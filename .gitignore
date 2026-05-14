@@ -1,0 +1,4 @@
+*.pyc
+auto-annotating/__pycache__/
+*.jpg
+*.png
