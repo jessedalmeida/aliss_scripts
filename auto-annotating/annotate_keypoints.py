@@ -21,7 +21,7 @@ Controls (Tracking Verification):
   Left-click: correct tip or tail (next click is opposite)
     T: toggle which point the next click edits
     R: re-anchor flow from the current corrected frame forward
-    O: toggle occluded mode for both points
+        O: toggle occluded mode for the selected point in the current frame
   ENTER: accept all predictions
   Q: quit without saving
 """
@@ -232,13 +232,19 @@ class VerificationUI:
         self.current_frame_num = 0
         self.corrections = {}  # {frame_idx: {"tip": (x,y), "tail": (x,y)}}
         self.current_label = "tip"
-        self.occluded = {"tip": False, "tail": False}
+        self.occluded = {}  # {frame_idx: {"tip": bool, "tail": bool}}
         self.window_name = f"Verify Keypoints - {bag_stem}"
         self.display = None
         self.reseed_callback = reseed_callback
 
     def _get_frame_idx(self, frame_num: int) -> int:
         return self.frame_indices[frame_num] if frame_num < len(self.frame_indices) else frame_num
+
+    def _frame_occlusion_state(self, frame_idx: int) -> dict[str, bool]:
+        return self.occluded.setdefault(frame_idx, {"tip": False, "tail": False})
+
+    def _is_occluded(self, frame_idx: int, label: str) -> bool:
+        return self.occluded.get(frame_idx, {}).get(label, False)
 
     def _render(self):
         frame = self.frames[self.current_frame_num].copy()
@@ -254,11 +260,12 @@ class VerificationUI:
 
         if keypoints is not None:
             tip, tail = keypoints.get("tip"), keypoints.get("tail")
-            if not self.occluded["tip"] and tip:
+            occluded = self._frame_occlusion_state(frame_idx)
+            if not occluded["tip"] and tip:
                 cv2.circle(frame, tuple(map(int, tip)), 1, (0, 0, 255), -1)
                 cv2.circle(frame, tuple(map(int, tip)), 4, (255, 255, 255), 1)
                 cv2.putText(frame, "tip", (int(tip[0]) + 6, int(tip[1]) - 6), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
-            if not self.occluded["tail"] and tail:
+            if not occluded["tail"] and tail:
                 cv2.circle(frame, tuple(map(int, tail)), 1, (255, 0, 0), -1)
                 cv2.circle(frame, tuple(map(int, tail)), 4, (255, 255, 255), 1)
                 cv2.putText(frame, "tail", (int(tail[0]) + 6, int(tail[1]) - 6), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
@@ -271,7 +278,7 @@ class VerificationUI:
         lines = [
             f"Frame {self.current_frame_num}/{self.n_frames - 1}  [{status}]",
             "A/D or arrows=navigate  Left-click=correct selected point  ENTER=accept all  Q=quit",
-            f"Next correction: {self.current_label.upper()}  (T to toggle)  R=reanchor  O=toggle {self.current_label} occluded:{'on' if self.occluded[self.current_label] else 'off'}",
+            f"Next correction: {self.current_label.upper()}  (T to toggle)  R=reanchor  O=toggle {self.current_label} occluded:{'on' if self._is_occluded(frame_idx, self.current_label) else 'off'}",
         ]
         for i, line in enumerate(lines):
             cv2.putText(frame, line, (10, h - 50 + i * 22), cv2.FONT_HERSHEY_SIMPLEX, 0.55, (200, 255, 200), 1)
@@ -349,7 +356,9 @@ class VerificationUI:
                 self.current_label = "tail" if self.current_label == "tip" else "tip"
                 self._render()
             elif key == ord("o"):  # O to toggle occlusion mode
-                self.occluded[self.current_label] = not self.occluded[self.current_label]
+                frame_idx = self._get_frame_idx(self.current_frame_num)
+                occluded = self._frame_occlusion_state(frame_idx)
+                occluded[self.current_label] = not occluded[self.current_label]
                 self._render()
             elif key == ord("r"):  # R to re-anchor the flow on this frame
                 self._reanchor_current_frame()
@@ -363,8 +372,18 @@ class VerificationUI:
 
         # Merge predictions and corrections
         final = {}
-        for frame_idx, pred in self.predictions.items():
-            final[frame_idx] = self.corrections.get(frame_idx, pred)
+        all_frame_indices = sorted(set(self.predictions.keys()) | set(self.corrections.keys()))
+        for frame_idx in all_frame_indices:
+            keypoints = self.corrections.get(frame_idx, self.predictions.get(frame_idx))
+            if keypoints is None:
+                continue
+
+            occluded = self._frame_occlusion_state(frame_idx)
+            final[frame_idx] = {
+                "tip": None if occluded["tip"] else keypoints.get("tip"),
+                "tail": None if occluded["tail"] else keypoints.get("tail"),
+                "occluded": {"tip": occluded["tip"], "tail": occluded["tail"]},
+            }
         return final
 
 
@@ -447,6 +466,7 @@ def annotate_bag_keypoints(bag_dir: Path, seed_frame_idx: int | None = None) -> 
                 result["frames"][f"{actual_idx:06d}"] = {
                     "needle_tip": _point_to_list(keypoints["tip"]),
                     "needle_tail": _point_to_list(keypoints["tail"]),
+                    "occluded": keypoints.get("occluded", {"tip": False, "tail": False}),
                     "status": "ok",
                 }
 
