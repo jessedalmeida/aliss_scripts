@@ -1,52 +1,53 @@
 #!/usr/bin/env python3
 """
-03_repack_bag.py  —  Run on either machine (no GPU needed)
+03_repack_bag.py  -  Run on either machine (no GPU needed)
 ===========================================================
-Takes the original .mcap bag and the generated mask PNGs, then writes a new
-.mcap bag that contains the original topics PLUS two new topics:
+Takes the original .mcap bag and the generated annotation files, then writes a
+new bag that keeps the camera stream needed for playback plus a new
+`/needle_tracking/snapshot` topic.
 
-  /needle_tracking/needle_mask   — sensor_msgs/msg/Image  (mono8, binary)
+Use `--output-mode topics` to keep the camera stream and publish each
+annotation component on its own topic for visualization tools like Foxglove.
 
-The new bag can be replayed alongside your NeedleTrackerNode. The node
-already subscribes to a needle_mask topic, so no code changes are needed.
+Each snapshot is written at the original image timestamp for the extracted
+frame, and bundles:
+  - the camera image
+  - the needle mask
+  - the nearest-earlier arm joint/pose messages
+  - the annotation keypoints
 
-USAGE
------
-python 03_repack_bag.py \
-    --bag     /path/to/original/suture1 \
-    --ann-dir ./annotations \
-    --out-dir ./annotated_bags
-
-DEPENDENCIES
-------------
-  pip install rosbags opencv-python numpy tqdm
-
-NOTE ON FRAME ALIGNMENT
------------------------
-Masks are matched to image messages by index (frame_N → Nth image message).
-If you used --every-n > 1 during extraction, frames between saved ones will
-receive a copy of the nearest available mask (nearest-neighbour fill).
-This is fine for the tracker since the masks are used as soft guidance.
-
-The original bag's image, robot, and TF topics are passed through unchanged.
+This is intended so a single replayed bag can drive the needle tracker or
+suturing package without requiring the annotation files at runtime.
 """
+
+from __future__ import annotations
 
 import argparse
 import json
-import os
 import sys
 from pathlib import Path
+from typing import cast
 
 import cv2
 import numpy as np
 
 try:
-    from rosbags.rosbag2 import Reader, Writer
-    from rosbags.typesys import Stores, get_typestore
+    from rosbags.rosbag2 import Reader, StoragePlugin, Writer
+    from rosbags.interfaces import ConnectionExtRosbag2
+    from rosbags.typesys import Stores, get_typestore, get_types_from_msg
     from rosbags.typesys.stores.ros2_humble import (
         builtin_interfaces__msg__Time as Time,
-        std_msgs__msg__Header as Header,
+        geometry_msgs__msg__Point as Point,
+        geometry_msgs__msg__Point32 as Point32,
+        geometry_msgs__msg__Pose as Pose,
+        geometry_msgs__msg__Pose2D as Pose2D,
+        geometry_msgs__msg__PoseStamped as PoseStamped,
+        geometry_msgs__msg__PoseWithCovariance as PoseWithCovariance,
+        geometry_msgs__msg__PoseWithCovarianceStamped as PoseWithCovarianceStamped,
+        geometry_msgs__msg__Quaternion as Quaternion,
         sensor_msgs__msg__Image as RosImage,
+        sensor_msgs__msg__JointState as JointState,
+        std_msgs__msg__Header as Header,
     )
     ROSBAGS_AVAILABLE = True
 except ImportError:
@@ -64,20 +65,63 @@ IMAGE_TOPICS = [
     "/ves_camera/image",
 ]
 
-MASK_TOPIC_MAP = {
-    "needle_mask": "/needle_tracking/needle_mask",
-}
+CAMERA_INFO_TYPES = {"sensor_msgs/msg/CameraInfo"}
+SNAPSHOT_TOPIC = "/needle_tracking/snapshot"
+KEYPOINTS_TOPIC = "/needle_tracking/keypoints"
+MASK_TOPIC = "/needle_tracking/mask"
+RIGHT_ARM_JP_TOPIC = "/needle_tracking/right_arm_jp"
+LEFT_ARM_JP_TOPIC = "/needle_tracking/left_arm_jp"
+RIGHT_ARM_CP_TOPIC = "/needle_tracking/right_arm_cp"
+LEFT_ARM_CP_TOPIC = "/needle_tracking/left_arm_cp"
+RIGHT_TIP_POSE_TOPIC = "/needle_tracking/right_tip_pose"
+LEFT_TIP_POSE_TOPIC = "/needle_tracking/left_tip_pose"
+PACKAGE_NAME = "needle_tracking"
+KEYPOINTS_TYPE = f"{PACKAGE_NAME}/msg/NeedleTrackingKeypoints"
+SNAPSHOT_TYPE = f"{PACKAGE_NAME}/msg/NeedleTrackingSnapshot"
+
+KEYPOINTS_MSG_DEF = """
+geometry_msgs/Point32 needle_tip
+geometry_msgs/Point32 needle_tail
+geometry_msgs/Point32 left_arm_tip
+geometry_msgs/Point32 right_arm_tip
+geometry_msgs/Pose2D bounding_box_center
+float64 bounding_box_size_x
+float64 bounding_box_size_y
+"""
+
+SNAPSHOT_MSG_DEF = """
+sensor_msgs/Image img
+sensor_msgs/Image mask
+sensor_msgs/JointState right_arm_jp
+sensor_msgs/JointState left_arm_jp
+geometry_msgs/PoseStamped right_arm_cp
+geometry_msgs/PoseStamped left_arm_cp
+geometry_msgs/PoseWithCovarianceStamped right_tip_pose
+geometry_msgs/PoseWithCovarianceStamped left_tip_pose
+NeedleTrackingKeypoints keypoints
+builtin_interfaces/Time stamp
+"""
 
 
-def ns_to_time(ns: int) -> "Time":
+def ns_to_time(ns: int) -> Time:
     return Time(sec=ns // 10**9, nanosec=ns % 10**9)
 
 
-def build_image_msg(mask_np: np.ndarray, timestamp_ns: int, frame_id: str = "camera") -> "RosImage":
-    """Wrap a numpy uint8 mask as a sensor_msgs/Image (mono8)."""
-    h, w = mask_np.shape[:2]
+def normalize_topic(topic: str) -> str:
+    return topic.lower()
+
+
+def register_custom_types(typestore) -> None:
+    """Register the custom message definitions under the needle_tracking package."""
+
+    typestore.register(get_types_from_msg(KEYPOINTS_MSG_DEF, KEYPOINTS_TYPE))
+    typestore.register(get_types_from_msg(SNAPSHOT_MSG_DEF, SNAPSHOT_TYPE))
+
+
+def build_image_msg(image_np: np.ndarray, timestamp_ns: int, frame_id: str = "camera") -> RosImage:
+    h, w = image_np.shape[:2]
     header = Header(stamp=ns_to_time(timestamp_ns), frame_id=frame_id)
-    data = mask_np.flatten().tolist()
+    data = np.ascontiguousarray(image_np, dtype=np.uint8).reshape(-1)
     return RosImage(
         header=header,
         height=h,
@@ -89,159 +133,524 @@ def build_image_msg(mask_np: np.ndarray, timestamp_ns: int, frame_id: str = "cam
     )
 
 
-def load_masks_for_bag(ann_dir: Path, bag_stem: str) -> dict[str, dict[int, np.ndarray]]:
-    """
-    Load mask PNGs from the masks/ subdirectory.
-    Returns {label: {frame_idx: mask_np}}.
-    """
+def build_blank_joint_state(timestamp_ns: int, frame_id: str = "") -> JointState:
+    return JointState(
+        header=Header(stamp=ns_to_time(timestamp_ns), frame_id=frame_id),
+        name=[],
+        position=np.array([], dtype=np.float64),
+        velocity=np.array([], dtype=np.float64),
+        effort=np.array([], dtype=np.float64),
+    )
+
+
+def build_blank_pose_stamped(timestamp_ns: int, frame_id: str = "") -> PoseStamped:
+    return PoseStamped(
+        header=Header(stamp=ns_to_time(timestamp_ns), frame_id=frame_id),
+        pose=Pose(
+            position=Point(x=0.0, y=0.0, z=0.0),
+            orientation=Quaternion(x=0.0, y=0.0, z=0.0, w=1.0),
+        ),
+    )
+
+
+def build_blank_pose_with_cov_stamped(timestamp_ns: int, frame_id: str = "") -> PoseWithCovarianceStamped:
+    return PoseWithCovarianceStamped(
+        header=Header(stamp=ns_to_time(timestamp_ns), frame_id=frame_id),
+        pose=PoseWithCovariance(
+            pose=Pose(
+                position=Point(x=0.0, y=0.0, z=0.0),
+                orientation=Quaternion(x=0.0, y=0.0, z=0.0, w=1.0),
+            ),
+            covariance=np.zeros(36, dtype=np.float64),
+        ),
+    )
+
+
+def point32_from_xy(x: float, y: float, z: float = 0.0) -> Point32:
+    return Point32(x=float(x), y=float(y), z=float(z))
+
+
+def load_masks_for_bag(ann_dir: Path, bag_stem: str) -> dict[int, np.ndarray]:
     masks_dir = ann_dir / bag_stem / "masks"
-    result: dict[str, dict[int, np.ndarray]] = {}
-
     if not masks_dir.exists():
-        return result
+        return {}
 
-    for label in ["needle_mask"]:
-        files = sorted(masks_dir.glob(f"frame_*_{label}.png"))
-        if not files:
+    frames: dict[int, np.ndarray] = {}
+    for mask_path in sorted(masks_dir.glob("frame_*_needle_mask.png")):
+        parts = mask_path.stem.split("_")
+        if len(parts) < 3:
             continue
-        frames = {}
-        for f in files:
-            idx = int(f.stem.split("_")[1])
-            img = cv2.imread(str(f), cv2.IMREAD_GRAYSCALE)
-            if img is not None:
-                frames[idx] = img
-        if frames:
-            result[label] = frames
+        try:
+            frame_idx = int(parts[1])
+        except ValueError:
+            continue
+        img = cv2.imread(str(mask_path), cv2.IMREAD_GRAYSCALE)
+        if img is not None:
+            frames[frame_idx] = img
+    return frames
 
+
+def load_keypoints_for_bag(ann_dir: Path, bag_stem: str) -> dict[int, dict]:
+    keypoints_path = ann_dir / bag_stem / "keypoints.json"
+    if not keypoints_path.exists():
+        return {}
+
+    with open(keypoints_path) as f:
+        payload = json.load(f)
+
+    frames = payload.get("frames", {})
+    result: dict[int, dict] = {}
+    for frame_key, frame_data in frames.items():
+        try:
+            frame_idx = int(frame_key)
+        except ValueError:
+            continue
+        result[frame_idx] = frame_data
     return result
 
 
-def nearest_mask(masks_by_frame: dict[int, np.ndarray], query_idx: int) -> np.ndarray | None:
-    """Return the mask for the closest available frame index."""
-    if not masks_by_frame:
+def select_topic(connections, msgtype: str | None = None, keywords: tuple[str, ...] = ()) -> str | None:
+    candidates = [conn.topic for conn in connections if msgtype is None or conn.msgtype == msgtype]
+    if not candidates:
         return None
-    keys = np.array(sorted(masks_by_frame.keys()))
-    nearest_key = keys[np.argmin(np.abs(keys - query_idx))]
-    return masks_by_frame[nearest_key]
+
+    if keywords:
+        filtered = [topic for topic in candidates if all(keyword in normalize_topic(topic) for keyword in keywords)]
+        if filtered:
+            return sorted(filtered)[0]
+
+        filtered = [topic for topic in candidates if any(keyword in normalize_topic(topic) for keyword in keywords)]
+        if filtered:
+            return sorted(filtered)[0]
+
+    return sorted(candidates)[0]
 
 
-def repack_bag(bag_path: Path, ann_dir: Path, out_dir: Path):
+def select_side_topic(connections, msgtype: str, side: str, fallback_index: int) -> str | None:
+    candidates = [conn.topic for conn in connections if conn.msgtype == msgtype]
+    if not candidates:
+        return None
+
+    filtered = [topic for topic in candidates if side in normalize_topic(topic)]
+    if filtered:
+        return sorted(filtered)[0]
+
+    ordered = sorted(candidates)
+    if fallback_index < len(ordered):
+        return ordered[fallback_index]
+    return ordered[0]
+
+
+def count_messages_for_topic(bag_dir: Path, topic: str) -> int:
+    with Reader(bag_dir) as reader:
+        connection = next((conn for conn in reader.connections if conn.topic == topic), None)
+        if connection is None:
+            return 0
+        return sum(1 for _ in reader.messages(connections=[connection]))
+
+
+def infer_every_n(bag_dir: Path, image_topic: str, annotated_frame_count: int) -> int:
+    if annotated_frame_count <= 0:
+        return 1
+
+    total_images = count_messages_for_topic(bag_dir, image_topic)
+    if total_images <= 0:
+        return 1
+
+    inferred = max(1, round(total_images / annotated_frame_count))
+    if abs((annotated_frame_count * inferred) - total_images) > inferred:
+        print(
+            f"  [WARN] Inferred frame stride {inferred} from {total_images} image messages and "
+            f"{annotated_frame_count} annotated frames."
+        )
+    return inferred
+
+
+def mask_bbox(mask_np: np.ndarray, fallback_points: list[tuple[float, float]] | None = None) -> tuple[Pose2D, float, float]:
+    ys, xs = np.where(mask_np > 0)
+    if len(xs) == 0 or len(ys) == 0:
+        fallback_points = fallback_points or []
+        if not fallback_points:
+            return Pose2D(x=0.0, y=0.0, theta=0.0), 0.0, 0.0
+        xs = np.array([pt[0] for pt in fallback_points], dtype=np.float32)
+        ys = np.array([pt[1] for pt in fallback_points], dtype=np.float32)
+
+    x_min = float(xs.min())
+    x_max = float(xs.max())
+    y_min = float(ys.min())
+    y_max = float(ys.max())
+
+    center = Pose2D(x=(x_min + x_max) / 2.0, y=(y_min + y_max) / 2.0, theta=0.0)
+    return center, x_max - x_min + 1.0, y_max - y_min + 1.0
+
+
+def extract_xy(point_like) -> tuple[float, float]:
+    return float(point_like[0]), float(point_like[1])
+
+
+def build_keypoints_msg(typestore, frame_data: dict, mask_np: np.ndarray, right_pose: PoseWithCovarianceStamped | None, left_pose: PoseWithCovarianceStamped | None):
+    keypoint_cls = typestore.types[KEYPOINTS_TYPE]
+
+    needle_tip_xy = extract_xy(frame_data.get("needle_tip", [0.0, 0.0]))
+    needle_tail_xy = extract_xy(frame_data.get("needle_tail", [0.0, 0.0]))
+
+    right_tip = point32_from_xy(
+        right_pose.pose.pose.position.x if right_pose else 0.0,
+        right_pose.pose.pose.position.y if right_pose else 0.0,
+        right_pose.pose.pose.position.z if right_pose else 0.0,
+    )
+    left_tip = point32_from_xy(
+        left_pose.pose.pose.position.x if left_pose else 0.0,
+        left_pose.pose.pose.position.y if left_pose else 0.0,
+        left_pose.pose.pose.position.z if left_pose else 0.0,
+    )
+
+    bbox_center, bbox_size_x, bbox_size_y = mask_bbox(
+        mask_np,
+        fallback_points=[needle_tip_xy, needle_tail_xy],
+    )
+
+    return keypoint_cls(
+        needle_tip=point32_from_xy(*needle_tip_xy),
+        needle_tail=point32_from_xy(*needle_tail_xy),
+        left_arm_tip=left_tip,
+        right_arm_tip=right_tip,
+        bounding_box_center=bbox_center,
+        bounding_box_size_x=float(bbox_size_x),
+        bounding_box_size_y=float(bbox_size_y),
+    )
+
+
+def build_snapshot_msg(
+    typestore,
+    image_msg: RosImage,
+    mask_msg: RosImage,
+    right_joint: JointState,
+    left_joint: JointState,
+    right_cp: PoseStamped,
+    left_cp: PoseStamped,
+    right_pose: PoseWithCovarianceStamped,
+    left_pose: PoseWithCovarianceStamped,
+    keypoints_msg,
+    timestamp_ns: int,
+):
+    snapshot_cls = typestore.types[SNAPSHOT_TYPE]
+    return snapshot_cls(
+        img=image_msg,
+        mask=mask_msg,
+        right_arm_jp=right_joint,
+        left_arm_jp=left_joint,
+        right_arm_cp=right_cp,
+        left_arm_cp=left_cp,
+        right_tip_pose=right_pose,
+        left_tip_pose=left_pose,
+        keypoints=keypoints_msg,
+        stamp=ns_to_time(timestamp_ns),
+    )
+
+
+def build_split_topic_messages(
+    mask_np: np.ndarray,
+    right_joint: JointState,
+    left_joint: JointState,
+    right_cp: PoseStamped,
+    left_cp: PoseStamped,
+    right_pose: PoseWithCovarianceStamped,
+    left_pose: PoseWithCovarianceStamped,
+    keypoints_msg,
+    timestamp_ns: int,
+    frame_id: str,
+) -> dict[str, tuple[str, object]]:
+    mask_msg = build_image_msg(mask_np, timestamp_ns, frame_id=frame_id)
+
+    return {
+        MASK_TOPIC: ("sensor_msgs/msg/Image", mask_msg),
+        KEYPOINTS_TOPIC: (KEYPOINTS_TYPE, keypoints_msg),
+        RIGHT_ARM_JP_TOPIC: ("sensor_msgs/msg/JointState", right_joint),
+        LEFT_ARM_JP_TOPIC: ("sensor_msgs/msg/JointState", left_joint),
+        RIGHT_ARM_CP_TOPIC: ("geometry_msgs/msg/PoseStamped", right_cp),
+        LEFT_ARM_CP_TOPIC: ("geometry_msgs/msg/PoseStamped", left_cp),
+        RIGHT_TIP_POSE_TOPIC: ("geometry_msgs/msg/PoseWithCovarianceStamped", right_pose),
+        LEFT_TIP_POSE_TOPIC: ("geometry_msgs/msg/PoseWithCovarianceStamped", left_pose),
+    }
+
+
+def serialize_and_write(writer, connection, typestore, message, msgtype: str, timestamp: int) -> None:
+    raw = typestore.serialize_cdr(message, msgtype)
+    writer.write(connection, timestamp, raw)
+
+
+def repack_bag(
+    bag_path: Path,
+    ann_dir: Path,
+    out_dir: Path,
+    every_n: int | None = None,
+    output_mode: str = "snapshot",
+):
     if not ROSBAGS_AVAILABLE:
-        print("[ERROR] rosbags not installed. Run:  pip install rosbags")
+        print("[ERROR] rosbags not installed. Run: pip install rosbags")
         sys.exit(1)
 
     bag_dir = bag_path if bag_path.is_dir() else bag_path.parent
     bag_stem = bag_dir.name
     out_bag_dir = out_dir / f"{bag_stem}_annotated"
 
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print(f"Repacking: {bag_stem}")
     print(f"Output:    {out_bag_dir}")
-    print(f"{'='*60}")
+    print(f"Annotation directory: {ann_dir / bag_stem}")
+    print(f"Output mode: {output_mode}")
+    print(f"{'=' * 60}")
 
-    # ── Load masks ────────────────────────────────────────────────────────
+    split_topics = output_mode == "topics"
+
     masks = load_masks_for_bag(ann_dir, bag_stem)
-    if not masks:
-        print(f"  [WARN] No masks found for {bag_stem} — bag will be written without mask topics")
+    keypoints = load_keypoints_for_bag(ann_dir, bag_stem)
+    annotated_indices = sorted(set(masks) & set(keypoints))
+
+    if not annotated_indices:
+        print(f"  [WARN] No overlapping mask/keypoint frames found for {bag_stem}")
     else:
-        for label, frames in masks.items():
-            print(f"  Loaded {len(frames)} masks for '{label}'")
+        print(f"  Loaded {len(annotated_indices)} annotated frames")
 
-    # ── Load seeds for every_n info ────────────────────────────────────────
-    seeds_path = ann_dir / bag_stem / "seeds.json"
-    every_n = 3  # default assumption
-    if seeds_path.exists():
-        with open(seeds_path) as f:
-            seeds = json.load(f)
-        # Infer every_n from frame count vs message count if possible
-        # (We just use nearest-neighbour so exact every_n doesn't matter)
-
-    typestore = get_typestore(Stores.ROS2_HUMBLE)
-
-    out_dir.mkdir(parents=True, exist_ok=True)
-
-    if out_bag_dir.exists():
-        print(f"  [WARN] Output bag already exists: {out_bag_dir}")
-        print(f"         Delete it to repack again.")
-        return False
-
-    # ── Open reader and writer ────────────────────────────────────────────
     with Reader(bag_dir) as reader:
-        available_topics = {c.topic: c for c in reader.connections}
+        connections = list(reader.connections)
+        available_topics = {conn.topic: conn for conn in connections}
 
-        # Determine which image topic exists
-        img_topic = next((t for t in IMAGE_TOPICS if t in available_topics), None)
+        image_topic = next((topic for topic in IMAGE_TOPICS if topic in available_topics), None)
+        if image_topic is None:
+            image_topic = select_topic(connections, msgtype="sensor_msgs/msg/Image", keywords=("image",))
+        if image_topic is None:
+            print(f"  [ERROR] No camera image topic found in {bag_dir}")
+            return False
 
-        with Writer(out_bag_dir) as writer:
-            # Register all original connections
-            conn_map = {}  # original id → new connection
-            for orig_conn in reader.connections:
-                new_conn = writer.add_connection(
-                    topic=orig_conn.topic,
-                    msgtype=orig_conn.msgtype,
-                    serialization_format=orig_conn.serialization_format,
-                    offered_qos_profiles=orig_conn.offered_qos_profiles,
+        camera_info_topics = [
+            conn.topic
+            for conn in connections
+            if conn.msgtype in CAMERA_INFO_TYPES or normalize_topic(conn.topic).endswith("camera_info")
+        ]
+
+        right_joint_topic = select_side_topic(connections, "sensor_msgs/msg/JointState", "right", fallback_index=0)
+        left_joint_topic = select_side_topic(connections, "sensor_msgs/msg/JointState", "left", fallback_index=1)
+        right_cp_topic = select_side_topic(connections, "geometry_msgs/msg/PoseStamped", "right", fallback_index=0)
+        left_cp_topic = select_side_topic(connections, "geometry_msgs/msg/PoseStamped", "left", fallback_index=1)
+        right_pose_topic = select_side_topic(connections, "geometry_msgs/msg/PoseWithCovarianceStamped", "right", fallback_index=0)
+        left_pose_topic = select_side_topic(connections, "geometry_msgs/msg/PoseWithCovarianceStamped", "left", fallback_index=1)
+
+        image_connection = available_topics.get(image_topic)
+        if image_connection is None:
+            print(f"  [ERROR] Could not resolve image topic connection: {image_topic}")
+            return False
+
+        image_connection_ext = cast(ConnectionExtRosbag2, image_connection.ext)
+
+        inferred_every_n = every_n if every_n is not None else infer_every_n(bag_dir, image_topic, len(annotated_indices))
+        inferred_every_n = max(1, int(inferred_every_n))
+        print(f"  Image topic: {image_topic}")
+        print(f"  Frame stride: {inferred_every_n}")
+
+        typestore = get_typestore(Stores.ROS2_HUMBLE)
+        register_custom_types(typestore)
+
+        if out_bag_dir.exists():
+            print(f"  [WARN] Output bag already exists: {out_bag_dir}")
+            print("         Delete it to repack again.")
+            return False
+
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+        with Writer(
+            out_bag_dir,
+            version=Writer.VERSION_LATEST,
+            storage_plugin=StoragePlugin.MCAP,
+        ) as writer:
+            pass_through_conns = {}
+            for topic in camera_info_topics:
+                conn = available_topics.get(topic)
+                if conn is None:
+                    continue
+                conn_ext = cast(ConnectionExtRosbag2, conn.ext)
+                pass_through_conns[conn.id] = writer.add_connection(
+                    topic=conn.topic,
+                    msgtype=conn.msgtype,
+                    typestore=typestore,
+                    serialization_format=conn_ext.serialization_format,
+                    offered_qos_profiles=conn_ext.offered_qos_profiles,
                 )
-                conn_map[orig_conn.id] = new_conn
 
-            # Register new mask topics
-            mask_conns = {}
-            for label in masks:
-                ros_topic = MASK_TOPIC_MAP.get(label)
-                if ros_topic:
-                    mask_conns[label] = writer.add_connection(
-                        topic=ros_topic,
-                        msgtype="sensor_msgs/msg/Image",
-                    )
+            image_out_conn = None
+            annotation_conns = {}
+            snapshot_conn = None
+            if split_topics:
+                image_out_conn = writer.add_connection(
+                    topic=image_topic,
+                    msgtype=image_connection.msgtype,
+                    typestore=typestore,
+                    serialization_format=image_connection_ext.serialization_format,
+                    offered_qos_profiles=image_connection_ext.offered_qos_profiles,
+                )
+                annotation_topics = {
+                    MASK_TOPIC: "sensor_msgs/msg/Image",
+                    KEYPOINTS_TOPIC: KEYPOINTS_TYPE,
+                    RIGHT_ARM_JP_TOPIC: "sensor_msgs/msg/JointState",
+                    LEFT_ARM_JP_TOPIC: "sensor_msgs/msg/JointState",
+                    RIGHT_ARM_CP_TOPIC: "geometry_msgs/msg/PoseStamped",
+                    LEFT_ARM_CP_TOPIC: "geometry_msgs/msg/PoseStamped",
+                    RIGHT_TIP_POSE_TOPIC: "geometry_msgs/msg/PoseWithCovarianceStamped",
+                    LEFT_TIP_POSE_TOPIC: "geometry_msgs/msg/PoseWithCovarianceStamped",
+                }
+                for topic, msgtype in annotation_topics.items():
+                    annotation_conns[topic] = writer.add_connection(topic=topic, msgtype=msgtype, typestore=typestore)
+            else:
+                snapshot_conn = writer.add_connection(topic=SNAPSHOT_TOPIC, msgtype=SNAPSHOT_TYPE, typestore=typestore)
 
-            # ── Stream messages ────────────────────────────────────────────
+            latest_joint_right: JointState | None = None
+            latest_joint_left: JointState | None = None
+            latest_cp_right: PoseStamped | None = None
+            latest_cp_left: PoseStamped | None = None
+            latest_pose_right: PoseStamped | None = None
+            latest_pose_left: PoseStamped | None = None
+
             img_frame_counter = 0
+            saved_frame_counter = 0
+            last_selected_mask_idx = None
             total = reader.message_count
-
             iter_ = reader.messages()
             if TQDM_AVAILABLE:
                 iter_ = tqdm(iter_, total=total, desc="  Messages", unit="msg")
 
             for connection, timestamp, rawdata in iter_:
-                # Pass through original message
-                new_conn = conn_map[connection.id]
-                writer.write(new_conn, timestamp, rawdata)
+                if connection.topic in camera_info_topics:
+                    writer.write(pass_through_conns[connection.id], timestamp, rawdata)
+                    continue
 
-                # When we hit an image message, also write the corresponding masks
-                if connection.topic == img_topic and mask_conns:
-                    for label, label_masks in masks.items():
-                        ros_topic = MASK_TOPIC_MAP.get(label)
-                        if ros_topic not in mask_conns:
-                            continue
+                if split_topics and connection.id == image_connection.id:
+                    assert image_out_conn is not None
+                    writer.write(image_out_conn, timestamp, rawdata)
 
-                        # Map image counter → nearest saved frame index
-                        # (saved frames are every every_n images)
-                        mask_np = nearest_mask(label_masks, img_frame_counter)
-                        if mask_np is None:
-                            img_frame_counter += 1
-                            continue
+                if connection.topic == right_joint_topic and connection.msgtype == "sensor_msgs/msg/JointState":
+                    latest_joint_right = typestore.deserialize_cdr(rawdata, connection.msgtype)
+                    continue
 
-                        # Resize mask to match if necessary
-                        # (we don't know image size here, but masks should match)
+                if connection.topic == left_joint_topic and connection.msgtype == "sensor_msgs/msg/JointState":
+                    latest_joint_left = typestore.deserialize_cdr(rawdata, connection.msgtype)
+                    continue
 
-                        msg = build_image_msg(mask_np, timestamp)
-                        raw = typestore.serialize_cdr(msg, "sensor_msgs/msg/Image")
-                        writer.write(mask_conns[label], timestamp, raw)
+                if connection.topic == right_cp_topic and connection.msgtype == "geometry_msgs/msg/PoseStamped":
+                    latest_cp_right = typestore.deserialize_cdr(rawdata, connection.msgtype)
+                    continue
 
-                    img_frame_counter += 1
+                if connection.topic == left_cp_topic and connection.msgtype == "geometry_msgs/msg/PoseStamped":
+                    latest_cp_left = typestore.deserialize_cdr(rawdata, connection.msgtype)
+                    continue
+
+                if connection.topic == right_pose_topic and connection.msgtype == "geometry_msgs/msg/PoseWithCovarianceStamped":
+                    latest_pose_right = typestore.deserialize_cdr(rawdata, connection.msgtype)
+                    continue
+
+                if connection.topic == left_pose_topic and connection.msgtype == "geometry_msgs/msg/PoseWithCovarianceStamped":
+                    latest_pose_left = typestore.deserialize_cdr(rawdata, connection.msgtype)
+                    continue
+
+                if connection.id != image_connection.id:
+                    continue
+
+                image_msg = typestore.deserialize_cdr(rawdata, connection.msgtype)
+                image_frame_idx = img_frame_counter
+
+                if image_frame_idx % inferred_every_n == 0:
+                    annotated_idx = saved_frame_counter
+                    if annotated_idx in masks and annotated_idx in keypoints:
+                        mask_np = masks[annotated_idx]
+                        frame_data = keypoints[annotated_idx]
+                        frame_id = getattr(image_msg.header, "frame_id", "camera") or "camera"
+                        mask_msg = build_image_msg(mask_np, timestamp, frame_id=frame_id)
+
+                        right_joint_msg = latest_joint_right or build_blank_joint_state(timestamp, frame_id=frame_id)
+                        left_joint_msg = latest_joint_left or build_blank_joint_state(timestamp, frame_id=frame_id)
+                        right_cp_msg = latest_cp_right or build_blank_pose_stamped(timestamp, frame_id=frame_id)
+                        left_cp_msg = latest_cp_left or build_blank_pose_stamped(timestamp, frame_id=frame_id)
+                        right_pose_msg = latest_pose_right or build_blank_pose_with_cov_stamped(timestamp, frame_id=frame_id)
+                        left_pose_msg = latest_pose_left or build_blank_pose_with_cov_stamped(timestamp, frame_id=frame_id)
+
+                        keypoints_msg = build_keypoints_msg(
+                            typestore,
+                            frame_data,
+                            mask_np,
+                            right_pose_msg,
+                            left_pose_msg,
+                        )
+
+                        if split_topics:
+                            assert image_out_conn is not None
+                            for topic, (msgtype, message) in build_split_topic_messages(
+                                mask_np,
+                                right_joint_msg,
+                                left_joint_msg,
+                                right_cp_msg,
+                                left_cp_msg,
+                                right_pose_msg,
+                                left_pose_msg,
+                                keypoints_msg,
+                                timestamp,
+                                frame_id,
+                            ).items():
+                                serialize_and_write(
+                                    writer,
+                                    annotation_conns[topic],
+                                    typestore,
+                                    message,
+                                    msgtype,
+                                    timestamp,
+                                )
+                        else:
+                            assert snapshot_conn is not None
+                            snapshot_msg = build_snapshot_msg(
+                                typestore,
+                                image_msg,
+                                mask_msg,
+                                right_joint_msg,
+                                left_joint_msg,
+                                right_cp_msg,
+                                left_cp_msg,
+                                right_pose_msg,
+                                left_pose_msg,
+                                keypoints_msg,
+                                timestamp,
+                            )
+                            serialize_and_write(writer, snapshot_conn, typestore, snapshot_msg, SNAPSHOT_TYPE, timestamp)
+                        last_selected_mask_idx = annotated_idx
+
+                    saved_frame_counter += 1
+
+                img_frame_counter += 1
+
+    if last_selected_mask_idx is None:
+        print("  [WARN] No snapshot messages were written")
+    else:
+        print(f"  Last snapshot frame index: {last_selected_mask_idx}")
 
     print(f"  ✓ Written to {out_bag_dir}")
     return True
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Repack bags with annotation mask topics")
-    parser.add_argument("--bag", nargs="+", required=True,
-                        help="Path(s) to original bag directories")
-    parser.add_argument("--ann-dir", required=True,
-                        help="Annotation directory (output from 01_seed_annotator + 02_propagate)")
-    parser.add_argument("--out-dir", required=True,
-                        help="Directory to write annotated bags into")
+    parser = argparse.ArgumentParser(description="Repack bags for needle-tracker playback")
+    parser.add_argument("--bag", nargs="+", required=True, help="Path(s) to original bag directories")
+    parser.add_argument("--ann-dir", required=True, help="Annotation directory")
+    parser.add_argument("--out-dir", required=True, help="Directory to write annotated bags into")
+    parser.add_argument(
+        "--output-mode",
+        choices=["snapshot", "topics"],
+        default="snapshot",
+        help="Write a bundled NeedleTrackingSnapshot or separate Foxglove-friendly topics.",
+    )
+    parser.add_argument(
+        "--every-n",
+        type=int,
+        default=None,
+        help="Original frame stride used during extraction. If omitted, infer it from the bag and annotations.",
+    )
     args = parser.parse_args()
 
     ann_dir = Path(args.ann_dir)
@@ -253,12 +662,10 @@ def main():
         if not bag_path.exists():
             print(f"[WARN] Bag not found: {bag_path}")
             continue
-        repack_bag(bag_path, ann_dir, out_dir)
+        repack_bag(bag_path, ann_dir, out_dir, every_n=args.every_n, output_mode=args.output_mode)
 
     print("\nDone. Replay with:")
-    print("  ros2 bag play <annotated_bag> --topics /needle_tracking/needle_mask \\")
-    print("                                          /ves_camera/image_rect \\")
-    print("                                          /ves/right/joint/measured_jp ...")
+    print("  ros2 bag play <annotated_bag>")
 
 
 if __name__ == "__main__":
