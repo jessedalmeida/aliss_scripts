@@ -9,6 +9,10 @@ new bag that keeps the camera stream needed for playback plus a new
 Use `--output-mode topics` to keep the camera stream and publish each
 annotation component on its own topic for visualization tools like Foxglove.
 
+If a `poses.json` file is present alongside the other annotations, the script
+also publishes `/pose_estimator/pose` using the saved checkerboard pose and
+covariance for each annotated frame.
+
 Each snapshot is written at the original image timestamp for the extracted
 frame, and bundles:
   - the camera image
@@ -46,6 +50,8 @@ try:
         geometry_msgs__msg__PoseWithCovarianceStamped as PoseWithCovarianceStamped,
         geometry_msgs__msg__Quaternion as Quaternion,
         sensor_msgs__msg__Image as RosImage,
+        sensor_msgs__msg__CameraInfo as CameraInfo,
+        sensor_msgs__msg__RegionOfInterest as RegionOfInterest,
         sensor_msgs__msg__JointState as JointState,
         std_msgs__msg__Header as Header,
     )
@@ -75,9 +81,11 @@ RIGHT_ARM_CP_TOPIC = "/needle_tracking/right_arm_cp"
 LEFT_ARM_CP_TOPIC = "/needle_tracking/left_arm_cp"
 RIGHT_TIP_POSE_TOPIC = "/needle_tracking/right_tip_pose"
 LEFT_TIP_POSE_TOPIC = "/needle_tracking/left_tip_pose"
-PACKAGE_NAME = "needle_tracking"
+POSE_TOPIC = "/pose_estimator/pose"
+PACKAGE_NAME = "aliss_ros_msg"
 KEYPOINTS_TYPE = f"{PACKAGE_NAME}/msg/NeedleTrackingKeypoints"
 SNAPSHOT_TYPE = f"{PACKAGE_NAME}/msg/NeedleTrackingSnapshot"
+POSE_TYPE = "geometry_msgs/msg/PoseWithCovarianceStamped"
 
 KEYPOINTS_MSG_DEF = """
 geometry_msgs/Point32 needle_tip
@@ -209,6 +217,25 @@ def load_keypoints_for_bag(ann_dir: Path, bag_stem: str) -> dict[int, dict]:
     return result
 
 
+def load_poses_for_bag(ann_dir: Path, bag_stem: str) -> dict[int, dict]:
+    poses_path = ann_dir / bag_stem / "poses.json"
+    if not poses_path.exists():
+        return {}
+
+    with open(poses_path, encoding="utf-8") as f:
+        payload = json.load(f)
+
+    frames = payload.get("frames", {})
+    result: dict[int, dict] = {}
+    for frame_key, frame_data in frames.items():
+        try:
+            frame_idx = int(frame_key)
+        except ValueError:
+            continue
+        result[frame_idx] = frame_data
+    return result
+
+
 def select_topic(connections, msgtype: str | None = None, keywords: tuple[str, ...] = ()) -> str | None:
     candidates = [conn.topic for conn in connections if msgtype is None or conn.msgtype == msgtype]
     if not candidates:
@@ -299,6 +326,38 @@ def build_keypoints_msg(typestore, frame_data: dict, mask_np: np.ndarray, right_
         right_pose.pose.pose.position.y if right_pose else 0.0,
         right_pose.pose.pose.position.z if right_pose else 0.0,
     )
+
+
+def build_pose_msg(timestamp_ns: int, frame_data: dict, default_frame_id: str = "endoscope_optical") -> PoseWithCovarianceStamped | None:
+    pose_data = frame_data.get("pose") if isinstance(frame_data, dict) else None
+    if not pose_data:
+        return None
+
+    position = pose_data.get("position", [0.0, 0.0, 0.0])
+    quaternion = pose_data.get("quaternion", [0.0, 0.0, 0.0, 1.0])
+    covariance = pose_data.get("covariance", [0.0] * 36)
+    if len(covariance) != 36:
+        covariance = list(covariance[:36]) + [0.0] * max(0, 36 - len(covariance))
+
+    pose_msg = PoseWithCovarianceStamped(
+        header=Header(
+            stamp=ns_to_time(timestamp_ns),
+            frame_id=str(pose_data.get("frame_id", default_frame_id) or default_frame_id),
+        ),
+        pose=PoseWithCovariance(
+            pose=Pose(
+                position=Point(x=float(position[0]), y=float(position[1]), z=float(position[2])),
+                orientation=Quaternion(
+                    x=float(quaternion[0]),
+                    y=float(quaternion[1]),
+                    z=float(quaternion[2]),
+                    w=float(quaternion[3]),
+                ),
+            ),
+            covariance=np.asarray(covariance, dtype=np.float64),
+        ),
+    )
+    return pose_msg
     left_tip = point32_from_xy(
         left_pose.pose.pose.position.x if left_pose else 0.0,
         left_pose.pose.pose.position.y if left_pose else 0.0,
@@ -406,12 +465,79 @@ def repack_bag(
 
     masks = load_masks_for_bag(ann_dir, bag_stem)
     keypoints = load_keypoints_for_bag(ann_dir, bag_stem)
+    poses = load_poses_for_bag(ann_dir, bag_stem)
     annotated_indices = sorted(set(masks) & set(keypoints))
+    pose_indices = sorted(idx for idx, frame_data in poses.items() if frame_data.get("pose") and frame_data.get("status") != "failed")
 
-    if not annotated_indices:
+    if not annotated_indices and not pose_indices:
         print(f"  [WARN] No overlapping mask/keypoint frames found for {bag_stem}")
     else:
-        print(f"  Loaded {len(annotated_indices)} annotated frames")
+        print(f"  Loaded {len(annotated_indices)} needle-annotated frames and {len(pose_indices)} pose frames")
+
+    # Try to find ves_camera.yaml in common locations (annotation dir, bag dir, ann root)
+    camera_yaml = None
+    yaml_paths = [
+        ann_dir / bag_stem / "ves_camera.yaml",
+        bag_dir / "ves_camera.yaml",
+        ann_dir / "ves_camera.yaml",
+    ]
+    try:
+        import yaml
+
+        for p in yaml_paths:
+            if p.exists():
+                try:
+                    with open(p, "r") as fh:
+                        camera_yaml = yaml.safe_load(fh)
+                    print(f"  Found camera YAML: {p}")
+                    break
+                except Exception:
+                    camera_yaml = None
+    except Exception:
+        camera_yaml = None
+
+    def build_camera_info_from_yaml(timestamp_ns: int, frame_id: str = "camera"):
+        # Default empty CameraInfo
+        if camera_yaml is None:
+            return CameraInfo(header=Header(stamp=ns_to_time(timestamp_ns), frame_id=frame_id))
+
+        img_w = int(camera_yaml.get("image_width") or camera_yaml.get("image_width", 0) or 0)
+        img_h = int(camera_yaml.get("image_height") or camera_yaml.get("image_height", 0) or 0)
+        model = camera_yaml.get("distortion_model", "plumb_bob")
+        D = camera_yaml.get("distortion_coefficients", {}).get("data") if isinstance(camera_yaml.get("distortion_coefficients"), dict) else camera_yaml.get("distortion_coefficients")
+        if D is None:
+            D = camera_yaml.get("D") or camera_yaml.get("distortion") or []
+        K = camera_yaml.get("camera_matrix", {}).get("data") if isinstance(camera_yaml.get("camera_matrix"), dict) else camera_yaml.get("camera_matrix")
+        if K is None:
+            K = camera_yaml.get("K")
+        R = camera_yaml.get("rectification_matrix", {}).get("data") if isinstance(camera_yaml.get("rectification_matrix"), dict) else camera_yaml.get("rectification_matrix")
+        if R is None:
+            R = camera_yaml.get("R")
+        P = camera_yaml.get("projection_matrix", {}).get("data") if isinstance(camera_yaml.get("projection_matrix"), dict) else camera_yaml.get("projection_matrix")
+        if P is None:
+            P = camera_yaml.get("P")
+
+        # Ensure lists of correct lengths
+        D = list(D) if D else []
+        K = list(K) if K and len(K) == 9 else ([1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0] if K else [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0])
+        R = list(R) if R and len(R) == 9 else ([1.0] * 9 if R else [1.0] * 9)
+        P = list(P) if P and len(P) == 12 else ([1.0] * 12 if P else [1.0] * 12)
+
+        roi = RegionOfInterest(x_offset=0, y_offset=0, height=0, width=0, do_rectify=False)
+
+        return CameraInfo(
+            header=Header(stamp=ns_to_time(timestamp_ns), frame_id=frame_id),
+            height=img_h,
+            width=img_w,
+            distortion_model=model,
+            d=D,
+            k=K,
+            r=R,
+            p=P,
+            binning_x=int(camera_yaml.get("binning_x", 0) or 0),
+            binning_y=int(camera_yaml.get("binning_y", 0) or 0),
+            roi=roi,
+        )
 
     with Reader(bag_dir) as reader:
         connections = list(reader.connections)
@@ -444,7 +570,8 @@ def repack_bag(
 
         image_connection_ext = cast(ConnectionExtRosbag2, image_connection.ext)
 
-        inferred_every_n = every_n if every_n is not None else infer_every_n(bag_dir, image_topic, len(annotated_indices))
+        reference_annotated_count = len(annotated_indices) if annotated_indices else len(pose_indices)
+        inferred_every_n = every_n if every_n is not None else infer_every_n(bag_dir, image_topic, reference_annotated_count)
         inferred_every_n = max(1, int(inferred_every_n))
         print(f"  Image topic: {image_topic}")
         print(f"  Frame stride: {inferred_every_n}")
@@ -464,6 +591,8 @@ def repack_bag(
             version=Writer.VERSION_LATEST,
             storage_plugin=StoragePlugin.MCAP,
         ) as writer:
+            # Add a camera_info connection that we will populate from ves_camera.yaml
+            camera_info_conn = writer.add_connection(topic="/ves_camera/camera_info", msgtype="sensor_msgs/msg/CameraInfo", typestore=typestore)
             pass_through_conns = {}
             for topic in camera_info_topics:
                 conn = available_topics.get(topic)
@@ -481,6 +610,7 @@ def repack_bag(
             image_out_conn = None
             annotation_conns = {}
             snapshot_conn = None
+            pose_conn = None
             if split_topics:
                 image_out_conn = writer.add_connection(
                     topic=image_topic,
@@ -499,10 +629,14 @@ def repack_bag(
                     RIGHT_TIP_POSE_TOPIC: "geometry_msgs/msg/PoseWithCovarianceStamped",
                     LEFT_TIP_POSE_TOPIC: "geometry_msgs/msg/PoseWithCovarianceStamped",
                 }
+                if pose_indices:
+                    annotation_topics[POSE_TOPIC] = POSE_TYPE
                 for topic, msgtype in annotation_topics.items():
                     annotation_conns[topic] = writer.add_connection(topic=topic, msgtype=msgtype, typestore=typestore)
             else:
                 snapshot_conn = writer.add_connection(topic=SNAPSHOT_TOPIC, msgtype=SNAPSHOT_TYPE, typestore=typestore)
+                if pose_indices:
+                    pose_conn = writer.add_connection(topic=POSE_TOPIC, msgtype=POSE_TYPE, typestore=typestore)
 
             latest_joint_right: JointState | None = None
             latest_joint_left: JointState | None = None
@@ -619,6 +753,28 @@ def repack_bag(
                                 timestamp,
                             )
                             serialize_and_write(writer, snapshot_conn, typestore, snapshot_msg, SNAPSHOT_TYPE, timestamp)
+                        try:
+                            camera_info_msg = build_camera_info_from_yaml(timestamp, frame_id=frame_id)
+                            serialize_and_write(writer, camera_info_conn, typestore, camera_info_msg, "sensor_msgs/msg/CameraInfo", timestamp)
+                        except Exception:
+                            pass
+
+                    if annotated_idx in poses:
+                        pose_frame_data = poses[annotated_idx]
+                        pose_msg = build_pose_msg(timestamp, pose_frame_data)
+                        if pose_msg is not None:
+                            if split_topics:
+                                serialize_and_write(
+                                    writer,
+                                    annotation_conns[POSE_TOPIC],
+                                    typestore,
+                                    pose_msg,
+                                    POSE_TYPE,
+                                    timestamp,
+                                )
+                            else:
+                                assert pose_conn is not None
+                                serialize_and_write(writer, pose_conn, typestore, pose_msg, POSE_TYPE, timestamp)
                         last_selected_mask_idx = annotated_idx
 
                     saved_frame_counter += 1

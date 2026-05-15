@@ -3,3 +3,7 @@ auto-annotating/__pycache__/
 *.jpg
 *.png
 .DS_Store
+*.mcap
+
+.venv/
+.venv2/

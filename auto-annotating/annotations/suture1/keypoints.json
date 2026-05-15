@@ -1,0 +1,6744 @@
+{
+  "bag_stem": "suture1",
+  "source": "optical_flow_tracking",
+  "seed_frame_idx": 0,
+  "seed_points": {
+    "frame_idx": 0,
+    "tip": [
+      415.0,
+      264.0
+    ],
+    "tail": [
+      718.0,
+      243.0
+    ]
+  },
+  "frames": {
+    "000000": {
+      "needle_tip": [
+        415.0,
+        264.0
+      ],
+      "needle_tail": [
+        718.0,
+        243.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000001": {
+      "needle_tip": [
+        414.9076232910156,
+        263.5585632324219
+      ],
+      "needle_tail": [
+        718.4598388671875,
+        242.33375549316406
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000002": {
+      "needle_tip": [
+        415.0167541503906,
+        264.0093994140625
+      ],
+      "needle_tail": [
+        718.6707153320312,
+        241.71275329589844
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000003": {
+      "needle_tip": [
+        414.81927490234375,
+        264.0145263671875
+      ],
+      "needle_tail": [
+        718.1737670898438,
+        243.42726135253906
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000004": {
+      "needle_tip": [
+        414.8678894042969,
+        264.2005920410156
+      ],
+      "needle_tail": [
+        718.0111083984375,
+        244.4725799560547
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000005": {
+      "needle_tip": [
+        415.6314392089844,
+        263.0853576660156
+      ],
+      "needle_tail": [
+        716.3893432617188,
+        258.3245544433594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000006": {
+      "needle_tip": [
+        417.8478088378906,
+        260.5303955078125
+      ],
+      "needle_tail": [
+        713.5778198242188,
+        280.2414855957031
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000007": {
+      "needle_tip": [
+        417.6447448730469,
+        260.748046875
+      ],
+      "needle_tail": [
+        713.8705444335938,
+        279.62200927734375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000008": {
+      "needle_tip": [
+        418.9122009277344,
+        256.10107421875
+      ],
+      "needle_tail": [
+        709.2821655273438,
+        304.33843994140625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000009": {
+      "needle_tip": [
+        392.0,
+        301.0
+      ],
+      "needle_tail": [
+        663.0,
+        378.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000010": {
+      "needle_tip": [
+        347.0,
+        339.0
+      ],
+      "needle_tail": [
+        615.0,
+        411.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000011": {
+      "needle_tip": [
+        312.0,
+        358.0
+      ],
+      "needle_tail": [
+        580.0,
+        428.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000012": {
+      "needle_tip": [
+        279.0,
+        377.0
+      ],
+      "needle_tail": [
+        553.0,
+        436.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000013": {
+      "needle_tip": [
+        250.0,
+        393.0
+      ],
+      "needle_tail": [
+        530.0,
+        441.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000014": {
+      "needle_tip": [
+        242.0,
+        403.0
+      ],
+      "needle_tail": [
+        525.0,
+        438.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000015": {
+      "needle_tip": [
+        234.8314208984375,
+        415.1942138671875
+      ],
+      "needle_tail": [
+        519.45556640625,
+        437.34197998046875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000016": {
+      "needle_tip": [
+        230.93246459960938,
+        422.8312683105469
+      ],
+      "needle_tail": [
+        516.0298461914062,
+        436.7532958984375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000017": {
+      "needle_tip": [
+        231.5322723388672,
+        426.87188720703125
+      ],
+      "needle_tail": [
+        516.46142578125,
+        435.8782653808594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000018": {
+      "needle_tip": [
+        231.61349487304688,
+        428.9739685058594
+      ],
+      "needle_tail": [
+        516.1422729492188,
+        435.9760437011719
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000019": {
+      "needle_tip": [
+        231.1231689453125,
+        429.2298583984375
+      ],
+      "needle_tail": [
+        516.04150390625,
+        435.6470947265625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000020": {
+      "needle_tip": [
+        231.11920166015625,
+        430.46929931640625
+      ],
+      "needle_tail": [
+        515.851806640625,
+        436.0035400390625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000021": {
+      "needle_tip": [
+        231.37466430664062,
+        429.3160095214844
+      ],
+      "needle_tail": [
+        515.7030029296875,
+        436.116455078125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000022": {
+      "needle_tip": [
+        231.54254150390625,
+        429.02520751953125
+      ],
+      "needle_tail": [
+        515.8676147460938,
+        435.88201904296875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000023": {
+      "needle_tip": [
+        231.27163696289062,
+        430.724365234375
+      ],
+      "needle_tail": [
+        515.659912109375,
+        436.6265869140625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000024": {
+      "needle_tip": [
+        232.5650634765625,
+        432.5313720703125
+      ],
+      "needle_tail": [
+        516.6915283203125,
+        435.6985168457031
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000025": {
+      "needle_tip": [
+        238.32107543945312,
+        438.7313537597656
+      ],
+      "needle_tail": [
+        521.2816772460938,
+        432.54486083984375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000026": {
+      "needle_tip": [
+        252.505859375,
+        453.15576171875
+      ],
+      "needle_tail": [
+        531.233154296875,
+        426.4068908691406
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000027": {
+      "needle_tip": [
+        272.4132385253906,
+        466.966552734375
+      ],
+      "needle_tail": [
+        543.3018798828125,
+        416.6302185058594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000028": {
+      "needle_tip": [
+        300.0,
+        475.0
+      ],
+      "needle_tail": [
+        560.7543334960938,
+        397.9198303222656
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000029": {
+      "needle_tip": [
+        308.0013122558594,
+        475.9082946777344
+      ],
+      "needle_tail": [
+        566.4813232421875,
+        392.2903747558594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000030": {
+      "needle_tip": [
+        308.24041748046875,
+        475.9173278808594
+      ],
+      "needle_tail": [
+        566.7039794921875,
+        392.54541015625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000031": {
+      "needle_tip": [
+        309.7572021484375,
+        478.34515380859375
+      ],
+      "needle_tail": [
+        567.1058959960938,
+        391.3320007324219
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000032": {
+      "needle_tip": [
+        328.95037841796875,
+        490.0144958496094
+      ],
+      "needle_tail": [
+        574.9266357421875,
+        384.99041748046875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000033": {
+      "needle_tip": [
+        354.0,
+        493.0
+      ],
+      "needle_tail": [
+        591.2598266601562,
+        368.35919189453125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000034": {
+      "needle_tip": [
+        396.0,
+        459.0
+      ],
+      "needle_tail": [
+        633.0,
+        329.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000035": {
+      "needle_tip": [
+        407.0,
+        433.0
+      ],
+      "needle_tail": [
+        655.0,
+        317.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000036": {
+      "needle_tip": [
+        415.7940979003906,
+        420.0015563964844
+      ],
+      "needle_tail": [
+        668.3611450195312,
+        309.2168884277344
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000037": {
+      "needle_tip": [
+        425.99542236328125,
+        409.7475280761719
+      ],
+      "needle_tail": [
+        681.8280639648438,
+        300.150390625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000038": {
+      "needle_tip": [
+        433.455078125,
+        403.69073486328125
+      ],
+      "needle_tail": [
+        690.36572265625,
+        293.0494689941406
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000039": {
+      "needle_tip": [
+        437.482666015625,
+        399.58819580078125
+      ],
+      "needle_tail": [
+        695.9620361328125,
+        290.04736328125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000040": {
+      "needle_tip": [
+        441.6307373046875,
+        395.93304443359375
+      ],
+      "needle_tail": [
+        701.2401123046875,
+        285.752197265625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000041": {
+      "needle_tip": [
+        444.1542663574219,
+        392.9815979003906
+      ],
+      "needle_tail": [
+        704.6664428710938,
+        283.1559143066406
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000042": {
+      "needle_tip": [
+        445.2942199707031,
+        394.4909362792969
+      ],
+      "needle_tail": [
+        704.7699584960938,
+        282.3721008300781
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000043": {
+      "needle_tip": [
+        445.71990966796875,
+        395.3277282714844
+      ],
+      "needle_tail": [
+        704.8230590820312,
+        281.72784423828125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000044": {
+      "needle_tip": [
+        444.7329406738281,
+        393.8706970214844
+      ],
+      "needle_tail": [
+        704.5253295898438,
+        282.1390380859375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000045": {
+      "needle_tip": [
+        433.97674560546875,
+        389.69158935546875
+      ],
+      "needle_tail": [
+        698.5903930664062,
+        288.2642517089844
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000046": {
+      "needle_tip": [
+        422.1649169921875,
+        393.7265930175781
+      ],
+      "needle_tail": [
+        686.491455078125,
+        295.441162109375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000047": {
+      "needle_tip": [
+        409.37060546875,
+        392.6065368652344
+      ],
+      "needle_tail": [
+        675.8234252929688,
+        304.5093078613281
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000048": {
+      "needle_tip": [
+        393.12701416015625,
+        395.2933349609375
+      ],
+      "needle_tail": [
+        662.3753051757812,
+        317.8943176269531
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000049": {
+      "needle_tip": [
+        372.7814025878906,
+        401.85015869140625
+      ],
+      "needle_tail": [
+        642.30029296875,
+        330.97802734375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000050": {
+      "needle_tip": [
+        360.2611083984375,
+        405.0085144042969
+      ],
+      "needle_tail": [
+        629.037841796875,
+        331.3149108886719
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000051": {
+      "needle_tip": [
+        350.5081787109375,
+        401.2958679199219
+      ],
+      "needle_tail": [
+        620.7582397460938,
+        327.72821044921875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000052": {
+      "needle_tip": [
+        334.420166015625,
+        395.7914123535156
+      ],
+      "needle_tail": [
+        607.5632934570312,
+        326.55023193359375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000053": {
+      "needle_tip": [
+        304.0,
+        387.0
+      ],
+      "needle_tail": [
+        584.0,
+        328.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000054": {
+      "needle_tip": [
+        281.363037109375,
+        388.29541015625
+      ],
+      "needle_tail": [
+        563.0,
+        325.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000055": {
+      "needle_tip": [
+        273.5863037109375,
+        387.6062316894531
+      ],
+      "needle_tail": [
+        555.934814453125,
+        323.4252014160156
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000056": {
+      "needle_tip": [
+        277.5830078125,
+        401.88995361328125
+      ],
+      "needle_tail": [
+        545.4830932617188,
+        320.5689697265625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000057": {
+      "needle_tip": [
+        287.0589294433594,
+        414.28643798828125
+      ],
+      "needle_tail": [
+        534.3248901367188,
+        317.2503967285156
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000058": {
+      "needle_tip": [
+        292.449951171875,
+        419.3434143066406
+      ],
+      "needle_tail": [
+        528.5761108398438,
+        315.2243347167969
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000059": {
+      "needle_tip": [
+        294.29583740234375,
+        417.27642822265625
+      ],
+      "needle_tail": [
+        526.9384765625,
+        314.6159362792969
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000060": {
+      "needle_tip": [
+        295.42645263671875,
+        414.23583984375
+      ],
+      "needle_tail": [
+        524.4343872070312,
+        312.6600341796875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000061": {
+      "needle_tip": [
+        291.200439453125,
+        408.4211120605469
+      ],
+      "needle_tail": [
+        519.11572265625,
+        308.45458984375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000062": {
+      "needle_tip": [
+        290.6656799316406,
+        404.997802734375
+      ],
+      "needle_tail": [
+        516.5274658203125,
+        306.49102783203125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000063": {
+      "needle_tip": [
+        291.458740234375,
+        404.3055114746094
+      ],
+      "needle_tail": [
+        515.7076416015625,
+        305.4126281738281
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000064": {
+      "needle_tip": [
+        291.6465148925781,
+        401.838134765625
+      ],
+      "needle_tail": [
+        513.1058349609375,
+        301.2929382324219
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000065": {
+      "needle_tip": [
+        291.47332763671875,
+        398.2695617675781
+      ],
+      "needle_tail": [
+        511.9533996582031,
+        293.8019104003906
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000066": {
+      "needle_tip": [
+        291.04217529296875,
+        396.3876647949219
+      ],
+      "needle_tail": [
+        511.80535888671875,
+        291.7120666503906
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000067": {
+      "needle_tip": [
+        290.90228271484375,
+        394.2810363769531
+      ],
+      "needle_tail": [
+        511.54656982421875,
+        289.4598388671875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000068": {
+      "needle_tip": [
+        298.2554016113281,
+        395.41302490234375
+      ],
+      "needle_tail": [
+        512.5170288085938,
+        280.615966796875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000069": {
+      "needle_tip": [
+        304.5116271972656,
+        392.42437744140625
+      ],
+      "needle_tail": [
+        515.1458129882812,
+        270.521484375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000070": {
+      "needle_tip": [
+        309.05804443359375,
+        387.669921875
+      ],
+      "needle_tail": [
+        525.5802612304688,
+        259.5445556640625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000071": {
+      "needle_tip": [
+        315.7681884765625,
+        385.7634582519531
+      ],
+      "needle_tail": [
+        535.4892578125,
+        247.30368041992188
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000072": {
+      "needle_tip": [
+        328.495361328125,
+        387.88165283203125
+      ],
+      "needle_tail": [
+        544.139404296875,
+        227.95899963378906
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000073": {
+      "needle_tip": [
+        332.13751220703125,
+        383.1643371582031
+      ],
+      "needle_tail": [
+        553.3321533203125,
+        216.25440979003906
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000074": {
+      "needle_tip": [
+        328.2403869628906,
+        385.21112060546875
+      ],
+      "needle_tail": [
+        559.843505859375,
+        212.9102783203125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000075": {
+      "needle_tip": [
+        327.5492858886719,
+        398.9745178222656
+      ],
+      "needle_tail": [
+        561.7880249023438,
+        211.37689208984375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000076": {
+      "needle_tip": [
+        335.36785888671875,
+        414.28497314453125
+      ],
+      "needle_tail": [
+        561.478271484375,
+        206.26242065429688
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000077": {
+      "needle_tip": [
+        345.6536560058594,
+        431.27130126953125
+      ],
+      "needle_tail": [
+        555.1376342773438,
+        203.99423217773438
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000078": {
+      "needle_tip": [
+        363.53497314453125,
+        454.4056396484375
+      ],
+      "needle_tail": [
+        543.4757690429688,
+        206.55703735351562
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000079": {
+      "needle_tip": [
+        388.08001708984375,
+        472.43359375
+      ],
+      "needle_tail": [
+        540.0,
+        211.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000080": {
+      "needle_tip": [
+        414.4729309082031,
+        482.11968994140625
+      ],
+      "needle_tail": [
+        537.7964477539062,
+        212.3520965576172
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000081": {
+      "needle_tip": [
+        432.8788146972656,
+        489.0819396972656
+      ],
+      "needle_tail": [
+        537.5982055664062,
+        214.24807739257812
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000082": {
+      "needle_tip": [
+        445.6607971191406,
+        492.40081787109375
+      ],
+      "needle_tail": [
+        538.1864013671875,
+        215.78521728515625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000083": {
+      "needle_tip": [
+        456.17559814453125,
+        494.6697998046875
+      ],
+      "needle_tail": [
+        541.3554077148438,
+        217.23316955566406
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000084": {
+      "needle_tip": [
+        462.3585205078125,
+        508.9517517089844
+      ],
+      "needle_tail": [
+        548.137451171875,
+        237.15830993652344
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000085": {
+      "needle_tip": [
+        474.7265625,
+        521.48828125
+      ],
+      "needle_tail": [
+        548.0923461914062,
+        251.71372985839844
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000086": {
+      "needle_tip": [
+        498.51055908203125,
+        534.3679809570312
+      ],
+      "needle_tail": [
+        547.2742919921875,
+        266.5494384765625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000087": {
+      "needle_tip": [
+        519.7442016601562,
+        537.281494140625
+      ],
+      "needle_tail": [
+        555.0249633789062,
+        271.9145202636719
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000088": {
+      "needle_tip": null,
+      "needle_tail": [
+        560.26611328125,
+        271.76971435546875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000089": {
+      "needle_tip": null,
+      "needle_tail": [
+        561.7467041015625,
+        272.32269287109375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000090": {
+      "needle_tip": null,
+      "needle_tail": [
+        561.5730590820312,
+        272.459716796875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000091": {
+      "needle_tip": null,
+      "needle_tail": [
+        562.1544189453125,
+        272.4493103027344
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000092": {
+      "needle_tip": null,
+      "needle_tail": [
+        563.1466674804688,
+        272.7538146972656
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000093": {
+      "needle_tip": null,
+      "needle_tail": [
+        563.3516235351562,
+        273.6531677246094
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000094": {
+      "needle_tip": null,
+      "needle_tail": [
+        563.2609252929688,
+        274.3000183105469
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000095": {
+      "needle_tip": null,
+      "needle_tail": [
+        563.5579833984375,
+        275.20416259765625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000096": {
+      "needle_tip": null,
+      "needle_tail": [
+        564.5430297851562,
+        289.64202880859375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000097": {
+      "needle_tip": null,
+      "needle_tail": [
+        565.8486328125,
+        303.46173095703125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000098": {
+      "needle_tip": null,
+      "needle_tail": [
+        565.6829833984375,
+        315.7476501464844
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000099": {
+      "needle_tip": null,
+      "needle_tail": [
+        566.17822265625,
+        320.2463684082031
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000100": {
+      "needle_tip": null,
+      "needle_tail": [
+        565.7345581054688,
+        321.6307067871094
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000101": {
+      "needle_tip": null,
+      "needle_tail": [
+        566.4259033203125,
+        322.1156005859375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000102": {
+      "needle_tip": null,
+      "needle_tail": [
+        562.84130859375,
+        333.3689880371094
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000103": {
+      "needle_tip": null,
+      "needle_tail": [
+        551.0,
+        356.0
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000104": {
+      "needle_tip": null,
+      "needle_tail": [
+        549.3099365234375,
+        358.7513732910156
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000105": {
+      "needle_tip": null,
+      "needle_tail": [
+        548.9888916015625,
+        359.1654968261719
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000106": {
+      "needle_tip": null,
+      "needle_tail": [
+        547.5271606445312,
+        363.1063232421875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000107": {
+      "needle_tip": null,
+      "needle_tail": [
+        534.3359375,
+        376.3824157714844
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000108": {
+      "needle_tip": null,
+      "needle_tail": [
+        532.6655883789062,
+        381.4294738769531
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000109": {
+      "needle_tip": null,
+      "needle_tail": [
+        534.24951171875,
+        384.8729553222656
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000110": {
+      "needle_tip": null,
+      "needle_tail": [
+        536.2236328125,
+        385.5237731933594
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000111": {
+      "needle_tip": null,
+      "needle_tail": [
+        538.6704711914062,
+        385.71673583984375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000112": {
+      "needle_tip": null,
+      "needle_tail": [
+        545.624267578125,
+        387.0650329589844
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000113": {
+      "needle_tip": null,
+      "needle_tail": [
+        550.5557861328125,
+        388.2254333496094
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000114": {
+      "needle_tip": null,
+      "needle_tail": [
+        551.5858154296875,
+        388.20257568359375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000115": {
+      "needle_tip": null,
+      "needle_tail": [
+        552.3021240234375,
+        388.501708984375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000116": {
+      "needle_tip": null,
+      "needle_tail": [
+        553.8388061523438,
+        388.480224609375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000117": {
+      "needle_tip": null,
+      "needle_tail": [
+        564.5557861328125,
+        390.9580078125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000118": {
+      "needle_tip": null,
+      "needle_tail": [
+        575.2420043945312,
+        396.1180725097656
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000119": {
+      "needle_tip": null,
+      "needle_tail": [
+        581.25146484375,
+        398.9270935058594
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000120": {
+      "needle_tip": null,
+      "needle_tail": [
+        585.8234252929688,
+        401.7355041503906
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000121": {
+      "needle_tip": null,
+      "needle_tail": [
+        591.6359252929688,
+        405.7858581542969
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000122": {
+      "needle_tip": null,
+      "needle_tail": [
+        597.4509887695312,
+        410.2144775390625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000123": {
+      "needle_tip": null,
+      "needle_tail": [
+        598.5409545898438,
+        410.5489196777344
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000124": {
+      "needle_tip": null,
+      "needle_tail": [
+        598.9868774414062,
+        410.8614501953125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000125": {
+      "needle_tip": null,
+      "needle_tail": [
+        599.0740966796875,
+        409.9745788574219
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000126": {
+      "needle_tip": null,
+      "needle_tail": [
+        598.8314819335938,
+        410.19598388671875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000127": {
+      "needle_tip": [
+        476.1798400878906,
+        533.7208251953125
+      ],
+      "needle_tail": [
+        598.9339599609375,
+        409.8044738769531
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000128": {
+      "needle_tip": [
+        474.0161437988281,
+        532.1414794921875
+      ],
+      "needle_tail": [
+        598.84033203125,
+        409.15106201171875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000129": {
+      "needle_tip": null,
+      "needle_tail": [
+        598.7632446289062,
+        409.3516540527344
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000130": {
+      "needle_tip": null,
+      "needle_tail": [
+        598.7890625,
+        409.0565185546875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000131": {
+      "needle_tip": null,
+      "needle_tail": [
+        598.7239379882812,
+        408.94049072265625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000132": {
+      "needle_tip": null,
+      "needle_tail": [
+        598.6155395507812,
+        409.4986572265625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000133": {
+      "needle_tip": null,
+      "needle_tail": [
+        595.7949829101562,
+        413.9751892089844
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000134": {
+      "needle_tip": null,
+      "needle_tail": [
+        592.701171875,
+        418.2738952636719
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000135": {
+      "needle_tip": [
+        312.0,
+        504.0
+      ],
+      "needle_tail": [
+        585.0,
+        429.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000136": {
+      "needle_tip": [
+        305.7720031738281,
+        499.9880676269531
+      ],
+      "needle_tail": [
+        581.559814453125,
+        432.32135009765625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000137": {
+      "needle_tip": [
+        290.36846923828125,
+        491.58306884765625
+      ],
+      "needle_tail": [
+        571.8411254882812,
+        442.17083740234375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000138": {
+      "needle_tip": [
+        279.3206787109375,
+        484.61895751953125
+      ],
+      "needle_tail": [
+        564.5324096679688,
+        446.50543212890625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000139": {
+      "needle_tip": [
+        275.3929138183594,
+        480.6454772949219
+      ],
+      "needle_tail": [
+        561.8613891601562,
+        448.7973327636719
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000140": {
+      "needle_tip": [
+        269.3807373046875,
+        475.76605224609375
+      ],
+      "needle_tail": [
+        557.9476318359375,
+        451.8912658691406
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000141": {
+      "needle_tip": [
+        259.359130859375,
+        469.62677001953125
+      ],
+      "needle_tail": [
+        550.5776977539062,
+        456.77337646484375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000142": {
+      "needle_tip": [
+        246.7821807861328,
+        463.70751953125
+      ],
+      "needle_tail": [
+        541.0908813476562,
+        461.3238220214844
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000143": {
+      "needle_tip": [
+        238.0482177734375,
+        460.138671875
+      ],
+      "needle_tail": [
+        533.8956298828125,
+        464.445556640625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000144": {
+      "needle_tip": [
+        232.84751892089844,
+        460.30133056640625
+      ],
+      "needle_tail": [
+        529.7224731445312,
+        466.966064453125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000145": {
+      "needle_tip": [
+        227.0,
+        445.0
+      ],
+      "needle_tail": [
+        524.6705322265625,
+        470.1053161621094
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000146": {
+      "needle_tip": [
+        222.75135803222656,
+        443.2587890625
+      ],
+      "needle_tail": [
+        521.5321044921875,
+        471.489501953125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000147": {
+      "needle_tip": [
+        220.69752502441406,
+        440.2425842285156
+      ],
+      "needle_tail": [
+        519.8346557617188,
+        471.9721374511719
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000148": {
+      "needle_tip": [
+        218.6065673828125,
+        440.5867004394531
+      ],
+      "needle_tail": [
+        518.57275390625,
+        473.0195617675781
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000149": {
+      "needle_tip": [
+        216.7548370361328,
+        441.5323791503906
+      ],
+      "needle_tail": [
+        517.5096435546875,
+        473.7089538574219
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000150": {
+      "needle_tip": [
+        216.0070037841797,
+        439.9773254394531
+      ],
+      "needle_tail": [
+        517.13232421875,
+        473.8145751953125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000151": {
+      "needle_tip": [
+        215.52012634277344,
+        441.0602722167969
+      ],
+      "needle_tail": [
+        516.579345703125,
+        474.25372314453125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000152": {
+      "needle_tip": [
+        215.65541076660156,
+        441.5115051269531
+      ],
+      "needle_tail": [
+        516.629150390625,
+        473.7049255371094
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000153": {
+      "needle_tip": [
+        215.29196166992188,
+        439.40423583984375
+      ],
+      "needle_tail": [
+        516.5032958984375,
+        474.47918701171875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000154": {
+      "needle_tip": [
+        214.1956787109375,
+        433.2919006347656
+      ],
+      "needle_tail": [
+        515.4368286132812,
+        474.5001220703125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000155": {
+      "needle_tip": [
+        213.19146728515625,
+        430.5457458496094
+      ],
+      "needle_tail": [
+        515.2398681640625,
+        473.7600402832031
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000156": {
+      "needle_tip": [
+        211.90000915527344,
+        431.14093017578125
+      ],
+      "needle_tail": [
+        514.9658203125,
+        472.28643798828125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000157": {
+      "needle_tip": [
+        217.25094604492188,
+        431.76983642578125
+      ],
+      "needle_tail": [
+        519.9990844726562,
+        468.112060546875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000158": {
+      "needle_tip": [
+        229.48370361328125,
+        429.4891357421875
+      ],
+      "needle_tail": [
+        530.59814453125,
+        463.3403015136719
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000159": {
+      "needle_tip": [
+        232.8909912109375,
+        432.9197692871094
+      ],
+      "needle_tail": [
+        533.8569946289062,
+        462.0275573730469
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000160": {
+      "needle_tip": [
+        239.3008270263672,
+        443.250244140625
+      ],
+      "needle_tail": [
+        541.1361083984375,
+        456.6496276855469
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000161": {
+      "needle_tip": [
+        244.92054748535156,
+        453.3263854980469
+      ],
+      "needle_tail": [
+        545.8975830078125,
+        451.1790466308594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000162": {
+      "needle_tip": [
+        250.3862762451172,
+        462.3937683105469
+      ],
+      "needle_tail": [
+        548.9940185546875,
+        447.086181640625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000163": {
+      "needle_tip": [
+        257.7413330078125,
+        477.2184753417969
+      ],
+      "needle_tail": [
+        552.3280029296875,
+        441.76470947265625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000164": {
+      "needle_tip": [
+        264.84893798828125,
+        486.29266357421875
+      ],
+      "needle_tail": [
+        554.6053466796875,
+        438.1335754394531
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000165": {
+      "needle_tip": [
+        263.92510986328125,
+        488.4095764160156
+      ],
+      "needle_tail": [
+        554.0897216796875,
+        437.8406677246094
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000166": {
+      "needle_tip": [
+        268.0782775878906,
+        497.5381164550781
+      ],
+      "needle_tail": [
+        554.8722534179688,
+        435.4233093261719
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000167": {
+      "needle_tip": [
+        283.0,
+        516.0
+      ],
+      "needle_tail": [
+        562.3096923828125,
+        431.3960266113281
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000168": {
+      "needle_tip": [
+        295.9325866699219,
+        524.4088745117188
+      ],
+      "needle_tail": [
+        568.3956909179688,
+        427.6368103027344
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000169": {
+      "needle_tip": [
+        308.93304443359375,
+        531.9855346679688
+      ],
+      "needle_tail": [
+        574.8168334960938,
+        422.2198486328125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000170": {
+      "needle_tip": [
+        381.0,
+        552.0
+      ],
+      "needle_tail": [
+        606.0,
+        387.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000171": {
+      "needle_tip": [
+        400.9768371582031,
+        548.9925537109375
+      ],
+      "needle_tail": [
+        615.0592651367188,
+        372.63323974609375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000172": {
+      "needle_tip": null,
+      "needle_tail": [
+        618.46337890625,
+        360.6712646484375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000173": {
+      "needle_tip": null,
+      "needle_tail": [
+        621.640625,
+        349.054443359375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000174": {
+      "needle_tip": null,
+      "needle_tail": [
+        623.3770141601562,
+        343.92138671875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000175": {
+      "needle_tip": null,
+      "needle_tail": [
+        623.7909545898438,
+        341.138671875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000176": {
+      "needle_tip": null,
+      "needle_tail": [
+        623.2050170898438,
+        340.4732666015625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000177": {
+      "needle_tip": null,
+      "needle_tail": [
+        620.2369384765625,
+        334.8354797363281
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000178": {
+      "needle_tip": null,
+      "needle_tail": [
+        613.8421020507812,
+        329.90057373046875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000179": {
+      "needle_tip": null,
+      "needle_tail": [
+        609.3335571289062,
+        329.4120788574219
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000180": {
+      "needle_tip": null,
+      "needle_tail": [
+        608.6494140625,
+        330.4647521972656
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000181": {
+      "needle_tip": null,
+      "needle_tail": [
+        606.693603515625,
+        331.23492431640625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000182": {
+      "needle_tip": null,
+      "needle_tail": [
+        604.5189208984375,
+        332.2806396484375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000183": {
+      "needle_tip": [
+        439.556396484375,
+        551.1721801757812
+      ],
+      "needle_tail": [
+        595.3326416015625,
+        333.6878356933594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000184": {
+      "needle_tip": [
+        440.3294677734375,
+        550.29736328125
+      ],
+      "needle_tail": [
+        593.4178466796875,
+        334.2207336425781
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000185": {
+      "needle_tip": null,
+      "needle_tail": [
+        593.6912841796875,
+        334.4835205078125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000186": {
+      "needle_tip": null,
+      "needle_tail": [
+        594.0712890625,
+        334.7203369140625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000187": {
+      "needle_tip": null,
+      "needle_tail": [
+        593.8451538085938,
+        334.9103698730469
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000188": {
+      "needle_tip": null,
+      "needle_tail": [
+        592.8438720703125,
+        334.5230712890625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000189": {
+      "needle_tip": null,
+      "needle_tail": [
+        589.6702880859375,
+        325.1887512207031
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000190": {
+      "needle_tip": null,
+      "needle_tail": [
+        588.4652099609375,
+        316.6961669921875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000191": {
+      "needle_tip": null,
+      "needle_tail": [
+        588.333251953125,
+        314.5955505371094
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000192": {
+      "needle_tip": null,
+      "needle_tail": [
+        588.3700561523438,
+        314.5325927734375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000193": {
+      "needle_tip": null,
+      "needle_tail": [
+        587.5772094726562,
+        314.4414367675781
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000194": {
+      "needle_tip": null,
+      "needle_tail": [
+        587.3577270507812,
+        314.2383728027344
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000195": {
+      "needle_tip": null,
+      "needle_tail": [
+        590.8078002929688,
+        304.9885559082031
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000196": {
+      "needle_tip": [
+        648.0,
+        552.0
+      ],
+      "needle_tail": [
+        593.1288452148438,
+        298.7225646972656
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000197": {
+      "needle_tip": [
+        665.1337890625,
+        541.1143188476562
+      ],
+      "needle_tail": [
+        593.8410034179688,
+        289.7958679199219
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000198": {
+      "needle_tip": [
+        686.0,
+        525.0
+      ],
+      "needle_tail": [
+        595.4032592773438,
+        280.12823486328125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000199": {
+      "needle_tip": [
+        691.5601196289062,
+        520.0281372070312
+      ],
+      "needle_tail": [
+        596.0870971679688,
+        276.14544677734375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000200": {
+      "needle_tip": [
+        697.9656372070312,
+        515.9480590820312
+      ],
+      "needle_tail": [
+        595.8623046875,
+        272.9659423828125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000201": {
+      "needle_tip": [
+        704.0,
+        509.0
+      ],
+      "needle_tail": [
+        595.4344482421875,
+        271.66351318359375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000202": {
+      "needle_tip": [
+        703.9425048828125,
+        508.9169006347656
+      ],
+      "needle_tail": [
+        596.6239013671875,
+        271.4432067871094
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000203": {
+      "needle_tip": [
+        708.6439819335938,
+        515.740234375
+      ],
+      "needle_tail": [
+        596.2391357421875,
+        275.4769592285156
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000204": {
+      "needle_tip": [
+        716.3905639648438,
+        527.3523559570312
+      ],
+      "needle_tail": [
+        598.4891357421875,
+        280.5648498535156
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000205": {
+      "needle_tip": [
+        720.8350219726562,
+        534.2609252929688
+      ],
+      "needle_tail": [
+        598.7881469726562,
+        284.2451477050781
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000206": {
+      "needle_tip": [
+        720.5525512695312,
+        538.7320556640625
+      ],
+      "needle_tail": [
+        600.134033203125,
+        285.7041320800781
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000207": {
+      "needle_tip": [
+        742.0,
+        505.0
+      ],
+      "needle_tail": [
+        599.0,
+        251.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000208": {
+      "needle_tip": [
+        741.4451293945312,
+        512.4254150390625
+      ],
+      "needle_tail": [
+        587.9337158203125,
+        256.5259094238281
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000209": {
+      "needle_tip": [
+        735.8193359375,
+        522.26708984375
+      ],
+      "needle_tail": [
+        583.81591796875,
+        261.0715637207031
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000210": {
+      "needle_tip": [
+        724.978271484375,
+        534.4888305664062
+      ],
+      "needle_tail": [
+        580.73779296875,
+        267.1396789550781
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000211": {
+      "needle_tip": [
+        701.5789184570312,
+        558.180908203125
+      ],
+      "needle_tail": [
+        579.3311767578125,
+        281.2438659667969
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000212": {
+      "needle_tip": [
+        686.0895385742188,
+        580.2647094726562
+      ],
+      "needle_tail": [
+        576.1425170898438,
+        302.8414306640625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000213": {
+      "needle_tip": [
+        674.4327392578125,
+        593.6847534179688
+      ],
+      "needle_tail": [
+        575.231689453125,
+        314.81854248046875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000214": {
+      "needle_tip": [
+        657.840087890625,
+        604.9811401367188
+      ],
+      "needle_tail": [
+        574.6354370117188,
+        321.0968322753906
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000215": {
+      "needle_tip": [
+        633.1731567382812,
+        619.6016845703125
+      ],
+      "needle_tail": [
+        574.0372924804688,
+        330.5828552246094
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000216": {
+      "needle_tip": null,
+      "needle_tail": [
+        550.0,
+        394.0
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000217": {
+      "needle_tip": null,
+      "needle_tail": [
+        532.0,
+        422.0
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000218": {
+      "needle_tip": null,
+      "needle_tail": [
+        517.933837890625,
+        438.6829833984375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000219": {
+      "needle_tip": null,
+      "needle_tail": [
+        510.4195556640625,
+        448.6324462890625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000220": {
+      "needle_tip": null,
+      "needle_tail": [
+        510.435546875,
+        449.8714294433594
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000221": {
+      "needle_tip": null,
+      "needle_tail": [
+        510.5008239746094,
+        450.13128662109375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000222": {
+      "needle_tip": null,
+      "needle_tail": [
+        510.6291198730469,
+        450.38775634765625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000223": {
+      "needle_tip": null,
+      "needle_tail": [
+        509.77362060546875,
+        448.5434265136719
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000224": {
+      "needle_tip": null,
+      "needle_tail": [
+        504.9484558105469,
+        447.1097717285156
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000225": {
+      "needle_tip": null,
+      "needle_tail": [
+        505.76312255859375,
+        443.7371520996094
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000226": {
+      "needle_tip": null,
+      "needle_tail": [
+        507.56671142578125,
+        440.5372009277344
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000227": {
+      "needle_tip": null,
+      "needle_tail": [
+        509.1408996582031,
+        437.0600891113281
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000228": {
+      "needle_tip": null,
+      "needle_tail": [
+        510.5879211425781,
+        433.409423828125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000229": {
+      "needle_tip": null,
+      "needle_tail": [
+        514.9312133789062,
+        429.09814453125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000230": {
+      "needle_tip": null,
+      "needle_tail": [
+        518.345458984375,
+        425.9519348144531
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000231": {
+      "needle_tip": null,
+      "needle_tail": [
+        518.1155395507812,
+        424.76068115234375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000232": {
+      "needle_tip": null,
+      "needle_tail": [
+        520.3973388671875,
+        423.666015625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000233": {
+      "needle_tip": [
+        571.6686401367188,
+        616.252197265625
+      ],
+      "needle_tail": [
+        510.8266296386719,
+        427.58758544921875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000234": {
+      "needle_tip": null,
+      "needle_tail": [
+        509.67926025390625,
+        427.41217041015625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000235": {
+      "needle_tip": null,
+      "needle_tail": [
+        508.140869140625,
+        427.50604248046875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000236": {
+      "needle_tip": null,
+      "needle_tail": [
+        507.84783935546875,
+        427.723876953125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000237": {
+      "needle_tip": null,
+      "needle_tail": [
+        507.539306640625,
+        427.39007568359375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000238": {
+      "needle_tip": null,
+      "needle_tail": [
+        507.20806884765625,
+        427.6007080078125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000239": {
+      "needle_tip": null,
+      "needle_tail": [
+        506.4137878417969,
+        426.8485107421875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000240": {
+      "needle_tip": null,
+      "needle_tail": [
+        514.0902709960938,
+        423.3583068847656
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000241": {
+      "needle_tip": null,
+      "needle_tail": [
+        524.17626953125,
+        418.6513366699219
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000242": {
+      "needle_tip": null,
+      "needle_tail": [
+        531.6204223632812,
+        415.57135009765625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000243": {
+      "needle_tip": null,
+      "needle_tail": [
+        549.5342407226562,
+        418.4388427734375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000244": {
+      "needle_tip": null,
+      "needle_tail": [
+        562.7010498046875,
+        420.5398864746094
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000245": {
+      "needle_tip": null,
+      "needle_tail": [
+        570.7269287109375,
+        423.6782531738281
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000246": {
+      "needle_tip": null,
+      "needle_tail": [
+        572.3180541992188,
+        424.4978942871094
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000247": {
+      "needle_tip": null,
+      "needle_tail": [
+        573.2639770507812,
+        424.6301574707031
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000248": {
+      "needle_tip": null,
+      "needle_tail": [
+        573.2310791015625,
+        424.3745422363281
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000249": {
+      "needle_tip": null,
+      "needle_tail": [
+        574.2486572265625,
+        425.1790771484375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000250": {
+      "needle_tip": null,
+      "needle_tail": [
+        576.6383666992188,
+        429.8482666015625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000251": {
+      "needle_tip": null,
+      "needle_tail": [
+        576.3724365234375,
+        433.05450439453125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000252": {
+      "needle_tip": null,
+      "needle_tail": [
+        575.1678466796875,
+        436.4796447753906
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000253": {
+      "needle_tip": null,
+      "needle_tail": [
+        572.7010498046875,
+        440.4723205566406
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000254": {
+      "needle_tip": [
+        239.0,
+        564.0
+      ],
+      "needle_tail": [
+        570.1948852539062,
+        443.94659423828125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000255": {
+      "needle_tip": [
+        232.6711883544922,
+        558.7051391601562
+      ],
+      "needle_tail": [
+        568.2684326171875,
+        445.94464111328125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000256": {
+      "needle_tip": [
+        225.66773986816406,
+        554.9331665039062
+      ],
+      "needle_tail": [
+        565.4056396484375,
+        449.8338317871094
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000257": {
+      "needle_tip": [
+        216.0,
+        541.0
+      ],
+      "needle_tail": [
+        561.7178955078125,
+        453.7418212890625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000258": {
+      "needle_tip": [
+        207.5937042236328,
+        539.3828125
+      ],
+      "needle_tail": [
+        557.4683227539062,
+        457.7674865722656
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000259": {
+      "needle_tip": [
+        200.3253173828125,
+        536.1416625976562
+      ],
+      "needle_tail": [
+        553.7896728515625,
+        460.9423522949219
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000260": {
+      "needle_tip": [
+        193.15011596679688,
+        532.5009765625
+      ],
+      "needle_tail": [
+        549.6793212890625,
+        464.7902526855469
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000261": {
+      "needle_tip": [
+        188.7472381591797,
+        526.8728637695312
+      ],
+      "needle_tail": [
+        547.9293212890625,
+        466.62774658203125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000262": {
+      "needle_tip": [
+        184.16604614257812,
+        519.9998779296875
+      ],
+      "needle_tail": [
+        545.91748046875,
+        470.1585388183594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000263": {
+      "needle_tip": [
+        178.99708557128906,
+        511.38397216796875
+      ],
+      "needle_tail": [
+        543.912353515625,
+        474.5051574707031
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000264": {
+      "needle_tip": [
+        172.34339904785156,
+        501.0657958984375
+      ],
+      "needle_tail": [
+        541.2335205078125,
+        478.4886474609375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000265": {
+      "needle_tip": [
+        167.95101928710938,
+        493.0281066894531
+      ],
+      "needle_tail": [
+        539.2421264648438,
+        481.2733459472656
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000266": {
+      "needle_tip": [
+        164.22169494628906,
+        485.02813720703125
+      ],
+      "needle_tail": [
+        537.4224243164062,
+        484.75567626953125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000267": {
+      "needle_tip": [
+        161.5301971435547,
+        479.5565490722656
+      ],
+      "needle_tail": [
+        535.922607421875,
+        486.309814453125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000268": {
+      "needle_tip": [
+        160.07432556152344,
+        474.3157653808594
+      ],
+      "needle_tail": [
+        534.8461303710938,
+        488.1585693359375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000269": {
+      "needle_tip": [
+        157.9862060546875,
+        472.6351013183594
+      ],
+      "needle_tail": [
+        533.8084106445312,
+        489.78857421875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000270": {
+      "needle_tip": [
+        156.76925659179688,
+        469.71337890625
+      ],
+      "needle_tail": [
+        533.4447021484375,
+        490.1121520996094
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000271": {
+      "needle_tip": [
+        155.73324584960938,
+        466.5680236816406
+      ],
+      "needle_tail": [
+        532.7650146484375,
+        491.3782653808594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000272": {
+      "needle_tip": [
+        154.66265869140625,
+        462.07891845703125
+      ],
+      "needle_tail": [
+        531.9664916992188,
+        493.5139465332031
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000273": {
+      "needle_tip": [
+        153.58871459960938,
+        458.33526611328125
+      ],
+      "needle_tail": [
+        531.0628051757812,
+        494.81707763671875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000274": {
+      "needle_tip": [
+        153.15322875976562,
+        455.6679992675781
+      ],
+      "needle_tail": [
+        530.7154541015625,
+        494.7817687988281
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000275": {
+      "needle_tip": [
+        152.3556365966797,
+        457.4898376464844
+      ],
+      "needle_tail": [
+        530.2915649414062,
+        494.8148193359375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000276": {
+      "needle_tip": [
+        152.01803588867188,
+        457.9118347167969
+      ],
+      "needle_tail": [
+        530.1331176757812,
+        494.1583251953125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000277": {
+      "needle_tip": [
+        153.39451599121094,
+        463.1335144042969
+      ],
+      "needle_tail": [
+        531.645751953125,
+        492.2075500488281
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000278": {
+      "needle_tip": [
+        158.62240600585938,
+        474.3954162597656
+      ],
+      "needle_tail": [
+        536.3125,
+        488.3894958496094
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000279": {
+      "needle_tip": [
+        164.40077209472656,
+        487.1132507324219
+      ],
+      "needle_tail": [
+        543.3833618164062,
+        483.3458251953125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000280": {
+      "needle_tip": [
+        165.1527862548828,
+        509.5207214355469
+      ],
+      "needle_tail": [
+        541.818359375,
+        475.8216247558594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000281": {
+      "needle_tip": [
+        172.1989288330078,
+        530.2901611328125
+      ],
+      "needle_tail": [
+        541.916015625,
+        468.56329345703125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000282": {
+      "needle_tip": [
+        183.47036743164062,
+        545.5618286132812
+      ],
+      "needle_tail": [
+        545.6776123046875,
+        462.0547790527344
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000283": {
+      "needle_tip": [
+        196.9856414794922,
+        553.8987426757812
+      ],
+      "needle_tail": [
+        550.716552734375,
+        456.5573425292969
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000284": {
+      "needle_tip": [
+        209.82818603515625,
+        562.7890625
+      ],
+      "needle_tail": [
+        555.9854125976562,
+        452.1759033203125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000285": {
+      "needle_tip": [
+        223.91294860839844,
+        571.8588256835938
+      ],
+      "needle_tail": [
+        561.229736328125,
+        447.4483337402344
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000286": {
+      "needle_tip": [
+        226.32350158691406,
+        573.7409057617188
+      ],
+      "needle_tail": [
+        562.4022827148438,
+        447.342529296875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000287": {
+      "needle_tip": [
+        227.56027221679688,
+        574.44921875
+      ],
+      "needle_tail": [
+        562.399169921875,
+        447.2294616699219
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000288": {
+      "needle_tip": [
+        229.54788208007812,
+        578.23095703125
+      ],
+      "needle_tail": [
+        562.0556640625,
+        446.63226318359375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000289": {
+      "needle_tip": [
+        240.12197875976562,
+        590.1851196289062
+      ],
+      "needle_tail": [
+        562.1641235351562,
+        443.97552490234375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000290": {
+      "needle_tip": [
+        314.0,
+        627.0
+      ],
+      "needle_tail": [
+        584.3944702148438,
+        422.91741943359375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000291": {
+      "needle_tip": [
+        320.4031066894531,
+        629.7201538085938
+      ],
+      "needle_tail": [
+        585.574462890625,
+        420.4072570800781
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000292": {
+      "needle_tip": [
+        319.7974853515625,
+        630.5382080078125
+      ],
+      "needle_tail": [
+        585.4828491210938,
+        420.43988037109375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000293": {
+      "needle_tip": [
+        320.3417053222656,
+        631.7047729492188
+      ],
+      "needle_tail": [
+        585.5413818359375,
+        420.54327392578125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000294": {
+      "needle_tip": [
+        334.63433837890625,
+        633.314697265625
+      ],
+      "needle_tail": [
+        588.67236328125,
+        415.1933288574219
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000295": {
+      "needle_tip": null,
+      "needle_tail": [
+        590.1824951171875,
+        405.1391296386719
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000296": {
+      "needle_tip": null,
+      "needle_tail": [
+        584.462646484375,
+        395.2739562988281
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000297": {
+      "needle_tip": null,
+      "needle_tail": [
+        583.3054809570312,
+        391.25567626953125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000298": {
+      "needle_tip": null,
+      "needle_tail": [
+        583.071044921875,
+        390.6294860839844
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000299": {
+      "needle_tip": null,
+      "needle_tail": [
+        582.717041015625,
+        390.3302001953125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000300": {
+      "needle_tip": null,
+      "needle_tail": [
+        591.9107055664062,
+        369.1222229003906
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000301": {
+      "needle_tip": null,
+      "needle_tail": [
+        594.2261962890625,
+        352.4769592285156
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000302": {
+      "needle_tip": null,
+      "needle_tail": [
+        598.2449340820312,
+        334.06719970703125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000303": {
+      "needle_tip": null,
+      "needle_tail": [
+        601.6680297851562,
+        314.6457214355469
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000304": {
+      "needle_tip": null,
+      "needle_tail": [
+        602.7008056640625,
+        295.8804016113281
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000305": {
+      "needle_tip": null,
+      "needle_tail": [
+        600.5596313476562,
+        279.36102294921875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000306": {
+      "needle_tip": null,
+      "needle_tail": [
+        599.3169555664062,
+        266.3013610839844
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000307": {
+      "needle_tip": null,
+      "needle_tail": [
+        596.9244995117188,
+        251.13485717773438
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000308": {
+      "needle_tip": null,
+      "needle_tail": [
+        596.137939453125,
+        247.4576416015625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000309": {
+      "needle_tip": null,
+      "needle_tail": [
+        595.2007446289062,
+        246.93507385253906
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000310": {
+      "needle_tip": null,
+      "needle_tail": [
+        594.2279663085938,
+        245.88482666015625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000311": {
+      "needle_tip": null,
+      "needle_tail": [
+        593.3798828125,
+        245.5906524658203
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000312": {
+      "needle_tip": null,
+      "needle_tail": [
+        593.22998046875,
+        246.0047149658203
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000313": {
+      "needle_tip": null,
+      "needle_tail": [
+        592.6814575195312,
+        246.212890625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000314": {
+      "needle_tip": null,
+      "needle_tail": [
+        591.5413208007812,
+        245.6570587158203
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000315": {
+      "needle_tip": null,
+      "needle_tail": [
+        590.472900390625,
+        246.17420959472656
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000316": {
+      "needle_tip": null,
+      "needle_tail": [
+        589.3536987304688,
+        246.68002319335938
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000317": {
+      "needle_tip": null,
+      "needle_tail": [
+        589.3106689453125,
+        246.37997436523438
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000318": {
+      "needle_tip": null,
+      "needle_tail": [
+        587.1492919921875,
+        248.16285705566406
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000319": {
+      "needle_tip": null,
+      "needle_tail": [
+        584.2953491210938,
+        246.45809936523438
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000320": {
+      "needle_tip": null,
+      "needle_tail": [
+        579.2614135742188,
+        245.52438354492188
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000321": {
+      "needle_tip": null,
+      "needle_tail": [
+        583.4595336914062,
+        240.22723388671875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000322": {
+      "needle_tip": null,
+      "needle_tail": [
+        589.4453735351562,
+        235.91891479492188
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000323": {
+      "needle_tip": null,
+      "needle_tail": [
+        595.0570068359375,
+        231.6990966796875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000324": {
+      "needle_tip": null,
+      "needle_tail": [
+        608.5267333984375,
+        227.6728515625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000325": {
+      "needle_tip": null,
+      "needle_tail": [
+        609.0493774414062,
+        227.01943969726562
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000326": {
+      "needle_tip": null,
+      "needle_tail": [
+        612.9119873046875,
+        227.0175323486328
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000327": {
+      "needle_tip": null,
+      "needle_tail": [
+        618.7824096679688,
+        229.63949584960938
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000328": {
+      "needle_tip": null,
+      "needle_tail": [
+        622.9618530273438,
+        231.2702178955078
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000329": {
+      "needle_tip": null,
+      "needle_tail": [
+        623.9169921875,
+        234.68653869628906
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000330": {
+      "needle_tip": null,
+      "needle_tail": [
+        625.6014404296875,
+        237.2968292236328
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000331": {
+      "needle_tip": null,
+      "needle_tail": [
+        625.2424926757812,
+        238.52728271484375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000332": {
+      "needle_tip": null,
+      "needle_tail": [
+        625.5872192382812,
+        240.36785888671875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000333": {
+      "needle_tip": [
+        748.0,
+        532.0
+      ],
+      "needle_tail": [
+        626.8640747070312,
+        242.4615478515625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000334": {
+      "needle_tip": [
+        746.6768798828125,
+        532.8628540039062
+      ],
+      "needle_tail": [
+        627.3447875976562,
+        243.6012725830078
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000335": {
+      "needle_tip": [
+        746.0767822265625,
+        533.18359375
+      ],
+      "needle_tail": [
+        626.996826171875,
+        243.6049346923828
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000336": {
+      "needle_tip": [
+        747.6627807617188,
+        531.4714965820312
+      ],
+      "needle_tail": [
+        626.8452758789062,
+        244.3078155517578
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000337": {
+      "needle_tip": [
+        745.73388671875,
+        532.6408081054688
+      ],
+      "needle_tail": [
+        626.9876708984375,
+        244.90164184570312
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000338": {
+      "needle_tip": [
+        744.8290405273438,
+        531.68115234375
+      ],
+      "needle_tail": [
+        627.9061279296875,
+        244.96202087402344
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000339": {
+      "needle_tip": [
+        745.7108154296875,
+        531.1590576171875
+      ],
+      "needle_tail": [
+        628.5861206054688,
+        245.13609313964844
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000340": {
+      "needle_tip": [
+        747.1439819335938,
+        531.3933715820312
+      ],
+      "needle_tail": [
+        628.115478515625,
+        244.91659545898438
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000341": {
+      "needle_tip": [
+        746.02099609375,
+        532.6337890625
+      ],
+      "needle_tail": [
+        627.8286743164062,
+        245.0841064453125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000342": {
+      "needle_tip": [
+        746.2982788085938,
+        532.9894409179688
+      ],
+      "needle_tail": [
+        627.3430786132812,
+        245.09786987304688
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000343": {
+      "needle_tip": [
+        746.0408935546875,
+        532.6336059570312
+      ],
+      "needle_tail": [
+        627.9051513671875,
+        245.1489715576172
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000344": {
+      "needle_tip": [
+        746.3141479492188,
+        534.3341064453125
+      ],
+      "needle_tail": [
+        628.3849487304688,
+        245.02040100097656
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000345": {
+      "needle_tip": [
+        745.3751220703125,
+        536.5567016601562
+      ],
+      "needle_tail": [
+        628.963134765625,
+        247.07965087890625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000346": {
+      "needle_tip": [
+        760.0,
+        559.0
+      ],
+      "needle_tail": [
+        628.0,
+        287.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000347": {
+      "needle_tip": [
+        771.2943115234375,
+        570.175537109375
+      ],
+      "needle_tail": [
+        621.489013671875,
+        313.3895568847656
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000348": {
+      "needle_tip": [
+        772.5357055664062,
+        574.0847778320312
+      ],
+      "needle_tail": [
+        616.1585083007812,
+        324.0869140625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000349": {
+      "needle_tip": [
+        770.0319213867188,
+        574.4082641601562
+      ],
+      "needle_tail": [
+        610.4733276367188,
+        330.93731689453125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000350": {
+      "needle_tip": [
+        770.86376953125,
+        571.5032958984375
+      ],
+      "needle_tail": [
+        606.0887451171875,
+        335.6383056640625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000351": {
+      "needle_tip": [
+        770.5562744140625,
+        562.0423583984375
+      ],
+      "needle_tail": [
+        601.18994140625,
+        336.8650207519531
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000352": {
+      "needle_tip": [
+        766.0,
+        568.0
+      ],
+      "needle_tail": [
+        596.9702758789062,
+        338.614990234375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000353": {
+      "needle_tip": [
+        762.0471801757812,
+        562.8243408203125
+      ],
+      "needle_tail": [
+        592.8463745117188,
+        340.56182861328125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000354": {
+      "needle_tip": [
+        756.9415283203125,
+        559.1431884765625
+      ],
+      "needle_tail": [
+        585.7614135742188,
+        343.7108154296875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000355": {
+      "needle_tip": [
+        756.1854858398438,
+        555.5665893554688
+      ],
+      "needle_tail": [
+        578.947265625,
+        346.7203674316406
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000356": {
+      "needle_tip": [
+        745.9952392578125,
+        554.3162841796875
+      ],
+      "needle_tail": [
+        567.166748046875,
+        353.72064208984375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000357": {
+      "needle_tip": [
+        729.1329956054688,
+        561.7054443359375
+      ],
+      "needle_tail": [
+        552.0123901367188,
+        363.2083740234375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000358": {
+      "needle_tip": [
+        718.2269287109375,
+        561.0684814453125
+      ],
+      "needle_tail": [
+        534.9788208007812,
+        368.6148681640625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000359": {
+      "needle_tip": [
+        711.6602783203125,
+        546.5405883789062
+      ],
+      "needle_tail": [
+        518.47509765625,
+        362.7121276855469
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000360": {
+      "needle_tip": [
+        689.0,
+        532.0
+      ],
+      "needle_tail": [
+        494.1193542480469,
+        346.1382141113281
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000361": {
+      "needle_tip": [
+        656.0,
+        519.0
+      ],
+      "needle_tail": [
+        460.0,
+        331.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000362": {
+      "needle_tip": [
+        638.3160400390625,
+        510.7034912109375
+      ],
+      "needle_tail": [
+        439.4622802734375,
+        323.30169677734375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000363": {
+      "needle_tip": [
+        627.2290649414062,
+        511.1988220214844
+      ],
+      "needle_tail": [
+        431.7734680175781,
+        319.36846923828125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000364": {
+      "needle_tip": [
+        617.4031372070312,
+        513.2136840820312
+      ],
+      "needle_tail": [
+        426.4354248046875,
+        316.3764953613281
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000365": {
+      "needle_tip": [
+        607.70361328125,
+        516.385498046875
+      ],
+      "needle_tail": [
+        423.4697570800781,
+        312.2352294921875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000366": {
+      "needle_tip": null,
+      "needle_tail": [
+        423.6940002441406,
+        316.6543884277344
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000367": {
+      "needle_tip": null,
+      "needle_tail": [
+        428.99383544921875,
+        330.453857421875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000368": {
+      "needle_tip": null,
+      "needle_tail": [
+        431.1618957519531,
+        337.248779296875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000369": {
+      "needle_tip": null,
+      "needle_tail": [
+        431.85333251953125,
+        338.7579345703125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000370": {
+      "needle_tip": null,
+      "needle_tail": [
+        431.9880676269531,
+        338.50677490234375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000371": {
+      "needle_tip": null,
+      "needle_tail": [
+        428.2044982910156,
+        344.0039978027344
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000372": {
+      "needle_tip": null,
+      "needle_tail": [
+        426.9068603515625,
+        344.2802734375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000373": {
+      "needle_tip": null,
+      "needle_tail": [
+        427.3349609375,
+        341.67279052734375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000374": {
+      "needle_tip": null,
+      "needle_tail": [
+        429.66973876953125,
+        335.91937255859375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000375": {
+      "needle_tip": null,
+      "needle_tail": [
+        432.1313171386719,
+        330.8133850097656
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000376": {
+      "needle_tip": null,
+      "needle_tail": [
+        435.7736511230469,
+        324.05841064453125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000377": {
+      "needle_tip": null,
+      "needle_tail": [
+        448.0,
+        315.0
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000378": {
+      "needle_tip": null,
+      "needle_tail": [
+        457.1724548339844,
+        315.5403137207031
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000379": {
+      "needle_tip": null,
+      "needle_tail": [
+        457.5504150390625,
+        315.8725891113281
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000380": {
+      "needle_tip": null,
+      "needle_tail": [
+        457.02655029296875,
+        315.6682434082031
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000381": {
+      "needle_tip": null,
+      "needle_tail": [
+        457.79156494140625,
+        316.2284240722656
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000382": {
+      "needle_tip": null,
+      "needle_tail": [
+        457.49713134765625,
+        316.4090576171875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000383": {
+      "needle_tip": null,
+      "needle_tail": [
+        459.3332824707031,
+        315.6246337890625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000384": {
+      "needle_tip": null,
+      "needle_tail": [
+        462.55841064453125,
+        314.1010437011719
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000385": {
+      "needle_tip": null,
+      "needle_tail": [
+        479.0,
+        317.0
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000386": {
+      "needle_tip": null,
+      "needle_tail": [
+        496.3339538574219,
+        326.829345703125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000387": {
+      "needle_tip": null,
+      "needle_tail": [
+        503.43304443359375,
+        331.74273681640625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000388": {
+      "needle_tip": null,
+      "needle_tail": [
+        513.322021484375,
+        340.265869140625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000389": {
+      "needle_tip": null,
+      "needle_tail": [
+        524.2933349609375,
+        352.619140625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000390": {
+      "needle_tip": null,
+      "needle_tail": [
+        526.7667846679688,
+        355.6234436035156
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000391": {
+      "needle_tip": null,
+      "needle_tail": [
+        527.5855712890625,
+        356.526611328125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000392": {
+      "needle_tip": null,
+      "needle_tail": [
+        532.6996459960938,
+        360.8003234863281
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000393": {
+      "needle_tip": null,
+      "needle_tail": [
+        539.1841430664062,
+        368.22467041015625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000394": {
+      "needle_tip": [
+        282.0,
+        535.0
+      ],
+      "needle_tail": [
+        537.5098266601562,
+        377.2159423828125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000395": {
+      "needle_tip": [
+        268.08233642578125,
+        528.894287109375
+      ],
+      "needle_tail": [
+        533.7389526367188,
+        382.7702331542969
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000396": {
+      "needle_tip": [
+        261.1107482910156,
+        525.6492309570312
+      ],
+      "needle_tail": [
+        532.2532958984375,
+        386.23162841796875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000397": {
+      "needle_tip": [
+        252.6706085205078,
+        519.5870971679688
+      ],
+      "needle_tail": [
+        530.113525390625,
+        390.6687927246094
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000398": {
+      "needle_tip": [
+        237.0,
+        504.0
+      ],
+      "needle_tail": [
+        526.7378540039062,
+        393.91864013671875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000399": {
+      "needle_tip": [
+        221.43585205078125,
+        493.8667907714844
+      ],
+      "needle_tail": [
+        519.9314575195312,
+        399.6983947753906
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000400": {
+      "needle_tip": [
+        203.34579467773438,
+        487.7753601074219
+      ],
+      "needle_tail": [
+        509.76873779296875,
+        406.8367919921875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000401": {
+      "needle_tip": [
+        196.9451904296875,
+        486.8663024902344
+      ],
+      "needle_tail": [
+        506.44281005859375,
+        410.5220642089844
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000402": {
+      "needle_tip": [
+        191.55612182617188,
+        481.4840393066406
+      ],
+      "needle_tail": [
+        504.939697265625,
+        414.63775634765625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000403": {
+      "needle_tip": [
+        185.97767639160156,
+        474.6498107910156
+      ],
+      "needle_tail": [
+        503.2642517089844,
+        416.97454833984375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000404": {
+      "needle_tip": [
+        180.8506317138672,
+        465.6336364746094
+      ],
+      "needle_tail": [
+        502.3813781738281,
+        420.3374938964844
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000405": {
+      "needle_tip": [
+        174.3120880126953,
+        448.6881103515625
+      ],
+      "needle_tail": [
+        501.2149353027344,
+        425.9380187988281
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000406": {
+      "needle_tip": [
+        171.2983856201172,
+        438.4425048828125
+      ],
+      "needle_tail": [
+        500.8905334472656,
+        429.4300842285156
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000407": {
+      "needle_tip": [
+        169.7019500732422,
+        428.2103576660156
+      ],
+      "needle_tail": [
+        501.15191650390625,
+        433.075927734375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000408": {
+      "needle_tip": [
+        169.19561767578125,
+        422.88336181640625
+      ],
+      "needle_tail": [
+        501.33294677734375,
+        433.5912780761719
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000409": {
+      "needle_tip": [
+        168.10995483398438,
+        420.5461120605469
+      ],
+      "needle_tail": [
+        500.94549560546875,
+        433.6399230957031
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000410": {
+      "needle_tip": [
+        167.59991455078125,
+        420.9328918457031
+      ],
+      "needle_tail": [
+        500.5757751464844,
+        433.3774108886719
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000411": {
+      "needle_tip": [
+        166.99534606933594,
+        419.31732177734375
+      ],
+      "needle_tail": [
+        500.53021240234375,
+        433.18994140625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000412": {
+      "needle_tip": [
+        166.43182373046875,
+        418.765380859375
+      ],
+      "needle_tail": [
+        500.06365966796875,
+        432.6494445800781
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000413": {
+      "needle_tip": [
+        166.06639099121094,
+        419.3739929199219
+      ],
+      "needle_tail": [
+        500.3726806640625,
+        432.6574401855469
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000414": {
+      "needle_tip": [
+        165.86036682128906,
+        429.87738037109375
+      ],
+      "needle_tail": [
+        499.7080078125,
+        430.1327209472656
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000415": {
+      "needle_tip": [
+        170.65060424804688,
+        443.7652587890625
+      ],
+      "needle_tail": [
+        502.228515625,
+        427.3701477050781
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000416": {
+      "needle_tip": [
+        182.598388671875,
+        464.6316833496094
+      ],
+      "needle_tail": [
+        507.7438659667969,
+        423.083984375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000417": {
+      "needle_tip": [
+        203.13185119628906,
+        489.6864929199219
+      ],
+      "needle_tail": [
+        517.2105102539062,
+        417.707763671875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000418": {
+      "needle_tip": [
+        226.8260498046875,
+        515.8126220703125
+      ],
+      "needle_tail": [
+        524.565185546875,
+        409.6619567871094
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000419": {
+      "needle_tip": [
+        235.6852569580078,
+        523.4312744140625
+      ],
+      "needle_tail": [
+        527.2656860351562,
+        408.2099914550781
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000420": {
+      "needle_tip": [
+        236.28628540039062,
+        524.2285766601562
+      ],
+      "needle_tail": [
+        527.4518432617188,
+        407.8384704589844
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000421": {
+      "needle_tip": [
+        244.61825561523438,
+        531.20166015625
+      ],
+      "needle_tail": [
+        529.7101440429688,
+        406.19085693359375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000422": {
+      "needle_tip": [
+        248.01913452148438,
+        532.2186889648438
+      ],
+      "needle_tail": [
+        531.08544921875,
+        405.2063903808594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000423": {
+      "needle_tip": [
+        249.152587890625,
+        531.9689331054688
+      ],
+      "needle_tail": [
+        531.7244262695312,
+        404.87115478515625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000424": {
+      "needle_tip": [
+        249.34169006347656,
+        533.2716064453125
+      ],
+      "needle_tail": [
+        532.1060791015625,
+        404.76690673828125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000425": {
+      "needle_tip": [
+        254.1082000732422,
+        533.73291015625
+      ],
+      "needle_tail": [
+        534.0338745117188,
+        403.310302734375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000426": {
+      "needle_tip": [
+        317.0,
+        565.0
+      ],
+      "needle_tail": [
+        557.0,
+        386.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000427": {
+      "needle_tip": [
+        333.2672424316406,
+        565.7553100585938
+      ],
+      "needle_tail": [
+        565.5431518554688,
+        379.8371887207031
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000428": {
+      "needle_tip": [
+        333.5548400878906,
+        566.367919921875
+      ],
+      "needle_tail": [
+        565.4747924804688,
+        379.76446533203125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000429": {
+      "needle_tip": [
+        335.9228820800781,
+        566.8052978515625
+      ],
+      "needle_tail": [
+        565.440185546875,
+        379.3716735839844
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000430": {
+      "needle_tip": [
+        388.28753662109375,
+        580.4525146484375
+      ],
+      "needle_tail": [
+        576.0711669921875,
+        360.5105895996094
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000431": {
+      "needle_tip": null,
+      "needle_tail": [
+        578.09912109375,
+        352.9246520996094
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000432": {
+      "needle_tip": null,
+      "needle_tail": [
+        574.2261962890625,
+        350.7474365234375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000433": {
+      "needle_tip": null,
+      "needle_tail": [
+        570.9900512695312,
+        351.8135070800781
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000434": {
+      "needle_tip": null,
+      "needle_tail": [
+        568.3096923828125,
+        352.4757995605469
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000435": {
+      "needle_tip": null,
+      "needle_tail": [
+        564.3667602539062,
+        354.619140625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000436": {
+      "needle_tip": null,
+      "needle_tail": [
+        556.3856811523438,
+        357.7822570800781
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000437": {
+      "needle_tip": null,
+      "needle_tail": [
+        547.8110961914062,
+        360.612060546875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000438": {
+      "needle_tip": null,
+      "needle_tail": [
+        547.3734741210938,
+        356.98919677734375
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000439": {
+      "needle_tip": null,
+      "needle_tail": [
+        548.2882690429688,
+        349.3454284667969
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000440": {
+      "needle_tip": null,
+      "needle_tail": [
+        549.7600708007812,
+        340.32440185546875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000441": {
+      "needle_tip": null,
+      "needle_tail": [
+        550.0343017578125,
+        323.7530517578125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000442": {
+      "needle_tip": null,
+      "needle_tail": [
+        549.7901611328125,
+        309.1893310546875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000443": {
+      "needle_tip": null,
+      "needle_tail": [
+        548.8203735351562,
+        299.8384094238281
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000444": {
+      "needle_tip": null,
+      "needle_tail": [
+        546.217041015625,
+        288.3603515625
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000445": {
+      "needle_tip": null,
+      "needle_tail": [
+        544.950439453125,
+        283.35430908203125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000446": {
+      "needle_tip": null,
+      "needle_tail": [
+        544.9615478515625,
+        282.84100341796875
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000447": {
+      "needle_tip": null,
+      "needle_tail": [
+        544.7484130859375,
+        282.8629455566406
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000448": {
+      "needle_tip": null,
+      "needle_tail": [
+        543.4630737304688,
+        279.93487548828125
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000449": {
+      "needle_tip": [
+        707.0,
+        485.0
+      ],
+      "needle_tail": [
+        540.98193359375,
+        265.44769287109375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000450": {
+      "needle_tip": [
+        708.0,
+        457.0
+      ],
+      "needle_tail": [
+        531.0,
+        234.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000451": {
+      "needle_tip": [
+        693.0,
+        429.0
+      ],
+      "needle_tail": [
+        513.0,
+        198.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000452": {
+      "needle_tip": [
+        677.0,
+        422.0
+      ],
+      "needle_tail": [
+        500.63232421875,
+        177.02035522460938
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000453": {
+      "needle_tip": [
+        677.5485229492188,
+        421.3511962890625
+      ],
+      "needle_tail": [
+        500.280029296875,
+        176.48216247558594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000454": {
+      "needle_tip": [
+        670.5521850585938,
+        423.8207702636719
+      ],
+      "needle_tail": [
+        498.2173156738281,
+        171.67938232421875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000455": {
+      "needle_tip": [
+        645.9570922851562,
+        432.0395812988281
+      ],
+      "needle_tail": [
+        499.0,
+        158.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000456": {
+      "needle_tip": [
+        610.0,
+        434.0
+      ],
+      "needle_tail": [
+        495.0,
+        136.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000457": {
+      "needle_tip": [
+        580.3494873046875,
+        437.7815856933594
+      ],
+      "needle_tail": [
+        502.0,
+        122.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000458": {
+      "needle_tip": [
+        515.0,
+        445.0
+      ],
+      "needle_tail": [
+        522.3655395507812,
+        110.31766510009766
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000459": {
+      "needle_tip": [
+        464.23980712890625,
+        456.4212341308594
+      ],
+      "needle_tail": [
+        565.2179565429688,
+        145.63803100585938
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000460": {
+      "needle_tip": [
+        435.15899658203125,
+        475.707275390625
+      ],
+      "needle_tail": [
+        576.0,
+        184.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000461": {
+      "needle_tip": [
+        413.7029113769531,
+        479.53594970703125
+      ],
+      "needle_tail": [
+        584.5393676757812,
+        208.7492218017578
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000462": {
+      "needle_tip": [
+        385.0,
+        491.0
+      ],
+      "needle_tail": [
+        578.0,
+        244.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000463": {
+      "needle_tip": [
+        355.0632019042969,
+        502.9092102050781
+      ],
+      "needle_tail": [
+        555.0,
+        260.0
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000464": {
+      "needle_tip": [
+        308.1427917480469,
+        489.8362121582031
+      ],
+      "needle_tail": [
+        537.9927978515625,
+        268.8977355957031
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000465": {
+      "needle_tip": [
+        282.8139953613281,
+        475.00933837890625
+      ],
+      "needle_tail": [
+        534.2896118164062,
+        271.2187194824219
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000466": {
+      "needle_tip": [
+        255.9013214111328,
+        452.77325439453125
+      ],
+      "needle_tail": [
+        532.7424926757812,
+        273.50567626953125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000467": {
+      "needle_tip": [
+        238.0,
+        428.0
+      ],
+      "needle_tail": [
+        534.0702514648438,
+        277.2484130859375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000468": {
+      "needle_tip": [
+        231.23703002929688,
+        417.7664794921875
+      ],
+      "needle_tail": [
+        535.5563354492188,
+        278.9277648925781
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000469": {
+      "needle_tip": [
+        227.31024169921875,
+        409.73883056640625
+      ],
+      "needle_tail": [
+        537.0596923828125,
+        279.7245788574219
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000470": {
+      "needle_tip": [
+        225.96664428710938,
+        407.6784362792969
+      ],
+      "needle_tail": [
+        537.2252197265625,
+        279.8968200683594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000471": {
+      "needle_tip": [
+        225.9359893798828,
+        407.68292236328125
+      ],
+      "needle_tail": [
+        537.509765625,
+        280.4467468261719
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000472": {
+      "needle_tip": [
+        225.24656677246094,
+        406.59326171875
+      ],
+      "needle_tail": [
+        537.4215698242188,
+        280.0683288574219
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000473": {
+      "needle_tip": [
+        224.69613647460938,
+        405.63775634765625
+      ],
+      "needle_tail": [
+        537.5308227539062,
+        280.229248046875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000474": {
+      "needle_tip": [
+        222.7496337890625,
+        402.5141296386719
+      ],
+      "needle_tail": [
+        537.906494140625,
+        280.47607421875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000475": {
+      "needle_tip": [
+        222.52218627929688,
+        402.09820556640625
+      ],
+      "needle_tail": [
+        537.7999267578125,
+        280.93438720703125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000476": {
+      "needle_tip": [
+        222.4694061279297,
+        402.30047607421875
+      ],
+      "needle_tail": [
+        537.8344116210938,
+        280.7296142578125
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000477": {
+      "needle_tip": [
+        222.4832000732422,
+        401.9101257324219
+      ],
+      "needle_tail": [
+        537.8264770507812,
+        281.0990295410156
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000478": {
+      "needle_tip": [
+        222.4318084716797,
+        402.2385559082031
+      ],
+      "needle_tail": [
+        537.9918823242188,
+        281.2884521484375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000479": {
+      "needle_tip": [
+        221.9387969970703,
+        400.923828125
+      ],
+      "needle_tail": [
+        537.945556640625,
+        281.0794677734375
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000480": {
+      "needle_tip": [
+        222.71072387695312,
+        402.5213317871094
+      ],
+      "needle_tail": [
+        537.9677734375,
+        280.8356628417969
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000481": {
+      "needle_tip": [
+        222.36373901367188,
+        402.0834045410156
+      ],
+      "needle_tail": [
+        537.74658203125,
+        280.9569091796875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000482": {
+      "needle_tip": [
+        222.12432861328125,
+        401.65484619140625
+      ],
+      "needle_tail": [
+        537.7852172851562,
+        281.12030029296875
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000483": {
+      "needle_tip": [
+        221.7841033935547,
+        401.0476989746094
+      ],
+      "needle_tail": [
+        537.7723999023438,
+        281.3291320800781
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000484": {
+      "needle_tip": [
+        222.3685302734375,
+        401.9595031738281
+      ],
+      "needle_tail": [
+        537.7943725585938,
+        280.95758056640625
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000485": {
+      "needle_tip": [
+        222.61917114257812,
+        402.3002624511719
+      ],
+      "needle_tail": [
+        537.6727905273438,
+        280.9698181152344
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    }
+  }
+}
