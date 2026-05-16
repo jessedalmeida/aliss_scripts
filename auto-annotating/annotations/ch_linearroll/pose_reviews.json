@@ -1,0 +1,10 @@
+{
+  "bag_stem": "ch_linearroll",
+  "source": "failed_frame_review",
+  "reviews": {
+    "000052": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 51 (12 pts)"
+    }
+  }
+}

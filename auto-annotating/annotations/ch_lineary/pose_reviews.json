@@ -1,0 +1,90 @@
+{
+  "bag_stem": "ch_lineary",
+  "source": "failed_frame_review",
+  "reviews": {
+    "000058": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 57 (12 pts)"
+    },
+    "000125": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 124 (12 pts)"
+    },
+    "000144": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 143 (12 pts)"
+    },
+    "000146": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 145 (12 pts)"
+    },
+    "000149": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 148 (12 pts)"
+    },
+    "000151": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 150 (12 pts)"
+    },
+    "000208": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 207 (12 pts)"
+    },
+    "000211": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 210 (12 pts)"
+    },
+    "000275": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 274 (12 pts)"
+    },
+    "000280": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 279 (12 pts)"
+    },
+    "000282": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 281 (12 pts)"
+    },
+    "000286": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 285 (12 pts)"
+    },
+    "000295": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 294 (12 pts)"
+    },
+    "000427": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 426 (12 pts)"
+    },
+    "000431": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 430 (12 pts)"
+    },
+    "000437": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 436 (12 pts)"
+    },
+    "000440": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 439 (12 pts)"
+    },
+    "000441": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 440 (12 pts)"
+    },
+    "000443": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 442 (12 pts)"
+    },
+    "000444": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 443 (12 pts)"
+    },
+    "000445": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 444 (12 pts)"
+    }
+  }
+}

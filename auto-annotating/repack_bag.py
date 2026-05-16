@@ -82,6 +82,7 @@ LEFT_ARM_CP_TOPIC = "/needle_tracking/left_arm_cp"
 RIGHT_TIP_POSE_TOPIC = "/needle_tracking/right_tip_pose"
 LEFT_TIP_POSE_TOPIC = "/needle_tracking/left_tip_pose"
 POSE_TOPIC = "/pose_estimator/pose"
+CHECKERBOARD_POSE_TOPIC = "/checkerboard/pose"
 PACKAGE_NAME = "aliss_ros_msg"
 KEYPOINTS_TYPE = f"{PACKAGE_NAME}/msg/NeedleTrackingKeypoints"
 SNAPSHOT_TYPE = f"{PACKAGE_NAME}/msg/NeedleTrackingSnapshot"
@@ -611,6 +612,7 @@ def repack_bag(
             annotation_conns = {}
             snapshot_conn = None
             pose_conn = None
+            checkerboard_pose_conn = None
             if split_topics:
                 image_out_conn = writer.add_connection(
                     topic=image_topic,
@@ -631,12 +633,14 @@ def repack_bag(
                 }
                 if pose_indices:
                     annotation_topics[POSE_TOPIC] = POSE_TYPE
+                    annotation_topics[CHECKERBOARD_POSE_TOPIC] = POSE_TYPE
                 for topic, msgtype in annotation_topics.items():
                     annotation_conns[topic] = writer.add_connection(topic=topic, msgtype=msgtype, typestore=typestore)
             else:
                 snapshot_conn = writer.add_connection(topic=SNAPSHOT_TOPIC, msgtype=SNAPSHOT_TYPE, typestore=typestore)
                 if pose_indices:
                     pose_conn = writer.add_connection(topic=POSE_TOPIC, msgtype=POSE_TYPE, typestore=typestore)
+                    checkerboard_pose_conn = writer.add_connection(topic=CHECKERBOARD_POSE_TOPIC, msgtype=POSE_TYPE, typestore=typestore)
 
             latest_joint_right: JointState | None = None
             latest_joint_left: JointState | None = None
@@ -772,9 +776,19 @@ def repack_bag(
                                     POSE_TYPE,
                                     timestamp,
                                 )
+                                serialize_and_write(
+                                    writer,
+                                    annotation_conns[CHECKERBOARD_POSE_TOPIC],
+                                    typestore,
+                                    pose_msg,
+                                    POSE_TYPE,
+                                    timestamp,
+                                )
                             else:
                                 assert pose_conn is not None
                                 serialize_and_write(writer, pose_conn, typestore, pose_msg, POSE_TYPE, timestamp)
+                                if checkerboard_pose_conn is not None:
+                                    serialize_and_write(writer, checkerboard_pose_conn, typestore, pose_msg, POSE_TYPE, timestamp)
                         last_selected_mask_idx = annotated_idx
 
                     saved_frame_counter += 1

@@ -1,0 +1,246 @@
+{
+  "bag_stem": "ch_suture3",
+  "source": "failed_frame_review",
+  "reviews": {
+    "000065": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 64 (11 pts)"
+    },
+    "000067": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 66 (12 pts)"
+    },
+    "000068": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 67 (12 pts)"
+    },
+    "000074": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 73 (12 pts)"
+    },
+    "000251": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 250 (12 pts)"
+    },
+    "000253": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 252 (12 pts)"
+    },
+    "000254": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 253 (12 pts)"
+    },
+    "000255": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 254 (12 pts)"
+    },
+    "000256": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 255 (12 pts)"
+    },
+    "000257": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 256 (12 pts)"
+    },
+    "000259": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 258 (12 pts)"
+    },
+    "000260": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 259 (12 pts)"
+    },
+    "000261": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 260 (12 pts)"
+    },
+    "000262": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 261 (12 pts)"
+    },
+    "000263": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 262 (12 pts)"
+    },
+    "000264": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 263 (12 pts)"
+    },
+    "000265": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 264 (12 pts)"
+    },
+    "000266": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 265 (12 pts)"
+    },
+    "000267": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 266 (12 pts)"
+    },
+    "000268": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 267 (12 pts)"
+    },
+    "000269": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 268 (12 pts)"
+    },
+    "000326": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 325 (11 pts)"
+    },
+    "000327": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 326 (11 pts)"
+    },
+    "000330": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 329 (11 pts)"
+    },
+    "000331": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 330 (11 pts)"
+    },
+    "000381": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 380 (12 pts)"
+    },
+    "000396": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 395 (12 pts)"
+    },
+    "000397": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 396 (12 pts)"
+    },
+    "000398": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 397 (12 pts)"
+    },
+    "000399": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 398 (12 pts)"
+    },
+    "000400": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 399 (12 pts)"
+    },
+    "000401": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 400 (12 pts)"
+    },
+    "000402": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 401 (12 pts)"
+    },
+    "000403": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 402 (12 pts)"
+    },
+    "000404": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 403 (12 pts)"
+    },
+    "000405": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 404 (11 pts)"
+    },
+    "000406": {
+      "status": "manual_correction_applied",
+      "note": "manually corrected via corner picking"
+    },
+    "000407": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 408 (12 pts)"
+    },
+    "000408": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 409 (12 pts)"
+    },
+    "000410": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 409 (12 pts)"
+    },
+    "000411": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 410 (12 pts)"
+    },
+    "000413": {
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 412 (12 pts)"
+    },
+    "000450": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000451": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000452": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000453": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000454": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000455": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000456": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000457": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000458": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000459": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000460": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000461": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000462": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000463": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000464": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000465": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000466": {
+      "status": "rejected",
+      "note": ""
+    },
+    "000467": {
+      "status": "rejected",
+      "note": ""
+    }
+  }
+}
