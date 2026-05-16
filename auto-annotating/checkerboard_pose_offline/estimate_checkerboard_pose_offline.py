@@ -48,7 +48,7 @@ def choose_camera_yaml(ann_dir: Path, bag_dir: Path, explicit: str | None) -> Pa
     raise FileNotFoundError("Could not find ves_camera.yaml. Pass --camera-yaml or place it beside the bag annotations.")
 
 
-def process_bag(args: argparse.Namespace, bag_dir: Path) -> bool:
+def process_bag(args: argparse.Namespace, bag_dir: Path, output_json: Path) -> bool:
     frames_dir = bag_dir / "frames"
     if not frames_dir.exists():
         print(f"[WARN] Frames dir not found: {frames_dir}")
@@ -74,7 +74,6 @@ def process_bag(args: argparse.Namespace, bag_dir: Path) -> bool:
         clahe_tile_grid_size=args.clahe_tile_grid_size,
         blur_kernel_size=args.blur_kernel_size,
         gamma_value=args.gamma_value,
-        use_orientation_markers=args.use_orientation_markers,
         use_temporal_roi=args.use_temporal_roi,
         temporal_roi_padding_factor=args.temporal_roi_padding_factor,
         detection_timeout_ms=args.detection_timeout_ms,
@@ -117,8 +116,8 @@ def process_bag(args: argparse.Namespace, bag_dir: Path) -> bool:
         "frames": {},
     }
 
-    if args.overwrite and args.output_json.exists():
-        args.output_json.unlink()
+    if args.overwrite and output_json.exists():
+        output_json.unlink()
 
     for frame_path in frame_paths:
         frame = cv2.imread(str(frame_path), cv2.IMREAD_COLOR)
@@ -139,12 +138,12 @@ def process_bag(args: argparse.Namespace, bag_dir: Path) -> bool:
         else:
             print(f"  [FAIL] {frame_key} {frame_result['failure_reason']}")
 
-    args.output_json.parent.mkdir(parents=True, exist_ok=True)
-    with open(args.output_json, "w", encoding="utf-8") as fh:
+    output_json.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_json, "w", encoding="utf-8") as fh:
         json.dump(result, fh, indent=2)
         fh.write("\n")
 
-    print(f"Saved: {args.output_json}")
+    print(f"Saved: {output_json}")
     return True
 
 
@@ -161,7 +160,7 @@ def main() -> int:
     parser.add_argument("--squares-y", type=int, default=5)
     parser.add_argument("--square-size", type=float, default=0.002)
     parser.add_argument("--pixel-noise-sigma", type=float, default=1.0)
-    parser.add_argument("--detector-mode", choices=["auto", "sb", "legacy", "fast"], default="legacy")
+    parser.add_argument("--detector-mode", choices=["auto", "sb", "legacy", "fast"], default="sb")
     parser.add_argument("--preprocess-steps", default="clahe", help="Comma-separated preprocessing steps: clahe, normalize, blur, denoise, gamma")
     parser.add_argument("--clahe-clip-limit", type=float, default=2.0)
     parser.add_argument("--clahe-tile-grid-size", type=int, default=8)
@@ -170,8 +169,8 @@ def main() -> int:
     parser.add_argument("--use-orientation-markers", action="store_true", default=True)
     parser.add_argument("--no-orientation-markers", dest="use_orientation_markers", action="store_false")
     parser.add_argument("--use-temporal-roi", action="store_true", default=False)
-    parser.add_argument("--temporal-roi-padding-factor", type=float, default=0.35)
-    parser.add_argument("--detection-timeout-ms", type=int, default=2000)
+    parser.add_argument("--temporal-roi-padding-factor", type=float, default=0.50)
+    parser.add_argument("--detection-timeout-ms", type=int, default=5000)
     parser.add_argument("--save-failed-diagnostics", action="store_true", default=False)
     parser.add_argument("--failed-diagnostics-dir", default="/tmp/checkerboard_pose_offline_diagnostics")
     parser.add_argument("--detection-cache-file", default=None, help="Optional JSON cache of successful detections")
@@ -197,8 +196,7 @@ def main() -> int:
     ok = True
     for bag_dir in bags:
         output_json = Path(args.output_json) if args.output_json else bag_dir / "poses.json"
-        args.output_json = output_json
-        ok = process_bag(args, bag_dir) and ok
+        ok = process_bag(args, bag_dir, output_json) and ok
     return 0 if ok else 1
 
 

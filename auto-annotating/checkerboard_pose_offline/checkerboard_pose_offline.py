@@ -593,13 +593,12 @@ class OfflineCheckerboardEstimator:
         checkerboard: CheckerboardInfo,
         pixel_noise_sigma: float = 10.0,
         rectified_input: bool = True,
-        detector_mode: str = "legacy",
+        detector_mode: str = "sb",
         preprocess_steps: list[str] | None = None,
         clahe_clip_limit: float = 2.0,
         clahe_tile_grid_size: int = 8,
         blur_kernel_size: int = 3,
         gamma_value: float = 1.0,
-        use_orientation_markers: bool = True,
         use_temporal_roi: bool = False,
         temporal_roi_padding_factor: float = 0.35,
         detection_timeout_ms: int = 1000,
@@ -617,7 +616,6 @@ class OfflineCheckerboardEstimator:
         self.clahe_tile_grid_size = clahe_tile_grid_size
         self.blur_kernel_size = blur_kernel_size
         self.gamma_value = gamma_value
-        self.use_orientation_markers = use_orientation_markers
         self.use_temporal_roi = use_temporal_roi
         self.temporal_roi_padding_factor = temporal_roi_padding_factor
         self.detection_timeout_ms = detection_timeout_ms
@@ -804,60 +802,6 @@ class OfflineCheckerboardEstimator:
                 "rms_reprojection_error": None,
                 "diagnostics_image": diagnostics_path,
             }
-
-        if self.use_orientation_markers:
-            markers = []
-            if self.checkerboard.pattern_size[0] >= 2 and self.checkerboard.pattern_size[1] >= 2:
-                corners_w = self.checkerboard.pattern_size[0]
-                corners_h = self.checkerboard.pattern_size[1]
-                tl = np.asarray(corners[0], dtype=np.float32)
-                tr = np.asarray(corners[corners_w - 1], dtype=np.float32)
-                bl = np.asarray(corners[(corners_h - 1) * corners_w], dtype=np.float32)
-                br = np.asarray(corners[-1], dtype=np.float32)
-                step_x = (tr - tl) / max(1, corners_w - 1)
-                step_y = (bl - tl) / max(1, corners_h - 1)
-                square_px_x = float(np.linalg.norm(step_x))
-                square_px_y = float(np.linalg.norm(step_y))
-                search_radius_min = max(3, int(0.18 * min(square_px_x, square_px_y)))
-                search_radius_max = max(search_radius_min + 2, int(0.45 * max(square_px_x, square_px_y)))
-                roi_half = max(12, int(0.9 * max(square_px_x, square_px_y)))
-                marker_centers = [
-                    tl - 0.5 * step_x - 0.5 * step_y,
-                    tr + 0.5 * step_x - 0.5 * step_y,
-                    bl - 0.5 * step_x + 0.5 * step_y,
-                    br + 0.5 * step_x + 0.5 * step_y,
-                ]
-                for center in marker_centers:
-                    c = (float(center[0]), float(center[1]))
-                    rx = max(0, int(math.floor(c[0] - roi_half)))
-                    ry = max(0, int(math.floor(c[1] - roi_half)))
-                    rw = min(gray.shape[1] - rx, 2 * roi_half)
-                    rh = min(gray.shape[0] - ry, 2 * roi_half)
-                    if rw <= 0 or rh <= 0:
-                        continue
-                    markers.extend(detect_orientation_markers(gray, search_radius_min, search_radius_max, 1, (rx, ry, rw, rh)))
-
-            if not markers:
-                min_x = gray.shape[1]
-                min_y = gray.shape[0]
-                max_x = 0
-                max_y = 0
-                for px, py in corners:
-                    min_x = min(min_x, int(math.floor(px)))
-                    min_y = min(min_y, int(math.floor(py)))
-                    max_x = max(max_x, int(math.ceil(px)))
-                    max_y = max(max_y, int(math.ceil(py)))
-                bw = max(1, max_x - min_x)
-                bh = max(1, max_y - min_y)
-                margin = max(10, int(0.1 * max(bw, bh)))
-                rx = max(0, min_x - margin)
-                ry = max(0, min_y - margin)
-                rw = min(gray.shape[1] - rx, bw + 2 * margin)
-                rh = min(gray.shape[0] - ry, bh + 2 * margin)
-                if rw > 0 and rh > 0:
-                    markers = detect_orientation_markers(gray, 5, 30, 4, (rx, ry, rw, rh))
-
-            verify_and_fix_orientation(markers, corners, self.checkerboard.pattern_size)
 
         pose_estimate = self._solve_pose(corners)
         if not pose_estimate.success:

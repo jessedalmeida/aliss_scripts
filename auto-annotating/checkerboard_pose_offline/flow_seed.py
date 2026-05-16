@@ -88,7 +88,8 @@ def try_optical_flow_seed(
 
     camera = load_camera_yaml(camera_yaml_path)
     camera_matrix = np.asarray(camera["projection_matrix"]["data"], dtype=np.float64).reshape(3,4)[:,:3]
-    distortion = np.asarray(camera["distortion_coefficients"]["data"], dtype=np.float64).reshape(-1,1)
+    # Frames are rectified, so match the SB path by using zero distortion.
+    distortion = np.zeros((5, 1), dtype=np.float64)
 
     params = poses_payload.get("parameters", {})
     squares_x = int(params.get("squares_x", 4))

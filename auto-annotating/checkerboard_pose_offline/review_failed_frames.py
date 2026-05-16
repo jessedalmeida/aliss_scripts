@@ -148,7 +148,7 @@ def show_pose_overlay_for_frame(
 
     camera_data = load_camera_yaml(camera_yaml_path)
     camera_matrix = np.asarray(camera_data["projection_matrix"]["data"], dtype=np.float64).reshape(3, 4)[:, :3]
-    distortion = np.asarray(camera_data["distortion_coefficients"]["data"], dtype=np.float64).reshape(-1, 1)
+    distortion = np.zeros((5, 1), dtype=np.float64)
     frame_entries = poses_payload.get("frames", {})
     pose_data = frame_entries.get(frame_key, {})
     params = poses_payload.get("parameters", {})
@@ -308,7 +308,7 @@ def main() -> int:
         # load camera for overlay drawing
         camera_data = load_camera_yaml(camera_yaml_path)
         camera_matrix = np.asarray(camera_data["projection_matrix"]["data"], dtype=np.float64).reshape(3, 4)[:, :3]
-        distortion = np.asarray(camera_data["distortion_coefficients"]["data"], dtype=np.float64).reshape(-1, 1)
+        distortion = np.zeros((5, 1), dtype=np.float64)
 
         # Attempt optical-flow seeding automatically (preview only)
         seeded_preview = None

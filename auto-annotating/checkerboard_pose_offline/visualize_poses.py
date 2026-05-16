@@ -94,7 +94,17 @@ def board_points_from_params(squares_x: int, squares_y: int, square_size: float)
     return np.asarray(points, dtype=np.float64)
 
 
-def draw_pose_overlay(image: np.ndarray, camera_matrix: np.ndarray, distortion: np.ndarray, pose_data: dict, squares_x: int, squares_y: int, square_size: float, draw_corners: bool = True) -> np.ndarray:
+def draw_pose_overlay(
+    image: np.ndarray,
+    camera_matrix: np.ndarray,
+    distortion: np.ndarray,
+    pose_data: dict,
+    squares_x: int,
+    squares_y: int,
+    square_size: float,
+    draw_corners: bool = True,
+    draw_detected_corners: bool = True,
+) -> np.ndarray:
     display = image.copy()
     if not pose_data or not pose_data.get("pose"):
         cv2.putText(display, "POSE: unavailable", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
@@ -118,6 +128,17 @@ def draw_pose_overlay(image: np.ndarray, camera_matrix: np.ndarray, distortion: 
             cv2.circle(display, (x_int, y_int), 2, (0, 255, 255), -1)
             cv2.putText(display, str(idx + 1), (x_int + 5, y_int - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 255, 255), 1)
 
+    if draw_detected_corners:
+        detected_corners = pose_data.get("corners", [])
+        if detected_corners:
+            for idx, corner in enumerate(detected_corners):
+                if not corner or len(corner) < 2:
+                    continue
+                x_int = int(round(float(corner[0])))
+                y_int = int(round(float(corner[1])))
+                cv2.circle(display, (x_int, y_int), 3, (0, 128, 255), 1)
+                cv2.putText(display, str(idx + 1), (x_int + 5, y_int + 12), cv2.FONT_HERSHEY_SIMPLEX, 0.4, (0, 128, 255), 1)
+
     rms = pose_data.get("rms_reprojection_error")
     if rms is not None:
         cv2.putText(display, f"RMS: {float(rms):.2f}px", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
@@ -134,6 +155,7 @@ def main() -> int:
     parser.add_argument("--camera-yaml", default=None, help="Path to ves_camera.yaml")
     parser.add_argument("--step", type=int, default=1, help="Frame step while browsing")
     parser.add_argument("--no-corners", action="store_true", help="Do not draw projected checkerboard corners")
+    parser.add_argument("--no-detected-corners", action="store_true", help="Do not draw the detected corner locations from poses.json")
     args = parser.parse_args()
 
     ann_dir = Path(args.ann_dir)
@@ -150,7 +172,8 @@ def main() -> int:
     camera_yaml_path = choose_camera_yaml(ann_dir, bag_dir, args.camera_yaml)
     camera_data = load_camera_yaml(camera_yaml_path)
     camera_matrix = np.asarray(camera_data["projection_matrix"]["data"], dtype=np.float64).reshape(3, 4)[:, :3]
-    distortion = np.asarray(camera_data["distortion_coefficients"]["data"], dtype=np.float64).reshape(-1, 1)
+    # Match the estimator: frames are treated as rectified, so distortion is zeroed.
+    distortion = np.zeros((5, 1), dtype=np.float64)
 
     payload = load_json(poses_json)
     frame_entries = payload.get("frames", {})
@@ -179,6 +202,7 @@ def main() -> int:
             squares_y=int(payload.get("parameters", {}).get("squares_y", 5)),
             square_size=float(payload.get("parameters", {}).get("square_size", 0.002)),
             draw_corners=not args.no_corners,
+            draw_detected_corners=not args.no_detected_corners,
         )
 
         status = pose_data.get("status", "missing")
