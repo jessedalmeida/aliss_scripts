@@ -10,7 +10,7 @@ Use `--output-mode topics` to keep the camera stream and publish each
 annotation component on its own topic for visualization tools like Foxglove.
 
 If a `poses.json` file is present alongside the other annotations, the script
-also publishes `/pose_estimator/pose` using the saved checkerboard pose and
+also publishes `/checkerboard/pose` using the saved checkerboard pose and
 covariance for each annotated frame.
 
 Each snapshot is written at the original image timestamp for the extracted
@@ -81,7 +81,6 @@ RIGHT_ARM_CP_TOPIC = "/needle_tracking/right_arm_cp"
 LEFT_ARM_CP_TOPIC = "/needle_tracking/left_arm_cp"
 RIGHT_TIP_POSE_TOPIC = "/needle_tracking/right_tip_pose"
 LEFT_TIP_POSE_TOPIC = "/needle_tracking/left_tip_pose"
-POSE_TOPIC = "/pose_estimator/pose"
 CHECKERBOARD_POSE_TOPIC = "/checkerboard/pose"
 PACKAGE_NAME = "aliss_ros_msg"
 KEYPOINTS_TYPE = f"{PACKAGE_NAME}/msg/NeedleTrackingKeypoints"
@@ -312,20 +311,47 @@ def mask_bbox(mask_np: np.ndarray, fallback_points: list[tuple[float, float]] | 
     return center, x_max - x_min + 1.0, y_max - y_min + 1.0
 
 
-def extract_xy(point_like) -> tuple[float, float]:
-    return float(point_like[0]), float(point_like[1])
+def extract_xy_or_default(point_like, default: tuple[float, float] = (0.0, 0.0)) -> tuple[float, float]:
+    if point_like is None:
+        return default
+
+    try:
+        if len(point_like) < 2:
+            return default
+        return float(point_like[0]), float(point_like[1])
+    except Exception:
+        return default
 
 
 def build_keypoints_msg(typestore, frame_data: dict, mask_np: np.ndarray, right_pose: PoseWithCovarianceStamped | None, left_pose: PoseWithCovarianceStamped | None):
     keypoint_cls = typestore.types[KEYPOINTS_TYPE]
 
-    needle_tip_xy = extract_xy(frame_data.get("needle_tip", [0.0, 0.0]))
-    needle_tail_xy = extract_xy(frame_data.get("needle_tail", [0.0, 0.0]))
+    needle_tip_xy = extract_xy_or_default(frame_data.get("needle_tip"))
+    needle_tail_xy = extract_xy_or_default(frame_data.get("needle_tail"))
 
     right_tip = point32_from_xy(
         right_pose.pose.pose.position.x if right_pose else 0.0,
         right_pose.pose.pose.position.y if right_pose else 0.0,
         right_pose.pose.pose.position.z if right_pose else 0.0,
+    )
+
+    left_tip = point32_from_xy(
+        left_pose.pose.pose.position.x if left_pose else 0.0,
+        left_pose.pose.pose.position.y if left_pose else 0.0,
+        left_pose.pose.pose.position.z if left_pose else 0.0,
+    )
+
+    fallback_points = [pt for pt in (needle_tip_xy, needle_tail_xy) if any(abs(v) > 0.0 for v in pt)]
+    bbox_center, bbox_size_x, bbox_size_y = mask_bbox(mask_np, fallback_points=fallback_points)
+
+    return keypoint_cls(
+        needle_tip=point32_from_xy(*needle_tip_xy),
+        needle_tail=point32_from_xy(*needle_tail_xy),
+        left_arm_tip=left_tip,
+        right_arm_tip=right_tip,
+        bounding_box_center=bbox_center,
+        bounding_box_size_x=float(bbox_size_x),
+        bounding_box_size_y=float(bbox_size_y),
     )
 
 
@@ -359,26 +385,6 @@ def build_pose_msg(timestamp_ns: int, frame_data: dict, default_frame_id: str = 
         ),
     )
     return pose_msg
-    left_tip = point32_from_xy(
-        left_pose.pose.pose.position.x if left_pose else 0.0,
-        left_pose.pose.pose.position.y if left_pose else 0.0,
-        left_pose.pose.pose.position.z if left_pose else 0.0,
-    )
-
-    bbox_center, bbox_size_x, bbox_size_y = mask_bbox(
-        mask_np,
-        fallback_points=[needle_tip_xy, needle_tail_xy],
-    )
-
-    return keypoint_cls(
-        needle_tip=point32_from_xy(*needle_tip_xy),
-        needle_tail=point32_from_xy(*needle_tail_xy),
-        left_arm_tip=left_tip,
-        right_arm_tip=right_tip,
-        bounding_box_center=bbox_center,
-        bounding_box_size_x=float(bbox_size_x),
-        bounding_box_size_y=float(bbox_size_y),
-    )
 
 
 def build_snapshot_msg(
@@ -453,7 +459,7 @@ def repack_bag(
 
     bag_dir = bag_path if bag_path.is_dir() else bag_path.parent
     bag_stem = bag_dir.name
-    out_bag_dir = out_dir / f"{bag_stem}_annotated"
+    out_bag_dir = out_dir / f"{bag_stem}_annotated_{output_mode}"
 
     print(f"\n{'=' * 60}")
     print(f"Repacking: {bag_stem}")
@@ -544,12 +550,18 @@ def repack_bag(
         connections = list(reader.connections)
         available_topics = {conn.topic: conn for conn in connections}
 
-        image_topic = next((topic for topic in IMAGE_TOPICS if topic in available_topics), None)
-        if image_topic is None:
-            image_topic = select_topic(connections, msgtype="sensor_msgs/msg/Image", keywords=("image",))
+        # Prefer the rectified image topic when available; fall back to any image topic.
+        if "/ves_camera/image_rect" in available_topics:
+            image_topic = "/ves_camera/image_rect"
+        else:
+            image_topic = next((topic for topic in IMAGE_TOPICS if topic in available_topics), None)
+            if image_topic is None:
+                image_topic = select_topic(connections, msgtype="sensor_msgs/msg/Image", keywords=("image",))
         if image_topic is None:
             print(f"  [ERROR] No camera image topic found in {bag_dir}")
             return False
+        if image_topic != "/ves_camera/image_rect":
+            print(f"  [WARN] '/ves_camera/image_rect' not present; falling back to {image_topic}")
 
         camera_info_topics = [
             conn.topic
@@ -611,7 +623,6 @@ def repack_bag(
             image_out_conn = None
             annotation_conns = {}
             snapshot_conn = None
-            pose_conn = None
             checkerboard_pose_conn = None
             if split_topics:
                 image_out_conn = writer.add_connection(
@@ -632,14 +643,12 @@ def repack_bag(
                     LEFT_TIP_POSE_TOPIC: "geometry_msgs/msg/PoseWithCovarianceStamped",
                 }
                 if pose_indices:
-                    annotation_topics[POSE_TOPIC] = POSE_TYPE
                     annotation_topics[CHECKERBOARD_POSE_TOPIC] = POSE_TYPE
                 for topic, msgtype in annotation_topics.items():
                     annotation_conns[topic] = writer.add_connection(topic=topic, msgtype=msgtype, typestore=typestore)
             else:
                 snapshot_conn = writer.add_connection(topic=SNAPSHOT_TOPIC, msgtype=SNAPSHOT_TYPE, typestore=typestore)
                 if pose_indices:
-                    pose_conn = writer.add_connection(topic=POSE_TOPIC, msgtype=POSE_TYPE, typestore=typestore)
                     checkerboard_pose_conn = writer.add_connection(topic=CHECKERBOARD_POSE_TOPIC, msgtype=POSE_TYPE, typestore=typestore)
 
             latest_joint_right: JointState | None = None
@@ -770,14 +779,6 @@ def repack_bag(
                             if split_topics:
                                 serialize_and_write(
                                     writer,
-                                    annotation_conns[POSE_TOPIC],
-                                    typestore,
-                                    pose_msg,
-                                    POSE_TYPE,
-                                    timestamp,
-                                )
-                                serialize_and_write(
-                                    writer,
                                     annotation_conns[CHECKERBOARD_POSE_TOPIC],
                                     typestore,
                                     pose_msg,
@@ -785,8 +786,6 @@ def repack_bag(
                                     timestamp,
                                 )
                             else:
-                                assert pose_conn is not None
-                                serialize_and_write(writer, pose_conn, typestore, pose_msg, POSE_TYPE, timestamp)
                                 if checkerboard_pose_conn is not None:
                                     serialize_and_write(writer, checkerboard_pose_conn, typestore, pose_msg, POSE_TYPE, timestamp)
                         last_selected_mask_idx = annotated_idx
@@ -821,6 +820,11 @@ def main():
         default=None,
         help="Original frame stride used during extraction. If omitted, infer it from the bag and annotations.",
     )
+    parser.add_argument(
+        "--pack-each",
+        action="store_true",
+        help="If set and a provided bag path is a directory containing multiple bag folders, repack each child folder into its own annotated bag.",
+    )
     args = parser.parse_args()
 
     ann_dir = Path(args.ann_dir)
@@ -832,6 +836,16 @@ def main():
         if not bag_path.exists():
             print(f"[WARN] Bag not found: {bag_path}")
             continue
+
+        # If --pack-each is set and the path is a parent directory, iterate its child folders
+        if args.pack_each and bag_path.is_dir():
+            for child in sorted(bag_path.iterdir()):
+                if not child.is_dir():
+                    continue
+                print(f"Packing child bag: {child.name}")
+                repack_bag(child, ann_dir, out_dir, every_n=args.every_n, output_mode=args.output_mode)
+            continue
+
         repack_bag(bag_path, ann_dir, out_dir, every_n=args.every_n, output_mode=args.output_mode)
 
     print("\nDone. Replay with:")
