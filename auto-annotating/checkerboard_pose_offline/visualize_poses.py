@@ -82,6 +82,51 @@ def pose_to_rvec_tvec(pose_data: dict) -> tuple[np.ndarray, np.ndarray]:
     return rvec, tvec
 
 
+def rotation_matrix_to_euler_deg(rot: np.ndarray) -> tuple[float, float, float]:
+    sy = math.sqrt(float(rot[0, 0] * rot[0, 0] + rot[1, 0] * rot[1, 0]))
+    singular = sy < 1e-6
+    if not singular:
+        roll = math.atan2(float(rot[2, 1]), float(rot[2, 2]))
+        pitch = math.atan2(float(-rot[2, 0]), sy)
+        yaw = math.atan2(float(rot[1, 0]), float(rot[0, 0]))
+    else:
+        roll = math.atan2(float(-rot[1, 2]), float(rot[1, 1]))
+        pitch = math.atan2(float(-rot[2, 0]), sy)
+        yaw = 0.0
+    return math.degrees(roll), math.degrees(pitch), math.degrees(yaw)
+
+
+def print_pose_summary(frame_key: str, pose_data: dict) -> None:
+    pose = pose_data.get("pose") if isinstance(pose_data, dict) else None
+    if not pose:
+        print(f"frame {frame_key}: pose unavailable")
+        return
+
+    position = [float(v) for v in pose.get("position", [0.0, 0.0, 0.0])]
+    rvec, _ = pose_to_rvec_tvec(pose)
+    rot, _ = cv2.Rodrigues(rvec)
+    roll_deg, pitch_deg, yaw_deg = rotation_matrix_to_euler_deg(rot)
+
+    cov_list = pose.get("covariance", [])
+    std_pos_mm = [float("nan")] * 3
+    std_rot_deg = [float("nan")] * 3
+    if isinstance(cov_list, list) and len(cov_list) == 36:
+        cov = np.asarray(cov_list, dtype=np.float64).reshape(6, 6)
+        diag = np.diag(cov)
+        std_pos_m = np.sqrt(np.maximum(diag[:3], 0.0))
+        std_rot_rad = np.sqrt(np.maximum(diag[3:], 0.0))
+        std_pos_mm = [float(v * 1e3) for v in std_pos_m]
+        std_rot_deg = [float(math.degrees(v)) for v in std_rot_rad]
+
+    print(
+        f"frame {frame_key}: "
+        f"mean pos [mm]=({position[0] * 1e3:.3f}, {position[1] * 1e3:.3f}, {position[2] * 1e3:.3f}) "
+        f"mean rpy [deg]=({roll_deg:.3f}, {pitch_deg:.3f}, {yaw_deg:.3f}) "
+        f"std pos [mm]=({std_pos_mm[0]:.3f}, {std_pos_mm[1]:.3f}, {std_pos_mm[2]:.3f}) "
+        f"std rot [deg]=({std_rot_deg[0]:.3f}, {std_rot_deg[1]:.3f}, {std_rot_deg[2]:.3f})"
+    )
+
+
 def board_points_from_params(squares_x: int, squares_y: int, square_size: float) -> np.ndarray:
     pattern_x = squares_x - 1
     pattern_y = squares_y - 1
@@ -193,6 +238,7 @@ def main() -> int:
 
         frame_key = frame_index_from_path(frame_path)
         pose_data = frame_entries.get(frame_key, {})
+        print_pose_summary(frame_key, pose_data)
         display = draw_pose_overlay(
             frame,
             camera_matrix,

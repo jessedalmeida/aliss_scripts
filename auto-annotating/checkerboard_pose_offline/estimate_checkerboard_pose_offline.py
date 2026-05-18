@@ -14,6 +14,14 @@ from checkerboard_pose_offline import (
     generate_checkerboard_info,
     load_camera_model,
 )
+from checkerboard_pose_offline import (
+    _solve_pnp_refine,
+    compute_pose_covariance,
+    pose_rms_reprojection_error,
+    rvec_to_quaternion,
+    flatten_covariance,
+)
+import numpy as np
 
 
 def collect_bags(ann_dir: Path, bag_name: str | None, all_bags: bool) -> list[Path]:
@@ -119,21 +127,87 @@ def process_bag(args: argparse.Namespace, bag_dir: Path, output_json: Path) -> b
     if args.overwrite and output_json.exists():
         output_json.unlink()
 
-    for frame_path in frame_paths:
-        frame = cv2.imread(str(frame_path), cv2.IMREAD_COLOR)
-        if frame is None:
-            print(f"[WARN] Could not read frame: {frame_path}")
-            continue
+    prev_result = None
+    if args.recalculate_from_corners and output_json.exists():
+        try:
+            with open(output_json, "r", encoding="utf-8") as fh:
+                prev_result = json.load(fh)
+        except Exception:
+            prev_result = None
 
+    for frame_path in frame_paths:
         frame_idx = frame_index_from_path(frame_path)
         if frame_idx is None:
             frame_idx = len(result["frames"])
         frame_key = f"{frame_idx:06d}"
-        frame_result = estimator.process_frame(frame, frame_key)
+
+        # If requested, and previous poses.json exists with detected corners, recompute from those corners
+        if prev_result is not None and frame_key in prev_result.get("frames", {}):
+            prev_frame = prev_result["frames"][frame_key]
+            corners = prev_frame.get("corners")
+            # Ensure corners match expected pattern size
+            if corners and len(corners) == len(checkerboard.object_points):
+                try:
+                    object_points = np.asarray(checkerboard.object_points, dtype=np.float64)
+                    image_points = np.asarray(corners, dtype=np.float64).reshape(-1, 2)
+                    refined = _solve_pnp_refine(object_points, image_points, estimator.camera_matrix, estimator.distortion_coeffs)
+                    if refined is None:
+                        raise RuntimeError("solvePnP failed")
+                    rvec, tvec = refined
+                    covariance = compute_pose_covariance(
+                        object_points,
+                        image_points,
+                        rvec,
+                        tvec,
+                        estimator.camera_matrix,
+                        estimator.distortion_coeffs,
+                        args.pixel_noise_sigma,
+                    )
+                    rms = pose_rms_reprojection_error(object_points, image_points, rvec, tvec, estimator.camera_matrix, estimator.distortion_coeffs)
+
+                    pose_dict = {
+                        "frame_id": "endoscope_optical",
+                        "position": [float(tvec[0, 0]), float(tvec[1, 0]), float(tvec[2, 0])],
+                        "quaternion": rvec_to_quaternion(rvec),
+                        "covariance": flatten_covariance(covariance),
+                    }
+                    frame_result = {
+                        "frame_key": frame_key,
+                        "status": "ok",
+                        "detector": prev_frame.get("detector", "recomputed"),
+                        "failure_stage": "",
+                        "failure_reason": "",
+                        "roi": prev_frame.get("roi", [0, 0, 0, 0]),
+                        "corners": corners,
+                        "pose": pose_dict,
+                        "rms_reprojection_error": float(rms),
+                        "diagnostics_image": None,
+                    }
+                except Exception as exc:
+                    print(f"  [FAIL RECOMPUTE] {frame_key} {exc}")
+                    # fall back to detection-based processing
+                    frame = cv2.imread(str(frame_path), cv2.IMREAD_COLOR)
+                    if frame is None:
+                        print(f"[WARN] Could not read frame: {frame_path}")
+                        continue
+                    frame_result = estimator.process_frame(frame, frame_key)
+            else:
+                # No usable corners in previous result; run normal detection
+                frame = cv2.imread(str(frame_path), cv2.IMREAD_COLOR)
+                if frame is None:
+                    print(f"[WARN] Could not read frame: {frame_path}")
+                    continue
+                frame_result = estimator.process_frame(frame, frame_key)
+        else:
+            frame = cv2.imread(str(frame_path), cv2.IMREAD_COLOR)
+            if frame is None:
+                print(f"[WARN] Could not read frame: {frame_path}")
+                continue
+            frame_result = estimator.process_frame(frame, frame_key)
+
         result["frames"][frame_key] = frame_result
 
         if frame_result["status"] == "ok":
-            pose = frame_result["pose"]
             print(f"  [OK] {frame_key} detector={frame_result['detector']} rms={frame_result['rms_reprojection_error']:.2f}px")
         else:
             print(f"  [FAIL] {frame_key} {frame_result['failure_reason']}")
@@ -159,7 +233,8 @@ def main() -> int:
     parser.add_argument("--squares-x", type=int, default=4)
     parser.add_argument("--squares-y", type=int, default=5)
     parser.add_argument("--square-size", type=float, default=0.002)
-    parser.add_argument("--pixel-noise-sigma", type=float, default=0.77)
+    parser.add_argument("--pixel-noise-sigma", type=float, default=0.54)
+    parser.add_argument("--recalculate-from-corners", action="store_true", help="Recompute poses and covariances from stored corners in existing poses.json instead of re-detecting")
     parser.add_argument("--detector-mode", choices=["auto", "sb", "legacy", "fast"], default="sb")
     parser.add_argument("--preprocess-steps", default="clahe", help="Comma-separated preprocessing steps: clahe, normalize, blur, denoise, gamma")
     parser.add_argument("--clahe-clip-limit", type=float, default=2.0)

@@ -583,7 +583,12 @@ def as_list_of_lists(points: list[tuple[float, float]] | list[tuple[float, float
 def flatten_covariance(covariance: np.ndarray | None) -> list[float]:
     if covariance is None:
         return [0.0] * 36
-    return [float(v) for v in np.asarray(covariance, dtype=np.float64).reshape(-1)]
+    cov = np.asarray(covariance, dtype=np.float64).reshape(6, 6)
+    # OpenCV Jacobian ordering is [rvec_x, rvec_y, rvec_z, t_x, t_y, t_z].
+    # ROS PoseWithCovariance expects [x, y, z, rot_x, rot_y, rot_z].
+    idx = [3, 4, 5, 0, 1, 2]
+    cov_ros = cov[np.ix_(idx, idx)]
+    return [float(v) for v in cov_ros.reshape(-1)]
 
 
 class OfflineCheckerboardEstimator:
