@@ -7,11 +7,11 @@ rosbag2_bagfile_information:
   files:
   - duration:
       nanoseconds: 31229489642
-    message_count: 4139
+    message_count: 3893
     path: ch_linearz_annotated_topics.mcap
     starting_time:
       nanoseconds_since_epoch: 1778615407547369193
-  message_count: 4139
+  message_count: 3893
   relative_file_paths:
   - ch_linearz_annotated_topics.mcap
   ros_distro: rosbags
@@ -137,15 +137,7 @@ rosbag2_bagfile_information:
       type: geometry_msgs/msg/PoseWithCovarianceStamped
       type_description_hash: 
         RIHS01_26432f9803e43727d3c8f668d1fdb3c630f548af631e2f4e31382371bfea3b6e
-  - message_count: 247
-    topic_metadata:
-      name: /pose_estimator/pose
-      offered_qos_profiles: []
-      serialization_format: cdr
-      type: geometry_msgs/msg/PoseWithCovarianceStamped
-      type_description_hash: 
-        RIHS01_26432f9803e43727d3c8f668d1fdb3c630f548af631e2f4e31382371bfea3b6e
-  - message_count: 247
+  - message_count: 248
     topic_metadata:
       name: /checkerboard/pose
       offered_qos_profiles: []

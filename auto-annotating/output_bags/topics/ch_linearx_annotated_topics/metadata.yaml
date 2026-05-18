@@ -7,11 +7,11 @@ rosbag2_bagfile_information:
   files:
   - duration:
       nanoseconds: 37494110115
-    message_count: 5986
+    message_count: 5612
     path: ch_linearx_annotated_topics.mcap
     starting_time:
       nanoseconds_since_epoch: 1778613735681025869
-  message_count: 5986
+  message_count: 5612
   relative_file_paths:
   - ch_linearx_annotated_topics.mcap
   ros_distro: rosbags
@@ -132,14 +132,6 @@ rosbag2_bagfile_information:
   - message_count: 374
     topic_metadata:
       name: /needle_tracking/left_tip_pose
-      offered_qos_profiles: []
-      serialization_format: cdr
-      type: geometry_msgs/msg/PoseWithCovarianceStamped
-      type_description_hash: 
-        RIHS01_26432f9803e43727d3c8f668d1fdb3c630f548af631e2f4e31382371bfea3b6e
-  - message_count: 374
-    topic_metadata:
-      name: /pose_estimator/pose
       offered_qos_profiles: []
       serialization_format: cdr
       type: geometry_msgs/msg/PoseWithCovarianceStamped
