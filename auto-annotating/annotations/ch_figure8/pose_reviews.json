@@ -11,8 +11,8 @@
       "note": "seeded from neighbor 1 (11 pts)"
     },
     "000003": {
-      "status": "rejected",
-      "note": ""
+      "status": "manual_correction_applied",
+      "note": "manually corrected via corner picking"
     },
     "000007": {
       "status": "optical_flow_applied",
@@ -55,16 +55,16 @@
       "note": "seeded from neighbor 163 (11 pts)"
     },
     "000004": {
-      "status": "optical_flow_applied",
-      "note": "seeded from neighbor 5 (12 pts)"
+      "status": "manual_correction_applied",
+      "note": "manually corrected via corner picking"
     },
     "000005": {
-      "status": "optical_flow_applied",
-      "note": "seeded from neighbor 6 (12 pts)"
+      "status": "manual_correction_applied",
+      "note": "manually corrected via corner picking"
     },
     "000165": {
-      "status": "rejected",
-      "note": ""
+      "status": "manual_edit",
+      "note": "needs manual pose correction"
     },
     "000166": {
       "status": "rejected",
@@ -91,16 +91,16 @@
       "note": ""
     },
     "000172": {
-      "status": "rejected",
-      "note": ""
+      "status": "manual_correction_applied",
+      "note": "manually corrected via corner picking"
     },
     "000173": {
-      "status": "optical_flow_applied",
-      "note": "seeded from neighbor 175 (11 pts)"
+      "status": "manual_correction_applied",
+      "note": "manually corrected via corner picking"
     },
     "000174": {
-      "status": "rejected",
-      "note": ""
+      "status": "optical_flow_applied",
+      "note": "seeded from neighbor 175 (11 pts)"
     },
     "000176": {
       "status": "optical_flow_applied",
@@ -159,8 +159,8 @@
       "note": ""
     },
     "000337": {
-      "status": "rejected",
-      "note": ""
+      "status": "manual_correction_applied",
+      "note": "manually corrected via corner picking"
     },
     "000338": {
       "status": "rejected",
@@ -203,8 +203,8 @@
       "note": "seeded from neighbor 349 (11 pts)"
     },
     "000348": {
-      "status": "rejected",
-      "note": ""
+      "status": "manual_correction_applied",
+      "note": "manually corrected via corner picking"
     },
     "000350": {
       "status": "optical_flow_applied",
@@ -223,12 +223,12 @@
       "note": ""
     },
     "000354": {
-      "status": "optical_flow_applied",
-      "note": "seeded from neighbor 356 (12 pts)"
+      "status": "rejected",
+      "note": ""
     },
     "000355": {
-      "status": "optical_flow_applied",
-      "note": "seeded from neighbor 354 (12 pts)"
+      "status": "manual_correction_applied",
+      "note": "manually corrected via corner picking"
     },
     "000356": {
       "status": "optical_flow_applied",

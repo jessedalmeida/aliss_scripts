@@ -159,7 +159,7 @@ def main() -> int:
     parser.add_argument("--squares-x", type=int, default=4)
     parser.add_argument("--squares-y", type=int, default=5)
     parser.add_argument("--square-size", type=float, default=0.002)
-    parser.add_argument("--pixel-noise-sigma", type=float, default=1.0)
+    parser.add_argument("--pixel-noise-sigma", type=float, default=0.77)
     parser.add_argument("--detector-mode", choices=["auto", "sb", "legacy", "fast"], default="sb")
     parser.add_argument("--preprocess-steps", default="clahe", help="Comma-separated preprocessing steps: clahe, normalize, blur, denoise, gamma")
     parser.add_argument("--clahe-clip-limit", type=float, default=2.0)

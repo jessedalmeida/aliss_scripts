@@ -151,8 +151,8 @@
       "note": "manually corrected via corner picking"
     },
     "000407": {
-      "status": "optical_flow_applied",
-      "note": "seeded from neighbor 408 (12 pts)"
+      "status": "manual_correction_applied",
+      "note": "manually corrected via corner picking"
     },
     "000408": {
       "status": "optical_flow_applied",
