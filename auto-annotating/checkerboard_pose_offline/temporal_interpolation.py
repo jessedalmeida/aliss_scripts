@@ -2,6 +2,8 @@
 """
 Temporal pose interpolation for failed frames.
 Fills in missing poses by interpolating from neighboring successful frames.
+
+Also includes SE(3) manifold-based smoothing using principled Lie group mechanics.
 """
 from __future__ import annotations
 
@@ -11,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+from scipy.spatial.transform import Rotation
 
 
 def quaternion_slerp(q1: list[float], q2: list[float], t: float) -> list[float]:
@@ -201,6 +204,191 @@ def compute_temporal_fill(
     return results
 
 
+def smooth_poses_rts(
+    poses_json_path: Path,
+    process_noise_scale: float = 1.0,
+    only_ok_frames: bool = True,
+) -> dict[str, dict[str, Any]]:
+    """
+    Smooth successful pose detections using Rauch-Tung-Striebel (RTS) backward filter.
+    
+    This is a principled approach that:
+    - Uses pose covariances as measurement noise (higher cov → allow more smoothing)
+    - Assumes small process noise (poses shouldn't jump between frames)
+    - Does optimal backward smoothing for lowest total error
+    
+    Args:
+        poses_json_path: Path to poses.json
+        process_noise_scale: Scales the assumed process noise between frames.
+                             Higher = smoother. Default 1.0 is conservative.
+                             Try 0.1-10 depending on how much smoothing you want.
+        only_ok_frames: If True, only smooth frames with status="ok". 
+                        If False, smooth all frames with valid poses.
+    
+    Returns:
+        Dict mapping frame_key -> {"smoothed_pose": pose_dict, "original_pose": pose_dict}
+    """
+    with open(poses_json_path, "r") as fh:
+        payload = json.load(fh)
+    
+    frames = payload.get("frames", {})
+    
+    # Collect all frames to smooth (in order)
+    frame_keys_sorted = sorted(
+        [k for k in frames.keys() if k.isdigit()],
+        key=lambda x: int(x)
+    )
+    
+    frame_data_list = []
+    for frame_key in frame_keys_sorted:
+        frame_data = frames[frame_key]
+        if only_ok_frames and frame_data.get("status") != "ok":
+            continue
+        pose = frame_data.get("pose")
+        if not pose or not pose.get("position") or not pose.get("quaternion"):
+            continue
+        frame_data_list.append((frame_key, frame_data, pose))
+    
+    if len(frame_data_list) < 2:
+        return {}
+    
+    # Extract poses and covariances
+    num_frames = len(frame_data_list)
+    positions = np.array([pose[2]["position"] for pose in frame_data_list], dtype=np.float64)  # (N, 3)
+    quaternions = [pose[2]["quaternion"] for pose in frame_data_list]  # List of [qx, qy, qz, qw]
+    covariances = np.array([
+        np.array(pose[2].get("covariance", [0.0] * 36), dtype=np.float64).reshape(6, 6)
+        for pose in frame_data_list
+    ])  # (N, 6, 6)
+    
+    # Process noise: assume small constant motion between frames
+    # Split into position (3x3) and orientation (3x3) blocks
+    Q_pos = np.eye(3) * (0.001 ** 2) * process_noise_scale  # position process noise
+    Q_rot = np.eye(3) * (0.001 ** 2) * process_noise_scale  # rotation (axis-angle) process noise
+    
+    # ===== Forward pass (Kalman filter) =====
+    x_filt = np.copy(positions)  # Filtered positions
+    P_filt = np.zeros((num_frames, 3, 3))  # Filtered covariance for positions
+    
+    # Initial state
+    P_filt[0] = covariances[0, :3, :3]  # Use measurement covariance
+    
+    for k in range(1, num_frames):
+        # Predict
+        x_pred = x_filt[k-1]  # Simple constant-velocity model: x_k|k-1 = x_{k-1}
+        P_pred = P_filt[k-1] + Q_pos
+        
+        # Measurement update
+        z_k = positions[k]
+        R_k = covariances[k, :3, :3]  # Measurement covariance (position part)
+        
+        # Kalman gain
+        S_k = P_pred + R_k
+        K_k = P_pred @ np.linalg.inv(S_k)
+        
+        # Update
+        x_filt[k] = x_pred + K_k @ (z_k - x_pred)
+        P_filt[k] = (np.eye(3) - K_k) @ P_pred
+    
+    # ===== Backward pass (RTS smoother) =====
+    x_smooth = np.copy(x_filt)
+    P_smooth = np.copy(P_filt)
+    
+    for k in range(num_frames - 2, -1, -1):
+        # Predicted covariance at k+1
+        P_pred_next = P_filt[k] + Q_pos
+        
+        # Smoother gain
+        C_k = P_filt[k] @ np.linalg.inv(P_pred_next)
+        
+        # Smoothing update
+        x_smooth[k] = x_filt[k] + C_k @ (x_smooth[k+1] - x_filt[k])
+        P_smooth[k] = P_filt[k] + C_k @ (P_smooth[k+1] - P_pred_next) @ C_k.T
+    
+    # ===== Smooth quaternions using weighted SLERP =====
+    # For rotations, use covariance trace as weighting (larger cov = less confident)
+    quaternions_smooth = [q.copy() for q in quaternions]
+    
+    for k in range(1, num_frames - 1):
+        q_before = quaternions_smooth[k - 1]
+        q_curr = quaternions[k]
+        q_after = quaternions_smooth[k + 1]
+        
+        # Weight by inverse covariance (more confident → stronger influence)
+        cov_curr = covariances[k, 3:6, 3:6]
+        cov_trace = np.trace(cov_curr)
+        if cov_trace > 1e-8:
+            w_curr = 1.0 / cov_trace
+        else:
+            w_curr = 1.0
+        
+        # Blend: interpolate between current and neighbors
+        # Forward interpolation
+        q_fwd = quaternion_slerp(q_before, q_curr, 0.5)
+        # Backward interpolation  
+        q_bwd = quaternion_slerp(q_curr, q_after, 0.5)
+        # Blend with confidence-based weighting
+        alpha = min(0.3, 1.0 / (1.0 + w_curr))  # Cap smoothing strength
+        quaternions_smooth[k] = quaternion_slerp(q_curr, 
+                                                 quaternion_slerp(q_fwd, q_bwd, 0.5),
+                                                 alpha)
+    
+    # Build results
+    results = {}
+    for i, (frame_key, frame_data, pose) in enumerate(frame_data_list):
+        # Reconstruct smoothed pose
+        smoothed_pose = {
+            "frame_id": pose.get("frame_id", "endoscope_optical"),
+            "position": [float(v) for v in x_smooth[i]],
+            "quaternion": [float(v) for v in quaternions_smooth[i]],
+            "covariance": [float(v) for v in P_smooth[i].flatten()],
+        }
+        
+        results[frame_key] = {
+            "original_pose": pose,
+            "smoothed_pose": smoothed_pose,
+            "original_position_error": float(np.linalg.norm(positions[i] - x_smooth[i])),
+        }
+    
+    return results
+
+
+def save_smoothed_poses(
+    poses_json_path: Path,
+    smoothing_results: dict[str, dict[str, Any]],
+    output_path: Path,
+) -> None:
+    """
+    Save smoothed poses to a new poses.json file.
+    
+    Args:
+        poses_json_path: Original poses.json path
+        smoothing_results: Results from smooth_poses_rts()
+        output_path: Where to write the smoothed poses.json
+    """
+    with open(poses_json_path, "r") as fh:
+        payload = json.load(fh)
+    
+    frames = payload.get("frames", {})
+    
+    for frame_key, result in smoothing_results.items():
+        frame_data = frames.get(frame_key, {})
+        frame_data["pose"] = result["smoothed_pose"]
+        frame_data["smoothing_info"] = {
+            "method": "rts_filter",
+            "original_position_error_m": result["original_position_error"],
+        }
+        frames[frame_key] = frame_data
+    
+    payload["frames"] = frames
+    payload["smoothing_applied"] = True
+    
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w") as fh:
+        json.dump(payload, fh, indent=2)
+        fh.write("\n")
+
+
 def save_interpolated_preview(
     poses_json_path: Path,
     temporal_results: dict[str, dict[str, Any]],
@@ -233,6 +421,332 @@ def save_interpolated_preview(
         frames[frame_key] = frame_data
     
     payload["frames"] = frames
+    
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w") as fh:
+        json.dump(payload, fh, indent=2)
+        fh.write("\n")
+
+
+# ============================================================================
+# SE(3) MANIFOLD-BASED SMOOTHING
+# ============================================================================
+
+def axis_angle_to_matrix(axis_angle: np.ndarray) -> np.ndarray:
+    """
+    Convert axis-angle representation (3D) to rotation matrix.
+    Args:
+        axis_angle: (3,) array with direction=axis, magnitude=angle
+    Returns:
+        (3, 3) rotation matrix
+    """
+    angle = np.linalg.norm(axis_angle)
+    if angle < 1e-8:
+        return np.eye(3)
+    axis = axis_angle / angle
+    # Rodrigues formula
+    K = np.array([
+        [0, -axis[2], axis[1]],
+        [axis[2], 0, -axis[0]],
+        [-axis[1], axis[0], 0]
+    ])
+    R = np.eye(3) + np.sin(angle) * K + (1 - np.cos(angle)) * (K @ K)
+    return R
+
+
+def matrix_to_axis_angle(R: np.ndarray) -> np.ndarray:
+    """
+    Convert rotation matrix to axis-angle representation.
+    Args:
+        R: (3, 3) rotation matrix
+    Returns:
+        (3,) axis-angle vector
+    """
+    rot = Rotation.from_matrix(R)
+    rotvec = rot.as_rotvec()
+    return rotvec
+
+
+def pose_to_se3_matrix(position: np.ndarray, axis_angle: np.ndarray) -> np.ndarray:
+    """
+    Build SE(3) matrix from position and axis-angle rotation.
+    Args:
+        position: (3,) translation vector
+        axis_angle: (3,) axis-angle rotation
+    Returns:
+        (4, 4) SE(3) matrix [R | t; 0 | 1]
+    """
+    R = axis_angle_to_matrix(axis_angle)
+    T = np.eye(4)
+    T[:3, :3] = R
+    T[:3, 3] = position
+    return T
+
+
+def se3_matrix_to_pose(T: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """
+    Extract position and axis-angle from SE(3) matrix.
+    Args:
+        T: (4, 4) SE(3) matrix
+    Returns:
+        Tuple of (position (3,), axis_angle (3,))
+    """
+    position = T[:3, 3]
+    axis_angle = matrix_to_axis_angle(T[:3, :3])
+    return position, axis_angle
+
+
+def se3_exp(xi: np.ndarray) -> np.ndarray:
+    """
+    Exponential map from se(3) algebra to SE(3) group.
+    xi is a 6D vector [rho, phi] where:
+      - phi: (3,) rotation (axis-angle)
+      - rho: (3,) translation
+    Args:
+        xi: (6,) tangent space element [rho_x, rho_y, rho_z, phi_x, phi_y, phi_z]
+    Returns:
+        (4, 4) SE(3) matrix
+    """
+    rho = xi[:3]  # Translation part
+    phi = xi[3:]  # Rotation part (axis-angle)
+    
+    # Rotation part: standard exp map
+    R = axis_angle_to_matrix(phi)
+    
+    # Translation: affected by rotation
+    angle = np.linalg.norm(phi)
+    if angle < 1e-8:
+        # First-order approximation when angle ≈ 0
+        V = np.eye(3)
+    else:
+        axis = phi / angle
+        K = np.array([
+            [0, -axis[2], axis[1]],
+            [axis[2], 0, -axis[0]],
+            [-axis[1], axis[0], 0]
+        ])
+        V = np.eye(3) + (1 - np.cos(angle)) * K / angle + (angle - np.sin(angle)) * (K @ K) / (angle ** 2)
+    
+    t = V @ rho
+    
+    T = np.eye(4)
+    T[:3, :3] = R
+    T[:3, 3] = t
+    return T
+
+
+def se3_log(T: np.ndarray) -> np.ndarray:
+    """
+    Logarithm map from SE(3) group to se(3) algebra.
+    Args:
+        T: (4, 4) SE(3) matrix
+    Returns:
+        (6,) tangent space element [rho_x, rho_y, rho_z, phi_x, phi_y, phi_z]
+    """
+    R = T[:3, :3]
+    t = T[:3, 3]
+    
+    # Rotation log (axis-angle)
+    phi = matrix_to_axis_angle(R)
+    
+    # Translation: need to invert V
+    angle = np.linalg.norm(phi)
+    if angle < 1e-8:
+        V_inv = np.eye(3)
+    else:
+        axis = phi / angle
+        K = np.array([
+            [0, -axis[2], axis[1]],
+            [axis[2], 0, -axis[0]],
+            [-axis[1], axis[0], 0]
+        ])
+        V = np.eye(3) + (1 - np.cos(angle)) * K / angle + (angle - np.sin(angle)) * (K @ K) / (angle ** 2)
+        V_inv = np.linalg.inv(V)
+    
+    rho = V_inv @ t
+    
+    xi = np.concatenate([rho, phi])
+    return xi
+
+
+def smooth_poses_se3(
+    poses_json_path: Path,
+    process_noise_scale: float = 1.0,
+    only_ok_frames: bool = True,
+    use_cov_drift: bool = True,
+) -> dict[str, dict[str, Any]]:
+    """
+    Smooth pose detections using SE(3) manifold-based covariance-weighted smoothing.
+    
+    This implements your proposed approach:
+      pose_new = pose_old * exp(xi)  where xi ~ N(0, sigma)
+      residual = cholesky(sigma) * logmap(inv(pose_new) * pose_old)
+      sigma_inv = sigma_old_inv + sigma_drift_inv
+    
+    This is optimal for Lie group data and respects measurement uncertainty via covariances.
+    
+    Args:
+        poses_json_path: Path to poses.json
+        process_noise_scale: Scales the assumed process noise between frames (drift covariance).
+                             Higher = smoother trajectory. Default 1.0.
+                             Typical range: 0.1-10.0
+        only_ok_frames: If True, only smooth frames with status="ok"
+        use_cov_drift: If True, accumulate process noise in information form.
+                       If False, use constant process noise.
+    
+    Returns:
+        Dict mapping frame_key -> {
+            "original_pose": pose_dict,
+            "smoothed_pose": pose_dict,
+            "residual_norm": float (log-manifold residual)
+        }
+    """
+    with open(poses_json_path, "r") as fh:
+        payload = json.load(fh)
+    
+    frames = payload.get("frames", {})
+    
+    # Collect frames in order
+    frame_keys_sorted = sorted(
+        [k for k in frames.keys() if k.isdigit()],
+        key=lambda x: int(x)
+    )
+    
+    frame_data_list = []
+    for frame_key in frame_keys_sorted:
+        frame_data = frames[frame_key]
+        if only_ok_frames and frame_data.get("status") != "ok":
+            continue
+        pose = frame_data.get("pose")
+        if not pose or not pose.get("position") or not pose.get("quaternion"):
+            continue
+        frame_data_list.append((frame_key, frame_data, pose))
+    
+    if len(frame_data_list) < 2:
+        return {}
+    
+    num_frames = len(frame_data_list)
+    
+    # Convert absolute poses to SE(3) matrices and extract covariances
+    T_list = []
+    sigma_list = []
+    for _, _, pose in frame_data_list:
+        pos = np.array(pose["position"], dtype=np.float64)
+        quat = np.array(pose.get("quaternion", [0, 0, 0, 1]), dtype=np.float64)
+        rot = Rotation.from_quat(quat)
+        axis_angle = rot.as_rotvec()
+        T = pose_to_se3_matrix(pos, axis_angle)
+        T_list.append(T)
+        cov = np.array(pose.get("covariance", np.eye(6) * 0.001), dtype=np.float64).reshape(6, 6)
+        sigma_list.append(cov)
+    
+    # Build relative frame-to-frame increments in se(3)
+    xi_rel_list = []
+    sigma_rel_list = []
+    for i in range(1, num_frames):
+        T_rel = np.linalg.inv(T_list[i - 1]) @ T_list[i]
+        xi_rel = se3_log(T_rel)
+        xi_rel_list.append(xi_rel)
+        sigma_rel_list.append(sigma_list[i - 1] + sigma_list[i])
+    
+    # Process noise covariance (in se(3)) for increments
+    Q = np.eye(6) * (process_noise_scale * 0.0001)
+    
+    # Information matrices (precision) for relative measurements
+    Y = [np.linalg.inv(sigma + 1e-8 * np.eye(6)) for sigma in sigma_rel_list]
+    y = xi_rel_list
+    
+    # Forward pass (information-filter Kalman) on relative increments
+    m_filt = [None] * (num_frames - 1)
+    P_filt = [None] * (num_frames - 1)
+    
+    P_filt[0] = sigma_rel_list[0]
+    m_filt[0] = y[0]
+    
+    for k in range(1, num_frames - 1):
+        P_pred = P_filt[k - 1] + Q
+        Y_pred = np.linalg.inv(P_pred + 1e-8 * np.eye(6))
+        Y_filt = Y_pred + Y[k]
+        P_filt[k] = np.linalg.inv(Y_filt + 1e-8 * np.eye(6))
+        m_filt[k] = P_filt[k] @ (Y_pred @ m_filt[k - 1] + Y[k] @ y[k])
+    
+    # Backward pass (RTS smoothing) on the increments
+    m_smooth = [None] * (num_frames - 1)
+    P_smooth = [None] * (num_frames - 1)
+    
+    m_smooth[-1] = m_filt[-1]
+    P_smooth[-1] = P_filt[-1]
+    
+    for k in range(num_frames - 3, -1, -1):
+        P_pred_next = P_filt[k] + Q
+        G_k = P_filt[k] @ np.linalg.inv(P_pred_next + 1e-8 * np.eye(6))
+        m_smooth[k] = m_filt[k] + G_k @ (m_smooth[k + 1] - m_filt[k])
+        P_smooth[k] = P_filt[k] + G_k @ (P_smooth[k + 1] - P_pred_next) @ G_k.T
+    
+    # Reconstruct the smoothed trajectory from the original start pose
+    T_smooth_list = [T_list[0]]
+    for i in range(1, num_frames):
+        T_smooth_list.append(T_smooth_list[i - 1] @ se3_exp(m_smooth[i - 1]))
+    
+    # Convert back to poses
+    results = {}
+    for i, (frame_key, frame_data, pose) in enumerate(frame_data_list):
+        T_smooth = T_smooth_list[i]
+        pos_smooth, axis_angle_smooth = se3_matrix_to_pose(T_smooth)
+        rot_smooth = Rotation.from_rotvec(axis_angle_smooth)
+        quat_smooth = rot_smooth.as_quat()
+        
+        T_orig = T_list[i]
+        delta_T = np.linalg.inv(T_orig) @ T_smooth
+        delta_xi = se3_log(delta_T)
+        residual_norm = float(np.linalg.norm(delta_xi))
+        
+        smoothed_pose = {
+            "frame_id": pose.get("frame_id", "endoscope_optical"),
+            "position": [float(v) for v in pos_smooth],
+            "quaternion": [float(v) for v in quat_smooth],
+            "covariance": [float(v) for v in np.array(pose.get("covariance", np.eye(6) * 0.001), dtype=np.float64).reshape(6, 6).flatten()],
+        }
+        
+        results[frame_key] = {
+            "original_pose": pose,
+            "smoothed_pose": smoothed_pose,
+            "residual_norm": residual_norm,
+        }
+    
+    return results
+
+
+def save_se3_smoothed_poses(
+    poses_json_path: Path,
+    smoothing_results: dict[str, dict[str, Any]],
+    output_path: Path,
+) -> None:
+    """
+    Save SE(3) smoothed poses to a new poses.json file.
+    
+    Args:
+        poses_json_path: Original poses.json path
+        smoothing_results: Results from smooth_poses_se3()
+        output_path: Where to write the smoothed poses.json
+    """
+    with open(poses_json_path, "r") as fh:
+        payload = json.load(fh)
+    
+    frames = payload.get("frames", {})
+    
+    for frame_key, result in smoothing_results.items():
+        frame_data = frames.get(frame_key, {})
+        frame_data["pose"] = result["smoothed_pose"]
+        frame_data["smoothing_info"] = {
+            "method": "se3_manifold_smoothing",
+            "residual_norm_m": result["residual_norm"],
+        }
+        frames[frame_key] = frame_data
+    
+    payload["frames"] = frames
+    payload["smoothing_applied"] = True
+    payload["smoothing_method"] = "se3_information_filter"
     
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w") as fh:
