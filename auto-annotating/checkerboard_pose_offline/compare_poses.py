@@ -188,14 +188,16 @@ def main():
         description="Compare original vs smoothed poses"
     )
     parser.add_argument(
-        "poses_original",
+        "--ann-dir",
         type=Path,
-        help="Path to original poses.json",
+        required=True,
+        help="Path to the annotation directory containing bag subfolders",
     )
     parser.add_argument(
-        "poses_smoothed",
-        type=Path,
-        help="Path to smoothed poses.json",
+        "--bag",
+        type=str,
+        required=True,
+        help="Bag folder name under the annotation directory",
     )
     parser.add_argument(
         "--output",
@@ -206,9 +208,13 @@ def main():
     
     args = parser.parse_args()
     
-    poses_orig = args.poses_original.resolve()
-    poses_smooth = args.poses_smoothed.resolve()
+    bag_dir = args.ann_dir.resolve() / Path(args.bag)
+    poses_orig = bag_dir / "poses.json"
+    poses_smooth = bag_dir / "poses_smooth.json"
     
+    if not bag_dir.exists():
+        print(f"Error: bag directory not found: {bag_dir}")
+        return 1
     if not poses_orig.exists():
         print(f"Error: {poses_orig} not found")
         return 1

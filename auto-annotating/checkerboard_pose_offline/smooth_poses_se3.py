@@ -6,7 +6,7 @@ This applies principled covariance-weighted smoothing that respects measurement
 uncertainty and follows Lie group geometry for rotation manifolds.
 
 Usage:
-    python smooth_poses_se3.py /path/to/poses.json --noise-scale 1.0 --output poses_smooth.json
+    python smooth_poses_se3.py --ann-dir ./annotations --bag ch_circlexy --noise-scale 1.0
 """
 from __future__ import annotations
 
@@ -24,9 +24,16 @@ def main():
         description="Smooth checkerboard poses using SE(3) manifold smoothing"
     )
     parser.add_argument(
-        "poses_json",
+        "--ann-dir",
         type=Path,
-        help="Path to poses.json file",
+        required=True,
+        help="Path to annotations directory containing bag subdirectories",
+    )
+    parser.add_argument(
+        "--bag",
+        type=str,
+        required=True,
+        help="Bag folder name under the annotation directory",
     )
     parser.add_argument(
         "--noise-scale",
@@ -38,7 +45,7 @@ def main():
         "--output",
         type=Path,
         default=None,
-        help="Output path. Default: poses_smooth.json in same directory.",
+        help="Output path. Default: poses_smooth.json in the bag directory.",
     )
     parser.add_argument(
         "--compare",
@@ -59,12 +66,16 @@ def main():
     
     args = parser.parse_args()
     
-    poses_json_path = args.poses_json.resolve()
+    bag_dir = args.ann_dir.resolve() / Path(args.bag)
+    poses_json_path = bag_dir / "poses.json"
+    if not bag_dir.exists():
+        print(f"Error: bag directory not found: {bag_dir}")
+        return 1
     if not poses_json_path.exists():
         print(f"Error: poses.json not found at {poses_json_path}")
         return 1
     
-    output_path = args.output or poses_json_path.parent / "poses_smooth.json"
+    output_path = args.output or bag_dir / "poses_smooth.json"
     output_path = output_path.resolve()
     
     only_ok_frames = not args.all_frames
@@ -115,8 +126,10 @@ def main():
         result = subprocess.run([
             sys.executable,
             str(compare_script),
-            str(poses_json_path),
-            str(output_path),
+            "--ann-dir",
+            str(args.ann_dir.resolve()),
+            "--bag",
+            args.bag,
         ])
         if result.returncode != 0:
             return result.returncode

@@ -577,41 +577,48 @@ def smooth_poses_se3(
 ) -> dict[str, dict[str, Any]]:
     """
     Smooth pose detections using SE(3) manifold-based covariance-weighted smoothing.
-    
-    This implements your proposed approach:
-      pose_new = pose_old * exp(xi)  where xi ~ N(0, sigma)
-      residual = cholesky(sigma) * logmap(inv(pose_new) * pose_old)
-      sigma_inv = sigma_old_inv + sigma_drift_inv
-    
-    This is optimal for Lie group data and respects measurement uncertainty via covariances.
-    
+
+    Implements a Rauch-Tung-Striebel (RTS) smoother directly on the ABSOLUTE pose
+    measurements, treating each detected pose as an independent observation of the
+    true pose at that frame.
+
+    Position is smoothed with a standard linear RTS filter.
+    Rotation is smoothed with a geodesic SO(3) RTS filter that linearises in the
+    tangent space of the current filtered estimate, avoiding cumulative drift.
+
+    Previous versions smoothed the *relative* frame-to-frame increments (xi_rel)
+    and then reconstructed the trajectory by chaining exp(xi_smooth) from the
+    first frame.  That is a dead-reckoning reconstruction: any per-step smoothing
+    deviation accumulates into a growing constant offset from the true absolute
+    measurements.  This version keeps the filter state anchored to the absolute
+    measurements so no such drift can occur.
+
     Args:
         poses_json_path: Path to poses.json
-        process_noise_scale: Scales the assumed process noise between frames (drift covariance).
+        process_noise_scale: Scales the assumed process noise between frames.
                              Higher = smoother trajectory. Default 1.0.
                              Typical range: 0.1-10.0
         only_ok_frames: If True, only smooth frames with status="ok"
-        use_cov_drift: If True, accumulate process noise in information form.
-                       If False, use constant process noise.
-    
+        use_cov_drift: Unused; kept for API compatibility.
+
     Returns:
         Dict mapping frame_key -> {
             "original_pose": pose_dict,
             "smoothed_pose": pose_dict,
-            "residual_norm": float (log-manifold residual)
+            "residual_norm": float (log-manifold distance between smoothed and original)
         }
     """
     with open(poses_json_path, "r") as fh:
         payload = json.load(fh)
-    
+
     frames = payload.get("frames", {})
-    
+
     # Collect frames in order
     frame_keys_sorted = sorted(
         [k for k in frames.keys() if k.isdigit()],
         key=lambda x: int(x)
     )
-    
+
     frame_data_list = []
     for frame_key in frame_keys_sorted:
         frame_data = frames[frame_key]
@@ -621,99 +628,116 @@ def smooth_poses_se3(
         if not pose or not pose.get("position") or not pose.get("quaternion"):
             continue
         frame_data_list.append((frame_key, frame_data, pose))
-    
+
     if len(frame_data_list) < 2:
         return {}
-    
+
     num_frames = len(frame_data_list)
-    
-    # Convert absolute poses to SE(3) matrices and extract covariances
-    T_list = []
-    sigma_list = []
-    for _, _, pose in frame_data_list:
-        pos = np.array(pose["position"], dtype=np.float64)
-        quat = np.array(pose.get("quaternion", [0, 0, 0, 1]), dtype=np.float64)
-        rot = Rotation.from_quat(quat)
-        axis_angle = rot.as_rotvec()
-        T = pose_to_se3_matrix(pos, axis_angle)
-        T_list.append(T)
-        cov = np.array(pose.get("covariance", np.eye(6) * 0.001), dtype=np.float64).reshape(6, 6)
-        sigma_list.append(cov)
-    
-    # Build relative frame-to-frame increments in se(3)
-    xi_rel_list = []
-    sigma_rel_list = []
-    for i in range(1, num_frames):
-        T_rel = np.linalg.inv(T_list[i - 1]) @ T_list[i]
-        xi_rel = se3_log(T_rel)
-        xi_rel_list.append(xi_rel)
-        sigma_rel_list.append(sigma_list[i - 1] + sigma_list[i])
-    
-    # Process noise covariance (in se(3)) for increments
-    Q = np.eye(6) * (process_noise_scale * 0.0001)
-    
-    # Information matrices (precision) for relative measurements
-    Y = [np.linalg.inv(sigma + 1e-8 * np.eye(6)) for sigma in sigma_rel_list]
-    y = xi_rel_list
-    
-    # Forward pass (information-filter Kalman) on relative increments
-    m_filt = [None] * (num_frames - 1)
-    P_filt = [None] * (num_frames - 1)
-    
-    P_filt[0] = sigma_rel_list[0]
-    m_filt[0] = y[0]
-    
-    for k in range(1, num_frames - 1):
-        P_pred = P_filt[k - 1] + Q
-        Y_pred = np.linalg.inv(P_pred + 1e-8 * np.eye(6))
-        Y_filt = Y_pred + Y[k]
-        P_filt[k] = np.linalg.inv(Y_filt + 1e-8 * np.eye(6))
-        m_filt[k] = P_filt[k] @ (Y_pred @ m_filt[k - 1] + Y[k] @ y[k])
-    
-    # Backward pass (RTS smoothing) on the increments
-    m_smooth = [None] * (num_frames - 1)
-    P_smooth = [None] * (num_frames - 1)
-    
-    m_smooth[-1] = m_filt[-1]
-    P_smooth[-1] = P_filt[-1]
-    
-    for k in range(num_frames - 3, -1, -1):
-        P_pred_next = P_filt[k] + Q
-        G_k = P_filt[k] @ np.linalg.inv(P_pred_next + 1e-8 * np.eye(6))
-        m_smooth[k] = m_filt[k] + G_k @ (m_smooth[k + 1] - m_filt[k])
-        P_smooth[k] = P_filt[k] + G_k @ (P_smooth[k + 1] - P_pred_next) @ G_k.T
-    
-    # Reconstruct the smoothed trajectory from the original start pose
-    T_smooth_list = [T_list[0]]
-    for i in range(1, num_frames):
-        T_smooth_list.append(T_smooth_list[i - 1] @ se3_exp(m_smooth[i - 1]))
-    
-    # Convert back to poses
+
+    # Parse measurements
+    positions = np.array([f[2]["position"] for f in frame_data_list], dtype=np.float64)
+    quats_meas = [Rotation.from_quat(np.array(f[2]["quaternion"], dtype=np.float64))
+                  for f in frame_data_list]
+    covs = [
+        np.array(f[2].get("covariance", np.eye(6) * 0.001), dtype=np.float64).reshape(6, 6)
+        for f in frame_data_list
+    ]
+
+    # Process noise (random-walk model between frames).
+    # Scale position and rotation Q relative to the median measurement covariance
+    # per axis so each axis is smoothed according to its own uncertainty.
+    # At scale=1.0, Q ~ median(R) along each axis.
+    # scale > 1  →  Q > R  →  trust measurements more  →  less smoothing.
+    # scale < 1  →  Q < R  →  trust motion model more  →  more smoothing.
+    median_pos_var = np.median([c[:3, :3].diagonal() for c in covs], axis=0)
+    median_rot_var = np.median([c[3:, 3:].diagonal() for c in covs], axis=0)
+    Q_pos = np.diag(median_pos_var * process_noise_scale)
+    Q_rot = np.diag(median_rot_var * process_noise_scale)
+
+    # ── Position: standard linear RTS ──────────────────────────────────────────
+    m_pos_filt = np.zeros((num_frames, 3))
+    P_pos_filt = np.zeros((num_frames, 3, 3))
+    m_pos_filt[0] = positions[0]
+    P_pos_filt[0] = covs[0][:3, :3]
+
+    for k in range(1, num_frames):
+        P_pred = P_pos_filt[k - 1] + Q_pos
+        S = P_pred + covs[k][:3, :3]
+        K = P_pred @ np.linalg.inv(S)
+        m_pos_filt[k] = m_pos_filt[k - 1] + K @ (positions[k] - m_pos_filt[k - 1])
+        P_pos_filt[k] = (np.eye(3) - K) @ P_pred
+
+    m_pos_smooth = m_pos_filt.copy()
+    P_pos_smooth = P_pos_filt.copy()
+    for k in range(num_frames - 2, -1, -1):
+        P_pred = P_pos_filt[k] + Q_pos
+        G = P_pos_filt[k] @ np.linalg.inv(P_pred)
+        m_pos_smooth[k] = m_pos_filt[k] + G @ (m_pos_smooth[k + 1] - m_pos_filt[k])
+        P_pos_smooth[k] = P_pos_filt[k] + G @ (P_pos_smooth[k + 1] - P_pred) @ G.T
+
+    # ── Rotation: geodesic SO(3) RTS ───────────────────────────────────────────
+    # State: a Rotation R_filt[k], covariance 3×3 in the local tangent space.
+    # Prediction: R_pred = R_filt[k-1], P_pred = P_filt[k-1] + Q_rot (const-vel prior).
+    # Update: innovation = log(R_meas * R_pred^{-1}) computed in tangent space of R_pred.
+    R_filt: list[Rotation] = [None] * num_frames  # type: ignore[assignment]
+    P_rot_filt = [None] * num_frames
+
+    R_filt[0] = quats_meas[0]
+    P_rot_filt[0] = covs[0][3:, 3:]
+
+    for k in range(1, num_frames):
+        # Predict
+        P_pred = P_rot_filt[k - 1] + Q_rot
+        R_pred = R_filt[k - 1]
+        # Innovation in tangent space of R_pred
+        delta = (quats_meas[k] * R_pred.inv()).as_rotvec()
+        S = P_pred + covs[k][3:, 3:]
+        K = P_pred @ np.linalg.inv(S)
+        delta_upd = K @ delta
+        R_filt[k] = Rotation.from_rotvec(delta_upd) * R_pred
+        P_rot_filt[k] = (np.eye(3) - K) @ P_pred
+
+    # Backward RTS on SO(3): smoother gain applied in tangent space of R_filt[k]
+    R_smooth: list[Rotation] = list(R_filt)
+    P_rot_smooth = list(P_rot_filt)
+    for k in range(num_frames - 2, -1, -1):
+        P_pred = P_rot_filt[k] + Q_rot
+        G = P_rot_filt[k] @ np.linalg.inv(P_pred)
+        # Smoother correction: tangent vector from R_filt[k] toward R_smooth[k+1]
+        delta_smooth = (R_smooth[k + 1] * R_filt[k].inv()).as_rotvec()
+        delta_upd = G @ delta_smooth
+        R_smooth[k] = Rotation.from_rotvec(delta_upd) * R_filt[k]
+        P_rot_smooth[k] = P_rot_filt[k] + G @ (P_rot_smooth[k + 1] - P_pred) @ G.T
+
+    # ── Build results ───────────────────────────────────────────────────────────
     results = {}
     for i, (frame_key, frame_data, pose) in enumerate(frame_data_list):
-        T_smooth = T_smooth_list[i]
-        pos_smooth, axis_angle_smooth = se3_matrix_to_pose(T_smooth)
-        rot_smooth = Rotation.from_rotvec(axis_angle_smooth)
-        quat_smooth = rot_smooth.as_quat()
-        
-        T_orig = T_list[i]
-        delta_T = np.linalg.inv(T_orig) @ T_smooth
-        delta_xi = se3_log(delta_T)
-        residual_norm = float(np.linalg.norm(delta_xi))
-        
+        pos_smooth = m_pos_smooth[i]
+        quat_smooth = R_smooth[i].as_quat()
+
+        # Residual: SE(3) log distance between smoothed and original poses
+        T_orig = pose_to_se3_matrix(
+            np.array(pose["position"], dtype=np.float64),
+            Rotation.from_quat(np.array(pose["quaternion"], dtype=np.float64)).as_rotvec(),
+        )
+        T_sm = pose_to_se3_matrix(pos_smooth, R_smooth[i].as_rotvec())
+        residual_norm = float(np.linalg.norm(se3_log(np.linalg.inv(T_orig) @ T_sm)))
+
         smoothed_pose = {
             "frame_id": pose.get("frame_id", "endoscope_optical"),
             "position": [float(v) for v in pos_smooth],
             "quaternion": [float(v) for v in quat_smooth],
-            "covariance": [float(v) for v in np.array(pose.get("covariance", np.eye(6) * 0.001), dtype=np.float64).reshape(6, 6).flatten()],
+            "covariance": [float(v) for v in
+                           np.array(pose.get("covariance", np.eye(6) * 0.001),
+                                    dtype=np.float64).reshape(6, 6).flatten()],
         }
-        
+
         results[frame_key] = {
             "original_pose": pose,
             "smoothed_pose": smoothed_pose,
             "residual_norm": residual_norm,
         }
-    
+
     return results
 
 

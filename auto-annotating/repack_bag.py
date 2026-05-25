@@ -218,7 +218,7 @@ def load_keypoints_for_bag(ann_dir: Path, bag_stem: str) -> dict[int, dict]:
 
 
 def load_poses_for_bag(ann_dir: Path, bag_stem: str) -> dict[int, dict]:
-    poses_path = ann_dir / bag_stem / "poses.json"
+    poses_path = ann_dir / bag_stem / "poses_smooth.json"
     if not poses_path.exists():
         return {}
 

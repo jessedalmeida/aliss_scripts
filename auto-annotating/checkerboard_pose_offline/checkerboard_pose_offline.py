@@ -416,40 +416,76 @@ def check_points_colinear(points: list[tuple[float, float]]) -> bool:
         return True
     return (eigvals[-1] / eigvals[0]) < 1e-2
 
-
-def _solve_pnp_refine(object_points: np.ndarray, image_points: np.ndarray, camera_matrix: np.ndarray, distortion_coeffs: np.ndarray) -> tuple[np.ndarray, np.ndarray] | None:
+def _solve_pnp_refine(
+    object_points: np.ndarray,
+    image_points: np.ndarray,
+    camera_matrix: np.ndarray,
+    distortion_coeffs: np.ndarray,
+    rvec: np.ndarray | None = None,
+    tvec: np.ndarray | None = None,
+) -> tuple[np.ndarray, np.ndarray] | None:
     if len(object_points) < 4:
         return None
 
-    ok, rvec, tvec = cv2.solvePnP(
-        object_points,
-        image_points,
-        camera_matrix,
-        distortion_coeffs,
-        flags=cv2.SOLVEPNP_EPNP,
-    )
+    object_points = np.asarray(object_points, dtype=np.float64)
+    image_points = np.asarray(image_points, dtype=np.float64)
+
+    has_guess = rvec is not None and tvec is not None
+
+    if has_guess:
+        rvec0 = np.asarray(rvec, dtype=np.float64).reshape(3, 1)
+        tvec0 = np.asarray(tvec, dtype=np.float64).reshape(3, 1)
+
+        ok, rvec_est, tvec_est = cv2.solvePnP(
+            object_points,
+            image_points,
+            camera_matrix,
+            distortion_coeffs,
+            rvec=rvec0,
+            tvec=tvec0,
+            useExtrinsicGuess=True,
+            flags=cv2.SOLVEPNP_ITERATIVE,
+        )
+    else:
+        ok, rvec_est, tvec_est = cv2.solvePnP(
+            object_points,
+            image_points,
+            camera_matrix,
+            distortion_coeffs,
+            flags=cv2.SOLVEPNP_EPNP,
+        )
+
     if not ok:
         return None
 
     refine = getattr(cv2, "solvePnPRefineLM", None)
     if refine is not None:
-        rvec, tvec = refine(object_points, image_points, camera_matrix, distortion_coeffs, rvec, tvec)
+        rvec_est, tvec_est = refine(
+            object_points,
+            image_points,
+            camera_matrix,
+            distortion_coeffs,
+            rvec_est,
+            tvec_est,
+        )
     else:
         ok_iter, rvec_iter, tvec_iter = cv2.solvePnP(
             object_points,
             image_points,
             camera_matrix,
             distortion_coeffs,
-            rvec=rvec,
-            tvec=tvec,
+            rvec=rvec_est,
+            tvec=tvec_est,
             useExtrinsicGuess=True,
             flags=cv2.SOLVEPNP_ITERATIVE,
         )
         if ok_iter:
-            rvec, tvec = rvec_iter, tvec_iter
+            rvec_est, tvec_est = rvec_iter, tvec_iter
 
-    return np.asarray(rvec, dtype=np.float64).reshape(3, 1), np.asarray(tvec, dtype=np.float64).reshape(3, 1)
-
+    return (
+        np.asarray(rvec_est, dtype=np.float64).reshape(3, 1),
+        np.asarray(tvec_est, dtype=np.float64).reshape(3, 1),
+    )
 
 def compute_pose_covariance(
     object_points: np.ndarray,

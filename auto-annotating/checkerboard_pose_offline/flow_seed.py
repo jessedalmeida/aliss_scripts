@@ -143,10 +143,57 @@ def try_optical_flow_seed(
         tracked_object_points = np.asarray(object_points, dtype=np.float64)[good_idx]
 
         # Solve PnP
-        res = _solve_pnp_refine(tracked_object_points, tracked_image_points, camera_matrix, distortion)
+        # Get neighbor pose as initialization
+        prev_pose = nb_entry.get("pose")
+        prev_rvec = None
+        prev_tvec = None
+
+        if prev_pose is not None:
+            quat = np.asarray(prev_pose["quaternion"], dtype=np.float64)
+            pos = np.asarray(prev_pose["position"], dtype=np.float64).reshape(3, 1)
+
+            qx, qy, qz, qw = quat
+
+            R_prev = np.array([
+                [1 - 2*(qy*qy + qz*qz), 2*(qx*qy - qz*qw),     2*(qx*qz + qy*qw)],
+                [2*(qx*qy + qz*qw),     1 - 2*(qx*qx + qz*qz), 2*(qy*qz - qx*qw)],
+                [2*(qx*qz - qy*qw),     2*(qy*qz + qx*qw),     1 - 2*(qx*qx + qy*qy)],
+            ], dtype=np.float64)
+
+            prev_rvec, _ = cv2.Rodrigues(R_prev)
+            prev_tvec = pos
+
+        # Solve using temporal initialization
+        res = _solve_pnp_refine(
+            object_points,
+            next_pts,
+            camera_matrix,
+            distortion,
+            rvec=prev_rvec,
+            tvec=prev_tvec,
+        )
+
         if res is None:
             continue
+
         rvec, tvec = res
+        
+        prev_pose = nb_entry.get("pose", {})
+        prev_q = prev_pose.get("quaternion")
+
+        if prev_q is not None:
+            R_prev = quat_to_R(prev_q)
+            R_new = rvec_to_R(rvec)
+
+            jump_deg = rotation_angle_deg(R_prev, R_new)
+
+            if jump_deg > 25.0:
+                print(
+                    f"[WARN] rejecting optical-flow seed for {frame_key}: "
+                    f"rotation jump {jump_deg:.1f} deg from neighbor {nb_key}"
+                )
+                continue
+
         cov = compute_pose_covariance(tracked_object_points, tracked_image_points, rvec, tvec, camera_matrix, distortion, pixel_noise_sigma)
         projected = cv2.projectPoints(tracked_object_points, rvec, tvec, camera_matrix, distortion)[0].reshape(-1, 2)
         if len(tracked_image_points) > 0:
@@ -174,3 +221,21 @@ def try_optical_flow_seed(
         return result
 
     return None
+
+
+def quat_to_R(q):
+    x, y, z, w = q
+    return np.array([
+        [1 - 2*(y*y + z*z), 2*(x*y - z*w),     2*(x*z + y*w)],
+        [2*(x*y + z*w),     1 - 2*(x*x + z*z), 2*(y*z - x*w)],
+        [2*(x*z - y*w),     2*(y*z + x*w),     1 - 2*(x*x + y*y)],
+    ], dtype=np.float64)
+
+def rvec_to_R(rvec):
+    R, _ = cv2.Rodrigues(rvec)
+    return R
+
+def rotation_angle_deg(R_a, R_b):
+    R = R_a.T @ R_b
+    c = (np.trace(R) - 1.0) * 0.5
+    return float(np.degrees(np.arccos(np.clip(c, -1.0, 1.0))))
