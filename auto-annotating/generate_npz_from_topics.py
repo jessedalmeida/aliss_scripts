@@ -25,6 +25,7 @@ import argparse
 from collections import defaultdict
 from pathlib import Path
 import numpy as np
+import cv2 as _cv2
 
 
 def _pose_from_pose_with_cov(msg) -> np.ndarray:
@@ -173,7 +174,11 @@ def generate_npz_from_mcap(mcap_path: Path, out_path: Path) -> None:
     # Now assemble NPZ entries in timestamp order where both mask and pose are present
     valid_ts = [ts for ts, d in sorted(frames.items()) if "mask" in d and "pose" in d and "kp" in d]
     if not valid_ts:
-        raise RuntimeError(f"No valid annotated frames (mask+pose+keypoints) found in {mcap_path}")
+        print(f"Warning: no frames with all valid annotations, trying without checkerboard pose...")
+        valid_ts = [ts for ts, d in sorted(frames.items()) if "mask" in d and "kp" in d]
+
+        if not valid_ts:
+            raise RuntimeError(f"No valid annotated frames (mask+pose+keypoints) found in {mcap_path}")
 
     data_dict = {}
     for idx, ts in enumerate(valid_ts):
@@ -192,7 +197,6 @@ def generate_npz_from_mcap(mcap_path: Path, out_path: Path) -> None:
         try:
             tip = kp.get("needle_tip")
             tail = kp.get("needle_tail")
-            import cv2 as _cv2
 
             if tip is not None and np.isfinite(tip).all():
                 _cv2.circle(mask_points, (int(tip[0]), int(tip[1])), 3, 255, -1)

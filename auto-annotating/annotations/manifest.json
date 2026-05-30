@@ -1,0 +1,897 @@
+{
+  "config": {
+    "out_dir": "annotated_bags",
+    "sam2_repo": "/home/jesse/sam2",
+    "model": "large",
+    "every_n": 3,
+    "camera_yaml": null,
+    "board": {
+      "squares_x": 4,
+      "squares_y": 5,
+      "square_size": 0.002
+    },
+    "bag_sources": {
+      "ch_circlexy_1": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_circlexy_1",
+      "ch_chicken_1": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_chicken_1",
+      "ch_chicken_2": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_chicken_2",
+      "ch_chicken_3": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_chicken_3",
+      "ch_chicken_4": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_chicken_4",
+      "ch_chicken_5": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_chicken_5",
+      "ch_circlexy_2": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_circlexy_2",
+      "ch_circlexy_3": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_circlexy_3",
+      "ch_circlexy_4": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_circlexy_4",
+      "ch_circlexy_5": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_circlexy_5",
+      "ch_circlexy_6": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_circlexy_6",
+      "ch_circlexz_1": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_circlexz_1",
+      "ch_circlexz_2": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_circlexz_2",
+      "ch_circlexz_3": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_circlexz_3",
+      "ch_circlexz_4": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_circlexz_4",
+      "ch_circlexz_5": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_circlexz_5",
+      "ch_figure8_1": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_figure8_1",
+      "ch_figure8_2": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_figure8_2",
+      "ch_figure8_3": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_figure8_3",
+      "ch_figure8_4": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_figure8_4",
+      "ch_figure8_5": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_figure8_5",
+      "ch_figure8_6": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_figure8_6",
+      "ch_suture_1": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_suture_1",
+      "ch_suture_2": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_suture_2",
+      "ch_suture_3": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_suture_3",
+      "ch_suture_4": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_suture_4",
+      "ch_suture_5": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_suture_5",
+      "ch_suture_6": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_suture_6",
+      "ch_suture_7": "/data/ros_bags/2026_5-29_data_collection/raw_bags/ch_suture_7",
+      "chicken_1": "/data/ros_bags/2026_5-29_data_collection/raw_bags/chicken_1",
+      "chicken_2": "/data/ros_bags/2026_5-29_data_collection/raw_bags/chicken_2",
+      "chicken_3": "/data/ros_bags/2026_5-29_data_collection/raw_bags/chicken_3",
+      "chicken_4": "/data/ros_bags/2026_5-29_data_collection/raw_bags/chicken_4",
+      "chicken_5": "/data/ros_bags/2026_5-29_data_collection/raw_bags/chicken_5",
+      "grasper_tracking": "/data/ros_bags/2026_5-29_data_collection/raw_bags/grasper_tracking",
+      "grasper_tracking_1": "/data/ros_bags/2026_5-29_data_collection/raw_bags/grasper_tracking_1",
+      "grasper_tracking_2": "/data/ros_bags/2026_5-29_data_collection/raw_bags/grasper_tracking_2",
+      "trachea_1": "/data/ros_bags/2026_5-29_data_collection/raw_bags/trachea_1",
+      "trachea_2": "/data/ros_bags/2026_5-29_data_collection/raw_bags/trachea_2",
+      "trachea_3": "/data/ros_bags/2026_5-29_data_collection/raw_bags/trachea_3",
+      "trachea_4": "/data/ros_bags/2026_5-29_data_collection/raw_bags/trachea_4",
+      "trachea_5": "/data/ros_bags/2026_5-29_data_collection/raw_bags/trachea_5"
+    },
+    "stage_args": {}
+  },
+  "bags": {
+    "ch_circlexy_1": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780107551.4721694
+        },
+        "smooth": {
+          "status": "fail",
+          "rc": 2,
+          "ts": 1780107551.5460296
+        },
+        "repack": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168352.6825254
+        }
+      }
+    },
+    "ch_chicken_1": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167671.0955281
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167699.6573644
+        },
+        "keypoints": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168598.181288
+        }
+      }
+    },
+    "ch_chicken_2": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167705.2009053
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167727.8919528
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167728.6746223
+        }
+      }
+    },
+    "ch_chicken_3": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167738.3398118
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167779.3469017
+        }
+      }
+    },
+    "ch_chicken_4": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167785.9444153
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167817.5434883
+        }
+      }
+    },
+    "ch_chicken_5": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167828.8800156
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167876.1589503
+        }
+      }
+    },
+    "ch_circlexy_2": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168638.6522517
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168639.580855
+        }
+      }
+    },
+    "ch_circlexy_3": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168647.992627
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168684.9646919
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168685.7357984
+        }
+      }
+    },
+    "ch_circlexy_4": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168696.3975828
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168740.6528208
+        }
+      }
+    },
+    "ch_circlexy_5": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168748.727542
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168784.4594631
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168785.4235783
+        }
+      }
+    },
+    "ch_circlexy_6": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168794.2277436
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168832.5749552
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168833.3813467
+        }
+      }
+    },
+    "ch_circlexz_1": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168841.9510481
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168875.299212
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168876.0467622
+        }
+      }
+    },
+    "ch_circlexz_2": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168884.744658
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168924.051024
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168924.8988504
+        }
+      }
+    },
+    "ch_circlexz_3": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168935.3922832
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168983.371257
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168984.2288146
+        }
+      }
+    },
+    "ch_circlexz_4": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780168992.3855755
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169025.6779904
+        }
+      }
+    },
+    "ch_circlexz_5": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169039.3465624
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169099.818516
+        }
+      }
+    },
+    "ch_figure8_1": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169105.5332341
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169133.6202455
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169134.3834982
+        }
+      }
+    },
+    "ch_figure8_2": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169145.5635595
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169202.307648
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169203.2093413
+        }
+      }
+    },
+    "ch_figure8_3": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169211.0485642
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169249.8945594
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169250.7179236
+        }
+      }
+    },
+    "ch_figure8_4": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169255.4044783
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169280.730515
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169281.509424
+        }
+      }
+    },
+    "ch_figure8_5": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169288.2757864
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169322.847285
+        }
+      }
+    },
+    "ch_figure8_6": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169329.7316868
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169364.5452452
+        }
+      }
+    },
+    "ch_suture_1": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169376.4759572
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169428.8106356
+        }
+      }
+    },
+    "ch_suture_2": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169442.745974
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169494.7036412
+        }
+      }
+    },
+    "ch_suture_3": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169506.8025084
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169558.6512055
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169559.5449214
+        }
+      }
+    },
+    "ch_suture_4": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169571.4139476
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169621.39571
+        }
+      }
+    },
+    "ch_suture_5": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169628.70091
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169647.9775748
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169648.4547827
+        }
+      }
+    },
+    "ch_suture_6": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169654.7173452
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169678.3883722
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169678.935289
+        }
+      }
+    },
+    "ch_suture_7": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169688.6014738
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169729.0760207
+        }
+      }
+    },
+    "chicken_1": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169732.9845364
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169748.3292255
+        }
+      }
+    },
+    "chicken_2": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169752.8217978
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169771.6169758
+        }
+      }
+    },
+    "chicken_3": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169778.6051135
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169808.373441
+        }
+      }
+    },
+    "chicken_4": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169811.8099544
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169827.052915
+        }
+      }
+    },
+    "chicken_5": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169833.241957
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169861.0274699
+        }
+      }
+    },
+    "grasper_tracking": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169872.8901346
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169927.7049222
+        }
+      }
+    },
+    "grasper_tracking_1": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169935.0262444
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169968.9704533
+        }
+      }
+    },
+    "grasper_tracking_2": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169972.9676123
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169990.0632203
+        }
+      }
+    },
+    "trachea_1": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780169993.9195065
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780170011.6402519
+        }
+      }
+    },
+    "trachea_2": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780170015.5094914
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780170033.5363774
+        }
+      }
+    },
+    "trachea_3": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780170038.701973
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780170061.0852718
+        }
+      }
+    },
+    "trachea_4": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780170064.610645
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780170079.9570863
+        }
+      }
+    },
+    "trachea_5": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780170085.0567572
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780170108.5039902
+        }
+      }
+    }
+  }
+}

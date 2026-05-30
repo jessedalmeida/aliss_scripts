@@ -220,6 +220,8 @@ def load_keypoints_for_bag(ann_dir: Path, bag_stem: str) -> dict[int, dict]:
 def load_poses_for_bag(ann_dir: Path, bag_stem: str) -> dict[int, dict]:
     poses_path = ann_dir / bag_stem / "poses_smooth.json"
     if not poses_path.exists():
+        poses_path = ann_dir / bag_stem / "poses.json"
+    if not poses_path.exists():
         return {}
 
     with open(poses_path, encoding="utf-8") as f:
@@ -323,23 +325,29 @@ def extract_xy_or_default(point_like, default: tuple[float, float] = (0.0, 0.0))
         return default
 
 
-def build_keypoints_msg(typestore, frame_data: dict, mask_np: np.ndarray, right_pose: PoseWithCovarianceStamped | None, left_pose: PoseWithCovarianceStamped | None):
+def build_keypoints_msg(typestore, frame_data: dict, mask_np: np.ndarray,
+                        right_pose: PoseWithCovarianceStamped | None,
+                        left_pose: PoseWithCovarianceStamped | None,
+                        right_tooltip=None, left_tooltip=None):
     keypoint_cls = typestore.types[KEYPOINTS_TYPE]
 
     needle_tip_xy = extract_xy_or_default(frame_data.get("needle_tip"))
     needle_tail_xy = extract_xy_or_default(frame_data.get("needle_tail"))
 
-    right_tip = point32_from_xy(
-        right_pose.pose.pose.position.x if right_pose else 0.0,
-        right_pose.pose.pose.position.y if right_pose else 0.0,
-        right_pose.pose.pose.position.z if right_pose else 0.0,
-    )
+    def _tip_point(tooltip, pose):
+        # Prefer the tool-tip PIXEL topic (x/y are pixels at .pose.pose.position);
+        # fall back to the 3D tip-pose position when no tool-tip message is present.
+        if tooltip is not None:
+            pos = tooltip.pose.pose.position
+            return point32_from_xy(float(pos.x), float(pos.y), 0.0)
+        if pose is not None:
+            return point32_from_xy(float(pose.pose.pose.position.x),
+                                   float(pose.pose.pose.position.y),
+                                   float(pose.pose.pose.position.z))
+        return point32_from_xy(0.0, 0.0, 0.0)
 
-    left_tip = point32_from_xy(
-        left_pose.pose.pose.position.x if left_pose else 0.0,
-        left_pose.pose.pose.position.y if left_pose else 0.0,
-        left_pose.pose.pose.position.z if left_pose else 0.0,
-    )
+    right_tip = _tip_point(right_tooltip, right_pose)
+    left_tip = _tip_point(left_tooltip, left_pose)
 
     fallback_points = [pt for pt in (needle_tip_xy, needle_tail_xy) if any(abs(v) > 0.0 for v in pt)]
     bbox_center, bbox_size_x, bbox_size_y = mask_bbox(mask_np, fallback_points=fallback_points)
@@ -573,8 +581,33 @@ def repack_bag(
         left_joint_topic = select_side_topic(connections, "sensor_msgs/msg/JointState", "left", fallback_index=1)
         right_cp_topic = select_side_topic(connections, "geometry_msgs/msg/PoseStamped", "right", fallback_index=0)
         left_cp_topic = select_side_topic(connections, "geometry_msgs/msg/PoseStamped", "left", fallback_index=1)
-        right_pose_topic = select_side_topic(connections, "geometry_msgs/msg/PoseWithCovarianceStamped", "right", fallback_index=0)
-        left_pose_topic = select_side_topic(connections, "geometry_msgs/msg/PoseWithCovarianceStamped", "left", fallback_index=1)
+
+        # tool-tip pixel topics: PoseWithCovarianceStamped whose position x/y are pixels.
+        # Discover them first and exclude from the 3D tip-pose selection so the two
+        # don't collide (both are PoseWithCovarianceStamped).
+        def _find_tooltip(side: str) -> str | None:
+            cands = [c.topic for c in connections
+                     if c.msgtype == "geometry_msgs/msg/PoseWithCovarianceStamped"
+                     and "tool_tip_pixel" in normalize_topic(c.topic)
+                     and side in normalize_topic(c.topic)]
+            return cands[0] if cands else None
+        right_tooltip_topic = _find_tooltip("right")
+        left_tooltip_topic = _find_tooltip("left")
+        _tooltip_topics = {t for t in (right_tooltip_topic, left_tooltip_topic) if t}
+        if _tooltip_topics:
+            print(f"  Tool-tip pixel topics: left={left_tooltip_topic}  right={right_tooltip_topic}")
+
+        def _select_pose_side(side: str, fallback_index: int) -> str | None:
+            cands = [c.topic for c in connections
+                     if c.msgtype == "geometry_msgs/msg/PoseWithCovarianceStamped"
+                     and c.topic not in _tooltip_topics]
+            sided = sorted(t for t in cands if side in normalize_topic(t))
+            if sided:
+                return sided[0]
+            cands = sorted(cands)
+            return cands[fallback_index] if fallback_index < len(cands) else (cands[0] if cands else None)
+        right_pose_topic = _select_pose_side("right", 0)
+        left_pose_topic = _select_pose_side("left", 1)
 
         image_connection = available_topics.get(image_topic)
         if image_connection is None:
@@ -657,6 +690,8 @@ def repack_bag(
             latest_cp_left: PoseStamped | None = None
             latest_pose_right: PoseStamped | None = None
             latest_pose_left: PoseStamped | None = None
+            latest_tooltip_right = None
+            latest_tooltip_left = None
 
             img_frame_counter = 0
             saved_frame_counter = 0
@@ -699,6 +734,14 @@ def repack_bag(
                     latest_pose_left = typestore.deserialize_cdr(rawdata, connection.msgtype)
                     continue
 
+                if right_tooltip_topic and connection.topic == right_tooltip_topic:
+                    latest_tooltip_right = typestore.deserialize_cdr(rawdata, connection.msgtype)
+                    continue
+
+                if left_tooltip_topic and connection.topic == left_tooltip_topic:
+                    latest_tooltip_left = typestore.deserialize_cdr(rawdata, connection.msgtype)
+                    continue
+
                 if connection.id != image_connection.id:
                     continue
 
@@ -726,6 +769,8 @@ def repack_bag(
                             mask_np,
                             right_pose_msg,
                             left_pose_msg,
+                            right_tooltip=latest_tooltip_right,
+                            left_tooltip=latest_tooltip_left,
                         )
 
                         if split_topics:

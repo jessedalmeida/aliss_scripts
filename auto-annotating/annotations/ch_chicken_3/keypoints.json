@@ -1,0 +1,21 @@
+{
+  "bag_stem": "ch_chicken_3",
+  "source": "gui_edit",
+  "frames": {
+    "000202": {
+      "needle_tip": [
+        569,
+        510
+      ],
+      "needle_tail": [
+        813,
+        501
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    }
+  }
+}

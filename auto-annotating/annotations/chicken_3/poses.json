@@ -1,0 +1,7574 @@
+{
+  "bag_stem": "chicken_3",
+  "source": "offline_checkerboard_pose_estimation",
+  "board_type": "checkerboard",
+  "parameters": {
+    "squares_x": 4,
+    "squares_y": 5,
+    "square_size": 0.002,
+    "rectified_input": true,
+    "detector_mode": "sb",
+    "preprocess_steps": [
+      "clahe"
+    ],
+    "clahe_clip_limit": 2.0,
+    "clahe_tile_grid_size": 8,
+    "blur_kernel_size": 3,
+    "gamma_value": 1.0,
+    "use_orientation_markers": true,
+    "use_temporal_roi": false,
+    "temporal_roi_padding_factor": 0.75,
+    "detection_timeout_ms": 10000,
+    "save_failed_diagnostics": false,
+    "pixel_noise_sigma": 0.54
+  },
+  "camera_yaml": "/home/jesse/aliss_core/src/aliss_scripts/auto-annotating/annotations/ves_camera.yaml",
+  "frames": {
+    "000000": {
+      "frame_key": "000000",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000001": {
+      "frame_key": "000001",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000002": {
+      "frame_key": "000002",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000003": {
+      "frame_key": "000003",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000004": {
+      "frame_key": "000004",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000005": {
+      "frame_key": "000005",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000006": {
+      "frame_key": "000006",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000007": {
+      "frame_key": "000007",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000008": {
+      "frame_key": "000008",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000009": {
+      "frame_key": "000009",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000010": {
+      "frame_key": "000010",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000011": {
+      "frame_key": "000011",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000012": {
+      "frame_key": "000012",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000013": {
+      "frame_key": "000013",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000014": {
+      "frame_key": "000014",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000015": {
+      "frame_key": "000015",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000016": {
+      "frame_key": "000016",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000017": {
+      "frame_key": "000017",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000018": {
+      "frame_key": "000018",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000019": {
+      "frame_key": "000019",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000020": {
+      "frame_key": "000020",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000021": {
+      "frame_key": "000021",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000022": {
+      "frame_key": "000022",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000023": {
+      "frame_key": "000023",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000024": {
+      "frame_key": "000024",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000025": {
+      "frame_key": "000025",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000026": {
+      "frame_key": "000026",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000027": {
+      "frame_key": "000027",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000028": {
+      "frame_key": "000028",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000029": {
+      "frame_key": "000029",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000030": {
+      "frame_key": "000030",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000031": {
+      "frame_key": "000031",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000032": {
+      "frame_key": "000032",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000033": {
+      "frame_key": "000033",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000034": {
+      "frame_key": "000034",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000035": {
+      "frame_key": "000035",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000036": {
+      "frame_key": "000036",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000037": {
+      "frame_key": "000037",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000038": {
+      "frame_key": "000038",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000039": {
+      "frame_key": "000039",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000040": {
+      "frame_key": "000040",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000041": {
+      "frame_key": "000041",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000042": {
+      "frame_key": "000042",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000043": {
+      "frame_key": "000043",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000044": {
+      "frame_key": "000044",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000045": {
+      "frame_key": "000045",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000046": {
+      "frame_key": "000046",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000047": {
+      "frame_key": "000047",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000048": {
+      "frame_key": "000048",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000049": {
+      "frame_key": "000049",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000050": {
+      "frame_key": "000050",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000051": {
+      "frame_key": "000051",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000052": {
+      "frame_key": "000052",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000053": {
+      "frame_key": "000053",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000054": {
+      "frame_key": "000054",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000055": {
+      "frame_key": "000055",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000056": {
+      "frame_key": "000056",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000057": {
+      "frame_key": "000057",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000058": {
+      "frame_key": "000058",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000059": {
+      "frame_key": "000059",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000060": {
+      "frame_key": "000060",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000061": {
+      "frame_key": "000061",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000062": {
+      "frame_key": "000062",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000063": {
+      "frame_key": "000063",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000064": {
+      "frame_key": "000064",
+      "status": "ok",
+      "detector": "sb",
+      "failure_stage": "",
+      "failure_reason": "",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [
+        [
+          859.2960205078125,
+          353.6378173828125
+        ],
+        [
+          830.6630859375,
+          382.1084289550781
+        ],
+        [
+          735.3130493164062,
+          467.896484375
+        ],
+        [
+          788.6605834960938,
+          301.4585266113281
+        ],
+        [
+          750.5464477539062,
+          344.5760803222656
+        ],
+        [
+          709.5635375976562,
+          389.32708740234375
+        ],
+        [
+          750.7127685546875,
+          257.86981201171875
+        ],
+        [
+          702.9863891601562,
+          302.191162109375
+        ],
+        [
+          640.3538818359375,
+          337.6442565917969
+        ],
+        [
+          714.1071166992188,
+          223.06968688964844
+        ],
+        [
+          638.3282470703125,
+          257.56768798828125
+        ],
+        [
+          591.0435180664062,
+          308.63629150390625
+        ]
+      ],
+      "pose": {
+        "frame_id": "endoscope_optical",
+        "position": [
+          0.0004964714066098836,
+          -0.007259002754332943,
+          0.01672096303951914
+        ],
+        "quaternion": [
+          -0.04319557375931384,
+          0.13070531293820792,
+          0.9187655513637422,
+          0.37002719522301014
+        ],
+        "covariance": [
+          1.8890150701976663e-11,
+          -2.1000418418666265e-11,
+          5.078404427586958e-11,
+          -2.7977530019354933e-09,
+          -6.3946099874722124e-09,
+          -5.788616109101794e-10,
+          -2.1000418418665503e-11,
+          2.290114852432709e-10,
+          -5.098630931578095e-10,
+          -6.573325447801605e-09,
+          4.742594606038089e-08,
+          2.3525607028302566e-09,
+          5.0784044275869703e-11,
+          -5.098630931578085e-10,
+          1.22621667365063e-09,
+          1.5889629709699687e-08,
+          -1.1729496030241909e-07,
+          -6.06364939485853e-09,
+          -2.797753001936111e-09,
+          -6.573325447794448e-09,
+          1.588962970969804e-08,
+          2.8877395023726645e-05,
+          -9.254987395996562e-07,
+          3.92239509982073e-06,
+          -6.394609987472064e-09,
+          4.742594606038022e-08,
+          -1.1729496030241654e-07,
+          -9.254987396007133e-07,
+          2.642932670286582e-05,
+          1.501125241945133e-06,
+          -5.788616109102732e-10,
+          2.352560702831113e-09,
+          -6.0636493948594824e-09,
+          3.922395099820753e-06,
+          1.5011252419454413e-06,
+          2.954073377656493e-06
+        ]
+      },
+      "rms_reprojection_error": 14.468064474130747,
+      "diagnostics_image": null
+    },
+    "000065": {
+      "frame_key": "000065",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000066": {
+      "frame_key": "000066",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000067": {
+      "frame_key": "000067",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000068": {
+      "frame_key": "000068",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000069": {
+      "frame_key": "000069",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000070": {
+      "frame_key": "000070",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000071": {
+      "frame_key": "000071",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000072": {
+      "frame_key": "000072",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000073": {
+      "frame_key": "000073",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000074": {
+      "frame_key": "000074",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000075": {
+      "frame_key": "000075",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000076": {
+      "frame_key": "000076",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000077": {
+      "frame_key": "000077",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000078": {
+      "frame_key": "000078",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000079": {
+      "frame_key": "000079",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000080": {
+      "frame_key": "000080",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000081": {
+      "frame_key": "000081",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000082": {
+      "frame_key": "000082",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000083": {
+      "frame_key": "000083",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000084": {
+      "frame_key": "000084",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000085": {
+      "frame_key": "000085",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000086": {
+      "frame_key": "000086",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000087": {
+      "frame_key": "000087",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000088": {
+      "frame_key": "000088",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000089": {
+      "frame_key": "000089",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000090": {
+      "frame_key": "000090",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000091": {
+      "frame_key": "000091",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000092": {
+      "frame_key": "000092",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000093": {
+      "frame_key": "000093",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000094": {
+      "frame_key": "000094",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000095": {
+      "frame_key": "000095",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000096": {
+      "frame_key": "000096",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000097": {
+      "frame_key": "000097",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000098": {
+      "frame_key": "000098",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000099": {
+      "frame_key": "000099",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000100": {
+      "frame_key": "000100",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000101": {
+      "frame_key": "000101",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000102": {
+      "frame_key": "000102",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000103": {
+      "frame_key": "000103",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000104": {
+      "frame_key": "000104",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000105": {
+      "frame_key": "000105",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000106": {
+      "frame_key": "000106",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000107": {
+      "frame_key": "000107",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000108": {
+      "frame_key": "000108",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000109": {
+      "frame_key": "000109",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000110": {
+      "frame_key": "000110",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000111": {
+      "frame_key": "000111",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000112": {
+      "frame_key": "000112",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000113": {
+      "frame_key": "000113",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000114": {
+      "frame_key": "000114",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000115": {
+      "frame_key": "000115",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000116": {
+      "frame_key": "000116",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000117": {
+      "frame_key": "000117",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000118": {
+      "frame_key": "000118",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000119": {
+      "frame_key": "000119",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000120": {
+      "frame_key": "000120",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000121": {
+      "frame_key": "000121",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000122": {
+      "frame_key": "000122",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000123": {
+      "frame_key": "000123",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000124": {
+      "frame_key": "000124",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000125": {
+      "frame_key": "000125",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000126": {
+      "frame_key": "000126",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000127": {
+      "frame_key": "000127",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000128": {
+      "frame_key": "000128",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000129": {
+      "frame_key": "000129",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000130": {
+      "frame_key": "000130",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000131": {
+      "frame_key": "000131",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000132": {
+      "frame_key": "000132",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000133": {
+      "frame_key": "000133",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000134": {
+      "frame_key": "000134",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000135": {
+      "frame_key": "000135",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000136": {
+      "frame_key": "000136",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000137": {
+      "frame_key": "000137",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000138": {
+      "frame_key": "000138",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000139": {
+      "frame_key": "000139",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000140": {
+      "frame_key": "000140",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000141": {
+      "frame_key": "000141",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000142": {
+      "frame_key": "000142",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000143": {
+      "frame_key": "000143",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000144": {
+      "frame_key": "000144",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000145": {
+      "frame_key": "000145",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000146": {
+      "frame_key": "000146",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000147": {
+      "frame_key": "000147",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000148": {
+      "frame_key": "000148",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000149": {
+      "frame_key": "000149",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000150": {
+      "frame_key": "000150",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000151": {
+      "frame_key": "000151",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000152": {
+      "frame_key": "000152",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000153": {
+      "frame_key": "000153",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000154": {
+      "frame_key": "000154",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000155": {
+      "frame_key": "000155",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000156": {
+      "frame_key": "000156",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000157": {
+      "frame_key": "000157",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000158": {
+      "frame_key": "000158",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000159": {
+      "frame_key": "000159",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000160": {
+      "frame_key": "000160",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000161": {
+      "frame_key": "000161",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000162": {
+      "frame_key": "000162",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000163": {
+      "frame_key": "000163",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000164": {
+      "frame_key": "000164",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000165": {
+      "frame_key": "000165",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000166": {
+      "frame_key": "000166",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000167": {
+      "frame_key": "000167",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000168": {
+      "frame_key": "000168",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000169": {
+      "frame_key": "000169",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000170": {
+      "frame_key": "000170",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000171": {
+      "frame_key": "000171",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000172": {
+      "frame_key": "000172",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000173": {
+      "frame_key": "000173",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000174": {
+      "frame_key": "000174",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000175": {
+      "frame_key": "000175",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000176": {
+      "frame_key": "000176",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000177": {
+      "frame_key": "000177",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000178": {
+      "frame_key": "000178",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000179": {
+      "frame_key": "000179",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000180": {
+      "frame_key": "000180",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000181": {
+      "frame_key": "000181",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000182": {
+      "frame_key": "000182",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000183": {
+      "frame_key": "000183",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000184": {
+      "frame_key": "000184",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000185": {
+      "frame_key": "000185",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000186": {
+      "frame_key": "000186",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000187": {
+      "frame_key": "000187",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000188": {
+      "frame_key": "000188",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000189": {
+      "frame_key": "000189",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000190": {
+      "frame_key": "000190",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000191": {
+      "frame_key": "000191",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000192": {
+      "frame_key": "000192",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000193": {
+      "frame_key": "000193",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000194": {
+      "frame_key": "000194",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000195": {
+      "frame_key": "000195",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000196": {
+      "frame_key": "000196",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000197": {
+      "frame_key": "000197",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000198": {
+      "frame_key": "000198",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000199": {
+      "frame_key": "000199",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000200": {
+      "frame_key": "000200",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000201": {
+      "frame_key": "000201",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000202": {
+      "frame_key": "000202",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000203": {
+      "frame_key": "000203",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000204": {
+      "frame_key": "000204",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000205": {
+      "frame_key": "000205",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000206": {
+      "frame_key": "000206",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000207": {
+      "frame_key": "000207",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000208": {
+      "frame_key": "000208",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000209": {
+      "frame_key": "000209",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000210": {
+      "frame_key": "000210",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000211": {
+      "frame_key": "000211",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000212": {
+      "frame_key": "000212",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000213": {
+      "frame_key": "000213",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000214": {
+      "frame_key": "000214",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000215": {
+      "frame_key": "000215",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000216": {
+      "frame_key": "000216",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000217": {
+      "frame_key": "000217",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000218": {
+      "frame_key": "000218",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000219": {
+      "frame_key": "000219",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000220": {
+      "frame_key": "000220",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000221": {
+      "frame_key": "000221",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000222": {
+      "frame_key": "000222",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000223": {
+      "frame_key": "000223",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000224": {
+      "frame_key": "000224",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000225": {
+      "frame_key": "000225",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000226": {
+      "frame_key": "000226",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000227": {
+      "frame_key": "000227",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000228": {
+      "frame_key": "000228",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000229": {
+      "frame_key": "000229",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000230": {
+      "frame_key": "000230",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000231": {
+      "frame_key": "000231",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000232": {
+      "frame_key": "000232",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000233": {
+      "frame_key": "000233",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000234": {
+      "frame_key": "000234",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000235": {
+      "frame_key": "000235",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000236": {
+      "frame_key": "000236",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000237": {
+      "frame_key": "000237",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000238": {
+      "frame_key": "000238",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000239": {
+      "frame_key": "000239",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000240": {
+      "frame_key": "000240",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000241": {
+      "frame_key": "000241",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000242": {
+      "frame_key": "000242",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000243": {
+      "frame_key": "000243",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000244": {
+      "frame_key": "000244",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000245": {
+      "frame_key": "000245",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000246": {
+      "frame_key": "000246",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000247": {
+      "frame_key": "000247",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000248": {
+      "frame_key": "000248",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000249": {
+      "frame_key": "000249",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000250": {
+      "frame_key": "000250",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000251": {
+      "frame_key": "000251",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000252": {
+      "frame_key": "000252",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000253": {
+      "frame_key": "000253",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000254": {
+      "frame_key": "000254",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000255": {
+      "frame_key": "000255",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000256": {
+      "frame_key": "000256",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000257": {
+      "frame_key": "000257",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000258": {
+      "frame_key": "000258",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000259": {
+      "frame_key": "000259",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000260": {
+      "frame_key": "000260",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000261": {
+      "frame_key": "000261",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000262": {
+      "frame_key": "000262",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000263": {
+      "frame_key": "000263",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000264": {
+      "frame_key": "000264",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000265": {
+      "frame_key": "000265",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000266": {
+      "frame_key": "000266",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000267": {
+      "frame_key": "000267",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000268": {
+      "frame_key": "000268",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000269": {
+      "frame_key": "000269",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000270": {
+      "frame_key": "000270",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000271": {
+      "frame_key": "000271",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000272": {
+      "frame_key": "000272",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000273": {
+      "frame_key": "000273",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000274": {
+      "frame_key": "000274",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000275": {
+      "frame_key": "000275",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000276": {
+      "frame_key": "000276",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000277": {
+      "frame_key": "000277",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000278": {
+      "frame_key": "000278",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000279": {
+      "frame_key": "000279",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000280": {
+      "frame_key": "000280",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000281": {
+      "frame_key": "000281",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000282": {
+      "frame_key": "000282",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000283": {
+      "frame_key": "000283",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000284": {
+      "frame_key": "000284",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000285": {
+      "frame_key": "000285",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000286": {
+      "frame_key": "000286",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000287": {
+      "frame_key": "000287",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000288": {
+      "frame_key": "000288",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000289": {
+      "frame_key": "000289",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000290": {
+      "frame_key": "000290",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000291": {
+      "frame_key": "000291",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000292": {
+      "frame_key": "000292",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000293": {
+      "frame_key": "000293",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000294": {
+      "frame_key": "000294",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000295": {
+      "frame_key": "000295",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000296": {
+      "frame_key": "000296",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000297": {
+      "frame_key": "000297",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000298": {
+      "frame_key": "000298",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000299": {
+      "frame_key": "000299",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000300": {
+      "frame_key": "000300",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000301": {
+      "frame_key": "000301",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000302": {
+      "frame_key": "000302",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000303": {
+      "frame_key": "000303",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000304": {
+      "frame_key": "000304",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000305": {
+      "frame_key": "000305",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000306": {
+      "frame_key": "000306",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000307": {
+      "frame_key": "000307",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000308": {
+      "frame_key": "000308",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000309": {
+      "frame_key": "000309",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000310": {
+      "frame_key": "000310",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000311": {
+      "frame_key": "000311",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000312": {
+      "frame_key": "000312",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000313": {
+      "frame_key": "000313",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000314": {
+      "frame_key": "000314",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000315": {
+      "frame_key": "000315",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000316": {
+      "frame_key": "000316",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000317": {
+      "frame_key": "000317",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000318": {
+      "frame_key": "000318",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000319": {
+      "frame_key": "000319",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000320": {
+      "frame_key": "000320",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000321": {
+      "frame_key": "000321",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000322": {
+      "frame_key": "000322",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000323": {
+      "frame_key": "000323",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000324": {
+      "frame_key": "000324",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000325": {
+      "frame_key": "000325",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000326": {
+      "frame_key": "000326",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000327": {
+      "frame_key": "000327",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000328": {
+      "frame_key": "000328",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000329": {
+      "frame_key": "000329",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000330": {
+      "frame_key": "000330",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000331": {
+      "frame_key": "000331",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000332": {
+      "frame_key": "000332",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000333": {
+      "frame_key": "000333",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000334": {
+      "frame_key": "000334",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000335": {
+      "frame_key": "000335",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000336": {
+      "frame_key": "000336",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000337": {
+      "frame_key": "000337",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000338": {
+      "frame_key": "000338",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000339": {
+      "frame_key": "000339",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000340": {
+      "frame_key": "000340",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000341": {
+      "frame_key": "000341",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000342": {
+      "frame_key": "000342",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000343": {
+      "frame_key": "000343",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000344": {
+      "frame_key": "000344",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000345": {
+      "frame_key": "000345",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000346": {
+      "frame_key": "000346",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000347": {
+      "frame_key": "000347",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000348": {
+      "frame_key": "000348",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000349": {
+      "frame_key": "000349",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000350": {
+      "frame_key": "000350",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000351": {
+      "frame_key": "000351",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000352": {
+      "frame_key": "000352",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000353": {
+      "frame_key": "000353",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000354": {
+      "frame_key": "000354",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000355": {
+      "frame_key": "000355",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000356": {
+      "frame_key": "000356",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000357": {
+      "frame_key": "000357",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000358": {
+      "frame_key": "000358",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000359": {
+      "frame_key": "000359",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000360": {
+      "frame_key": "000360",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000361": {
+      "frame_key": "000361",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000362": {
+      "frame_key": "000362",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000363": {
+      "frame_key": "000363",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000364": {
+      "frame_key": "000364",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000365": {
+      "frame_key": "000365",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000366": {
+      "frame_key": "000366",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000367": {
+      "frame_key": "000367",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000368": {
+      "frame_key": "000368",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000369": {
+      "frame_key": "000369",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000370": {
+      "frame_key": "000370",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000371": {
+      "frame_key": "000371",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000372": {
+      "frame_key": "000372",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000373": {
+      "frame_key": "000373",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000374": {
+      "frame_key": "000374",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000375": {
+      "frame_key": "000375",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000376": {
+      "frame_key": "000376",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000377": {
+      "frame_key": "000377",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000378": {
+      "frame_key": "000378",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000379": {
+      "frame_key": "000379",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000380": {
+      "frame_key": "000380",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000381": {
+      "frame_key": "000381",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000382": {
+      "frame_key": "000382",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000383": {
+      "frame_key": "000383",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000384": {
+      "frame_key": "000384",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000385": {
+      "frame_key": "000385",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000386": {
+      "frame_key": "000386",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000387": {
+      "frame_key": "000387",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000388": {
+      "frame_key": "000388",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000389": {
+      "frame_key": "000389",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000390": {
+      "frame_key": "000390",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000391": {
+      "frame_key": "000391",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000392": {
+      "frame_key": "000392",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000393": {
+      "frame_key": "000393",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000394": {
+      "frame_key": "000394",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000395": {
+      "frame_key": "000395",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000396": {
+      "frame_key": "000396",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000397": {
+      "frame_key": "000397",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000398": {
+      "frame_key": "000398",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000399": {
+      "frame_key": "000399",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000400": {
+      "frame_key": "000400",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000401": {
+      "frame_key": "000401",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000402": {
+      "frame_key": "000402",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000403": {
+      "frame_key": "000403",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000404": {
+      "frame_key": "000404",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000405": {
+      "frame_key": "000405",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000406": {
+      "frame_key": "000406",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000407": {
+      "frame_key": "000407",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000408": {
+      "frame_key": "000408",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000409": {
+      "frame_key": "000409",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000410": {
+      "frame_key": "000410",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000411": {
+      "frame_key": "000411",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000412": {
+      "frame_key": "000412",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000413": {
+      "frame_key": "000413",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000414": {
+      "frame_key": "000414",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000415": {
+      "frame_key": "000415",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000416": {
+      "frame_key": "000416",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000417": {
+      "frame_key": "000417",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000418": {
+      "frame_key": "000418",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000419": {
+      "frame_key": "000419",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000420": {
+      "frame_key": "000420",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000421": {
+      "frame_key": "000421",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000422": {
+      "frame_key": "000422",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000423": {
+      "frame_key": "000423",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000424": {
+      "frame_key": "000424",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000425": {
+      "frame_key": "000425",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000426": {
+      "frame_key": "000426",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000427": {
+      "frame_key": "000427",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000428": {
+      "frame_key": "000428",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000429": {
+      "frame_key": "000429",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000430": {
+      "frame_key": "000430",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000431": {
+      "frame_key": "000431",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000432": {
+      "frame_key": "000432",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000433": {
+      "frame_key": "000433",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000434": {
+      "frame_key": "000434",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000435": {
+      "frame_key": "000435",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000436": {
+      "frame_key": "000436",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    },
+    "000437": {
+      "frame_key": "000437",
+      "status": "failed",
+      "detector": "sb",
+      "failure_stage": "detector_rejection",
+      "failure_reason": "SB detector rejected the ROI",
+      "roi": [
+        0,
+        0,
+        1080,
+        1080
+      ],
+      "corners": [],
+      "pose": null,
+      "rms_reprojection_error": null,
+      "diagnostics_image": null
+    }
+  }
+}

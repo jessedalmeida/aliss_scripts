@@ -341,7 +341,7 @@ def propagate_bag(
         print("  Initialising SAM2 state…")
         # frames_for_sam = ensure_jpg_frames(frames_dir)
         # We'll propagate from each seed entry independently, then merge per-frame masks
-        video_segments_best: dict[int, dict[str, tuple[int, np.ndarray]]] = {}
+        video_segments_best: dict[int, dict[str, tuple[int, np.ndarray, bool]]] = {}
 
         for entry in seed_entries:
             seed_frame_idx = int(entry.get("seed_frame_idx", 0))
@@ -383,8 +383,10 @@ def propagate_bag(
                             seed_mask = cleanup_binary_mask(seed_mask, min_component_area=min_component_area)
                         if seed_frame_idx not in video_segments_best:
                             video_segments_best[seed_frame_idx] = {}
-                        # store tuple (seed_frame_idx, mask)
-                        video_segments_best[seed_frame_idx][obj_label] = (seed_frame_idx, seed_mask)
+                        # store (src_seed, mask, is_seed_frame=True) — the explicit
+                        # click prompt is authoritative and must outrank any
+                        # propagated mask that lands on this frame from another seed.
+                        video_segments_best[seed_frame_idx][obj_label] = (seed_frame_idx, seed_mask, True)
 
             # ── Propagate forward for this seed ─────────────────────────────────
             print(f"  Propagating forward from seed {seed_frame_idx}…")
@@ -401,13 +403,16 @@ def propagate_bag(
                     prev = video_segments_best.get(out_frame_idx, {}).get(label)
                     replace = True
                     if prev is not None:
-                        prev_seed_idx, _ = prev
-                        if abs(out_frame_idx - prev_seed_idx) <= abs(out_frame_idx - seed_frame_idx):
+                        prev_seed_idx, _, prev_is_seed = prev
+                        # an explicit seed-frame mask is authoritative — never overwrite it
+                        if prev_is_seed:
+                            replace = False
+                        elif abs(out_frame_idx - prev_seed_idx) <= abs(out_frame_idx - seed_frame_idx):
                             replace = False
                     if replace:
                         if out_frame_idx not in video_segments_best:
                             video_segments_best[out_frame_idx] = {}
-                        video_segments_best[out_frame_idx][label] = (seed_frame_idx, mask)
+                        video_segments_best[out_frame_idx][label] = (seed_frame_idx, mask, False)
 
         # ── Propagate backward from seed frame ────────────────────────────
             if seed_frame_idx > 0:
@@ -425,29 +430,42 @@ def propagate_bag(
                         prev = video_segments_best.get(out_frame_idx, {}).get(label)
                         replace = True
                         if prev is not None:
-                            prev_seed_idx, _ = prev
-                            if abs(out_frame_idx - prev_seed_idx) <= abs(out_frame_idx - seed_frame_idx):
+                            prev_seed_idx, _, prev_is_seed = prev
+                            if prev_is_seed:
+                                replace = False
+                            elif abs(out_frame_idx - prev_seed_idx) <= abs(out_frame_idx - seed_frame_idx):
                                 replace = False
                         if replace:
                             if out_frame_idx not in video_segments_best:
                                 video_segments_best[out_frame_idx] = {}
-                            video_segments_best[out_frame_idx][label] = (seed_frame_idx, mask)
+                            video_segments_best[out_frame_idx][label] = (seed_frame_idx, mask, False)
 
         # After processing all seeds, convert best entries to plain masks
         video_segments: dict[int, dict[str, np.ndarray]] = {}
         for fidx, labels in video_segments_best.items():
             video_segments[fidx] = {}
-            for lbl, (src_seed, mask) in labels.items():
+            for lbl, entry in labels.items():
+                src_seed, mask = entry[0], entry[1]
                 video_segments[fidx][lbl] = mask
 
     # ── Save all masks ─────────────────────────────────────────────────────
     print("  Saving masks…")
     saved_count = 0
+    seed_frame_set = {int(e.get("seed_frame_idx", 0)) for e in seed_entries}
     for frame_idx in sorted(video_segments.keys()):
         for label, mask in video_segments[frame_idx].items():
             fname = masks_dir / f"frame_{frame_idx:06d}_{label}.png"
             cv2.imwrite(str(fname), mask)
             saved_count += 1
+        # Diagnostic: report which seed each seed-frame's mask actually came from.
+        if frame_idx in seed_frame_set:
+            prov = video_segments_best.get(frame_idx, {})
+            for label, entry in prov.items():
+                src_seed, _, is_seed = entry
+                tag = "authoritative click" if is_seed else f"PROPAGATED from seed {src_seed}"
+                if not is_seed or src_seed != frame_idx:
+                    print(f"    [seed-frame {frame_idx:06d}/{label}] mask source: {tag}"
+                          + ("  <-- unexpected; expected its own click mask" if src_seed != frame_idx else ""))
 
     elapsed = time.time() - t_start
     fps = n_frames / elapsed if elapsed > 0 else 0

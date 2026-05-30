@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEEDLE · annotation console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Saira+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0d10; --panel:#15171d; --panel2:#1c1f27; --line:#2a2e39;
+    --ink:#d7dbe3; --dim:#8b93a4; --faint:#5a6172;
+    --amber:#ffb000; --green:#3fb950; --cyan:#39b7d6; --red:#f85149; --yellow:#e3b341;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --disp:'Saira Condensed',sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background:var(--bg); color:var(--ink); font-family:var(--mono); font-size:13px;
+    background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
+    background-size:22px 22px;
+    display:grid; grid-template-columns:300px 1fr 280px; grid-template-rows:46px 1fr;
+    grid-template-areas:"head head head" "side main jobs"; height:100vh; overflow:hidden;
+  }
+  header{grid-area:head; border-bottom:1px solid var(--line); display:flex; align-items:center;
+    gap:14px; padding:0 16px; background:linear-gradient(180deg,#16181f,#101117)}
+  header .logo{font-family:var(--disp); font-weight:700; letter-spacing:3px; font-size:18px;
+    color:var(--amber); text-transform:uppercase}
+  header .logo b{color:var(--ink)}
+  header .meta{color:var(--faint); font-size:11px; letter-spacing:1px}
+  header .spacer{flex:1}
+  .legend{display:flex; gap:12px; font-size:10px; color:var(--dim); letter-spacing:.5px}
+  .legend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;vertical-align:middle}
+
+  aside{grid-area:side; border-right:1px solid var(--line); overflow-y:auto; background:var(--panel)}
+  .side-h{font-family:var(--disp); letter-spacing:2px; text-transform:uppercase; color:var(--dim);
+    font-size:12px; padding:10px 14px 6px; position:sticky; top:0; background:var(--panel);
+    border-bottom:1px solid var(--line)}
+  .bag{padding:10px 14px; border-bottom:1px solid var(--line); cursor:pointer}
+  .bag:hover{background:var(--panel2)}
+  .bag.active{background:#10243a; box-shadow:inset 3px 0 0 var(--cyan)}
+  .bag .row1{display:flex; align-items:center; gap:8px}
+  .bag .name{font-weight:700; letter-spacing:.5px}
+  .bag .badge{font-size:9px; padding:1px 5px; border:1px solid var(--line); border-radius:3px;
+    color:var(--dim); letter-spacing:1px; cursor:pointer; user-select:none}
+  .bag .badge.on{color:var(--bg); background:var(--cyan); border-color:var(--cyan)}
+  .bag .cnt{margin-left:auto; color:var(--faint); font-size:10px}
+  .strip{display:flex; gap:3px; margin-top:8px}
+  .dot{flex:1; height:5px; border-radius:2px; background:var(--faint); opacity:.5}
+  .dot.done{background:var(--green); opacity:1}
+  .dot.attention{background:var(--yellow); opacity:1}
+  .dot.ready{background:var(--cyan); opacity:1}
+  .dot.blocked{background:var(--red); opacity:1}
+  .dot.na{background:transparent; border:1px dashed var(--line)}
+
+  main{grid-area:main; display:flex; flex-direction:column; overflow:hidden}
+  .toolbar{display:flex; align-items:center; gap:8px; padding:8px 12px; border-bottom:1px solid var(--line);
+    background:var(--panel); flex-wrap:wrap}
+  .modeseg{display:flex; border:1px solid var(--line); border-radius:5px; overflow:hidden}
+  .modeseg button{background:transparent; color:var(--dim); border:0; padding:6px 12px; cursor:pointer;
+    font-family:var(--mono); font-size:11px; letter-spacing:1px; text-transform:uppercase}
+  .modeseg button.active{background:var(--amber); color:#161616; font-weight:700}
+  .btn{background:var(--panel2); color:var(--ink); border:1px solid var(--line); border-radius:5px;
+    padding:6px 11px; cursor:pointer; font-family:var(--mono); font-size:11px; letter-spacing:.5px}
+  .btn:hover{border-color:var(--cyan); color:#fff}
+  .btn.go{border-color:var(--green); color:var(--green)}
+  .btn.go:hover{background:var(--green); color:#0c0d10}
+  .btn.warn{border-color:var(--amber); color:var(--amber)}
+  .btn:disabled{opacity:.35; cursor:not-allowed}
+  .toolbar .gap{flex:1}
+  .toolbar label{color:var(--dim); font-size:10px; letter-spacing:1px; text-transform:uppercase}
+  input[type=range]{accent-color:var(--amber)}
+  .pill{font-size:10px; color:var(--dim); border:1px solid var(--line); border-radius:20px; padding:2px 9px}
+  .pill b{color:var(--amber)}
+
+  .stage-rail{display:flex; gap:4px; padding:7px 12px; border-bottom:1px solid var(--line);
+    background:var(--bg); overflow-x:auto}
+  .chip{display:flex; align-items:center; gap:6px; border:1px solid var(--line); border-radius:5px;
+    padding:4px 8px; white-space:nowrap; font-size:10px; letter-spacing:.5px}
+  .chip .led{width:8px;height:8px;border-radius:50%}
+  .chip.run{cursor:pointer}
+  .chip.run:hover{border-color:var(--cyan)}
+  .chip small{color:var(--faint)}
+
+  .stage-wrap{flex:1; position:relative; overflow:hidden;
+    background:repeating-conic-gradient(#0a0b0e 0% 25%,#0d0e12 0% 50%) 50%/24px 24px}
+  #cv{position:absolute; inset:0; width:100%; height:100%; display:block}
+  .empty{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    color:var(--faint); font-family:var(--disp); letter-spacing:2px; text-transform:uppercase}
+  .zoombar{position:absolute; right:12px; bottom:12px; display:flex; gap:4px; align-items:center;
+    background:rgba(12,13,16,.8); border:1px solid var(--line); border-radius:6px; padding:4px 6px}
+  .zoombar button{width:26px;height:26px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);
+    border-radius:4px;cursor:pointer;font-family:var(--mono)}
+  .zoombar button:hover{border-color:var(--cyan)}
+  .zoombar .z{min-width:46px;text-align:center;color:var(--amber);font-size:11px}
+  .vhint{position:absolute; left:12px; bottom:12px; color:var(--faint); font-size:10px; letter-spacing:.5px;
+    background:rgba(12,13,16,.7); padding:3px 8px; border-radius:5px; border:1px solid var(--line)}
+
+  .scrub{display:flex; align-items:center; gap:10px; padding:9px 14px; border-top:1px solid var(--line);
+    background:var(--panel)}
+  .scrub input[type=range]{flex:1}
+  .scrub .fc{font-variant-numeric:tabular-nums; color:var(--amber); min-width:130px; text-align:center}
+
+  section.jobs{grid-area:jobs; border-left:1px solid var(--line); background:var(--panel);
+    display:flex; flex-direction:column; overflow:hidden}
+  .jobs h3{font-family:var(--disp); letter-spacing:2px; text-transform:uppercase; color:var(--dim);
+    font-size:12px; margin:0; padding:10px 14px; border-bottom:1px solid var(--line)}
+  .joblist{overflow-y:auto; flex:1}
+  .job{border-bottom:1px solid var(--line); padding:9px 12px}
+  .job .jh{display:flex; gap:8px; align-items:center; font-size:11px}
+  .job .st{font-size:9px; padding:1px 6px; border-radius:3px; letter-spacing:1px; text-transform:uppercase}
+  .st.running{background:var(--cyan); color:#0c0d10}
+  .st.queued{background:var(--faint); color:#0c0d10}
+  .st.done{background:var(--green); color:#0c0d10}
+  .st.failed{background:var(--red); color:#fff}
+  .job pre{margin:6px 0 0; max-height:120px; overflow:auto; background:#0a0b0e; border:1px solid var(--line);
+    border-radius:4px; padding:6px; font-size:10px; color:var(--dim); white-space:pre-wrap}
+  .toast{position:fixed; bottom:16px; left:50%; transform:translateX(-50%); background:var(--panel2);
+    border:1px solid var(--cyan); color:var(--ink); padding:8px 16px; border-radius:6px; font-size:12px;
+    opacity:0; transition:opacity .2s; pointer-events:none; z-index:9; max-width:60vw}
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">NEEDLE<b>·</b>console</div>
+  <div class="meta" id="cfgmeta">—</div>
+  <div class="spacer"></div>
+  <div class="legend">
+    <span><i style="background:var(--green)"></i>done</span>
+    <span><i style="background:var(--yellow)"></i>attention</span>
+    <span><i style="background:var(--cyan)"></i>ready</span>
+    <span><i style="background:var(--red)"></i>blocked</span>
+  </div>
+</header>
+
+<aside>
+  <div class="side-h">Bags · click N/C to toggle track</div>
+  <div id="baglist"></div>
+</aside>
+
+<main>
+  <div class="toolbar">
+    <div class="modeseg" id="modeseg">
+      <button data-mode="view" class="active">View</button>
+      <button data-mode="seed">Seed</button>
+      <button data-mode="mask">Mask</button>
+      <button data-mode="keypoints">Keypts</button>
+      <button data-mode="corners">Corners</button>
+    </div>
+    <span id="modetools" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"></span>
+    <div class="gap"></div>
+    <span class="pill" id="statpill"></span>
+  </div>
+
+  <div class="stage-rail" id="stagerail"></div>
+
+  <div class="stage-wrap" id="stagewrap">
+    <canvas id="cv"></canvas>
+    <div class="empty" id="empty">select a bag</div>
+    <div class="vhint">scroll = zoom · space+drag or middle-drag = pan</div>
+    <div class="zoombar">
+      <button id="zout">–</button><span class="z" id="zlevel">100%</span>
+      <button id="zin">+</button><button id="zfit" title="fit">⤢</button>
+    </div>
+  </div>
+
+  <div class="scrub">
+    <button class="btn" id="prev">◀</button>
+    <button class="btn go" id="play" style="min-width:64px">▶ play</button>
+    <input type="range" id="slider" min="0" max="0" value="0">
+    <button class="btn" id="next">▶</button>
+    <select class="btn" id="fps" title="playback speed" style="padding:6px 6px">
+      <option value="4">4 fps</option><option value="8" selected>8 fps</option>
+      <option value="15">15 fps</option><option value="30">30 fps</option>
+    </select>
+    <div class="fc" id="fc">— / —</div>
+  </div>
+</main>
+
+<section class="jobs">
+  <h3>Jobs</h3>
+  <div class="joblist" id="joblist"><div class="job"><span style="color:var(--faint)">no jobs yet</span></div></div>
+</section>
+
+<div class="toast" id="toast"></div>
+
+<div id="borrowModal" style="display:none; position:fixed; inset:0; z-index:20; background:rgba(8,9,11,.72);">
+  <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:min(760px,92vw);
+    max-height:88vh; overflow:auto; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px">
+      <span style="font-family:var(--disp); letter-spacing:2px; text-transform:uppercase; color:var(--amber); font-size:16px">Borrow seed from another bag</span>
+      <div style="flex:1"></div>
+      <button class="btn" id="borrowClose">close</button>
+    </div>
+    <div style="color:var(--dim); font-size:11px; margin-bottom:12px; line-height:1.5">
+      Teach this bag from another bag's annotated frame. SAM2 carries the learned needle appearance into
+      this bag's frames — robust to the needle being in a different position. Pick a teacher frame where the
+      needle looks most like this bag's start.
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px">
+      <div>
+        <label style="color:var(--dim); font-size:10px; letter-spacing:1px; text-transform:uppercase">Source</label>
+        <select id="borrowSrc" class="btn" style="width:100%; margin-top:4px"></select>
+        <select id="borrowFrame" class="btn" style="width:100%; margin-top:6px"></select>
+        <div style="margin-top:8px; border:1px solid var(--line); border-radius:6px; overflow:hidden; background:#0a0b0e">
+          <canvas id="borrowCv" style="width:100%; display:block"></canvas>
+        </div>
+        <div style="color:var(--faint); font-size:10px; margin-top:4px">green = +needle · red = −background</div>
+      </div>
+      <div>
+        <label style="color:var(--dim); font-size:10px; letter-spacing:1px; text-transform:uppercase">Apply to</label>
+        <div id="borrowTargets" style="margin-top:6px; display:flex; flex-direction:column; gap:6px; max-height:300px; overflow:auto"></div>
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; margin-top:16px; justify-content:flex-end">
+      <button class="btn warn" id="borrowClear">clear this bag's reference</button>
+      <button class="btn go" id="borrowApply">apply reference</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const cv = $("cv"), ctx = cv.getContext("2d");
+const HANDLE = 6, HIT = 12;
+
+const S = {
+  bags:[], bag:null, keys:[], idx:0, mode:"view", config:{},
+  frameImg:null, maskCanvas:null,
+  kp:{}, poses:{}, seeds:{}, axes:{},  // seeds: {frameKey:{points:[[x,y]],labels:[1/0]}}; axes: {frameKey:{origin,x,y,z}}
+  corners:[],                          // working corners for current frame
+  board:{cols:3, rows:4, expected:12},
+  view:{scale:1, ox:0, oy:0}, viewReady:false,
+  brush:6, erase:false,
+  stickyOcc:{tip:false, tail:false},  // occlusion persists across frames until toggled off
+  painting:false, dragKp:null, dragCorner:-1, panning:false, panLast:null, spaceDown:false,
+  kpNext:"needle_tip",
+};
+
+function toast(m){ const t=$("toast"); t.textContent=m; t.classList.add("show"); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove("show"),1800); }
+async function jget(u){ const r=await fetch(u); if(!r.ok) throw new Error((await r.text()).slice(0,200)); return r.json(); }
+async function jpost(u,b){ const r=await fetch(u,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)}); if(!r.ok) throw new Error((await r.text()).slice(0,200)); return r.json(); }
+
+// ===== viewport =====
+function sizeCanvas(){ const w=$("stagewrap"); cv.width=w.clientWidth; cv.height=w.clientHeight; }
+function fitView(){
+  if(!S.frameImg) return;
+  const s=Math.min(cv.width/S.frameImg.naturalWidth, cv.height/S.frameImg.naturalHeight)*0.96;
+  S.view.scale=s;
+  S.view.ox=(cv.width - S.frameImg.naturalWidth*s)/2;
+  S.view.oy=(cv.height - S.frameImg.naturalHeight*s)/2;
+  S.viewReady=true; updateZoom();
+}
+function updateZoom(){ $("zlevel").textContent=Math.round(S.view.scale*100)+"%"; }
+function zoomAt(factor, cx, cy){
+  const ix=(cx-S.view.ox)/S.view.scale, iy=(cy-S.view.oy)/S.view.scale;
+  S.view.scale=Math.max(0.05, Math.min(40, S.view.scale*factor));
+  S.view.ox=cx-ix*S.view.scale; S.view.oy=cy-iy*S.view.scale; updateZoom(); draw();
+}
+function canvasXY(e){ const r=cv.getBoundingClientRect(); return [ (e.clientX-r.left)*cv.width/r.width, (e.clientY-r.top)*cv.height/r.height ]; }
+function imgXY(e){ const [cx,cy]=canvasXY(e); return [ (cx-S.view.ox)/S.view.scale, (cy-S.view.oy)/S.view.scale ]; }
+
+// ===== draw =====
+function draw(){
+  ctx.setTransform(1,0,0,1,0,0); ctx.clearRect(0,0,cv.width,cv.height);
+  if(!S.frameImg) return;
+  ctx.setTransform(S.view.scale,0,0,S.view.scale,S.view.ox,S.view.oy);
+  ctx.imageSmoothingEnabled = S.view.scale < 3;
+  ctx.drawImage(S.frameImg,0,0);
+
+  if(S.maskCanvas && (S.mode==="mask"||S.mode==="view")){
+    const iw=S.frameImg.naturalWidth, ih=S.frameImg.naturalHeight;
+    const tmp=document.createElement("canvas"); tmp.width=iw; tmp.height=ih;
+    const tctx=tmp.getContext("2d");
+    const m=S.maskCanvas.getContext("2d").getImageData(0,0,iw,ih), d=m.data;
+    for(let p=0;p<d.length;p+=4){ const on=d[p]>127||d[p+1]>127||d[p+2]>127;
+      if(on){ d[p]=40; d[p+1]=255; d[p+2]=120; d[p+3]=110; } else d[p+3]=0; }
+    tctx.putImageData(m,0,0); ctx.drawImage(tmp,0,0);
+  }
+
+  const key=S.keys[S.idx];
+  // keypoints
+  if(S.mode==="keypoints"||S.mode==="view"){
+    const k=S.kp[key];
+    if(k){ drawPt(k.needle_tip,"#f85149","tip",k.occluded&&k.occluded.tip);
+           drawPt(k.needle_tail,"#39b7d6","tail",k.occluded&&k.occluded.tail);
+           if(k.needle_tip&&k.needle_tail){ const lw=1.5/S.view.scale; ctx.lineWidth=lw; ctx.strokeStyle="rgba(255,255,255,.4)";
+             ctx.beginPath(); ctx.moveTo(k.needle_tip[0],k.needle_tip[1]); ctx.lineTo(k.needle_tail[0],k.needle_tail[1]); ctx.stroke(); } }
+  }
+  // seeds
+  if(S.mode==="seed"){
+    const s=S.seeds[key];
+    if(s) s.points.forEach((p,i)=>drawDot(p, s.labels[i]===1?"#3fb950":"#f85149"));
+  }
+  // corners (current working set + grid) — shown in corners and view
+  if(S.mode==="corners"||S.mode==="view"){
+    drawCornerGrid(S.corners.length?S.corners:(S.poses[key]&&S.poses[key].corners)||[]);
+    if(S.axes[key]) drawAxes(S.axes[key]);
+  }
+}
+function drawAxes(a){
+  if(!a||!a.origin) return;
+  const lw=3/S.view.scale, o=a.origin;
+  const seg=(tip,color,label)=>{ ctx.lineWidth=lw; ctx.strokeStyle=color; ctx.lineCap="round";
+    ctx.beginPath(); ctx.moveTo(o[0],o[1]); ctx.lineTo(tip[0],tip[1]); ctx.stroke();
+    ctx.fillStyle=color; ctx.font=`bold ${13/S.view.scale}px JetBrains Mono`; ctx.fillText(label, tip[0]+3/S.view.scale, tip[1]-3/S.view.scale); };
+  // draw Z first so X/Y sit on top; X=red Y=green Z=blue (standard)
+  seg(a.z,"#4aa3ff","Z"); seg(a.y,"#3fb950","Y"); seg(a.x,"#f85149","X");
+  ctx.fillStyle="#fff"; ctx.strokeStyle="#000"; ctx.lineWidth=1/S.view.scale;
+  ctx.beginPath(); ctx.arc(o[0],o[1],3/S.view.scale,0,7); ctx.fill(); ctx.stroke();
+}
+function drawPt(p,color,label,occ){ if(!p) return; const r=HANDLE/S.view.scale, lw=2/S.view.scale;
+  ctx.lineWidth=lw; ctx.strokeStyle=occ?"#888":"#fff"; ctx.fillStyle=occ?"#555":color;
+  ctx.beginPath(); ctx.arc(p[0],p[1],r,0,7); ctx.fill(); ctx.stroke();
+  ctx.fillStyle=color; ctx.font=`${12/S.view.scale}px JetBrains Mono`;
+  ctx.fillText(label+(occ?" (occ)":""), p[0]+r+2, p[1]-r); }
+function drawDot(p,color){ const r=(HANDLE-1)/S.view.scale; ctx.fillStyle=color; ctx.strokeStyle="#000"; ctx.lineWidth=1/S.view.scale;
+  ctx.beginPath(); ctx.arc(p[0],p[1],r,0,7); ctx.fill(); ctx.stroke(); }
+function drawCornerGrid(cs){
+  if(!cs.length) return;
+  const {cols,rows}=S.board, lw=1.2/S.view.scale, r=(HANDLE-1)/S.view.scale;
+  ctx.lineWidth=lw; ctx.strokeStyle="rgba(255,176,0,.7)";
+  if(cs.length===cols*rows){
+    for(let rIdx=0;rIdx<rows;rIdx++){ ctx.beginPath();
+      for(let c=0;c<cols;c++){ const pt=cs[rIdx*cols+c]; c?ctx.lineTo(pt[0],pt[1]):ctx.moveTo(pt[0],pt[1]); } ctx.stroke(); }
+    for(let c=0;c<cols;c++){ ctx.beginPath();
+      for(let rIdx=0;rIdx<rows;rIdx++){ const pt=cs[rIdx*cols+c]; rIdx?ctx.lineTo(pt[0],pt[1]):ctx.moveTo(pt[0],pt[1]); } ctx.stroke(); }
+  }
+  cs.forEach((c,i)=>{ ctx.fillStyle = i===0?"#39b7d6":"#ffb000"; ctx.beginPath(); ctx.arc(c[0],c[1],r,0,7); ctx.fill();
+    ctx.fillStyle="#000"; ctx.font=`${10/S.view.scale}px JetBrains Mono`; ctx.fillText(i+1, c[0]+r, c[1]-r); });
+}
+
+// ===== bag list =====
+async function loadBags(){
+  const d=await jget("/api/bags"); S.bags=d.bags; S.config=d.config||{};
+  const b=(S.config.board)||{squares_x:4,squares_y:5};
+  S.board={cols:(b.squares_x-1), rows:(b.squares_y-1), expected:(b.squares_x-1)*(b.squares_y-1)};
+  $("cfgmeta").textContent=`model:${S.config.model||"?"} · every_n:${S.config.every_n||"?"} · board:${b.squares_x}×${b.squares_y} · out:${S.config.out_dir?"set":"unset"}`;
+  const el=$("baglist"); el.innerHTML="";
+  for(const bg of S.bags){
+    const div=document.createElement("div"); div.className="bag"+(bg.name===S.bag?" active":"");
+    const dots=bg.stages.map(s=>`<div class="dot ${s.status}" title="${s.name}: ${s.status}${s.msg?' — '+s.msg:''}"></div>`).join("");
+    const mode=bg.repack_mode||"snapshot";
+    const refbadge=bg.has_reference?`<span class="badge" data-ref="1" title="borrows another bag's seed (cross-bag propagation)" style="border-color:var(--amber);color:var(--amber)">⇄ ref</span>`:"";
+    div.innerHTML=`<div class="row1"><span class="name">${bg.name}</span>
+      <span class="badge ${bg.tracks.needle?'on':''}" data-t="needle">N</span>
+      <span class="badge ${bg.tracks.checkerboard?'on':''}" data-t="checkerboard">C</span>
+      <span class="cnt">${bg.frames}f</span></div>
+      <div class="strip">${dots}</div>
+      <div class="row1" style="margin-top:6px">
+        <span class="badge" data-mode="1" title="repack output mode — click to toggle"
+          style="cursor:pointer;${mode==='topics'?'border-color:var(--cyan);color:var(--cyan)':'border-color:var(--green);color:var(--green)'}">
+          repack: ${mode}</span>
+        ${refbadge}
+      </div>`;
+    div.querySelector(".name").onclick=()=>selectBag(bg.name);
+    div.querySelector(".strip").onclick=()=>selectBag(bg.name);
+    div.querySelectorAll(".badge[data-t]").forEach(bd=>bd.onclick=async ev=>{ ev.stopPropagation();
+      const t=bd.dataset.t, on=!bg.tracks[t]; await jpost(`/api/bags/${bg.name}/track`,{[t]:on}); loadBags(); });
+    const modeBadge=div.querySelector('.badge[data-mode]');
+    if(modeBadge) modeBadge.onclick=async ev=>{ ev.stopPropagation();
+      const next=mode==="snapshot"?"topics":"snapshot";
+      await jpost(`/api/bags/${bg.name}/repack_mode`,{mode:next}); toast(`${bg.name}: repack → ${next}`); loadBags(); };
+    el.appendChild(div);
+  }
+  if(S.bag) renderRail();
+}
+function curBag(){ return S.bags.find(b=>b.name===S.bag); }
+function renderRail(){
+  const b=curBag(); if(!b){ $("stagerail").innerHTML=""; return; }
+  $("stagerail").innerHTML=b.stages.map(s=>{
+    const c={done:"var(--green)",attention:"var(--yellow)",ready:"var(--cyan)",blocked:"var(--red)",waiting:"var(--faint)",na:"transparent"}[s.status];
+    const run=s.status==="ready"&&s.kind==="auto";
+    return `<div class="chip ${run?'run':''}" ${run?`onclick="runStage('${s.name}')"`:""} title="${s.msg||s.status}">
+      <span class="led" style="background:${c};${s.status==='na'?'border:1px dashed var(--line)':''}"></span>
+      ${s.name}${run?' <small>▶</small>':''}${s.kind==='manual'&&s.status==='ready'?' <small>manual</small>':''}</div>`;
+  }).join("");
+}
+
+// ===== select / frames =====
+function loadImg(u){ return new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=u; }); }
+async function selectBag(name){
+  if(typeof stopPlay==="function") stopPlay();
+  S.bag=name; S.idx=0; S.viewReady=false; S.seeds={}; S.axes={};
+  const f=await jget(`/api/bags/${name}/frames`); S.keys=f.keys;
+  try{ S.kp=(await jget(`/api/bags/${name}/keypoints`)).frames||{}; }catch{ S.kp={}; }
+  try{ S.poses=(await jget(`/api/bags/${name}/poses`)).frames||{}; }catch{ S.poses={}; }
+  try{ const sd=await jget(`/api/bags/${name}/seeds`); (sd.seed_frames||[]).forEach(e=>{
+        const o=e.objects&&e.objects.needle_mask; if(o) S.seeds[String(e.seed_frame_idx).padStart(6,'0')]={points:o.points,labels:o.labels}; }); }catch{}
+  $("slider").max=Math.max(0,S.keys.length-1);
+  $("empty").style.display=S.keys.length?"none":"flex";
+  await loadBags();
+  if(S.keys.length) await showFrame(0); else renderRail();
+}
+async function showFrame(i){
+  if(!S.keys.length) return;
+  S.idx=Math.max(0,Math.min(S.keys.length-1,i));
+  S.dragKp=null; S.dragCorner=-1; S.kpNext="needle_tip";
+  const key=S.keys[S.idx];
+  S.frameImg=await loadImg(`/api/bags/${S.bag}/frame/${key}?t=${Date.now()}`);
+  const iw=S.frameImg.naturalWidth, ih=S.frameImg.naturalHeight;
+  S.maskCanvas=document.createElement("canvas"); S.maskCanvas.width=iw; S.maskCanvas.height=ih;
+  try{ const mi=await loadImg(`/api/bags/${S.bag}/mask/${key}?t=${Date.now()}`); S.maskCanvas.getContext("2d").drawImage(mi,0,0,iw,ih); }catch{}
+  // load existing corners into working set so they're draggable
+  S.corners = (S.poses[key]&&S.poses[key].corners)? S.poses[key].corners.map(c=>[c[0],c[1]]) : [];
+  // sticky occlusion: carry the current tip/tail occlusion state onto this frame
+  if(S.stickyOcc.tip || S.stickyOcc.tail){
+    const k=S.kp[key]=S.kp[key]||{occluded:{tip:false,tail:false}};
+    k.occluded=k.occluded||{tip:false,tail:false};
+    let changed=false;
+    for(const w of ["tip","tail"]){ if(S.stickyOcc[w] && !k.occluded[w]){ k.occluded[w]=true; changed=true; } }
+    // only autosave if this frame already has keypoints to annotate (don't create empty entries)
+    if(changed && (k.needle_tip||k.needle_tail)) saveKp(true);
+  }
+  if(!S.viewReady){ sizeCanvas(); fitView(); }
+  $("slider").value=S.idx;
+  const pe=S.poses[key];
+  $("fc").textContent=`${S.idx+1} / ${S.keys.length} · ${key}`;
+  updateStatPill();
+  updateModeTools(); draw();
+  fetchAxes(key);   // async; redraws when ready
+}
+async function fetchAxes(key){
+  if(key in S.axes) return;                    // cached (incl. null)
+  const pe=S.poses[key];
+  if(!pe||pe.status!=="ok"||!pe.pose){ S.axes[key]=null; return; }
+  try{ const r=await jget(`/api/bags/${S.bag}/axes/${key}`); S.axes[key]=r.axes||null;
+       if(S.keys[S.idx]===key) draw(); }   // only redraw if still on this frame
+  catch{ S.axes[key]=null; }
+}
+function updateStatPill(){
+  const key=S.keys[S.idx], pe=S.poses[key], k=S.kp[key];
+  let bits=[];
+  if(pe) bits.push(`pose <b>${pe.status||'?'}</b>${pe.rms_reprojection_error!=null?` rms ${(+pe.rms_reprojection_error).toFixed(2)}px`:''}`);
+  if(k) bits.push(`kp <b>${k.status||'?'}</b>`);
+  $("statpill").innerHTML=bits.join(" · ");
+}
+
+// ===== interactions =====
+cv.addEventListener("contextmenu", e=>e.preventDefault());
+cv.addEventListener("wheel", e=>{ e.preventDefault(); const [cx,cy]=canvasXY(e); zoomAt(e.deltaY<0?1.12:1/1.12, cx, cy); }, {passive:false});
+
+cv.addEventListener("mousedown", e=>{
+  if(S.spaceDown || e.button===1){ S.panning=true; S.panLast=[e.clientX,e.clientY]; cv.style.cursor="grabbing"; return; }
+  const [x,y]=imgXY(e);
+  if(S.mode==="mask" && e.button===0){ S.painting=true; stroke(x,y); }
+  else if(S.mode==="seed"){ const key=S.keys[S.idx]; S.seeds[key]=S.seeds[key]||{points:[],labels:[]};
+    const neg=(e.button===2||e.shiftKey); S.seeds[key].points.push([Math.round(x),Math.round(y)]); S.seeds[key].labels.push(neg?0:1); draw(); updateModeTools(); }
+  else if(S.mode==="keypoints" && e.button===0){
+    const k=S.kp[S.keys[S.idx]]||{}; const hit=["needle_tip","needle_tail"].find(n=>k[n]&&dist(k[n],[x,y])<HIT/S.view.scale);
+    if(hit) S.dragKp=hit; else { setKp(S.kpNext,[Math.round(x),Math.round(y)]); S.kpNext=S.kpNext==="needle_tip"?"needle_tail":"needle_tip"; updateModeTools(); } }
+  else if(S.mode==="corners" && e.button===0){
+    const ci=S.corners.findIndex(c=>dist(c,[x,y])<HIT/S.view.scale);
+    if(ci>=0) S.dragCorner=ci;
+    else if(S.corners.length<S.board.expected){ S.corners.push([Math.round(x),Math.round(y)]); draw(); updateModeTools(); } }
+});
+window.addEventListener("mousemove", e=>{
+  if(S.panning){ const dx=(e.clientX-S.panLast[0])*cv.width/cv.getBoundingClientRect().width;
+    const dy=(e.clientY-S.panLast[1])*cv.height/cv.getBoundingClientRect().height;
+    S.view.ox+=dx; S.view.oy+=dy; S.panLast=[e.clientX,e.clientY]; draw(); return; }
+  if(!S.frameImg) return; const [x,y]=imgXY(e);
+  if(S.mode==="mask"&&S.painting) stroke(x,y);
+  else if(S.mode==="keypoints"&&S.dragKp){ setKp(S.dragKp,[Math.round(x),Math.round(y)]); }
+  else if(S.mode==="corners"&&S.dragCorner>=0){ S.corners[S.dragCorner]=[Math.round(x),Math.round(y)]; draw(); }
+});
+window.addEventListener("mouseup", ()=>{ S.painting=false; S.dragKp=null; S.dragCorner=-1; if(S.panning){ S.panning=false; cv.style.cursor=""; } });
+window.addEventListener("keydown", e=>{
+  if(e.target.tagName==="INPUT") return;
+  if(e.code==="Space"){ S.spaceDown=true; cv.style.cursor="grab"; e.preventDefault(); }
+  else if(e.key==="ArrowLeft") showFrame(S.idx-1);
+  else if(e.key==="ArrowRight") showFrame(S.idx+1);
+  else if(e.key.toLowerCase()==="s"){ if(S.mode==="mask")saveMask(); else if(S.mode==="keypoints")saveKp(); else if(S.mode==="seed")saveSeeds(); }
+});
+window.addEventListener("keyup", e=>{ if(e.code==="Space"){ S.spaceDown=false; cv.style.cursor=""; } });
+function dist(a,b){ return Math.hypot(a[0]-b[0],a[1]-b[1]); }
+function stroke(x,y){ const m=S.maskCanvas.getContext("2d"); m.globalCompositeOperation=S.erase?"destination-out":"source-over";
+  m.fillStyle="#fff"; m.beginPath(); m.arc(x,y,S.brush,0,7); m.fill(); m.globalCompositeOperation="source-over"; draw(); }
+function setKp(which,xy){ const key=S.keys[S.idx]; S.kp[key]=S.kp[key]||{occluded:{tip:false,tail:false}}; S.kp[key][which]=xy; draw(); }
+
+// ===== saves / actions =====
+async function saveMask(){ const key=S.keys[S.idx];
+  const blob=await new Promise(r=>S.maskCanvas.toBlob(r,"image/png"));
+  const res=await fetch(`/api/bags/${S.bag}/mask/${key}`,{method:"POST",headers:{"Content-Type":"image/png"},body:blob});
+  toast(res.ok?"mask saved":"mask save failed"); }
+async function saveKp(silent){ const key=S.keys[S.idx], k=S.kp[key]||{};
+  await jpost(`/api/bags/${S.bag}/keypoints/${key}`,{needle_tip:k.needle_tip||null,needle_tail:k.needle_tail||null,occluded:k.occluded||{}}); if(!silent) toast("keypoints saved"); }
+async function saveSeeds(run){
+  const seeds=Object.entries(S.seeds).filter(([k,v])=>v.points.some((_,i)=>v.labels[i]===1))
+    .map(([k,v])=>({frame_idx:parseInt(k,10),points:v.points,labels:v.labels}));
+  if(!seeds.length){ toast("place at least one positive (left-click) point"); return; }
+  try{ await jpost(`/api/bags/${S.bag}/seeds`,{seeds}); toast(`seeds saved (${seeds.length} frame${seeds.length>1?'s':''})`);
+    if(run){ await runStage("propagate"); } await loadBags(); }
+  catch(e){ toast("seed save failed: "+e.message); } }
+async function trackKp(anchor){ const key=S.keys[S.idx], k=S.kp[key]||{};
+  if(!k.needle_tip||!k.needle_tail){ toast("place tip and tail first"); return; }
+  toast(anchor?"re-anchoring…":"tracking…");
+  try{ const r=await jpost(`/api/bags/${S.bag}/keypoints/track`,
+        {seed_key:key,needle_tip:k.needle_tip,needle_tail:k.needle_tail,direction:"both",anchor:!!anchor});
+    S.kp=(await jget(`/api/bags/${S.bag}/keypoints`)).frames||{}; toast(`tracked ${r.tracked} frames`); await loadBags(); draw(); }
+  catch(e){ toast("track failed: "+e.message); } }
+async function suggestKp(all){
+  if(all){
+    toast("suggesting from masks…");
+    let ok=0, fail=0;
+    for(const key of S.keys){
+      try{ const r=await jpost(`/api/bags/${S.bag}/keypoints/${key}/suggest`,{});
+        await jpost(`/api/bags/${S.bag}/keypoints/${key}`,{needle_tip:r.needle_tip,needle_tail:r.needle_tail}); ok++; }
+      catch{ fail++; }
+    }
+    S.kp=(await jget(`/api/bags/${S.bag}/keypoints`)).frames||{};
+    toast(`suggested ${ok} frame${ok!==1?'s':''}${fail?`, ${fail} skipped (no mask/endpoints)`:''}`); await loadBags(); draw();
+  } else {
+    const key=S.keys[S.idx], k=S.kp[key]||{};
+    // if user already placed a tip, use it as a hint for which end is which
+    const body = k.needle_tip ? {tip_hint:k.needle_tip} : {};
+    try{ const r=await jpost(`/api/bags/${S.bag}/keypoints/${key}/suggest`, body);
+      setKp("needle_tip", r.needle_tip); setKp("needle_tail", r.needle_tail); S.kpNext="needle_tip";
+      toast("suggested — adjust if needed, then save or track"); updateModeTools(); }
+    catch(e){ toast("suggest failed: "+(e.message||"no mask/endpoints")); }
+  }
+}
+async function solvePose(){ const key=S.keys[S.idx];
+  if(S.corners.length!==S.board.expected){ toast(`need ${S.board.expected} corners (have ${S.corners.length})`); return; }
+  try{ const r=await jpost(`/api/bags/${S.bag}/pose/${key}`,{corners:S.corners});
+    S.poses[key]=r.frame; delete S.axes[key]; updateStatPill(); toast(`pose solved · rms ${(+r.frame.rms_reprojection_error).toFixed(2)}px`); await loadBags(); draw(); fetchAxes(key); }
+  catch(e){ toast("solve failed: "+e.message); } }
+async function reflowPose(){ const key=S.keys[S.idx];
+  toast("reflowing corners from nearest good neighbor…");
+  try{ const r=await jpost(`/api/bags/${S.bag}/pose/${key}/reflow`,{});
+    const f=r.frame;
+    // load the flowed corners into the working set for review; user drags + re-solves
+    S.corners = (f.corners||[]).map(c=>[Math.round(c[0]),Math.round(c[1])]);
+    draw(); updateModeTools();
+    const note = f.num_tracked!=null && f.num_tracked<S.board.expected
+      ? ` (only ${f.num_tracked}/${S.board.expected} corners tracked — fix the rest, then re-solve)`
+      : ` (rms ${(+f.rms_reprojection_error).toFixed(2)}px — review, then re-solve to save)`;
+    toast(`reflowed from neighbor ${f.used_neighbor}${note}`);
+  }catch(e){ toast("reflow failed: "+(e.message||"no good neighbor")); } }
+function copyPrevMask(){ if(S.idx===0){ toast("no previous frame"); return; } const key=S.keys[S.idx-1];
+  loadImg(`/api/bags/${S.bag}/mask/${key}?t=${Date.now()}`).then(mi=>{ const m=S.maskCanvas.getContext("2d");
+    m.clearRect(0,0,S.maskCanvas.width,S.maskCanvas.height); m.drawImage(mi,0,0,S.maskCanvas.width,S.maskCanvas.height); draw(); toast("copied previous mask"); })
+    .catch(()=>toast("previous frame has no mask")); }
+
+// ===== mode tools =====
+$("modeseg").addEventListener("click", e=>{ const b=e.target.closest("button"); if(!b) return;
+  [...e.currentTarget.children].forEach(x=>x.classList.remove("active")); b.classList.add("active");
+  S.mode=b.dataset.mode; if(S.mode!=="corners") {} updateModeTools(); draw(); });
+function mk(html){ $("modetools").innerHTML=html; }
+function updateModeTools(){
+  if(!S.bag){ mk(""); return; }
+  if(S.mode==="seed"){
+    const key=S.keys[S.idx], s=S.seeds[key]||{points:[],labels:[]};
+    const pos=s.labels.filter(l=>l===1).length, neg=s.labels.length-pos;
+    mk(`<span style="color:var(--dim)">L=<b style="color:var(--green)">+needle</b> · R/⇧=<b style="color:var(--red)">−bg</b></span>
+        <span class="pill">${pos}+ / ${neg}−</span>
+        <button class="btn" id="undoS">undo</button><button class="btn" id="clrS">clear frame</button>
+        <button class="btn go" id="saveS">save seeds</button><button class="btn warn" id="runS">save + run SAM2</button>
+        <button class="btn" id="borrowS" title="use another bag's annotated frame as a teacher">borrow from bag ⇄</button>`);
+    $("undoS").onclick=()=>{ const s=S.seeds[key]; if(s&&s.points.length){ s.points.pop(); s.labels.pop(); draw(); updateModeTools(); } };
+    $("clrS").onclick=()=>{ delete S.seeds[key]; draw(); updateModeTools(); };
+    $("saveS").onclick=()=>saveSeeds(false); $("runS").onclick=()=>saveSeeds(true);
+    $("borrowS").onclick=openBorrow;
+  } else if(S.mode==="mask"){
+    mk(`<button class="btn" id="eb">${S.erase?"ERASE":"PAINT"}</button>
+        <label>brush</label><input type="range" id="br" min="1" max="60" value="${S.brush}" style="width:90px">
+        <button class="btn" id="cm">clear</button><button class="btn" id="cp">copy prev</button>
+        <button class="btn go" id="sm">save mask</button>`);
+    $("eb").onclick=()=>{ S.erase=!S.erase; updateModeTools(); };
+    $("br").oninput=e=>S.brush=+e.target.value;
+    $("cm").onclick=()=>{ S.maskCanvas.getContext("2d").clearRect(0,0,S.maskCanvas.width,S.maskCanvas.height); draw(); };
+    $("cp").onclick=copyPrevMask; $("sm").onclick=saveMask;
+  } else if(S.mode==="keypoints"){
+    const k=S.kp[S.keys[S.idx]]||{occluded:{}}; const oc=k.occluded||{};
+    mk(`<span style="color:var(--dim)">next: <b style="color:var(--amber)">${S.kpNext==='needle_tip'?'TIP':'TAIL'}</b> · drag to move</span>
+        <button class="btn" id="sg">suggest ⌖</button><button class="btn" id="sga">suggest all</button>
+        <button class="btn ${oc.tip?'warn':''}" id="ot">tip ${oc.tip?'OCCLUDED':'visible'}${S.stickyOcc.tip?' ⤓':''}</button>
+        <button class="btn ${oc.tail?'warn':''}" id="ol">tail ${oc.tail?'OCCLUDED':'visible'}${S.stickyOcc.tail?' ⤓':''}</button>
+        <button class="btn" id="tk">track ↔</button><button class="btn warn" id="ak">re-anchor →</button>
+        <button class="btn go" id="sk">save frame</button>`);
+    $("sg").onclick=()=>suggestKp(false); $("sga").onclick=()=>suggestKp(true);
+    $("ot").onclick=()=>toggleOcc("tip"); $("ol").onclick=()=>toggleOcc("tail");
+    $("tk").onclick=()=>trackKp(false); $("ak").onclick=()=>trackKp(true); $("sk").onclick=()=>saveKp();
+  } else if(S.mode==="corners"){
+    mk(`<span class="pill">${S.corners.length}/${S.board.expected} corners</span>
+        <span style="color:var(--dim)">click to place · drag to fix</span>
+        <button class="btn" id="uc">undo</button><button class="btn" id="cc">clear</button>
+        <button class="btn" id="rc">reset to detected</button>
+        <button class="btn warn" id="rf">reflow from neighbor ↺</button>
+        <button class="btn go" id="sp">re-solve pose</button>`);
+    $("uc").onclick=()=>{ S.corners.pop(); draw(); updateModeTools(); };
+    $("cc").onclick=()=>{ S.corners=[]; draw(); updateModeTools(); };
+    $("rc").onclick=()=>{ const pe=S.poses[S.keys[S.idx]]; S.corners=pe&&pe.corners?pe.corners.map(c=>[c[0],c[1]]):[]; draw(); updateModeTools(); };
+    $("rf").onclick=reflowPose;
+    $("sp").onclick=solvePose;
+  } else mk(`<span style="color:var(--faint)">read-only · overlays show mask, keypoints & checkerboard</span>`);
+}
+function toggleOcc(which){ const key=S.keys[S.idx]; S.kp[key]=S.kp[key]||{occluded:{tip:false,tail:false}};
+  S.kp[key].occluded=S.kp[key].occluded||{tip:false,tail:false};
+  const nv=!S.kp[key].occluded[which];
+  S.kp[key].occluded[which]=nv;
+  S.stickyOcc[which]=nv;                 // persist this choice to following frames
+  draw(); updateModeTools();
+  saveKp(true);                          // autosave so the flag sticks on disk
+  toast(`${which} occluded: ${nv} (persists to next frames until toggled off)`); }
+
+// ===== borrow (cross-bag reference seeding) =====
+let borrowState={sources:[],src:null,frame:null};
+async function openBorrow(){
+  if(!S.bag){ toast("select a bag first"); return; }
+  let d; try{ d=await jget("/api/seed_sources"); }catch{ toast("could not load sources"); return; }
+  borrowState.sources=d.sources.filter(s=>s.bag!==S.bag);
+  if(!borrowState.sources.length){ toast("no other bag has seeds to borrow yet"); return; }
+  const srcSel=$("borrowSrc"); srcSel.innerHTML=borrowState.sources.map(s=>`<option>${s.bag}</option>`).join("");
+  // targets = every other bag, current one checked
+  $("borrowTargets").innerHTML=S.bags.map(b=>`<label style="display:flex;gap:8px;align-items:center;color:var(--ink);font-size:12px">
+      <input type="checkbox" value="${b.name}" ${b.name===S.bag?'checked':''}> ${b.name} <span style="color:var(--faint)">${b.frames}f</span></label>`).join("");
+  srcSel.onchange=()=>pickBorrowSrc(srcSel.value);
+  $("borrowFrame").onchange=()=>{ borrowState.frame=borrowState.src.frames.find(f=>f.frame_key===$("borrowFrame").value); drawBorrowPreview(); };
+  pickBorrowSrc(borrowState.sources[0].bag);
+  $("borrowModal").style.display="block";
+}
+function pickBorrowSrc(name){
+  borrowState.src=borrowState.sources.find(s=>s.bag===name);
+  $("borrowFrame").innerHTML=borrowState.src.frames.map(f=>`<option value="${f.frame_key}">frame ${f.frame_key} · ${f.labels.filter(l=>l===1).length}+/${f.labels.filter(l=>l===0).length}−</option>`).join("");
+  borrowState.frame=borrowState.src.frames[0]; drawBorrowPreview();
+}
+async function drawBorrowPreview(){
+  const cvb=$("borrowCv"), c=cvb.getContext("2d"); const f=borrowState.frame; if(!f) return;
+  try{ const img=await loadImg(`/api/bags/${borrowState.src.bag}/frame/${f.frame_key}?t=${Date.now()}`);
+    cvb.width=img.naturalWidth; cvb.height=img.naturalHeight; c.drawImage(img,0,0);
+    f.points.forEach((p,i)=>{ c.fillStyle=f.labels[i]===1?"#3fb950":"#f85149"; c.strokeStyle="#000"; c.lineWidth=2;
+      c.beginPath(); c.arc(p[0],p[1],6,0,7); c.fill(); c.stroke(); });
+  }catch{ c.clearRect(0,0,cvb.width,cvb.height); }
+}
+$("borrowClose").onclick=()=>$("borrowModal").style.display="none";
+$("borrowApply").onclick=async()=>{
+  const f=borrowState.frame; if(!f){ toast("pick a source frame"); return; }
+  const targets=[...document.querySelectorAll("#borrowTargets input:checked")].map(i=>i.value);
+  if(!targets.length){ toast("pick at least one target bag"); return; }
+  try{ const r=await jpost(`/api/bags/${S.bag}/reference`,
+        {source_bag:borrowState.src.bag, source_frame_key:f.frame_key, points:f.points, labels:f.labels,
+         also_apply_to:targets.filter(t=>t!==S.bag)});
+    toast(`reference applied to ${r.applied_to.length} bag(s)`); $("borrowModal").style.display="none"; await loadBags(); }
+  catch(e){ toast("apply failed: "+e.message); }
+};
+$("borrowClear").onclick=async()=>{ try{ await fetch(`/api/bags/${S.bag}/reference`,{method:"DELETE"});
+  toast("reference cleared for "+S.bag); $("borrowModal").style.display="none"; await loadBags(); }catch{ toast("clear failed"); } };
+
+// ===== jobs =====
+async function runStage(stage){ try{ await jpost("/api/run",{bag:S.bag,stage}); toast(`launched ${stage}`); pollJobs(); }
+  catch(e){ toast("launch failed: "+e.message); } }
+let jobTimer=null;
+async function pollJobs(){
+  let d; try{ d=await jget("/api/jobs"); }catch{ return; }
+  const jl=$("joblist");
+  jl.innerHTML = d.jobs.length? d.jobs.slice().reverse().map(j=>`
+    <div class="job"><div class="jh"><span class="st ${j.status}">${j.status}</span><b>${j.bag}</b> · ${j.stage}</div>
+      <pre>${(j.log||[]).slice(-12).join("\n").replace(/[<>]/g,"")||"…"}</pre></div>`).join("")
+    : `<div class="job"><span style="color:var(--faint)">no jobs yet</span></div>`;
+  const active=d.jobs.some(j=>j.status==="running"||j.status==="queued");
+  if(active){ if(!jobTimer) jobTimer=setInterval(pollJobs,1200); }
+  else if(jobTimer){ clearInterval(jobTimer); jobTimer=null; if(S.bag) selectBag(S.bag); }
+}
+
+// ===== nav / zoom controls =====
+$("prev").onclick=()=>{ stopPlay(); showFrame(S.idx-1); }; $("next").onclick=()=>{ stopPlay(); showFrame(S.idx+1); };
+$("slider").oninput=e=>{ stopPlay(); showFrame(+e.target.value); };
+$("zin").onclick=()=>zoomAt(1.25, cv.width/2, cv.height/2);
+$("zout").onclick=()=>zoomAt(1/1.25, cv.width/2, cv.height/2);
+$("zfit").onclick=()=>{ sizeCanvas(); fitView(); draw(); };
+window.addEventListener("resize", ()=>{ sizeCanvas(); draw(); });
+
+// ===== playback =====
+let playTimer=null;
+function isPlaying(){ return playTimer!==null; }
+function stopPlay(){ if(playTimer){ clearInterval(playTimer); playTimer=null; $("play").textContent="▶ play"; $("play").classList.add("go"); } }
+function startPlay(){
+  if(!S.keys.length){ return; }
+  if(S.idx>=S.keys.length-1) S.idx=-1;  // restart from top if at end
+  $("play").textContent="⏸ pause"; $("play").classList.remove("go");
+  const period=1000/parseInt($("fps").value,10);
+  playTimer=setInterval(async()=>{
+    if(S.idx>=S.keys.length-1){ stopPlay(); return; }
+    await showFrame(S.idx+1);
+    prefetchAround(S.idx);  // warm next frames' images for smoother play
+  }, period);
+}
+function togglePlay(){ isPlaying()?stopPlay():startPlay(); }
+$("play").onclick=togglePlay;
+$("fps").onchange=()=>{ if(isPlaying()){ stopPlay(); startPlay(); } };
+function prefetchAround(i){
+  for(let j=i+1;j<=i+3 && j<S.keys.length;j++){
+    const k=S.keys[j]; new Image().src=`/api/bags/${S.bag}/frame/${k}`;
+    new Image().src=`/api/bags/${S.bag}/mask/${k}`;
+    if(!(k in S.axes)) fetchAxes(k);   // warm axes cache ahead of playhead
+  }
+}
+// spacebar: pan-grab if held over canvas, but plain tap toggles play when not dragging
+window.addEventListener("keydown",e=>{ if(e.target.tagName==="INPUT"||e.target.tagName==="SELECT") return;
+  if(e.key==="p"||e.key==="P"){ togglePlay(); } });
+
+(async()=>{ sizeCanvas(); await loadBags(); updateModeTools(); pollJobs(); })();
+</script>
+</body>
+</html>

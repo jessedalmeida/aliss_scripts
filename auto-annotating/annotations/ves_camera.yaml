@@ -1,0 +1,26 @@
+image_width: 1080
+image_height: 1080
+camera_name: ves_camera
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [794.57599,   0.     , 670.39073,
+           0.     , 790.93113, 583.76347,
+           0.     ,   0.     ,   1.     ]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.376045, 0.141423, -0.000800, 0.002095, 0.000000]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1., 0., 0.,
+         0., 1., 0.,
+         0., 0., 1.]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [646.45343,   0.     , 705.86273,   0.     ,
+           0.     , 633.28931, 600.06932,   0.     ,
+           0.     ,   0.     ,   1.     ,   0.     ]
