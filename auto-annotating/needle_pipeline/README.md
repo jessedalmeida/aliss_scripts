@@ -125,6 +125,56 @@ camera intrinsics (preferring the stored corners for an exact solve, falling bac
 to the stored quaternion), so what you see is the actual `poses.json` pose, not an
 approximation.
 
+### Keyboard shortcuts
+
+Press `?` in the app for an in-GUI cheatsheet. Shortcuts are ignored while typing in
+a field, and Ctrl/Cmd/Alt combos pass through to the browser (so Cmd-S etc. behave
+normally).
+
+Global:
+
+| Key | Action |
+| --- | --- |
+| `a` / `←` | previous frame |
+| `d` / `→` | next frame |
+| `q` / `e` | jump back / forward 10 frames |
+| `s` | save (context-aware: mask / keypoints / seeds, or re-solve pose in Corners) |
+| `p` | play / pause |
+| `f` | fit image to view |
+| `[` / `]` | zoom out / in |
+| `space` + drag | pan (scroll wheel also zooms to cursor) |
+| `1` … `5` | switch mode: View / Seed / Mask / Keypts / Corners |
+| `?` | toggle the shortcut cheatsheet (`Esc` closes it) |
+
+Keypoints mode:
+
+| Key | Action |
+| --- | --- |
+| `t` | track ↔ (Lucas-Kanade both directions) |
+| `r` | re-anchor → (re-track forward from this frame) |
+| `g` | suggest tip/tail for this frame from its mask |
+| `z` / `x` | toggle occlusion on tip / tail |
+
+Mask mode:
+
+| Key | Action |
+| --- | --- |
+| `e` | toggle paint / erase |
+| `c` | clear the mask |
+| `v` | copy the previous frame's mask |
+
+Corners mode:
+
+| Key | Action |
+| --- | --- |
+| `r` | reset corners to detected |
+| `u` | undo last placed corner |
+| `s` | re-solve pose from current corners |
+
+The mode-specific keys (`r`, `e`, etc.) only act when that mode is active, so they
+don't collide with the global jumps — e.g. `e` toggles erase in Mask mode but jumps
+forward 10 frames everywhere else.
+
 ### Annotating several similar bags from one (cross-bag seeding)
 
 If you have several near-identical bags, you can annotate one and let the rest
@@ -167,6 +217,20 @@ sidebar (the `repack: snapshot|topics` pill), or set a global default with
 `--stage-arg` / the manifest. The annotated bag is written to
 `<out>/<bag>_annotated_<mode>` and the NPZ stage reads that mode-specific directory.
 
+### Smoothed vs raw poses
+
+The **poses ⟿** button (top toolbar) opens trajectory plots for the selected bag:
+X/Y/Z checkerboard position vs frame, raw (amber) overlaid with smoothed (cyan),
+plus a smoothing-deviation strip and mean/max shift stats. From that panel — or the
+sidebar `poses: auto|smooth|raw` pill — you choose what `repack` packs:
+
+- **auto** — smoothed when `poses_smooth.json` exists, else raw (the old behavior).
+- **smooth** — force smoothed (falls back to raw with a warning if not yet smoothed).
+- **raw** — force the unsmoothed `poses.json`.
+
+The choice is per bag (persisted in the manifest) and threads to `repack_bag.py`'s
+new `--poses {auto,smooth,raw}` flag.
+
 If the source bag has `ves_smoother/{left,right}/tool_tip_pixels` topics
 (`PoseWithCovarianceStamped` with pixel x/y in `position`), those pixel points are
 packed into the keypoints message's `left_arm_tip` / `right_arm_tip` fields. They
@@ -184,16 +248,6 @@ Three of your scripts are shipped here with fixes — drop them in over the orig
   flash on seeded frames), plus per-seed-frame provenance logging so any remaining
   discontinuity prints its source.
 - **`quick_compare.py`** — fixed the undefined variable and wrong arguments.
-
-## Fixes folded into the refactor
-
-- **Headless `extract`** split out from `seed_annotator.py` (which fused
-  extraction with the click UI), with the displaced-`return` decode bug fixed —
-  extraction now runs unattended.
-- **`correct_poses.py`** supplied so `review_failed_frames.py` runs (it imported
-  a module that wasn't in the set).
-- **One canonical `keypoints.json` schema** owned by a single editor instead of
-  three tools writing slightly different shapes.
 
 Still external: `smooth_poses_se3.py --compare` shells out to `compare_poses.py`
 (you provided it).

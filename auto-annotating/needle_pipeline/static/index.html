@@ -153,6 +153,7 @@
     </div>
     <span id="modetools" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"></span>
     <div class="gap"></div>
+    <button class="btn" id="posesBtn" title="visualize smoothed vs raw checkerboard poses">poses ⟿</button>
     <span class="pill" id="statpill"></span>
   </div>
 
@@ -161,7 +162,7 @@
   <div class="stage-wrap" id="stagewrap">
     <canvas id="cv"></canvas>
     <div class="empty" id="empty">select a bag</div>
-    <div class="vhint">scroll = zoom · space+drag or middle-drag = pan</div>
+    <div class="vhint">scroll = zoom · space+drag = pan · <b>a</b>/<b>d</b> frames · <b>s</b> save · press <b>?</b> for keys</div>
     <div class="zoombar">
       <button id="zout">–</button><span class="z" id="zlevel">100%</span>
       <button id="zin">+</button><button id="zfit" title="fit">⤢</button>
@@ -187,6 +188,37 @@
 </section>
 
 <div class="toast" id="toast"></div>
+
+<div id="posesModal" style="display:none; position:fixed; inset:0; z-index:30; background:rgba(8,9,11,.78)">
+  <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:min(880px,94vw);
+    max-height:90vh; overflow:auto; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px">
+      <span style="font-family:var(--disp); letter-spacing:2px; text-transform:uppercase; color:var(--amber); font-size:16px">Pose smoothing</span>
+      <span id="posesStats" style="color:var(--dim); font-size:11px"></span>
+      <div style="flex:1"></div>
+      <span style="color:var(--dim); font-size:11px">pack with:</span>
+      <div class="modeseg" id="posesPick" style="border-color:var(--line)">
+        <button data-src="auto">auto</button><button data-src="smooth">smoothed</button><button data-src="raw">raw</button>
+      </div>
+      <button class="btn" id="posesClose">close</button>
+    </div>
+    <div style="color:var(--faint); font-size:10px; margin-bottom:10px">
+      <span style="color:var(--amber)">&#9644; raw</span> &nbsp; <span style="color:var(--cyan)">&#9644; smoothed</span> &nbsp; · position vs frame index
+    </div>
+    <div id="posesPlots"></div>
+  </div>
+</div>
+
+<div id="keysModal" style="display:none; position:fixed; inset:0; z-index:30; background:rgba(8,9,11,.72)">
+  <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:min(560px,92vw);
+    max-height:88vh; overflow:auto; background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px">
+      <span style="font-family:var(--disp); letter-spacing:2px; text-transform:uppercase; color:var(--amber); font-size:16px">Keyboard shortcuts</span>
+      <div style="flex:1"></div><button class="btn" id="keysClose">close</button>
+    </div>
+    <div id="keysBody" style="display:grid; grid-template-columns:1fr 1fr; gap:6px 18px; font-size:12px; color:var(--ink)"></div>
+  </div>
+</div>
 
 <div id="borrowModal" style="display:none; position:fixed; inset:0; z-index:20; background:rgba(8,9,11,.72);">
   <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:min(760px,92vw);
@@ -345,16 +377,20 @@ async function loadBags(){
     const div=document.createElement("div"); div.className="bag"+(bg.name===S.bag?" active":"");
     const dots=bg.stages.map(s=>`<div class="dot ${s.status}" title="${s.name}: ${s.status}${s.msg?' — '+s.msg:''}"></div>`).join("");
     const mode=bg.repack_mode||"snapshot";
+    const psrc=bg.poses_source||"auto";
+    const psColor=psrc==="smooth"?"var(--cyan)":psrc==="raw"?"var(--amber)":"var(--faint)";
     const refbadge=bg.has_reference?`<span class="badge" data-ref="1" title="borrows another bag's seed (cross-bag propagation)" style="border-color:var(--amber);color:var(--amber)">⇄ ref</span>`:"";
     div.innerHTML=`<div class="row1"><span class="name">${bg.name}</span>
       <span class="badge ${bg.tracks.needle?'on':''}" data-t="needle">N</span>
       <span class="badge ${bg.tracks.checkerboard?'on':''}" data-t="checkerboard">C</span>
       <span class="cnt">${bg.frames}f</span></div>
       <div class="strip">${dots}</div>
-      <div class="row1" style="margin-top:6px">
+      <div class="row1" style="margin-top:6px; flex-wrap:wrap; gap:4px">
         <span class="badge" data-mode="1" title="repack output mode — click to toggle"
           style="cursor:pointer;${mode==='topics'?'border-color:var(--cyan);color:var(--cyan)':'border-color:var(--green);color:var(--green)'}">
           repack: ${mode}</span>
+        <span class="badge" data-psrc="1" title="which poses to pack — click to cycle auto→smooth→raw${bg.has_smoothed?'':' (no smoothed yet)'}"
+          style="cursor:pointer;border-color:${psColor};color:${psColor}">poses: ${psrc}${bg.has_smoothed?'':' ⚠'}</span>
         ${refbadge}
       </div>`;
     div.querySelector(".name").onclick=()=>selectBag(bg.name);
@@ -365,6 +401,10 @@ async function loadBags(){
     if(modeBadge) modeBadge.onclick=async ev=>{ ev.stopPropagation();
       const next=mode==="snapshot"?"topics":"snapshot";
       await jpost(`/api/bags/${bg.name}/repack_mode`,{mode:next}); toast(`${bg.name}: repack → ${next}`); loadBags(); };
+    const psBadge=div.querySelector('.badge[data-psrc]');
+    if(psBadge) psBadge.onclick=async ev=>{ ev.stopPropagation();
+      const cycle={auto:"smooth",smooth:"raw",raw:"auto"}; const next=cycle[psrc];
+      await jpost(`/api/bags/${bg.name}/poses_source`,{source:next}); toast(`${bg.name}: poses → ${next}`); loadBags(); };
     el.appendChild(div);
   }
   if(S.bag) renderRail();
@@ -469,11 +509,61 @@ window.addEventListener("mousemove", e=>{
 });
 window.addEventListener("mouseup", ()=>{ S.painting=false; S.dragKp=null; S.dragCorner=-1; if(S.panning){ S.panning=false; cv.style.cursor=""; } });
 window.addEventListener("keydown", e=>{
-  if(e.target.tagName==="INPUT") return;
-  if(e.code==="Space"){ S.spaceDown=true; cv.style.cursor="grab"; e.preventDefault(); }
-  else if(e.key==="ArrowLeft") showFrame(S.idx-1);
-  else if(e.key==="ArrowRight") showFrame(S.idx+1);
-  else if(e.key.toLowerCase()==="s"){ if(S.mode==="mask")saveMask(); else if(S.mode==="keypoints")saveKp(); else if(S.mode==="seed")saveSeeds(); }
+  // never intercept typing in inputs/selects/textareas
+  if(["INPUT","SELECT","TEXTAREA"].includes(e.target.tagName)) return;
+  // ignore browser/OS chords (Ctrl/Cmd/Alt) so Cmd-S etc. still work normally
+  if(e.metaKey || e.ctrlKey || e.altKey) return;
+  const k=e.key.toLowerCase();
+
+  if(e.code==="Space"){ S.spaceDown=true; cv.style.cursor="grab"; e.preventDefault(); return; }
+
+  // --- help cheatsheet ---
+  if(e.key==="?" || (k==="/" && e.shiftKey)){ toggleKeys(); return; }
+  if(e.key==="Escape"){ $("keysModal").style.display="none"; return; }
+
+  // --- frame navigation (a/d and arrows); pause playback on manual step ---
+  if(k==="a" || e.key==="ArrowLeft"){ stopPlay(); showFrame(S.idx-1); return; }
+  if(k==="d" || e.key==="ArrowRight"){ stopPlay(); showFrame(S.idx+1); return; }
+
+  // --- save (context-sensitive to the active mode) ---
+  if(k==="s"){ e.preventDefault();
+    if(S.mode==="mask") saveMask();
+    else if(S.mode==="keypoints") saveKp();
+    else if(S.mode==="seed") saveSeeds(false);
+    else if(S.mode==="corners") solvePose();
+    return; }
+
+  // --- playback ---
+  if(k==="p"){ togglePlay(); return; }
+
+  // --- mode switching (1..5 match the toolbar order) ---
+  const modeKeys={"1":"view","2":"seed","3":"mask","4":"keypoints","5":"corners"};
+  if(modeKeys[e.key]){ setMode(modeKeys[e.key]); return; }
+
+  // --- view controls ---
+  if(k==="f"){ sizeCanvas(); fitView(); draw(); return; }          // fit
+  if(e.key==="]" || k==="="){ zoomAt(1.25, cv.width/2, cv.height/2); return; }
+  if(e.key==="[" || k==="-"){ zoomAt(1/1.25, cv.width/2, cv.height/2); return; }
+
+  // --- mode-specific keys (checked before generic q/e jumps) ---
+  if(S.mode==="keypoints"){
+    if(k==="t"){ trackKp(false); return; }     // track ↔
+    if(k==="r"){ trackKp(true); return; }      // re-anchor →
+    if(k==="g"){ suggestKp(false); return; }   // suggest this frame
+    if(k==="z"){ toggleOcc("tip"); return; }   // occlude tip
+    if(k==="x"){ toggleOcc("tail"); return; }  // occlude tail
+  } else if(S.mode==="mask"){
+    if(k==="e"){ S.erase=!S.erase; updateModeTools(); return; }     // toggle erase
+    if(k==="c"){ S.maskCanvas.getContext("2d").clearRect(0,0,S.maskCanvas.width,S.maskCanvas.height); draw(); return; }
+    if(k==="v"){ copyPrevMask(); return; }     // copy previous mask
+  } else if(S.mode==="corners"){
+    if(k==="r"){ const pe=S.poses[S.keys[S.idx]]; S.corners=pe&&pe.corners?pe.corners.map(c=>[c[0],c[1]]):[]; draw(); updateModeTools(); return; } // reset to detected
+    if(k==="u"){ S.corners.pop(); draw(); updateModeTools(); return; } // undo last corner
+  }
+
+  // --- generic 10-frame jumps (only if the mode didn't claim q/e above) ---
+  if(k==="q"){ stopPlay(); showFrame(S.idx-10); return; }
+  if(k==="e"){ stopPlay(); showFrame(S.idx+10); return; }
 });
 window.addEventListener("keyup", e=>{ if(e.code==="Space"){ S.spaceDown=false; cv.style.cursor=""; } });
 function dist(a,b){ return Math.hypot(a[0]-b[0],a[1]-b[1]); }
@@ -546,9 +636,13 @@ function copyPrevMask(){ if(S.idx===0){ toast("no previous frame"); return; } co
     .catch(()=>toast("previous frame has no mask")); }
 
 // ===== mode tools =====
+function setMode(mode){
+  S.mode=mode;
+  [...$("modeseg").children].forEach(x=>x.classList.toggle("active", x.dataset.mode===mode));
+  updateModeTools(); draw();
+}
 $("modeseg").addEventListener("click", e=>{ const b=e.target.closest("button"); if(!b) return;
-  [...e.currentTarget.children].forEach(x=>x.classList.remove("active")); b.classList.add("active");
-  S.mode=b.dataset.mode; if(S.mode!=="corners") {} updateModeTools(); draw(); });
+  setMode(b.dataset.mode); });
 function mk(html){ $("modetools").innerHTML=html; }
 function updateModeTools(){
   if(!S.bag){ mk(""); return; }
@@ -699,9 +793,83 @@ function prefetchAround(i){
     if(!(k in S.axes)) fetchAxes(k);   // warm axes cache ahead of playhead
   }
 }
-// spacebar: pan-grab if held over canvas, but plain tap toggles play when not dragging
-window.addEventListener("keydown",e=>{ if(e.target.tagName==="INPUT"||e.target.tagName==="SELECT") return;
-  if(e.key==="p"||e.key==="P"){ togglePlay(); } });
+
+function toggleKeys(){
+  const m=$("keysModal");
+  if(m.style.display==="block"){ m.style.display="none"; return; }
+  const rows=[
+    ["a / ←","previous frame"],["d / →","next frame"],
+    ["q / e","jump ±10 frames"],["s","save (mode-aware)"],
+    ["p","play / pause"],["f","fit to view"],
+    ["[ / ]","zoom out / in"],["space + drag","pan"],["scroll","zoom to cursor"],
+    ["1 … 5","View / Seed / Mask / Keypts / Corners"],
+    ["— Keypts —",""],["t","track ↔"],["r","re-anchor →"],["g","suggest this frame"],
+    ["z / x","occlude tip / tail"],
+    ["— Mask —",""],["e","toggle erase"],["c","clear mask"],["v","copy previous mask"],
+    ["— Corners —",""],["r","reset to detected"],["u","undo last corner"],["s","re-solve pose"],
+    ["?","this cheatsheet"],
+  ];
+  $("keysBody").innerHTML=rows.map(([key,desc])=>
+    desc===""
+      ? `<div style="grid-column:1/-1; color:var(--amber); font-size:11px; letter-spacing:1px; margin-top:6px">${key}</div>`
+      : `<div><kbd style="background:var(--panel2); border:1px solid var(--line); border-radius:4px; padding:1px 6px; color:var(--cyan)">${key}</kbd></div><div style="color:var(--dim)">${desc}</div>`
+  ).join("");
+  m.style.display="block";
+}
+$("keysClose").onclick=()=>$("keysModal").style.display="none";
+
+// ===== pose smoothing plots =====
+function _linePath(idx, vals, x0,y0,w,h, lo,hi, imin,imax){
+  if(!idx.length) return "";
+  const sx=i=>x0 + (imax===imin?0:(i-imin)/(imax-imin))*w;
+  const sy=v=>y0 + h - (hi===lo?h/2:(v-lo)/(hi-lo)*h);
+  return idx.map((i,n)=>`${n?'L':'M'}${sx(i).toFixed(1)},${sy(vals[n]).toFixed(1)}`).join("");
+}
+function _panel(title, idx, raw, smooth, devMode){
+  const W=820,H=150, x0=46,y0=14, w=W-x0-12, h=H-y0-26;
+  const all=[...raw, ...(smooth||[])].filter(v=>v!=null);
+  if(!all.length) return `<div style="color:var(--faint);font-size:11px;margin:8px 0">${title}: no data</div>`;
+  let lo=Math.min(...all), hi=Math.max(...all); if(lo===hi){lo-=1;hi+=1;}
+  const pad=(hi-lo)*0.08; lo-=pad; hi+=pad;
+  const imin=idx.length?idx[0]:0, imax=idx.length?idx[idx.length-1]:1;
+  const grid=[0,0.25,0.5,0.75,1].map(f=>{const y=y0+h-f*h; return `<line x1="${x0}" y1="${y.toFixed(1)}" x2="${x0+w}" y2="${y.toFixed(1)}" stroke="var(--line)" stroke-width="0.5"/>`+
+    `<text x="${x0-4}" y="${(y+3).toFixed(1)}" fill="var(--faint)" font-size="9" text-anchor="end">${(lo+f*(hi-lo)).toFixed(3)}</text>`;}).join("");
+  const rawP=_linePath(idx,raw,x0,y0,w,h,lo,hi,imin,imax);
+  const smP = smooth?_linePath(idx,smooth,x0,y0,w,h,lo,hi,imin,imax):"";
+  return `<div style="margin-bottom:6px"><div style="color:var(--dim);font-size:10px;letter-spacing:1px;text-transform:uppercase;margin:4px 0 2px">${title}</div>
+    <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block;background:#0a0b0e;border:1px solid var(--line);border-radius:6px">
+      ${grid}
+      ${rawP?`<path d="${rawP}" fill="none" stroke="${devMode?'var(--green)':'var(--amber)'}" stroke-width="1.4"/>`:""}
+      ${smP?`<path d="${smP}" fill="none" stroke="var(--cyan)" stroke-width="1.4"/>`:""}
+    </svg></div>`;
+}
+async function openPoses(){
+  if(!S.bag){ toast("select a bag first"); return; }
+  let tr; try{ tr=await jget(`/api/bags/${S.bag}/pose_trajectory`); }catch{ toast("no poses to plot"); return; }
+  if(!tr.raw.idx.length && !tr.smooth.idx.length){ toast("no checkerboard poses for this bag yet"); return; }
+  const s=tr.stats||{};
+  $("posesStats").textContent = tr.has_smoothed
+    ? `${s.frames||0} frames · mean shift ${(s.mean_mm||0).toFixed(2)}mm · max ${(s.max_mm||0).toFixed(2)}mm`
+    : "no smoothed poses yet — run the smooth stage to compare";
+  const R=tr.raw, M=tr.smooth;
+  let html = _panel("X position (m)", R.idx, R.x, tr.has_smoothed?M.x:null)
+           + _panel("Y position (m)", R.idx, R.y, tr.has_smoothed?M.y:null)
+           + _panel("Z position (m)", R.idx, R.z, tr.has_smoothed?M.z:null);
+  if(tr.has_smoothed && tr.deviation.idx.length)
+    html += _panel("Smoothing deviation |Δ| (m)", tr.deviation.idx, tr.deviation.dist, null, true);
+  $("posesPlots").innerHTML=html;
+  // reflect current pack-with choice
+  const cur=(curBag()&&curBag().poses_source)||"auto";
+  [...$("posesPick").children].forEach(b=>b.classList.toggle("active", b.dataset.src===cur));
+  $("posesModal").style.display="block";
+}
+$("posesPick").addEventListener("click", async e=>{ const b=e.target.closest("button"); if(!b) return;
+  const src=b.dataset.src;
+  await jpost(`/api/bags/${S.bag}/poses_source`,{source:src});
+  [...$("posesPick").children].forEach(x=>x.classList.toggle("active", x===b));
+  toast(`${S.bag}: repack will use ${src} poses`); loadBags(); });
+$("posesBtn").onclick=openPoses;
+$("posesClose").onclick=()=>$("posesModal").style.display="none";
 
 (async()=>{ sizeCanvas(); await loadBags(); updateModeTools(); pollJobs(); })();
 </script>

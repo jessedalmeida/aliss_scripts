@@ -101,7 +101,9 @@
           "rc": 0,
           "ts": 1780168598.181288
         }
-      }
+      },
+      "poses_source": "smooth",
+      "repack_mode": "topics"
     },
     "ch_chicken_2": {
       "tracks": {

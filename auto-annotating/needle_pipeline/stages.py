@@ -142,6 +142,11 @@ def _repack_mode(ctx, bag) -> str:
     return per_bag or ctx.repack_mode or "snapshot"
 
 
+def _poses_source(ctx, bag) -> str:
+    per_bag = (ctx.bag_poses_sources or {}).get(bag)
+    return per_bag or ctx.poses_source or "auto"
+
+
 def _annotated_dir(ctx, bag):
     # repack_bag.py writes <out>/<bag>_annotated_<mode>
     return ctx.out_dir / f"{bag}_annotated_{_repack_mode(ctx, bag)}" if ctx.out_dir else None
@@ -154,7 +159,8 @@ def _repack_cmd(ctx, bag):
     return [sys.executable, str(ctx.script("repack_bag.py")),
             "--bag", src, "--ann-dir", str(ctx.ann_dir),
             "--out-dir", str(ctx.out_dir),
-            "--output-mode", _repack_mode(ctx, bag), *_extra(ctx, "repack")]
+            "--output-mode", _repack_mode(ctx, bag),
+            "--poses", _poses_source(ctx, bag), *_extra(ctx, "repack")]
 
 
 def _npz_cmd(ctx, bag):

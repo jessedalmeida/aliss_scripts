@@ -108,6 +108,8 @@ def list_bags():
             "tracks": tracks,
             "frames": len(frame_files(bag)),
             "repack_mode": m.bag(bag).get("repack_mode") or c.repack_mode,
+            "poses_source": m.bag(bag).get("poses_source") or c.poses_source,
+            "has_smoothed": (bag_dir(bag) / "poses_smooth.json").exists(),
             "has_reference": (bag_dir(bag) / "reference_seed.json").exists(),
             "stages": [
                 {"name": s.name, "track": s.track, "kind": s.kind,
@@ -140,6 +142,54 @@ async def set_repack_mode(bag: str, req: Request):
     m.set_repack_mode(bag, mode)
     m.save()
     return {"ok": True, "repack_mode": mode}
+
+
+@app.post("/api/bags/{bag}/poses_source")
+async def set_poses_source(bag: str, req: Request):
+    body = await req.json()
+    src = body.get("source")
+    if src not in ("auto", "smooth", "raw"):
+        raise HTTPException(400, "source must be 'auto', 'smooth', or 'raw'")
+    m = manifest()
+    m.set_poses_source(bag, src)
+    m.save()
+    return {"ok": True, "poses_source": src}
+
+
+@app.get("/api/bags/{bag}/pose_trajectory")
+def pose_trajectory(bag: str):
+    """Per-frame position trajectories for raw and smoothed poses, plus the
+    per-frame deviation between them — for the GUI's smoothing plots."""
+    def _traj(fname: str):
+        data = read_json(bag_dir(bag) / fname).get("frames", {})
+        keys = sorted((k for k in data if k.isdigit()), key=int)
+        idx, xs, ys, zs = [], [], [], []
+        for k in keys:
+            fr = data[k]
+            pose = fr.get("pose") if isinstance(fr, dict) else None
+            pos = (pose or {}).get("position") if pose else None
+            if not pos:
+                continue
+            idx.append(int(k)); xs.append(pos[0]); ys.append(pos[1]); zs.append(pos[2])
+        return {"idx": idx, "x": xs, "y": ys, "z": zs}
+
+    raw = _traj("poses.json")
+    smooth = _traj("poses_smooth.json")
+    # per-frame deviation (m) on the common frames
+    dev = {"idx": [], "dist": []}
+    if smooth["idx"]:
+        rmap = {i: (raw["x"][n], raw["y"][n], raw["z"][n]) for n, i in enumerate(raw["idx"])}
+        for n, i in enumerate(smooth["idx"]):
+            if i in rmap:
+                rx, ry, rz = rmap[i]
+                d = ((smooth["x"][n]-rx)**2 + (smooth["y"][n]-ry)**2 + (smooth["z"][n]-rz)**2) ** 0.5
+                dev["idx"].append(i); dev["dist"].append(d)
+    stats = {}
+    if dev["dist"]:
+        ds = dev["dist"]
+        stats = {"mean_mm": 1000*sum(ds)/len(ds), "max_mm": 1000*max(ds), "frames": len(ds)}
+    return {"raw": raw, "smooth": smooth, "deviation": dev, "stats": stats,
+            "has_smoothed": bool(smooth["idx"])}
 
 
 # --------------------------------------------------------------------------

@@ -217,12 +217,22 @@ def load_keypoints_for_bag(ann_dir: Path, bag_stem: str) -> dict[int, dict]:
     return result
 
 
-def load_poses_for_bag(ann_dir: Path, bag_stem: str) -> dict[int, dict]:
-    poses_path = ann_dir / bag_stem / "poses_smooth.json"
+def load_poses_for_bag(ann_dir: Path, bag_stem: str, poses_source: str = "auto") -> dict[int, dict]:
+    smooth_path = ann_dir / bag_stem / "poses_smooth.json"
+    raw_path = ann_dir / bag_stem / "poses.json"
+    if poses_source == "smooth":
+        poses_path = smooth_path
+    elif poses_source == "raw":
+        poses_path = raw_path
+    else:  # auto: prefer smoothed when present
+        poses_path = smooth_path if smooth_path.exists() else raw_path
     if not poses_path.exists():
-        poses_path = ann_dir / bag_stem / "poses.json"
-    if not poses_path.exists():
-        return {}
+        if poses_source == "smooth" and raw_path.exists():
+            print(f"  [WARN] poses_smooth.json missing; falling back to raw poses.json")
+            poses_path = raw_path
+        else:
+            return {}
+    print(f"  Pose source: {poses_path.name}")
 
     with open(poses_path, encoding="utf-8") as f:
         payload = json.load(f)
@@ -460,6 +470,7 @@ def repack_bag(
     out_dir: Path,
     every_n: int | None = None,
     output_mode: str = "snapshot",
+    poses_source: str = "auto",
 ):
     if not ROSBAGS_AVAILABLE:
         print("[ERROR] rosbags not installed. Run: pip install rosbags")
@@ -480,7 +491,7 @@ def repack_bag(
 
     masks = load_masks_for_bag(ann_dir, bag_stem)
     keypoints = load_keypoints_for_bag(ann_dir, bag_stem)
-    poses = load_poses_for_bag(ann_dir, bag_stem)
+    poses = load_poses_for_bag(ann_dir, bag_stem, poses_source=poses_source)
     annotated_indices = sorted(set(masks) & set(keypoints))
     pose_indices = sorted(idx for idx, frame_data in poses.items() if frame_data.get("pose") and frame_data.get("status") != "failed")
 
@@ -860,6 +871,13 @@ def main():
         help="Write a bundled NeedleTrackingSnapshot or separate Foxglove-friendly topics.",
     )
     parser.add_argument(
+        "--poses",
+        choices=["auto", "smooth", "raw"],
+        default="auto",
+        help="Which checkerboard poses to pack: 'smooth' (poses_smooth.json), 'raw' (poses.json), "
+             "or 'auto' (smoothed when present, else raw). Default: auto.",
+    )
+    parser.add_argument(
         "--every-n",
         type=int,
         default=None,
@@ -888,10 +906,12 @@ def main():
                 if not child.is_dir():
                     continue
                 print(f"Packing child bag: {child.name}")
-                repack_bag(child, ann_dir, out_dir, every_n=args.every_n, output_mode=args.output_mode)
+                repack_bag(child, ann_dir, out_dir, every_n=args.every_n,
+                           output_mode=args.output_mode, poses_source=args.poses)
             continue
 
-        repack_bag(bag_path, ann_dir, out_dir, every_n=args.every_n, output_mode=args.output_mode)
+        repack_bag(bag_path, ann_dir, out_dir, every_n=args.every_n,
+                   output_mode=args.output_mode, poses_source=args.poses)
 
     print("\nDone. Replay with:")
     print("  ros2 bag play <annotated_bag>")
