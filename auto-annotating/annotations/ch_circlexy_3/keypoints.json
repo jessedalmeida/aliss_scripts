@@ -1,0 +1,4561 @@
+{
+  "bag_stem": "ch_circlexy_3",
+  "source": "mask_skeleton_endpoints",
+  "seed_frame_idx": 0,
+  "seed_points": null,
+  "tip_hint": null,
+  "frames": {
+    "000000": {
+      "needle_tip": [
+        476,
+        615
+      ],
+      "needle_tail": [
+        653,
+        556
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000001": {
+      "needle_tip": [
+        469,
+        612
+      ],
+      "needle_tail": [
+        649,
+        554
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000002": {
+      "needle_tip": [
+        465,
+        612
+      ],
+      "needle_tail": [
+        646,
+        549
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000003": {
+      "needle_tip": [
+        459,
+        608
+      ],
+      "needle_tail": [
+        644,
+        549
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000004": {
+      "needle_tip": [
+        457,
+        608
+      ],
+      "needle_tail": [
+        644,
+        541
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000005": {
+      "needle_tip": [
+        453,
+        606
+      ],
+      "needle_tail": [
+        644,
+        541
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000006": {
+      "needle_tip": [
+        450,
+        605
+      ],
+      "needle_tail": [
+        643,
+        538
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000007": {
+      "needle_tip": [
+        445,
+        602
+      ],
+      "needle_tail": [
+        641,
+        535
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000008": {
+      "needle_tip": [
+        442,
+        599
+      ],
+      "needle_tail": [
+        641,
+        532
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000009": {
+      "needle_tip": [
+        438,
+        594
+      ],
+      "needle_tail": [
+        642,
+        529
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000010": {
+      "needle_tip": [
+        435,
+        591
+      ],
+      "needle_tail": [
+        642,
+        526
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000011": {
+      "needle_tip": [
+        432,
+        587
+      ],
+      "needle_tail": [
+        644,
+        520
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000012": {
+      "needle_tip": [
+        429,
+        582
+      ],
+      "needle_tail": [
+        644,
+        516
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000013": {
+      "needle_tip": [
+        426,
+        579
+      ],
+      "needle_tail": [
+        645,
+        513
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000014": {
+      "needle_tip": [
+        429,
+        579
+      ],
+      "needle_tail": [
+        648,
+        510
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000015": {
+      "needle_tip": [
+        425,
+        574
+      ],
+      "needle_tail": [
+        651,
+        508
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000016": {
+      "needle_tip": [
+        425,
+        571
+      ],
+      "needle_tail": [
+        653,
+        505
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000017": {
+      "needle_tip": [
+        425,
+        568
+      ],
+      "needle_tail": [
+        657,
+        500
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000018": {
+      "needle_tip": [
+        424,
+        564
+      ],
+      "needle_tail": [
+        661,
+        498
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000019": {
+      "needle_tip": [
+        425,
+        562
+      ],
+      "needle_tail": [
+        665,
+        492
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000020": {
+      "needle_tip": [
+        429,
+        562
+      ],
+      "needle_tail": [
+        668,
+        489
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000021": {
+      "needle_tip": [
+        429,
+        557
+      ],
+      "needle_tail": [
+        674,
+        486
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000022": {
+      "needle_tip": [
+        430,
+        554
+      ],
+      "needle_tail": [
+        680,
+        482
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000023": {
+      "needle_tip": [
+        434,
+        555
+      ],
+      "needle_tail": [
+        685,
+        478
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000024": {
+      "needle_tip": [
+        442,
+        558
+      ],
+      "needle_tail": [
+        693,
+        476
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000025": {
+      "needle_tip": [
+        448,
+        559
+      ],
+      "needle_tail": [
+        698,
+        475
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000026": {
+      "needle_tip": [
+        451,
+        557
+      ],
+      "needle_tail": [
+        705,
+        469
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000027": {
+      "needle_tip": [
+        454,
+        557
+      ],
+      "needle_tail": [
+        712,
+        470
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000028": {
+      "needle_tip": [
+        465,
+        561
+      ],
+      "needle_tail": [
+        717,
+        469
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000029": {
+      "needle_tip": [
+        474,
+        564
+      ],
+      "needle_tail": [
+        724,
+        469
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000030": {
+      "needle_tip": [
+        480,
+        565
+      ],
+      "needle_tail": [
+        732,
+        454
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000031": {
+      "needle_tip": [
+        485,
+        567
+      ],
+      "needle_tail": [
+        738,
+        468
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000032": {
+      "needle_tip": [
+        495,
+        571
+      ],
+      "needle_tail": [
+        744,
+        467
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000033": {
+      "needle_tip": [
+        505,
+        575
+      ],
+      "needle_tail": [
+        753,
+        458
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000034": {
+      "needle_tip": [
+        511,
+        578
+      ],
+      "needle_tail": [
+        760,
+        464
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000035": {
+      "needle_tip": [
+        518,
+        581
+      ],
+      "needle_tail": [
+        763,
+        462
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000036": {
+      "needle_tip": [
+        518,
+        580
+      ],
+      "needle_tail": [
+        762,
+        465
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000037": {
+      "needle_tip": [
+        517,
+        580
+      ],
+      "needle_tail": [
+        762,
+        460
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000038": {
+      "needle_tip": [
+        523,
+        583
+      ],
+      "needle_tail": [
+        763,
+        464
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000039": {
+      "needle_tip": [
+        526,
+        589
+      ],
+      "needle_tail": [
+        765,
+        461
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000040": {
+      "needle_tip": [
+        539,
+        596
+      ],
+      "needle_tail": [
+        768,
+        461
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000041": {
+      "needle_tip": [
+        549,
+        606
+      ],
+      "needle_tail": [
+        773,
+        462
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000042": {
+      "needle_tip": [
+        578,
+        621
+      ],
+      "needle_tail": [
+        781,
+        455
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000043": {
+      "needle_tip": [
+        609,
+        626
+      ],
+      "needle_tail": [
+        797,
+        453
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000044": {
+      "needle_tip": [
+        628,
+        618
+      ],
+      "needle_tail": [
+        820,
+        447
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000045": {
+      "needle_tip": [
+        643,
+        604
+      ],
+      "needle_tail": [
+        840,
+        445
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000046": {
+      "needle_tip": [
+        651,
+        587
+      ],
+      "needle_tail": [
+        858,
+        443
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000047": {
+      "needle_tip": [
+        653,
+        571
+      ],
+      "needle_tail": [
+        874,
+        444
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000048": {
+      "needle_tip": [
+        662,
+        567
+      ],
+      "needle_tail": [
+        881,
+        446
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000049": {
+      "needle_tip": [
+        669,
+        565
+      ],
+      "needle_tail": [
+        885,
+        448
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000050": {
+      "needle_tip": [
+        674,
+        553
+      ],
+      "needle_tail": [
+        899,
+        451
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000051": {
+      "needle_tip": [
+        684,
+        550
+      ],
+      "needle_tail": [
+        905,
+        453
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000052": {
+      "needle_tip": [
+        684,
+        543
+      ],
+      "needle_tail": [
+        911,
+        459
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000053": {
+      "needle_tip": [
+        693,
+        543
+      ],
+      "needle_tail": [
+        917,
+        458
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000054": {
+      "needle_tip": [
+        699,
+        543
+      ],
+      "needle_tail": [
+        919,
+        461
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000055": {
+      "needle_tip": [
+        705,
+        543
+      ],
+      "needle_tail": [
+        921,
+        466
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000056": {
+      "needle_tip": [
+        710,
+        545
+      ],
+      "needle_tail": [
+        923,
+        468
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000057": {
+      "needle_tip": [
+        711,
+        545
+      ],
+      "needle_tail": [
+        923,
+        469
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000058": {
+      "needle_tip": [
+        721,
+        551
+      ],
+      "needle_tail": [
+        924,
+        471
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000059": {
+      "needle_tip": [
+        723,
+        552
+      ],
+      "needle_tail": [
+        924,
+        476
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000060": {
+      "needle_tip": [
+        725,
+        552
+      ],
+      "needle_tail": [
+        924,
+        481
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000061": {
+      "needle_tip": [
+        728,
+        553
+      ],
+      "needle_tail": [
+        923,
+        484
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000062": {
+      "needle_tip": [
+        731,
+        555
+      ],
+      "needle_tail": [
+        924,
+        485
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000063": {
+      "needle_tip": [
+        730,
+        553
+      ],
+      "needle_tail": [
+        924,
+        491
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000064": {
+      "needle_tip": [
+        737,
+        559
+      ],
+      "needle_tail": [
+        923,
+        493
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000065": {
+      "needle_tip": [
+        738,
+        559
+      ],
+      "needle_tail": [
+        924,
+        490
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000066": {
+      "needle_tip": [
+        740,
+        562
+      ],
+      "needle_tail": [
+        921,
+        495
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000067": {
+      "needle_tip": [
+        738,
+        568
+      ],
+      "needle_tail": [
+        916,
+        494
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000068": {
+      "needle_tip": [
+        740,
+        577
+      ],
+      "needle_tail": [
+        911,
+        500
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000069": {
+      "needle_tip": [
+        741,
+        582
+      ],
+      "needle_tail": [
+        907,
+        503
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints"
+    },
+    "000070": {
+      "needle_tip": [
+        738,
+        589
+      ],
+      "needle_tail": [
+        901,
+        504
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000071": {
+      "needle_tip": [
+        741,
+        597
+      ],
+      "needle_tail": [
+        894,
+        510
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000072": {
+      "needle_tip": [
+        739,
+        603
+      ],
+      "needle_tail": [
+        888,
+        510
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000073": {
+      "needle_tip": [
+        734,
+        606
+      ],
+      "needle_tail": [
+        883,
+        517
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000074": {
+      "needle_tip": [
+        735,
+        611
+      ],
+      "needle_tail": [
+        879,
+        519
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000075": {
+      "needle_tip": [
+        736,
+        614
+      ],
+      "needle_tail": [
+        874,
+        521
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000076": {
+      "needle_tip": [
+        729,
+        615
+      ],
+      "needle_tail": [
+        871,
+        525
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000077": {
+      "needle_tip": [
+        731,
+        618
+      ],
+      "needle_tail": [
+        868,
+        529
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000078": {
+      "needle_tip": [
+        729,
+        621
+      ],
+      "needle_tail": [
+        864,
+        533
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000079": {
+      "needle_tip": [
+        725,
+        623
+      ],
+      "needle_tail": [
+        860,
+        533
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000080": {
+      "needle_tip": [
+        721,
+        624
+      ],
+      "needle_tail": [
+        857,
+        533
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000081": {
+      "needle_tip": [
+        719,
+        626
+      ],
+      "needle_tail": [
+        853,
+        539
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000082": {
+      "needle_tip": [
+        716,
+        628
+      ],
+      "needle_tail": [
+        848,
+        542
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000083": {
+      "needle_tip": [
+        712,
+        628
+      ],
+      "needle_tail": [
+        845,
+        539
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000084": {
+      "needle_tip": [
+        712,
+        629
+      ],
+      "needle_tail": [
+        843,
+        540
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000085": {
+      "needle_tip": [
+        713,
+        629
+      ],
+      "needle_tail": [
+        843,
+        545
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000086": {
+      "needle_tip": [
+        713,
+        628
+      ],
+      "needle_tail": [
+        843,
+        545
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000087": {
+      "needle_tip": [
+        710,
+        626
+      ],
+      "needle_tail": [
+        843,
+        550
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000088": {
+      "needle_tip": [
+        715,
+        627
+      ],
+      "needle_tail": [
+        844,
+        545
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000089": {
+      "needle_tip": [
+        715,
+        625
+      ],
+      "needle_tail": [
+        844,
+        546
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000090": {
+      "needle_tip": [
+        714,
+        622
+      ],
+      "needle_tail": [
+        845,
+        548
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000091": {
+      "needle_tip": [
+        715,
+        622
+      ],
+      "needle_tail": [
+        845,
+        549
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000092": {
+      "needle_tip": [
+        716,
+        621
+      ],
+      "needle_tail": [
+        845,
+        549
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000093": {
+      "needle_tip": [
+        713,
+        619
+      ],
+      "needle_tail": [
+        845,
+        551
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000094": {
+      "needle_tip": [
+        717,
+        619
+      ],
+      "needle_tail": [
+        846,
+        549
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000095": {
+      "needle_tip": [
+        714,
+        617
+      ],
+      "needle_tail": [
+        846,
+        549
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000096": {
+      "needle_tip": [
+        715,
+        617
+      ],
+      "needle_tail": [
+        846,
+        550
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000097": {
+      "needle_tip": [
+        714,
+        617
+      ],
+      "needle_tail": [
+        846,
+        550
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000098": {
+      "needle_tip": [
+        714,
+        616
+      ],
+      "needle_tail": [
+        845,
+        551
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000099": {
+      "needle_tip": [
+        712,
+        616
+      ],
+      "needle_tail": [
+        844,
+        552
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000100": {
+      "needle_tip": [
+        712,
+        616
+      ],
+      "needle_tail": [
+        842,
+        552
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000101": {
+      "needle_tip": [
+        707,
+        614
+      ],
+      "needle_tail": [
+        840,
+        553
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000102": {
+      "needle_tip": [
+        704,
+        613
+      ],
+      "needle_tail": [
+        839,
+        555
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000103": {
+      "needle_tip": [
+        701,
+        613
+      ],
+      "needle_tail": [
+        836,
+        558
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000104": {
+      "needle_tip": [
+        695,
+        612
+      ],
+      "needle_tail": [
+        833,
+        559
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000105": {
+      "needle_tip": [
+        691,
+        612
+      ],
+      "needle_tail": [
+        830,
+        557
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000106": {
+      "needle_tip": [
+        689,
+        612
+      ],
+      "needle_tail": [
+        827,
+        560
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000107": {
+      "needle_tip": [
+        684,
+        612
+      ],
+      "needle_tail": [
+        824,
+        558
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000108": {
+      "needle_tip": [
+        679,
+        611
+      ],
+      "needle_tail": [
+        819,
+        565
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000109": {
+      "needle_tip": [
+        678,
+        614
+      ],
+      "needle_tail": [
+        816,
+        565
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000110": {
+      "needle_tip": [
+        670,
+        610
+      ],
+      "needle_tail": [
+        812,
+        565
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000111": {
+      "needle_tip": [
+        667,
+        612
+      ],
+      "needle_tail": [
+        807,
+        570
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000112": {
+      "needle_tip": [
+        662,
+        611
+      ],
+      "needle_tail": [
+        805,
+        573
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000113": {
+      "needle_tip": [
+        659,
+        613
+      ],
+      "needle_tail": [
+        802,
+        577
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000114": {
+      "needle_tip": [
+        658,
+        613
+      ],
+      "needle_tail": [
+        801,
+        579
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000115": {
+      "needle_tip": [
+        656,
+        612
+      ],
+      "needle_tail": [
+        798,
+        582
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000116": {
+      "needle_tip": [
+        653,
+        611
+      ],
+      "needle_tail": [
+        797,
+        581
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000117": {
+      "needle_tip": [
+        645,
+        607
+      ],
+      "needle_tail": [
+        795,
+        581
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000118": {
+      "needle_tip": [
+        641,
+        608
+      ],
+      "needle_tail": [
+        791,
+        582
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000119": {
+      "needle_tip": [
+        637,
+        608
+      ],
+      "needle_tail": [
+        787,
+        583
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000120": {
+      "needle_tip": [
+        635,
+        612
+      ],
+      "needle_tail": [
+        784,
+        583
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000121": {
+      "needle_tip": [
+        629,
+        612
+      ],
+      "needle_tail": [
+        780,
+        584
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000122": {
+      "needle_tip": [
+        626,
+        614
+      ],
+      "needle_tail": [
+        777,
+        584
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000123": {
+      "needle_tip": [
+        616,
+        613
+      ],
+      "needle_tail": [
+        770,
+        585
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000124": {
+      "needle_tip": [
+        606,
+        612
+      ],
+      "needle_tail": [
+        762,
+        586
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000125": {
+      "needle_tip": [
+        593,
+        613
+      ],
+      "needle_tail": [
+        749,
+        586
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000126": {
+      "needle_tip": [
+        576,
+        612
+      ],
+      "needle_tail": [
+        736,
+        585
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000127": {
+      "needle_tip": [
+        562,
+        615
+      ],
+      "needle_tail": [
+        721,
+        584
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000128": {
+      "needle_tip": [
+        545,
+        614
+      ],
+      "needle_tail": [
+        708,
+        581
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000129": {
+      "needle_tip": [
+        525,
+        608
+      ],
+      "needle_tail": [
+        694,
+        577
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000130": {
+      "needle_tip": [
+        509,
+        607
+      ],
+      "needle_tail": [
+        680,
+        573
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000131": {
+      "needle_tip": [
+        494,
+        605
+      ],
+      "needle_tail": [
+        668,
+        568
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000132": {
+      "needle_tip": [
+        485,
+        606
+      ],
+      "needle_tail": [
+        662,
+        561
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000133": {
+      "needle_tip": [
+        481,
+        609
+      ],
+      "needle_tail": [
+        657,
+        560
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000134": {
+      "needle_tip": [
+        476,
+        612
+      ],
+      "needle_tail": [
+        655,
+        559
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000135": {
+      "needle_tip": [
+        471,
+        611
+      ],
+      "needle_tail": [
+        651,
+        554
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000136": {
+      "needle_tip": [
+        464,
+        608
+      ],
+      "needle_tail": [
+        648,
+        553
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000137": {
+      "needle_tip": [
+        459,
+        606
+      ],
+      "needle_tail": [
+        645,
+        549
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000138": {
+      "needle_tip": [
+        460,
+        608
+      ],
+      "needle_tail": [
+        645,
+        545
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000139": {
+      "needle_tip": [
+        455,
+        606
+      ],
+      "needle_tail": [
+        645,
+        543
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000140": {
+      "needle_tip": [
+        450,
+        603
+      ],
+      "needle_tail": [
+        644,
+        540
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000141": {
+      "needle_tip": [
+        448,
+        602
+      ],
+      "needle_tail": [
+        644,
+        537
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000142": {
+      "needle_tip": [
+        443,
+        599
+      ],
+      "needle_tail": [
+        642,
+        532
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000143": {
+      "needle_tip": [
+        440,
+        595
+      ],
+      "needle_tail": [
+        643,
+        531
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000144": {
+      "needle_tip": [
+        437,
+        592
+      ],
+      "needle_tail": [
+        644,
+        526
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000145": {
+      "needle_tip": [
+        435,
+        590
+      ],
+      "needle_tail": [
+        645,
+        522
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000146": {
+      "needle_tip": [
+        432,
+        586
+      ],
+      "needle_tail": [
+        644,
+        517
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000147": {
+      "needle_tip": [
+        431,
+        584
+      ],
+      "needle_tail": [
+        645,
+        516
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000148": {
+      "needle_tip": [
+        427,
+        579
+      ],
+      "needle_tail": [
+        647,
+        513
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000149": {
+      "needle_tip": [
+        427,
+        577
+      ],
+      "needle_tail": [
+        650,
+        506
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000150": {
+      "needle_tip": [
+        426,
+        573
+      ],
+      "needle_tail": [
+        653,
+        504
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000151": {
+      "needle_tip": [
+        427,
+        572
+      ],
+      "needle_tail": [
+        655,
+        505
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000152": {
+      "needle_tip": [
+        426,
+        568
+      ],
+      "needle_tail": [
+        661,
+        499
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000153": {
+      "needle_tip": [
+        426,
+        564
+      ],
+      "needle_tail": [
+        664,
+        492
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000154": {
+      "needle_tip": [
+        426,
+        562
+      ],
+      "needle_tail": [
+        667,
+        491
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000155": {
+      "needle_tip": [
+        430,
+        560
+      ],
+      "needle_tail": [
+        672,
+        489
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000156": {
+      "needle_tip": [
+        433,
+        560
+      ],
+      "needle_tail": [
+        678,
+        482
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000157": {
+      "needle_tip": [
+        436,
+        560
+      ],
+      "needle_tail": [
+        683,
+        479
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000158": {
+      "needle_tip": [
+        444,
+        562
+      ],
+      "needle_tail": [
+        690,
+        476
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000159": {
+      "needle_tip": [
+        446,
+        561
+      ],
+      "needle_tail": [
+        696,
+        475
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000160": {
+      "needle_tip": [
+        447,
+        560
+      ],
+      "needle_tail": [
+        701,
+        474
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000161": {
+      "needle_tip": [
+        454,
+        560
+      ],
+      "needle_tail": [
+        707,
+        474
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000162": {
+      "needle_tip": [
+        465,
+        565
+      ],
+      "needle_tail": [
+        714,
+        468
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000163": {
+      "needle_tip": [
+        473,
+        567
+      ],
+      "needle_tail": [
+        721,
+        468
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000164": {
+      "needle_tip": [
+        478,
+        569
+      ],
+      "needle_tail": [
+        728,
+        470
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000165": {
+      "needle_tip": [
+        489,
+        573
+      ],
+      "needle_tail": [
+        735,
+        467
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000166": {
+      "needle_tip": [
+        497,
+        576
+      ],
+      "needle_tail": [
+        743,
+        466
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000167": {
+      "needle_tip": [
+        502,
+        577
+      ],
+      "needle_tail": [
+        749,
+        464
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000168": {
+      "needle_tip": [
+        510,
+        579
+      ],
+      "needle_tail": [
+        756,
+        459
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000169": {
+      "needle_tip": [
+        517,
+        583
+      ],
+      "needle_tail": [
+        760,
+        465
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000170": {
+      "needle_tip": [
+        518,
+        583
+      ],
+      "needle_tail": [
+        760,
+        465
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000171": {
+      "needle_tip": [
+        514,
+        582
+      ],
+      "needle_tail": [
+        760,
+        462
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000172": {
+      "needle_tip": [
+        516,
+        582
+      ],
+      "needle_tail": [
+        760,
+        462
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000173": {
+      "needle_tip": [
+        520,
+        586
+      ],
+      "needle_tail": [
+        762,
+        461
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000174": {
+      "needle_tip": [
+        533,
+        595
+      ],
+      "needle_tail": [
+        764,
+        460
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000175": {
+      "needle_tip": [
+        544,
+        604
+      ],
+      "needle_tail": [
+        768,
+        458
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000176": {
+      "needle_tip": [
+        576,
+        622
+      ],
+      "needle_tail": [
+        776,
+        458
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000177": {
+      "needle_tip": [
+        598,
+        624
+      ],
+      "needle_tail": [
+        792,
+        452
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000178": {
+      "needle_tip": [
+        624,
+        620
+      ],
+      "needle_tail": [
+        814,
+        448
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000179": {
+      "needle_tip": [
+        641,
+        608
+      ],
+      "needle_tail": [
+        835,
+        446
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000180": {
+      "needle_tip": [
+        645,
+        591
+      ],
+      "needle_tail": [
+        853,
+        443
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000181": {
+      "needle_tip": [
+        654,
+        573
+      ],
+      "needle_tail": [
+        872,
+        445
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000182": {
+      "needle_tip": [
+        657,
+        566
+      ],
+      "needle_tail": [
+        881,
+        451
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000183": {
+      "needle_tip": [
+        668,
+        567
+      ],
+      "needle_tail": [
+        883,
+        447
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000184": {
+      "needle_tip": [
+        674,
+        555
+      ],
+      "needle_tail": [
+        896,
+        452
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000185": {
+      "needle_tip": [
+        684,
+        550
+      ],
+      "needle_tail": [
+        904,
+        454
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000186": {
+      "needle_tip": [
+        685,
+        545
+      ],
+      "needle_tail": [
+        910,
+        459
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000187": {
+      "needle_tip": [
+        694,
+        543
+      ],
+      "needle_tail": [
+        916,
+        459
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000188": {
+      "needle_tip": [
+        694,
+        542
+      ],
+      "needle_tail": [
+        919,
+        459
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000189": {
+      "needle_tip": [
+        704,
+        544
+      ],
+      "needle_tail": [
+        921,
+        466
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000190": {
+      "needle_tip": [
+        709,
+        544
+      ],
+      "needle_tail": [
+        923,
+        469
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000191": {
+      "needle_tip": [
+        717,
+        547
+      ],
+      "needle_tail": [
+        924,
+        470
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000192": {
+      "needle_tip": [
+        722,
+        551
+      ],
+      "needle_tail": [
+        924,
+        473
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000193": {
+      "needle_tip": [
+        721,
+        548
+      ],
+      "needle_tail": [
+        925,
+        475
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000194": {
+      "needle_tip": [
+        727,
+        553
+      ],
+      "needle_tail": [
+        925,
+        480
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000195": {
+      "needle_tip": [
+        724,
+        549
+      ],
+      "needle_tail": [
+        925,
+        485
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000196": {
+      "needle_tip": [
+        733,
+        554
+      ],
+      "needle_tail": [
+        925,
+        486
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000197": {
+      "needle_tip": [
+        732,
+        554
+      ],
+      "needle_tail": [
+        924,
+        489
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000198": {
+      "needle_tip": [
+        734,
+        555
+      ],
+      "needle_tail": [
+        925,
+        493
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000199": {
+      "needle_tip": [
+        737,
+        558
+      ],
+      "needle_tail": [
+        923,
+        494
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000200": {
+      "needle_tip": [
+        738,
+        559
+      ],
+      "needle_tail": [
+        922,
+        493
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000201": {
+      "needle_tip": [
+        737,
+        561
+      ],
+      "needle_tail": [
+        918,
+        499
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000202": {
+      "needle_tip": [
+        739,
+        571
+      ],
+      "needle_tail": [
+        915,
+        497
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000203": {
+      "needle_tip": [
+        743,
+        579
+      ],
+      "needle_tail": [
+        910,
+        504
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000204": {
+      "needle_tip": [
+        739,
+        585
+      ],
+      "needle_tail": [
+        904,
+        506
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000205": {
+      "needle_tip": [
+        740,
+        594
+      ],
+      "needle_tail": [
+        897,
+        510
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000206": {
+      "needle_tip": [
+        740,
+        601
+      ],
+      "needle_tail": [
+        890,
+        509
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000207": {
+      "needle_tip": [
+        737,
+        606
+      ],
+      "needle_tail": [
+        885,
+        513
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000208": {
+      "needle_tip": [
+        736,
+        609
+      ],
+      "needle_tail": [
+        880,
+        518
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000209": {
+      "needle_tip": [
+        735,
+        613
+      ],
+      "needle_tail": [
+        876,
+        522
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000210": {
+      "needle_tip": [
+        732,
+        615
+      ],
+      "needle_tail": [
+        872,
+        520
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000211": {
+      "needle_tip": [
+        728,
+        617
+      ],
+      "needle_tail": [
+        868,
+        525
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000212": {
+      "needle_tip": [
+        726,
+        619
+      ],
+      "needle_tail": [
+        865,
+        530
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000213": {
+      "needle_tip": [
+        727,
+        622
+      ],
+      "needle_tail": [
+        861,
+        534
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000214": {
+      "needle_tip": [
+        724,
+        624
+      ],
+      "needle_tail": [
+        857,
+        534
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000215": {
+      "needle_tip": [
+        717,
+        625
+      ],
+      "needle_tail": [
+        854,
+        537
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000216": {
+      "needle_tip": [
+        718,
+        628
+      ],
+      "needle_tail": [
+        850,
+        543
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000217": {
+      "needle_tip": [
+        713,
+        628
+      ],
+      "needle_tail": [
+        845,
+        543
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000218": {
+      "needle_tip": [
+        712,
+        630
+      ],
+      "needle_tail": [
+        843,
+        542
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000219": {
+      "needle_tip": [
+        716,
+        631
+      ],
+      "needle_tail": [
+        843,
+        542
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000220": {
+      "needle_tip": [
+        715,
+        630
+      ],
+      "needle_tail": [
+        841,
+        542
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000221": {
+      "needle_tip": [
+        717,
+        630
+      ],
+      "needle_tail": [
+        842,
+        541
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000222": {
+      "needle_tip": [
+        715,
+        628
+      ],
+      "needle_tail": [
+        842,
+        542
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000223": {
+      "needle_tip": [
+        713,
+        626
+      ],
+      "needle_tail": [
+        842,
+        543
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000224": {
+      "needle_tip": [
+        716,
+        626
+      ],
+      "needle_tail": [
+        843,
+        546
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000225": {
+      "needle_tip": [
+        717,
+        625
+      ],
+      "needle_tail": [
+        842,
+        546
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000226": {
+      "needle_tip": [
+        710,
+        622
+      ],
+      "needle_tail": [
+        843,
+        547
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000227": {
+      "needle_tip": [
+        715,
+        622
+      ],
+      "needle_tail": [
+        843,
+        547
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000228": {
+      "needle_tip": [
+        715,
+        621
+      ],
+      "needle_tail": [
+        844,
+        550
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000229": {
+      "needle_tip": [
+        717,
+        621
+      ],
+      "needle_tail": [
+        844,
+        547
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000230": {
+      "needle_tip": [
+        714,
+        620
+      ],
+      "needle_tail": [
+        844,
+        549
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000231": {
+      "needle_tip": [
+        713,
+        618
+      ],
+      "needle_tail": [
+        844,
+        549
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000232": {
+      "needle_tip": [
+        713,
+        619
+      ],
+      "needle_tail": [
+        843,
+        551
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000233": {
+      "needle_tip": [
+        712,
+        619
+      ],
+      "needle_tail": [
+        841,
+        552
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000234": {
+      "needle_tip": [
+        710,
+        619
+      ],
+      "needle_tail": [
+        839,
+        552
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000235": {
+      "needle_tip": [
+        704,
+        617
+      ],
+      "needle_tail": [
+        838,
+        554
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000236": {
+      "needle_tip": [
+        704,
+        618
+      ],
+      "needle_tail": [
+        836,
+        553
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000237": {
+      "needle_tip": [
+        700,
+        618
+      ],
+      "needle_tail": [
+        833,
+        557
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000238": {
+      "needle_tip": [
+        694,
+        616
+      ],
+      "needle_tail": [
+        830,
+        556
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000239": {
+      "needle_tip": [
+        692,
+        616
+      ],
+      "needle_tail": [
+        827,
+        559
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000240": {
+      "needle_tip": [
+        686,
+        615
+      ],
+      "needle_tail": [
+        823,
+        558
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000241": {
+      "needle_tip": [
+        681,
+        616
+      ],
+      "needle_tail": [
+        819,
+        562
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000242": {
+      "needle_tip": [
+        678,
+        615
+      ],
+      "needle_tail": [
+        815,
+        563
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000243": {
+      "needle_tip": [
+        671,
+        613
+      ],
+      "needle_tail": [
+        812,
+        563
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000244": {
+      "needle_tip": [
+        670,
+        616
+      ],
+      "needle_tail": [
+        807,
+        568
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000245": {
+      "needle_tip": [
+        663,
+        615
+      ],
+      "needle_tail": [
+        804,
+        570
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000246": {
+      "needle_tip": [
+        659,
+        615
+      ],
+      "needle_tail": [
+        801,
+        572
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000247": {
+      "needle_tip": [
+        656,
+        616
+      ],
+      "needle_tail": [
+        798,
+        577
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000248": {
+      "needle_tip": [
+        654,
+        615
+      ],
+      "needle_tail": [
+        797,
+        579
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000249": {
+      "needle_tip": [
+        652,
+        612
+      ],
+      "needle_tail": [
+        797,
+        580
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000250": {
+      "needle_tip": [
+        651,
+        612
+      ],
+      "needle_tail": [
+        794,
+        583
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000251": {
+      "needle_tip": [
+        649,
+        612
+      ],
+      "needle_tail": [
+        792,
+        582
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000252": {
+      "needle_tip": [
+        641,
+        607
+      ],
+      "needle_tail": [
+        790,
+        583
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000253": {
+      "needle_tip": [
+        636,
+        607
+      ],
+      "needle_tail": [
+        787,
+        583
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000254": {
+      "needle_tip": [
+        634,
+        611
+      ],
+      "needle_tail": [
+        782,
+        585
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000255": {
+      "needle_tip": [
+        628,
+        609
+      ],
+      "needle_tail": [
+        780,
+        585
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000256": {
+      "needle_tip": [
+        626,
+        612
+      ],
+      "needle_tail": [
+        775,
+        585
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000257": {
+      "needle_tip": [
+        616,
+        610
+      ],
+      "needle_tail": [
+        771,
+        585
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000258": {
+      "needle_tip": [
+        608,
+        611
+      ],
+      "needle_tail": [
+        763,
+        587
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000259": {
+      "needle_tip": [
+        594,
+        610
+      ],
+      "needle_tail": [
+        752,
+        587
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000260": {
+      "needle_tip": [
+        578,
+        608
+      ],
+      "needle_tail": [
+        739,
+        585
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000261": {
+      "needle_tip": [
+        562,
+        608
+      ],
+      "needle_tail": [
+        725,
+        584
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000262": {
+      "needle_tip": [
+        545,
+        606
+      ],
+      "needle_tail": [
+        712,
+        582
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000263": {
+      "needle_tip": [
+        528,
+        604
+      ],
+      "needle_tail": [
+        698,
+        575
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000264": {
+      "needle_tip": [
+        511,
+        603
+      ],
+      "needle_tail": [
+        683,
+        573
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000265": {
+      "needle_tip": [
+        497,
+        602
+      ],
+      "needle_tail": [
+        671,
+        569
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000266": {
+      "needle_tip": [
+        488,
+        604
+      ],
+      "needle_tail": [
+        662,
+        568
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000267": {
+      "needle_tip": [
+        481,
+        604
+      ],
+      "needle_tail": [
+        660,
+        561
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000268": {
+      "needle_tip": [
+        477,
+        607
+      ],
+      "needle_tail": [
+        657,
+        559
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000269": {
+      "needle_tip": [
+        472,
+        606
+      ],
+      "needle_tail": [
+        654,
+        558
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000270": {
+      "needle_tip": [
+        466,
+        606
+      ],
+      "needle_tail": [
+        650,
+        555
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000271": {
+      "needle_tip": [
+        460,
+        603
+      ],
+      "needle_tail": [
+        647,
+        552
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000272": {
+      "needle_tip": [
+        456,
+        602
+      ],
+      "needle_tail": [
+        646,
+        549
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000273": {
+      "needle_tip": [
+        456,
+        603
+      ],
+      "needle_tail": [
+        646,
+        544
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000274": {
+      "needle_tip": [
+        453,
+        603
+      ],
+      "needle_tail": [
+        645,
+        542
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000275": {
+      "needle_tip": [
+        450,
+        602
+      ],
+      "needle_tail": [
+        644,
+        539
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000276": {
+      "needle_tip": [
+        443,
+        596
+      ],
+      "needle_tail": [
+        644,
+        534
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000277": {
+      "needle_tip": [
+        442,
+        594
+      ],
+      "needle_tail": [
+        643,
+        531
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000278": {
+      "needle_tip": [
+        438,
+        591
+      ],
+      "needle_tail": [
+        644,
+        527
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000279": {
+      "needle_tip": [
+        437,
+        591
+      ],
+      "needle_tail": [
+        645,
+        525
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000280": {
+      "needle_tip": [
+        433,
+        587
+      ],
+      "needle_tail": [
+        645,
+        520
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000281": {
+      "needle_tip": [
+        431,
+        585
+      ],
+      "needle_tail": [
+        646,
+        517
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000282": {
+      "needle_tip": [
+        428,
+        580
+      ],
+      "needle_tail": [
+        647,
+        515
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000283": {
+      "needle_tip": [
+        428,
+        579
+      ],
+      "needle_tail": [
+        650,
+        507
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000284": {
+      "needle_tip": [
+        426,
+        575
+      ],
+      "needle_tail": [
+        653,
+        507
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000285": {
+      "needle_tip": [
+        425,
+        571
+      ],
+      "needle_tail": [
+        656,
+        504
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000286": {
+      "needle_tip": [
+        426,
+        569
+      ],
+      "needle_tail": [
+        660,
+        501
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000287": {
+      "needle_tip": [
+        426,
+        566
+      ],
+      "needle_tail": [
+        663,
+        497
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000288": {
+      "needle_tip": [
+        426,
+        563
+      ],
+      "needle_tail": [
+        666,
+        492
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000289": {
+      "needle_tip": [
+        430,
+        560
+      ],
+      "needle_tail": [
+        672,
+        487
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000290": {
+      "needle_tip": [
+        431,
+        560
+      ],
+      "needle_tail": [
+        677,
+        484
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000291": {
+      "needle_tip": [
+        437,
+        562
+      ],
+      "needle_tail": [
+        683,
+        475
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000292": {
+      "needle_tip": [
+        437,
+        559
+      ],
+      "needle_tail": [
+        687,
+        477
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000293": {
+      "needle_tip": [
+        443,
+        562
+      ],
+      "needle_tail": [
+        695,
+        473
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000294": {
+      "needle_tip": [
+        449,
+        562
+      ],
+      "needle_tail": [
+        700,
+        472
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000295": {
+      "needle_tip": [
+        457,
+        565
+      ],
+      "needle_tail": [
+        705,
+        468
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000296": {
+      "needle_tip": [
+        467,
+        569
+      ],
+      "needle_tail": [
+        712,
+        471
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000297": {
+      "needle_tip": [
+        473,
+        569
+      ],
+      "needle_tail": [
+        719,
+        469
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000298": {
+      "needle_tip": [
+        476,
+        570
+      ],
+      "needle_tail": [
+        725,
+        470
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000299": {
+      "needle_tip": [
+        486,
+        574
+      ],
+      "needle_tail": [
+        733,
+        466
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000300": {
+      "needle_tip": [
+        493,
+        577
+      ],
+      "needle_tail": [
+        740,
+        467
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    },
+    "000301": {
+      "needle_tip": [
+        507,
+        581
+      ],
+      "needle_tail": [
+        746,
+        459
+      ],
+      "status": "ok",
+      "method": "mask_skeleton_endpoints",
+      "occluded": {
+        "tip": false,
+        "tail": false
+      }
+    }
+  }
+}

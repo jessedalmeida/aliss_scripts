@@ -181,9 +181,7 @@ STAGES: list[Stage] = [
           or (c.bag_dir(b) / "reference_seed.json").exists()),
     Stage("propagate", "needle", "auto", ["seed"], _propagate_cmd,
           lambda c, b: (c.bag_dir(b) / "propagation_done").exists()
-          and any((c.bag_dir(b) / "masks").glob("*.png")),
-          lambda c, b: ((c.bag_dir(b) / "sanity_check.png").exists(),
-                        f"QC {c.bag_dir(b) / 'sanity_check.png'}")),
+          and any((c.bag_dir(b) / "masks").glob("*.png"))),
     Stage("keypoints", "needle", "auto", ["propagate"], _keypoints_cmd,
           lambda c, b: (c.bag_dir(b) / "keypoints.json").exists()),
     Stage("pose", "checkerboard", "auto", ["extract"], _pose_cmd,
@@ -198,7 +196,7 @@ STAGES: list[Stage] = [
           lambda c, b: bool(c.out_dir) and (_annotated_dir(c, b) is not None)
           and _annotated_dir(c, b).exists()),
     Stage("npz", "output", "auto", ["repack"], _npz_cmd,
-          lambda c, b: bool(c.out_dir) and (c.out_dir / f"{b}.npz").exists()),
+          lambda c, b: bool(c.out_dir) and (c.out_dir / f"{b}_annotated_topics.npz").exists()),
 ]
 STAGE_BY_NAME = {s.name: s for s in STAGES}
 

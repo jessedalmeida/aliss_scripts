@@ -4,7 +4,7 @@
     "sam2_repo": "/home/jesse/sam2",
     "model": "large",
     "every_n": 3,
-    "camera_yaml": null,
+    "camera_yaml": "/home/jesse/aliss_core/src/aliss_scripts/auto-annotating/annotations/ves_camera.yaml",
     "board": {
       "squares_x": 4,
       "squares_y": 5,
@@ -54,7 +54,13 @@
       "trachea_4": "/data/ros_bags/2026_5-29_data_collection/raw_bags/trachea_4",
       "trachea_5": "/data/ros_bags/2026_5-29_data_collection/raw_bags/trachea_5"
     },
-    "stage_args": {}
+    "stage_args": {
+      "pose": [
+        "--recalculate_from_corners"
+      ]
+    },
+    "repack_mode": "snapshot",
+    "poses_source": "auto"
   },
   "bags": {
     "ch_circlexy_1": {
@@ -78,7 +84,9 @@
           "rc": 0,
           "ts": 1780168352.6825254
         }
-      }
+      },
+      "repack_mode": "snapshot",
+      "poses_source": "smooth"
     },
     "ch_chicken_1": {
       "tracks": {
@@ -103,7 +111,7 @@
         }
       },
       "poses_source": "smooth",
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "ch_chicken_2": {
       "tracks": {
@@ -126,7 +134,9 @@
           "rc": 0,
           "ts": 1780167728.6746223
         }
-      }
+      },
+      "poses_source": "smooth",
+      "repack_mode": "topics"
     },
     "ch_chicken_3": {
       "tracks": {
@@ -144,7 +154,9 @@
           "rc": 0,
           "ts": 1780167779.3469017
         }
-      }
+      },
+      "repack_mode": "topics",
+      "poses_source": "smooth"
     },
     "ch_chicken_4": {
       "tracks": {
@@ -162,7 +174,9 @@
           "rc": 0,
           "ts": 1780167817.5434883
         }
-      }
+      },
+      "poses_source": "smooth",
+      "repack_mode": "topics"
     },
     "ch_chicken_5": {
       "tracks": {
@@ -180,7 +194,9 @@
           "rc": 0,
           "ts": 1780167876.1589503
         }
-      }
+      },
+      "poses_source": "smooth",
+      "repack_mode": "topics"
     },
     "ch_circlexy_2": {
       "tracks": {
@@ -198,7 +214,9 @@
           "rc": 0,
           "ts": 1780168639.580855
         }
-      }
+      },
+      "repack_mode": "snapshot",
+      "poses_source": "smooth"
     },
     "ch_circlexy_3": {
       "tracks": {
@@ -221,7 +239,9 @@
           "rc": 0,
           "ts": 1780168685.7357984
         }
-      }
+      },
+      "repack_mode": "topics",
+      "poses_source": "smooth"
     },
     "ch_circlexy_4": {
       "tracks": {

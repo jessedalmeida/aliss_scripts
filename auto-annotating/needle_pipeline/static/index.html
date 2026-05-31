@@ -515,7 +515,8 @@ window.addEventListener("keydown", e=>{
   if(e.metaKey || e.ctrlKey || e.altKey) return;
   const k=e.key.toLowerCase();
 
-  if(e.code==="Space"){ S.spaceDown=true; cv.style.cursor="grab"; e.preventDefault(); return; }
+  // if(e.code==="Space"){ S.spaceDown=true; cv.style.cursor="grab"; e.preventDefault(); return; }
+  if(e.code==="Space"){ togglePlay(); e.preventDefault(); return; }
 
   // --- help cheatsheet ---
   if(e.key==="?" || (k==="/" && e.shiftKey)){ toggleKeys(); return; }
@@ -534,7 +535,7 @@ window.addEventListener("keydown", e=>{
     return; }
 
   // --- playback ---
-  if(k==="p"){ togglePlay(); return; }
+  // if(k==="p"){ togglePlay(); return; }
 
   // --- mode switching (1..5 match the toolbar order) ---
   const modeKeys={"1":"view","2":"seed","3":"mask","4":"keypoints","5":"corners"};
@@ -660,7 +661,7 @@ function updateModeTools(){
     $("borrowS").onclick=openBorrow;
   } else if(S.mode==="mask"){
     mk(`<button class="btn" id="eb">${S.erase?"ERASE":"PAINT"}</button>
-        <label>brush</label><input type="range" id="br" min="1" max="60" value="${S.brush}" style="width:90px">
+        <label>brush</label><input type="range" id="br" min="1" max="20" value="${S.brush}" style="width:90px">
         <button class="btn" id="cm">clear</button><button class="btn" id="cp">copy prev</button>
         <button class="btn go" id="sm">save mask</button>`);
     $("eb").onclick=()=>{ S.erase=!S.erase; updateModeTools(); };
@@ -800,7 +801,7 @@ function toggleKeys(){
   const rows=[
     ["a / ←","previous frame"],["d / →","next frame"],
     ["q / e","jump ±10 frames"],["s","save (mode-aware)"],
-    ["p","play / pause"],["f","fit to view"],
+    ["(space)","play / pause"],["f","fit to view"],
     ["[ / ]","zoom out / in"],["space + drag","pan"],["scroll","zoom to cursor"],
     ["1 … 5","View / Seed / Mask / Keypts / Corners"],
     ["— Keypts —",""],["t","track ↔"],["r","re-anchor →"],["g","suggest this frame"],
