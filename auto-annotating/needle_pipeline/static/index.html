@@ -440,6 +440,7 @@ async function selectBag(name){
   const f=await jget(`/api/bags/${name}/frames`); S.keys=f.keys;
   try{ S.kp=(await jget(`/api/bags/${name}/keypoints`)).frames||{}; }catch{ S.kp={}; }
   try{ S.poses=(await jget(`/api/bags/${name}/poses`)).frames||{}; }catch{ S.poses={}; }
+  await loadFlagged();
   try{ const sd=await jget(`/api/bags/${name}/seeds`); (sd.seed_frames||[]).forEach(e=>{
         const o=e.objects&&e.objects.needle_mask; if(o) S.seeds[String(e.seed_frame_idx).padStart(6,'0')]={points:o.points,labels:o.labels}; }); }catch{}
   $("slider").max=Math.max(0,S.keys.length-1);
@@ -628,13 +629,13 @@ async function suggestKp(all){
 async function solvePose(){ const key=S.keys[S.idx];
   if(S.corners.length!==S.board.expected){ toast(`need ${S.board.expected} corners (have ${S.corners.length})`); return; }
   try{ const r=await jpost(`/api/bags/${S.bag}/pose/${key}`,{corners:S.corners});
-    S.poses[key]=r.frame; delete S.axes[key]; updateStatPill(); toast(`pose solved · rms ${(+r.frame.rms_reprojection_error).toFixed(2)}px`); await loadBags(); draw(); fetchAxes(key); }
+    S.poses[key]=r.frame; delete S.axes[key]; updateStatPill(); toast(`pose solved · rms ${(+r.frame.rms_reprojection_error).toFixed(2)}px`); await loadBags(); await loadFlagged(); draw(); updateModeTools(); fetchAxes(key); }
   catch(e){ toast("solve failed: "+e.message); } }
 async function markNoBoard(){ const key=S.keys[S.idx];
   try{ const r=await jpost(`/api/bags/${S.bag}/pose/${key}/no_board`,{});
     if(r.state==="no_board"){ S.poses[key]={status:"no_board",pose:null,corners:null}; delete S.axes[key]; toast("marked no board — won't count as failure"); }
     else { delete S.poses[key]; delete S.axes[key]; toast("cleared no-board — will be re-detected next pose run"); }
-    S.corners=[]; draw(); updateModeTools(); await loadBags();
+    S.corners=[]; draw(); updateModeTools(); await loadBags(); await loadFlagged();
   }catch(e){ toast("failed: "+e.message); } }
 async function reflowPose(){ const key=S.keys[S.idx];
   toast("reflowing corners from nearest good neighbor…");
@@ -698,20 +699,53 @@ function updateModeTools(){
     $("tk").onclick=()=>trackKp(false); $("ak").onclick=()=>trackKp(true); $("sk").onclick=()=>saveKp();
   } else if(S.mode==="corners"){
     const isNB=(S.poses[S.keys[S.idx]]||{}).status==="no_board";
+    const nFlag=S.flagged?S.flagged.length:0;
     mk(`<span class="pill">${S.corners.length}/${S.board.expected} corners</span>
         <span style="color:var(--dim)">click to place · drag to fix</span>
         <button class="btn" id="uc">undo</button><button class="btn" id="cc">clear</button>
         <button class="btn" id="rc">reset to detected</button>
         <button class="btn warn" id="rf">reflow from neighbor ↺</button>
         <button class="btn ${isNB?'warn':''}" id="nb">${isNB?'no board ✓ (click to clear)':'mark no board'}</button>
-        <button class="btn go" id="sp">re-solve pose</button>`);
+        <button class="btn go" id="sp">re-solve pose</button>
+        <span style="flex:1"></span>
+        <button class="btn" id="autofix" title="reflow every frame whose RMS is above threshold, keeping the result only if it improves">auto-fix high-RMS</button>
+        <button class="btn ${nFlag?'warn':''}" id="nextflag" title="jump to the next frame still flagged high-RMS / failed">next flagged ⚑${nFlag?` (${nFlag})`:''}</button>`);
     $("uc").onclick=()=>{ S.corners.pop(); draw(); updateModeTools(); };
     $("cc").onclick=()=>{ S.corners=[]; draw(); updateModeTools(); };
     $("rc").onclick=()=>{ const pe=S.poses[S.keys[S.idx]]; S.corners=pe&&pe.corners?pe.corners.map(c=>[c[0],c[1]]):[]; draw(); updateModeTools(); };
     $("rf").onclick=reflowPose;
     $("nb").onclick=markNoBoard;
     $("sp").onclick=solvePose;
+    $("autofix").onclick=autoFixHighRms;
+    $("nextflag").onclick=nextFlagged;
   } else mk(`<span style="color:var(--faint)">read-only · overlays show mask, keypoints & checkerboard</span>`);
+}
+async function loadFlagged(){
+  try{ const r=await jget(`/api/bags/${S.bag}/flagged_frames`); S.flagged=r.all||[]; S.flaggedHigh=r.high_rms||[]; }
+  catch{ S.flagged=[]; S.flaggedHigh=[]; }
+}
+async function autoFixHighRms(){
+  const thr=parseFloat(prompt("Reflow frames with RMS above (px):","5"));
+  if(!(thr>0)) return;
+  toast("auto-fixing high-RMS frames… this reflows each from a good neighbor");
+  try{ const r=await jpost(`/api/bags/${S.bag}/poses/reflow_high_rms`,{max_rms:thr});
+    toast(`checked ${r.checked}: ${r.healed} improved, ${r.still_high} still high (flagged)`);
+    // reload poses + flagged list so the rail and nav reflect the new state
+    try{ S.poses=(await jget(`/api/bags/${S.bag}/poses`)).frames||{}; }catch{}
+    await loadFlagged(); await loadBags(); updateModeTools(); draw();
+  }catch(e){ toast("auto-fix failed: "+e.message); }
+}
+async function nextFlagged(){
+  if(!S.flagged || !S.flagged.length){ await loadFlagged(); }
+  if(!S.flagged.length){ toast("no flagged frames 🎉"); return; }
+  // find the next flagged key strictly after the current frame, wrapping around
+  const cur=parseInt(S.keys[S.idx],10);
+  const nums=S.flagged.map(k=>parseInt(k,10)).sort((a,b)=>a-b);
+  let target=nums.find(n=>n>cur); if(target===undefined) target=nums[0];
+  const idx=S.keys.indexOf(String(target).padStart(6,"0"));
+  if(idx>=0){ const hi=S.flaggedHigh.find(h=>parseInt(h.key,10)===target);
+    await showFrame(idx); toast(`flagged frame ${target}${hi?` · rms ${(+hi.rms).toFixed(2)}px`:''} (${S.flagged.length} total)`); }
+  else toast("flagged frame not in current list");
 }
 function toggleOcc(which){ const key=S.keys[S.idx]; S.kp[key]=S.kp[key]||{occluded:{tip:false,tail:false}};
   S.kp[key].occluded=S.kp[key].occluded||{tip:false,tail:false};

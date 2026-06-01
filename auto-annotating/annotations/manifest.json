@@ -445,7 +445,8 @@
           "ts": 1780169134.3834982
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "topics",
+      "poses_source": "raw"
     },
     "ch_figure8_2": {
       "tracks": {
@@ -469,7 +470,8 @@
           "ts": 1780169203.2093413
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "topics",
+      "poses_source": "smooth"
     },
     "ch_figure8_3": {
       "tracks": {
@@ -492,7 +494,8 @@
           "rc": 0,
           "ts": 1780169250.7179236
         }
-      }
+      },
+      "repack_mode": "topics"
     },
     "ch_figure8_4": {
       "tracks": {
