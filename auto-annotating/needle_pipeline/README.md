@@ -231,6 +231,32 @@ sidebar `poses: auto|smooth|raw` pill — you choose what `repack` packs:
 The choice is per bag (persisted in the manifest) and threads to `repack_bag.py`'s
 new `--poses {auto,smooth,raw}` flag.
 
+The same panel has tools to fix and re-smooth poses without leaving the GUI:
+
+- **recompute all ↻** — re-solves every frame's pose from its stored corners using
+  the current camera YAML and the **square (m)** field. This is how you fix a wrong
+  `ves_camera.yaml` *or* a wrong `square_size` after the fact — the corners are kept,
+  only the metric solve changes. It writes `poses_recomputed.json` for review (the
+  plots refresh to show it) and does **not** touch `poses.json` until you press
+  **commit ✓**, which backs the old file up to `poses_prev.json` first.
+- **re-smooth ∿** — re-runs SE(3) smoothing on the current `poses.json` (so you no
+  longer delete `poses_smooth.json` by hand). **Z-downweight** (>1) tells the
+  smoother to trust the depth axis less and lean on the temporal prior — useful when
+  the board is small in-frame and Z is noisy, though its effect plateaus quickly
+  because the smoother is already covariance-weighted.
+
+In **Corners** mode, **mark no board** tags a frame as intentionally having no
+checkerboard (`status="no_board"`). Such frames don't count as detection failures,
+don't block `review`, and are simply skipped by repack — so a clip where the board
+leaves view won't stall the pipeline. Click again to clear the mark.
+
+Note on small boards: if the checkerboard is only ~10–15% of the frame, depth (Z)
+is inherently ill-conditioned — a fraction of a pixel of corner noise moves Z by
+millimeters even at sub-pixel RMS. Smoothing roughly halves the residual jitter but
+can't remove it; the real levers are a larger board or closer capture. Getting the
+`square_size` right (via recompute) is the bigger correctness fix, since a wrong
+square size rescales every translation.
+
 If the source bag has `ves_smoother/{left,right}/tool_tip_pixels` topics
 (`PoseWithCovarianceStamped` with pixel x/y in `position`), those pixel points are
 packed into the keypoints message's `left_arm_tip` / `right_arm_tip` fields. They

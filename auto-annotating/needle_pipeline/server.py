@@ -157,9 +157,15 @@ async def set_poses_source(bag: str, req: Request):
 
 
 @app.get("/api/bags/{bag}/pose_trajectory")
-def pose_trajectory(bag: str):
+def pose_trajectory(bag: str, preview: bool = False):
     """Per-frame position trajectories for raw and smoothed poses, plus the
-    per-frame deviation between them — for the GUI's smoothing plots."""
+    per-frame deviation between them — for the GUI's smoothing plots.
+    If preview=true and poses_recomputed.json exists, it's shown as the 'raw'
+    series so you can see a recompute proposal before committing."""
+    raw_name = "poses.json"
+    if preview and (bag_dir(bag) / "poses_recomputed.json").exists():
+        raw_name = "poses_recomputed.json"
+
     def _traj(fname: str):
         data = read_json(bag_dir(bag) / fname).get("frames", {})
         keys = sorted((k for k in data if k.isdigit()), key=int)
@@ -173,7 +179,7 @@ def pose_trajectory(bag: str):
             idx.append(int(k)); xs.append(pos[0]); ys.append(pos[1]); zs.append(pos[2])
         return {"idx": idx, "x": xs, "y": ys, "z": zs}
 
-    raw = _traj("poses.json")
+    raw = _traj(raw_name)
     smooth = _traj("poses_smooth.json")
     # per-frame deviation (m) on the common frames
     dev = {"idx": [], "dist": []}
@@ -505,7 +511,27 @@ async def recompute_pose(bag: str, key: str, req: Request):
     if not corners:
         raise HTTPException(400, "no corners provided")
     try:
-        frame_result = recompute_from_corners(ctx(), bag, key, corners)
+        
+        # frame_result = recompute_from_corners(ctx(), bag, key, corners)
+        p = bag_dir(bag) / "poses.json"
+        data = read_json(p)
+        old_frame = data.get("frames", {}).get(key, {})
+        old_pose = None
+        old_rms = old_frame.get("rms_reprojection_error")
+
+        if old_frame.get("pose") and old_rms is not None and old_rms < 3.0:
+            old_pose = old_frame.get("pose")
+
+        frame_result = recompute_from_corners(
+            ctx(),
+            bag,
+            key,
+            corners,
+            initial_pose=old_pose,
+        )
+        frame_result["roi"] = old_frame.get("roi", [0, 0, 0, 0])
+        frame_result["failure_stage"] = ""
+        frame_result["diagnostics_image"] = old_frame.get("diagnostics_image")
     except Exception as exc:  # noqa: BLE001 - surface the reason to the UI
         raise HTTPException(400, f"pose solve failed: {exc}")
     p = bag_dir(bag) / "poses.json"
@@ -515,9 +541,111 @@ async def recompute_pose(bag: str, key: str, req: Request):
     return {"ok": True, "frame": frame_result}
 
 
-# --------------------------------------------------------------------------
-# background stage jobs
-# --------------------------------------------------------------------------
+@app.post("/api/bags/{bag}/pose/{key}/no_board")
+def mark_no_board(bag: str, key: str):
+    """Mark a frame as intentionally having no checkerboard, so it isn't counted
+    as a failure and doesn't block review/repack. Toggles back to needing
+    detection if already no_board."""
+    p = bag_dir(bag) / "poses.json"
+    data = read_json(p)
+    frames = data.setdefault("frames", {})
+    cur = frames.get(key, {})
+    if cur.get("status") == "no_board":
+        # un-mark: drop the entry so the pose stage will try it again next run
+        frames.pop(key, None)
+        state = "cleared"
+    else:
+        frames[key] = {"frame_key": key, "status": "no_board", "detector": "manual_no_board",
+                       "failure_reason": "", "corners": None, "pose": None,
+                       "rms_reprojection_error": 0.0}
+        state = "no_board"
+    p.write_text(json.dumps(data, indent=2) + "\n")
+    return {"ok": True, "state": state}
+
+
+@app.post("/api/bags/{bag}/poses/recompute")
+async def recompute_all_poses(bag: str, req: Request):
+    """Re-solve EVERY frame's pose from its stored corners using the current
+    camera + board settings (fixes wrong camera_info or square_size without
+    re-detecting). Writes to poses_recomputed.json for review — does NOT touch
+    poses.json until committed. Body (optional): {square_size, squares_x, squares_y}."""
+    from .pose_ops import recompute_from_corners
+    body = await req.json() if await req.body() else {}
+    c = ctx()
+    # allow a one-off board override (e.g. correcting square_size) without persisting
+    if body.get("square_size"): c.board["square_size"] = float(body["square_size"])
+    if body.get("squares_x"): c.board["squares_x"] = int(body["squares_x"])
+    if body.get("squares_y"): c.board["squares_y"] = int(body["squares_y"])
+    src = read_json(bag_dir(bag) / "poses.json")
+    frames = src.get("frames", {})
+    if not frames:
+        raise HTTPException(404, "no poses.json to recompute from")
+    out = dict(src); out_frames = {}
+    recomputed = skipped = failed = 0
+    for key, fr in frames.items():
+        if fr.get("status") == "no_board":
+            out_frames[key] = fr; skipped += 1; continue
+        corners = fr.get("corners")
+        if not corners:
+            out_frames[key] = fr; skipped += 1; continue
+        try:
+            new_fr = recompute_from_corners(
+                c,
+                bag,
+                key,
+                corners,
+                initial_pose=(fr.get("pose") if isinstance(fr, dict) else None),
+            )
+            new_fr["roi"] = fr.get("roi", [0, 0, 0, 0])
+            new_fr["failure_stage"] = ""
+            new_fr["diagnostics_image"] = fr.get("diagnostics_image")
+            new_fr["detector"] = fr.get("detector", new_fr.get("detector", "manual_corner"))
+            out_frames[key] = new_fr
+            recomputed += 1
+        except Exception:
+            out_frames[key] = fr; failed += 1
+    out["frames"] = out_frames
+    out["parameters"] = {**out.get("parameters", {}),
+                         "square_size": c.board["square_size"],
+                         "squares_x": c.board["squares_x"], "squares_y": c.board["squares_y"]}
+    (bag_dir(bag) / "poses_recomputed.json").write_text(json.dumps(out, indent=2) + "\n")
+    return {"ok": True, "recomputed": recomputed, "skipped": skipped, "failed": failed,
+            "preview": "poses_recomputed.json"}
+
+
+@app.post("/api/bags/{bag}/poses/commit")
+async def commit_poses(bag: str, req: Request):
+    """Promote a preview file to poses.json (backing up the current one first).
+    Body: {"preview": "poses_recomputed.json"}."""
+    body = await req.json()
+    preview = body.get("preview", "poses_recomputed.json")
+    src = bag_dir(bag) / preview
+    if not src.exists():
+        raise HTTPException(404, f"{preview} not found - run recompute first")
+    dst = bag_dir(bag) / "poses.json"
+    if dst.exists():
+        backup = bag_dir(bag) / "poses_prev.json"
+        backup.write_text(dst.read_text())
+    dst.write_text(src.read_text())
+    src.unlink()  # consume the preview
+    # smoothed file is now stale relative to new raw poses
+    return {"ok": True, "committed": preview, "note": "re-run smoothing to refresh poses_smooth.json"}
+
+
+@app.post("/api/bags/{bag}/poses/resmooth")
+async def resmooth_poses(bag: str, req: Request):
+    """Re-run SE(3) smoothing on the current poses.json. Body (optional):
+    {z_downweight: float (>1 trusts Z less), to_preview: bool}. Writes
+    poses_smooth.json (or poses_smooth_preview.json if to_preview)."""
+    body = await req.json() if await req.body() else {}
+    from .pose_ops import resmooth
+    try:
+        info = resmooth(ctx(), bag,
+                        z_downweight=float(body.get("z_downweight", 1.0)),
+                        to_preview=bool(body.get("to_preview")))
+    except Exception as exc:  # noqa: BLE001
+        raise HTTPException(400, f"re-smooth failed: {exc}")
+    return {"ok": True, **info}
 
 async def _run_job(job_id: str, cmd: list[str], cwd: str):
     job = STATE["jobs"][job_id]

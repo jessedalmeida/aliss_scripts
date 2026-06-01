@@ -16,6 +16,7 @@ from checkerboard_pose_offline import (
     flatten_covariance,
     rvec_to_quaternion,
     generate_checkerboard_info,
+    pose_rms_reprojection_error,
     to_gray_image,
 )
 from visualize_poses import collect_frames, load_camera_yaml
@@ -36,7 +37,7 @@ def try_optical_flow_seed(
     neighbor_radius: int = 2,
     fb_max_err: float = 1.5,
     min_tracked: int = 4,
-    pixel_noise_sigma: float = 10.0,
+    pixel_noise_sigma: float = 1.0,
 ) -> dict[str, Any] | None:
     """
     Attempt to seed corners via optical flow from nearest successful neighbor frames.
@@ -133,7 +134,11 @@ def try_optical_flow_seed(
         next_back, st2, err2 = cv2.calcOpticalFlowPyrLK(target_gray, nb_gray, next_pts, None, **lk_params)
 
         # forward-backward check
-        good_mask, fb_err = forward_backward_check(prev_pts, next_pts, next_back, max_err=fb_max_err)
+        st = st.reshape(-1).astype(bool)
+        st2 = st2.reshape(-1).astype(bool)
+
+        fb_good, fb_err = forward_backward_check(prev_pts, next_pts, next_back, max_err=fb_max_err)
+        good_mask = st & st2 & fb_good
         good_idx = np.nonzero(good_mask)[0]
 
         if len(good_idx) < min_tracked:
@@ -165,8 +170,8 @@ def try_optical_flow_seed(
 
         # Solve using temporal initialization
         res = _solve_pnp_refine(
-            object_points,
-            next_pts,
+            tracked_object_points,
+            tracked_image_points,
             camera_matrix,
             distortion,
             rvec=prev_rvec,
@@ -177,6 +182,19 @@ def try_optical_flow_seed(
             continue
 
         rvec, tvec = res
+
+        rms = pose_rms_reprojection_error(
+            tracked_object_points,
+            tracked_image_points,
+            rvec,
+            tvec,
+            camera_matrix,
+            distortion,
+        )
+
+        # 4. Reject bad optical-flow seeded poses
+        if rms > 3.0:
+            continue
         
         prev_pose = nb_entry.get("pose", {})
         prev_q = prev_pose.get("quaternion")

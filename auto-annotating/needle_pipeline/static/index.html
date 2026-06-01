@@ -205,6 +205,17 @@
     <div style="color:var(--faint); font-size:10px; margin-bottom:10px">
       <span style="color:var(--amber)">&#9644; raw</span> &nbsp; <span style="color:var(--cyan)">&#9644; smoothed</span> &nbsp; · position vs frame index
     </div>
+    <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:10px; padding:8px; border:1px solid var(--line); border-radius:6px; background:#0d0e12">
+      <span style="color:var(--amber); font-size:10px; letter-spacing:1px; text-transform:uppercase">recompute</span>
+      <label style="color:var(--dim); font-size:11px">square (m)<input id="recSq" type="number" step="0.0001" style="width:80px; margin-left:4px; background:var(--panel2); color:var(--ink); border:1px solid var(--line); border-radius:4px; padding:2px 4px"></label>
+      <button class="btn" id="recBtn" title="re-solve every frame from its stored corners with current camera + this square size">recompute all ↻</button>
+      <span id="recStatus" style="color:var(--faint); font-size:10px"></span>
+      <button class="btn go" id="recCommit" style="display:none" title="promote the recomputed poses to poses.json (backs up the old one)">commit ✓</button>
+      <div style="flex:1"></div>
+      <span style="color:var(--cyan); font-size:10px; letter-spacing:1px; text-transform:uppercase">smooth</span>
+      <label style="color:var(--dim); font-size:11px">Z-downweight<input id="zdw" type="number" step="1" value="1" style="width:56px; margin-left:4px; background:var(--panel2); color:var(--ink); border:1px solid var(--line); border-radius:4px; padding:2px 4px"></label>
+      <button class="btn" id="resmoothBtn" title="re-run SE(3) smoothing on the current poses.json">re-smooth ∿</button>
+    </div>
     <div id="posesPlots"></div>
   </div>
 </div>
@@ -515,8 +526,7 @@ window.addEventListener("keydown", e=>{
   if(e.metaKey || e.ctrlKey || e.altKey) return;
   const k=e.key.toLowerCase();
 
-  // if(e.code==="Space"){ S.spaceDown=true; cv.style.cursor="grab"; e.preventDefault(); return; }
-  if(e.code==="Space"){ togglePlay(); e.preventDefault(); return; }
+  if(e.code==="Space"){ S.spaceDown=true; cv.style.cursor="grab"; e.preventDefault(); return; }
 
   // --- help cheatsheet ---
   if(e.key==="?" || (k==="/" && e.shiftKey)){ toggleKeys(); return; }
@@ -535,7 +545,7 @@ window.addEventListener("keydown", e=>{
     return; }
 
   // --- playback ---
-  // if(k==="p"){ togglePlay(); return; }
+  if(k==="p"){ togglePlay(); return; }
 
   // --- mode switching (1..5 match the toolbar order) ---
   const modeKeys={"1":"view","2":"seed","3":"mask","4":"keypoints","5":"corners"};
@@ -619,6 +629,12 @@ async function solvePose(){ const key=S.keys[S.idx];
   try{ const r=await jpost(`/api/bags/${S.bag}/pose/${key}`,{corners:S.corners});
     S.poses[key]=r.frame; delete S.axes[key]; updateStatPill(); toast(`pose solved · rms ${(+r.frame.rms_reprojection_error).toFixed(2)}px`); await loadBags(); draw(); fetchAxes(key); }
   catch(e){ toast("solve failed: "+e.message); } }
+async function markNoBoard(){ const key=S.keys[S.idx];
+  try{ const r=await jpost(`/api/bags/${S.bag}/pose/${key}/no_board`,{});
+    if(r.state==="no_board"){ S.poses[key]={status:"no_board",pose:null,corners:null}; delete S.axes[key]; toast("marked no board — won't count as failure"); }
+    else { delete S.poses[key]; delete S.axes[key]; toast("cleared no-board — will be re-detected next pose run"); }
+    S.corners=[]; draw(); updateModeTools(); await loadBags();
+  }catch(e){ toast("failed: "+e.message); } }
 async function reflowPose(){ const key=S.keys[S.idx];
   toast("reflowing corners from nearest good neighbor…");
   try{ const r=await jpost(`/api/bags/${S.bag}/pose/${key}/reflow`,{});
@@ -661,7 +677,7 @@ function updateModeTools(){
     $("borrowS").onclick=openBorrow;
   } else if(S.mode==="mask"){
     mk(`<button class="btn" id="eb">${S.erase?"ERASE":"PAINT"}</button>
-        <label>brush</label><input type="range" id="br" min="1" max="20" value="${S.brush}" style="width:90px">
+        <label>brush</label><input type="range" id="br" min="1" max="60" value="${S.brush}" style="width:90px">
         <button class="btn" id="cm">clear</button><button class="btn" id="cp">copy prev</button>
         <button class="btn go" id="sm">save mask</button>`);
     $("eb").onclick=()=>{ S.erase=!S.erase; updateModeTools(); };
@@ -680,16 +696,19 @@ function updateModeTools(){
     $("ot").onclick=()=>toggleOcc("tip"); $("ol").onclick=()=>toggleOcc("tail");
     $("tk").onclick=()=>trackKp(false); $("ak").onclick=()=>trackKp(true); $("sk").onclick=()=>saveKp();
   } else if(S.mode==="corners"){
+    const isNB=(S.poses[S.keys[S.idx]]||{}).status==="no_board";
     mk(`<span class="pill">${S.corners.length}/${S.board.expected} corners</span>
         <span style="color:var(--dim)">click to place · drag to fix</span>
         <button class="btn" id="uc">undo</button><button class="btn" id="cc">clear</button>
         <button class="btn" id="rc">reset to detected</button>
         <button class="btn warn" id="rf">reflow from neighbor ↺</button>
+        <button class="btn ${isNB?'warn':''}" id="nb">${isNB?'no board ✓ (click to clear)':'mark no board'}</button>
         <button class="btn go" id="sp">re-solve pose</button>`);
     $("uc").onclick=()=>{ S.corners.pop(); draw(); updateModeTools(); };
     $("cc").onclick=()=>{ S.corners=[]; draw(); updateModeTools(); };
     $("rc").onclick=()=>{ const pe=S.poses[S.keys[S.idx]]; S.corners=pe&&pe.corners?pe.corners.map(c=>[c[0],c[1]]):[]; draw(); updateModeTools(); };
     $("rf").onclick=reflowPose;
+    $("nb").onclick=markNoBoard;
     $("sp").onclick=solvePose;
   } else mk(`<span style="color:var(--faint)">read-only · overlays show mask, keypoints & checkerboard</span>`);
 }
@@ -801,7 +820,7 @@ function toggleKeys(){
   const rows=[
     ["a / ←","previous frame"],["d / →","next frame"],
     ["q / e","jump ±10 frames"],["s","save (mode-aware)"],
-    ["(space)","play / pause"],["f","fit to view"],
+    ["p","play / pause"],["f","fit to view"],
     ["[ / ]","zoom out / in"],["space + drag","pan"],["scroll","zoom to cursor"],
     ["1 … 5","View / Seed / Mask / Keypts / Corners"],
     ["— Keypts —",""],["t","track ↔"],["r","re-anchor →"],["g","suggest this frame"],
@@ -826,20 +845,23 @@ function _linePath(idx, vals, x0,y0,w,h, lo,hi, imin,imax){
   const sy=v=>y0 + h - (hi===lo?h/2:(v-lo)/(hi-lo)*h);
   return idx.map((i,n)=>`${n?'L':'M'}${sx(i).toFixed(1)},${sy(vals[n]).toFixed(1)}`).join("");
 }
-function _panel(title, idx, raw, smooth, devMode){
+function _panel(title, idx, raw, smooth, devMode, committed){
   const W=820,H=150, x0=46,y0=14, w=W-x0-12, h=H-y0-26;
-  const all=[...raw, ...(smooth||[])].filter(v=>v!=null);
+  const all=[...raw, ...(smooth||[]), ...(committed||[])].filter(v=>v!=null);
   if(!all.length) return `<div style="color:var(--faint);font-size:11px;margin:8px 0">${title}: no data</div>`;
   let lo=Math.min(...all), hi=Math.max(...all); if(lo===hi){lo-=1;hi+=1;}
   const pad=(hi-lo)*0.08; lo-=pad; hi+=pad;
   const imin=idx.length?idx[0]:0, imax=idx.length?idx[idx.length-1]:1;
   const grid=[0,0.25,0.5,0.75,1].map(f=>{const y=y0+h-f*h; return `<line x1="${x0}" y1="${y.toFixed(1)}" x2="${x0+w}" y2="${y.toFixed(1)}" stroke="var(--line)" stroke-width="0.5"/>`+
     `<text x="${x0-4}" y="${(y+3).toFixed(1)}" fill="var(--faint)" font-size="9" text-anchor="end">${(lo+f*(hi-lo)).toFixed(3)}</text>`;}).join("");
+  // committed overlay drawn first (underneath), faint grey, so the proposed amber sits on top
+  const comP = (committed&&committed.length)?_linePath(idx,committed,x0,y0,w,h,lo,hi,imin,imax):"";
   const rawP=_linePath(idx,raw,x0,y0,w,h,lo,hi,imin,imax);
   const smP = smooth?_linePath(idx,smooth,x0,y0,w,h,lo,hi,imin,imax):"";
   return `<div style="margin-bottom:6px"><div style="color:var(--dim);font-size:10px;letter-spacing:1px;text-transform:uppercase;margin:4px 0 2px">${title}</div>
     <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block;background:#0a0b0e;border:1px solid var(--line);border-radius:6px">
       ${grid}
+      ${comP?`<path d="${comP}" fill="none" stroke="#6b7280" stroke-width="1.2" stroke-dasharray="4 3"/>`:""}
       ${rawP?`<path d="${rawP}" fill="none" stroke="${devMode?'var(--green)':'var(--amber)'}" stroke-width="1.4"/>`:""}
       ${smP?`<path d="${smP}" fill="none" stroke="var(--cyan)" stroke-width="1.4"/>`:""}
     </svg></div>`;
@@ -859,10 +881,60 @@ async function openPoses(){
   if(tr.has_smoothed && tr.deviation.idx.length)
     html += _panel("Smoothing deviation |Δ| (m)", tr.deviation.idx, tr.deviation.dist, null, true);
   $("posesPlots").innerHTML=html;
+  // prefill square size from config; hide commit until a recompute runs
+  const board=(S.config&&S.config.board)||{};
+  if(board.square_size!=null && !$("recSq").value) $("recSq").value=board.square_size;
+  $("recCommit").style.display="none"; $("recStatus").textContent="";
   // reflect current pack-with choice
   const cur=(curBag()&&curBag().poses_source)||"auto";
   [...$("posesPick").children].forEach(b=>b.classList.toggle("active", b.dataset.src===cur));
   $("posesModal").style.display="block";
+}
+$("recBtn").onclick=async()=>{
+  const sq=parseFloat($("recSq").value);
+  const body=sq>0?{square_size:sq}:{};
+  $("recStatus").textContent="recomputing…";
+  try{ const r=await jpost(`/api/bags/${S.bag}/poses/recompute`, body);
+    $("recStatus").textContent=`${r.recomputed} recomputed, ${r.skipped} skipped${r.failed?`, ${r.failed} failed`:''} — review plots, then commit`;
+    $("recCommit").style.display="";
+    // show the preview by reloading the recomputed file as the "raw" overlay
+    await refreshPosesPlots(true);
+  }catch(e){ $("recStatus").textContent="recompute failed: "+e.message; }
+};
+$("recCommit").onclick=async()=>{
+  try{ await jpost(`/api/bags/${S.bag}/poses/commit`, {preview:"poses_recomputed.json"});
+    toast("committed — re-smooth to refresh smoothed track"); $("recCommit").style.display="none";
+    $("recStatus").textContent="committed to poses.json (old backed up to poses_prev.json)";
+    await refreshPosesPlots(false); loadBags();
+  }catch(e){ toast("commit failed: "+e.message); }
+};
+$("resmoothBtn").onclick=async()=>{
+  const zd=parseFloat($("zdw").value)||1.0;
+  toast("re-smoothing…");
+  try{ const r=await jpost(`/api/bags/${S.bag}/poses/resmooth`, {z_downweight:zd});
+    toast(`smoothed ${r.smoothed_frames} frames (Z-downweight ${zd})`); await refreshPosesPlots(false); loadBags();
+  }catch(e){ toast("re-smooth failed: "+e.message); }
+};
+async function refreshPosesPlots(preview){
+  const q = preview ? "?preview=true" : "";
+  let tr; try{ tr=await jget(`/api/bags/${S.bag}/pose_trajectory${q}`); }catch{ return; }
+  // when previewing a recompute, also fetch the committed track to overlay underneath
+  let committed=null;
+  if(preview){ try{ committed=(await jget(`/api/bags/${S.bag}/pose_trajectory`)).raw; }catch{} }
+  const R=tr.raw, M=tr.smooth;
+  const banner = preview
+    ? `<div style="background:#2a1f08;border:1px solid var(--amber);border-radius:6px;padding:6px 10px;margin-bottom:8px;color:var(--amber);font-size:11px">
+         PROPOSED recompute (bright amber) vs current committed (grey). Press <b>commit ✓</b> to keep it, or close to discard.</div>`
+    : "";
+  let html = banner
+           + _panel("X position (m)", R.idx, R.x, tr.has_smoothed?M.x:null, false, committed&&committed.x)
+           + _panel("Y position (m)", R.idx, R.y, tr.has_smoothed?M.y:null, false, committed&&committed.y)
+           + _panel("Z position (m)", R.idx, R.z, tr.has_smoothed?M.z:null, false, committed&&committed.z);
+  if(tr.has_smoothed && tr.deviation.idx.length)
+    html += _panel("Smoothing deviation |Δ| (m)", tr.deviation.idx, tr.deviation.dist, null, true);
+  $("posesPlots").innerHTML=html;
+  const s=tr.stats||{};
+  if(tr.has_smoothed) $("posesStats").textContent=`${s.frames||0} frames · mean shift ${(s.mean_mm||0).toFixed(2)}mm · max ${(s.max_mm||0).toFixed(2)}mm`;
 }
 $("posesPick").addEventListener("click", async e=>{ const b=e.target.closest("button"); if(!b) return;
   const src=b.dataset.src;

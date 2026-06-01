@@ -56,7 +56,7 @@
     },
     "stage_args": {
       "pose": [
-        "--recalculate_from_corners"
+        "--recalculate-from-corners"
       ]
     },
     "repack_mode": "snapshot",
@@ -72,7 +72,7 @@
         "pose": {
           "status": "ok",
           "rc": 0,
-          "ts": 1780107551.4721694
+          "ts": 1780267512.5973063
         },
         "smooth": {
           "status": "fail",
@@ -85,8 +85,8 @@
           "ts": 1780168352.6825254
         }
       },
-      "repack_mode": "snapshot",
-      "poses_source": "smooth"
+      "repack_mode": "topics",
+      "poses_source": "auto"
     },
     "ch_chicken_1": {
       "tracks": {
@@ -136,7 +136,7 @@
         }
       },
       "poses_source": "smooth",
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "ch_chicken_3": {
       "tracks": {
@@ -215,7 +215,7 @@
           "ts": 1780168639.580855
         }
       },
-      "repack_mode": "snapshot",
+      "repack_mode": "topics",
       "poses_source": "smooth"
     },
     "ch_circlexy_3": {
@@ -259,7 +259,8 @@
           "rc": 0,
           "ts": 1780168740.6528208
         }
-      }
+      },
+      "repack_mode": "topics"
     },
     "ch_circlexy_5": {
       "tracks": {
@@ -282,7 +283,8 @@
           "rc": 0,
           "ts": 1780168785.4235783
         }
-      }
+      },
+      "repack_mode": "topics"
     },
     "ch_circlexy_6": {
       "tracks": {
@@ -305,7 +307,8 @@
           "rc": 0,
           "ts": 1780168833.3813467
         }
-      }
+      },
+      "repack_mode": "topics"
     },
     "ch_circlexz_1": {
       "tracks": {

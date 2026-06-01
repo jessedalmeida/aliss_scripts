@@ -73,7 +73,31 @@ def _pose_failures(ctx: Ctx, bag: str) -> int:
         frames = json.loads(p.read_text()).get("frames", {})
     except Exception:
         return 0
-    return sum(1 for f in frames.values() if f.get("status") != "ok")
+    return sum(1 for f in frames.values() if f.get("status") not in ("ok", "no_board"))
+
+
+def _pose_breakdown(ctx: Ctx, bag: str) -> tuple[int, int]:
+    """Return (outright_failures, high_rms) counts for the worklist message."""
+    p = ctx.bag_dir(bag) / "poses.json"
+    if not p.exists():
+        return (0, 0)
+    try:
+        frames = json.loads(p.read_text()).get("frames", {})
+    except Exception:
+        return (0, 0)
+    fails = sum(1 for f in frames.values() if f.get("status") not in ("ok", "high_rms", "no_board"))
+    high = sum(1 for f in frames.values() if f.get("status") == "high_rms")
+    return (fails, high)
+
+
+def _pose_attention_msg(ctx: Ctx, bag: str) -> str:
+    fails, high = _pose_breakdown(ctx, bag)
+    parts = []
+    if fails:
+        parts.append(f"{fails} detection failure(s)")
+    if high:
+        parts.append(f"{high} high-RMS frame(s)")
+    return " + ".join(parts) + " -> review" if parts else ""
 
 
 # --------------------------------------------------------------------------

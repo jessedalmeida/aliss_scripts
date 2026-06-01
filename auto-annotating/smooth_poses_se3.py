@@ -38,7 +38,7 @@ def main():
     parser.add_argument(
         "--noise-scale",
         type=float,
-        default=100.0,
+        default=0.54,
         help="Process noise scale (higher = smoother). Default: 1.0. Try 0.1-10.",
     )
     parser.add_argument(

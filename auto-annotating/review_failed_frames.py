@@ -236,7 +236,7 @@ def handle_manual_correction(
         return False
 
     print("\n[INFO] Opening corner picker. Click checkerboard corners on the image.")
-    result = open_corner_picker(image, camera, checkerboard, pixel_noise_sigma=10.0)
+    result = open_corner_picker(image, camera, checkerboard, pixel_noise_sigma=1.0)
     
     if result is None:
         print("[INFO] Manual correction cancelled")

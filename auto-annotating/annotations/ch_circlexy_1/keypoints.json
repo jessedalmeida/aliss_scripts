@@ -4173,7 +4173,7 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": false
       },
       "status": "ok",
       "method": "optical_flow_gui"
