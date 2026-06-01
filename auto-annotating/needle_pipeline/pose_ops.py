@@ -252,13 +252,20 @@ def resmooth(ctx, bag: str, z_downweight: float = 1.0, process_noise_scale: floa
                 continue
             cov = pose.get("covariance")
             if cov and len(cov) == 36:
-                c = list(cov)
-                # 6x6 row-major; position Z variance is index 2*6+2 = 14
-                c[14] *= float(z_downweight) ** 2
-                # also down-weight the two in-plane tilt rotations (rx, ry) -> indices 21, 28
-                c[21] *= float(z_downweight)
-                c[28] *= float(z_downweight)
-                pose["covariance"] = c
+                # Covariance is ROS order [x,y,z,rot_x,rot_y,rot_z], row-major 6x6.
+                # To down-weight Z we must scale the ENTIRE Z row AND column by the
+                # factor (not just the c[2,2] diagonal): this preserves the matrix's
+                # positive-definiteness and its x/y<->z correlation structure. Scaling
+                # only the diagonal on a near-singular covariance breaks conditioning
+                # and can make the smoother's Kalman gain produce wrong-sign (drifting)
+                # Z corrections. Row+col scaling by s multiplies the z variance by s^2
+                # and each z-cross-covariance by s, exactly as a proper rescaling should.
+                import numpy as _np
+                M = _np.asarray(cov, dtype=_np.float64).reshape(6, 6)
+                s = float(z_downweight)
+                M[2, :] *= s
+                M[:, 2] *= s
+                pose["covariance"] = [float(v) for v in M.reshape(-1)]
         tf = tempfile.NamedTemporaryFile("w", suffix=".json", delete=False)
         tf.write(json.dumps(data)); tf.close()
         src_path = Path(tf.name)

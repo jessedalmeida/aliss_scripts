@@ -216,6 +216,12 @@
       <label style="color:var(--dim); font-size:11px">Z-downweight<input id="zdw" type="number" step="1" value="1" style="width:56px; margin-left:4px; background:var(--panel2); color:var(--ink); border:1px solid var(--line); border-radius:4px; padding:2px 4px"></label>
       <button class="btn" id="resmoothBtn" title="re-run SE(3) smoothing on the current poses.json">re-smooth ∿</button>
     </div>
+    <div id="poseReadout" style="display:none; align-items:center; gap:12px; margin-bottom:8px; padding:6px 10px; border:1px solid var(--cyan); border-radius:6px; background:#0c1418; font-size:12px">
+      <span style="color:var(--cyan); font-weight:bold">frame <span id="roFrame">—</span></span>
+      <span id="roVals" style="color:var(--dim)"></span>
+      <div style="flex:1"></div>
+      <button class="btn go" id="roJump">jump to frame →</button>
+    </div>
     <div id="posesPlots"></div>
   </div>
 </div>
@@ -889,16 +895,27 @@ function _panel(title, idx, raw, smooth, devMode, committed){
   const imin=idx.length?idx[0]:0, imax=idx.length?idx[idx.length-1]:1;
   const grid=[0,0.25,0.5,0.75,1].map(f=>{const y=y0+h-f*h; return `<line x1="${x0}" y1="${y.toFixed(1)}" x2="${x0+w}" y2="${y.toFixed(1)}" stroke="var(--line)" stroke-width="0.5"/>`+
     `<text x="${x0-4}" y="${(y+3).toFixed(1)}" fill="var(--faint)" font-size="9" text-anchor="end">${(lo+f*(hi-lo)).toFixed(3)}</text>`;}).join("");
+  // x-axis: frame-number ticks (vertical gridlines + labels along the bottom)
+  const xticks=[0,0.25,0.5,0.75,1].map(f=>{
+    const x=x0+f*w; const fi=Math.round(imin+f*(imax-imin));
+    const lbl=String(fi).padStart(6,"0");
+    return `<line x1="${x.toFixed(1)}" y1="${y0}" x2="${x.toFixed(1)}" y2="${(y0+h).toFixed(1)}" stroke="var(--line)" stroke-width="0.4"/>`+
+      `<text x="${x.toFixed(1)}" y="${(y0+h+11).toFixed(1)}" fill="var(--faint)" font-size="8" text-anchor="${f===0?'start':f===1?'end':'middle'}">${lbl}</text>`;
+  }).join("");
   // committed overlay drawn first (underneath), faint grey, so the proposed amber sits on top
   const comP = (committed&&committed.length)?_linePath(idx,committed,x0,y0,w,h,lo,hi,imin,imax):"";
   const rawP=_linePath(idx,raw,x0,y0,w,h,lo,hi,imin,imax);
   const smP = smooth?_linePath(idx,smooth,x0,y0,w,h,lo,hi,imin,imax):"";
+  // expose plot geometry so the click handler can invert pixel->frame and place a marker
+  const meta=`data-x0="${x0}" data-w="${w}" data-imin="${imin}" data-imax="${imax}" data-idx='${JSON.stringify(idx)}'`;
   return `<div style="margin-bottom:6px"><div style="color:var(--dim);font-size:10px;letter-spacing:1px;text-transform:uppercase;margin:4px 0 2px">${title}</div>
-    <svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block;background:#0a0b0e;border:1px solid var(--line);border-radius:6px">
+    <svg class="poseplot" ${meta} viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="width:100%;height:auto;display:block;background:#0a0b0e;border:1px solid var(--line);border-radius:6px;cursor:crosshair">
       ${grid}
+      ${xticks}
       ${comP?`<path d="${comP}" fill="none" stroke="#6b7280" stroke-width="1.2" stroke-dasharray="4 3"/>`:""}
       ${rawP?`<path d="${rawP}" fill="none" stroke="${devMode?'var(--green)':'var(--amber)'}" stroke-width="1.4"/>`:""}
       ${smP?`<path d="${smP}" fill="none" stroke="var(--cyan)" stroke-width="1.4"/>`:""}
+      <line class="pp-marker" x1="0" y1="14" x2="0" y2="124" stroke="var(--cyan)" stroke-width="1" stroke-dasharray="3 2" style="display:none"/>
     </svg></div>`;
 }
 async function openPoses(){
@@ -910,6 +927,8 @@ async function openPoses(){
     ? `${s.frames||0} frames · mean shift ${(s.mean_mm||0).toFixed(2)}mm · max ${(s.max_mm||0).toFixed(2)}mm`
     : "no smoothed poses yet — run the smooth stage to compare";
   const R=tr.raw, M=tr.smooth;
+  S.poseTraj=tr;                       // stash for click-readout
+  $("poseReadout").style.display="none";
   let html = _panel("X position (m)", R.idx, R.x, tr.has_smoothed?M.x:null)
            + _panel("Y position (m)", R.idx, R.y, tr.has_smoothed?M.y:null)
            + _panel("Z position (m)", R.idx, R.z, tr.has_smoothed?M.z:null);
@@ -957,6 +976,7 @@ async function refreshPosesPlots(preview){
   let committed=null;
   if(preview){ try{ committed=(await jget(`/api/bags/${S.bag}/pose_trajectory`)).raw; }catch{} }
   const R=tr.raw, M=tr.smooth;
+  S.poseTraj=tr; $("poseReadout").style.display="none";
   const banner = preview
     ? `<div style="background:#2a1f08;border:1px solid var(--amber);border-radius:6px;padding:6px 10px;margin-bottom:8px;color:var(--amber);font-size:11px">
          PROPOSED recompute (bright amber) vs current committed (grey). Press <b>commit ✓</b> to keep it, or close to discard.</div>`
@@ -978,6 +998,47 @@ $("posesPick").addEventListener("click", async e=>{ const b=e.target.closest("bu
   toast(`${S.bag}: repack will use ${src} poses`); loadBags(); });
 $("posesBtn").onclick=openPoses;
 $("posesClose").onclick=()=>$("posesModal").style.display="none";
+
+// click a plot -> snap to nearest frame, show readout + a vertical marker on all panels
+$("posesPlots").addEventListener("click", e=>{
+  const svg=e.target.closest("svg.poseplot"); if(!svg) return;
+  const idx=JSON.parse(svg.dataset.idx||"[]"); if(!idx.length) return;
+  const x0=+svg.dataset.x0, w=+svg.dataset.w, imin=+svg.dataset.imin, imax=+svg.dataset.imax;
+  // map click (in CSS px) to the SVG's 0..820 viewBox x, then invert to a frame index
+  const rect=svg.getBoundingClientRect();
+  const vbx=(e.clientX-rect.left)/rect.width*820;
+  const frac=Math.max(0,Math.min(1,(vbx-x0)/w));
+  const fi=imin+frac*(imax-imin);
+  // snap to the nearest actual data frame
+  let nearest=idx[0]; for(const v of idx){ if(Math.abs(v-fi)<Math.abs(nearest-fi)) nearest=v; }
+  S.poseSel=nearest;
+  // draw the marker on every panel at this frame's x
+  document.querySelectorAll("#posesPlots svg.poseplot").forEach(sv=>{
+    const _x0=+sv.dataset.x0,_w=+sv.dataset.w,_imin=+sv.dataset.imin,_imax=+sv.dataset.imax;
+    const mx=_x0+(_imax===_imin?0:(nearest-_imin)/(_imax-_imin))*_w;
+    const m=sv.querySelector(".pp-marker"); if(m){ m.setAttribute("x1",mx); m.setAttribute("x2",mx); m.style.display=""; }
+  });
+  // readout: frame number + per-axis raw (and smoothed) values
+  const tr=S.poseTraj||{}; const R=tr.raw||{}, M=tr.smooth||{};
+  const n=(R.idx||[]).indexOf(nearest);
+  const fmt=v=>v==null?"—":(v*1000).toFixed(2);
+  let vals="";
+  if(n>=0){ vals=`raw X ${fmt(R.x[n])} · Y ${fmt(R.y[n])} · Z ${fmt(R.z[n])} mm`;
+    if(tr.has_smoothed){ const sn=(M.idx||[]).indexOf(nearest);
+      if(sn>=0) vals+=`   |   smoothed Z ${fmt(M.z[sn])} mm`; } }
+  $("roFrame").textContent=String(nearest).padStart(6,"0");
+  $("roVals").textContent=vals;
+  $("poseReadout").style.display="flex";
+});
+$("roJump").onclick=()=>{
+  if(S.poseSel==null) return;
+  const key=String(S.poseSel).padStart(6,"0");
+  const i=S.keys.indexOf(key);
+  if(i<0){ toast("frame not in viewer list"); return; }
+  $("posesModal").style.display="none";
+  setMode("corners");          // land in corners mode ready to inspect/fix the pose
+  showFrame(i);
+};
 
 (async()=>{ sizeCanvas(); await loadBags(); updateModeTools(); pollJobs(); })();
 </script>

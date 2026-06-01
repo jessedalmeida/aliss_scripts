@@ -574,6 +574,7 @@ def smooth_poses_se3(
     process_noise_scale: float = 1.0,
     only_ok_frames: bool = True,
     use_cov_drift: bool = True,
+    pos_process_noise: float = 1e-7,
 ) -> dict[str, dict[str, Any]]:
     """
     Smooth pose detections using SE(3) manifold-based covariance-weighted smoothing.
@@ -659,9 +660,16 @@ def smooth_poses_se3(
     m_pos_filt[0] = positions[0]
     P_pos_filt[0] = covs[0][:3, :3]
 
+    # Position process noise is a FIXED small random-walk term, NOT proportional
+    # to the measurement covariance. Tying Q to R (the previous behaviour) meant
+    # that at planar-ambiguous frames — where the measurement Z-variance balloons —
+    # Q ballooned too, so the filter lost its anchor and the RTS backward pass swung
+    # Z by up to ~11 mm with no support in the raw data. A fixed Q keeps the gain
+    # well-behaved: confident frames are still followed, noisy frames are smoothed
+    # toward the local trend rather than allowed to wander.
+    Q_pos_fixed = np.eye(3) * pos_process_noise * process_noise_scale
     for k in range(1, num_frames):
-        Q_pos = np.diag(np.diag(covs[k][:3, :3]) * process_noise_scale)
-        P_pred = P_pos_filt[k - 1] + Q_pos
+        P_pred = P_pos_filt[k - 1] + Q_pos_fixed
         S = P_pred + covs[k][:3, :3]
         K = P_pred @ np.linalg.inv(S)
         m_pos_filt[k] = m_pos_filt[k - 1] + K @ (positions[k] - m_pos_filt[k - 1])
@@ -670,8 +678,7 @@ def smooth_poses_se3(
     m_pos_smooth = m_pos_filt.copy()
     P_pos_smooth = P_pos_filt.copy()
     for k in range(num_frames - 2, -1, -1):
-        Q_pos = np.diag(np.diag(covs[k + 1][:3, :3]) * process_noise_scale)
-        P_pred = P_pos_filt[k] + Q_pos
+        P_pred = P_pos_filt[k] + Q_pos_fixed
         G = P_pos_filt[k] @ np.linalg.inv(P_pred)
         m_pos_smooth[k] = m_pos_filt[k] + G @ (m_pos_smooth[k + 1] - m_pos_filt[k])
         P_pos_smooth[k] = P_pos_filt[k] + G @ (P_pos_smooth[k + 1] - P_pred) @ G.T

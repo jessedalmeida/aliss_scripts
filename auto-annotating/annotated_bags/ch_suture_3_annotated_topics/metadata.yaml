@@ -1,0 +1,148 @@
+rosbag2_bagfile_information:
+  compression_format: ''
+  compression_mode: ''
+  custom_data: null
+  duration:
+    nanoseconds: 42431945429
+  files:
+  - duration:
+      nanoseconds: 42431945429
+    message_count: 6373
+    path: ch_suture_3_annotated_topics.mcap
+    starting_time:
+      nanoseconds_since_epoch: 1780093759501441640
+  message_count: 6373
+  relative_file_paths:
+  - ch_suture_3_annotated_topics.mcap
+  ros_distro: rosbags
+  starting_time:
+    nanoseconds_since_epoch: 1780093759501441640
+  storage_identifier: mcap
+  topics_with_message_count:
+  - message_count: 0
+    topic_metadata:
+      name: /ves_camera/camera_info
+      offered_qos_profiles: []
+      serialization_format: cdr
+      type: sensor_msgs/msg/CameraInfo
+      type_description_hash: 
+        RIHS01_b3dfd68ff46c9d56c80fd3bd4ed22c7a4ddce8c8348f2f59c299e73118e7e275
+  - message_count: 1274
+    topic_metadata:
+      name: /ves_camera/camera_info
+      offered_qos_profiles:
+      - avoid_ros_namespace_conventions: false
+        deadline:
+          nsec: 854775807
+          sec: 9223372036
+        depth: 0
+        durability: volatile
+        history: unknown
+        lifespan:
+          nsec: 854775807
+          sec: 9223372036
+        liveliness: automatic
+        liveliness_lease_duration:
+          nsec: 854775807
+          sec: 9223372036
+        reliability: reliable
+      serialization_format: cdr
+      type: sensor_msgs/msg/CameraInfo
+      type_description_hash: 
+        RIHS01_b3dfd68ff46c9d56c80fd3bd4ed22c7a4ddce8c8348f2f59c299e73118e7e275
+  - message_count: 1274
+    topic_metadata:
+      name: /ves_camera/image_rect
+      offered_qos_profiles:
+      - avoid_ros_namespace_conventions: false
+        deadline:
+          nsec: 854775807
+          sec: 9223372036
+        depth: 0
+        durability: volatile
+        history: unknown
+        lifespan:
+          nsec: 854775807
+          sec: 9223372036
+        liveliness: automatic
+        liveliness_lease_duration:
+          nsec: 854775807
+          sec: 9223372036
+        reliability: reliable
+      serialization_format: cdr
+      type: sensor_msgs/msg/Image
+      type_description_hash: 
+        RIHS01_d31d41a9a4c4bc8eae9be757b0beed306564f7526c88ea6a4588fb9582527d47
+  - message_count: 425
+    topic_metadata:
+      name: /needle_tracking/mask
+      offered_qos_profiles: []
+      serialization_format: cdr
+      type: sensor_msgs/msg/Image
+      type_description_hash: 
+        RIHS01_d31d41a9a4c4bc8eae9be757b0beed306564f7526c88ea6a4588fb9582527d47
+  - message_count: 425
+    topic_metadata:
+      name: /needle_tracking/keypoints
+      offered_qos_profiles: []
+      serialization_format: cdr
+      type: aliss_ros_msg/msg/NeedleTrackingKeypoints
+      type_description_hash: 
+        RIHS01_5f9fb6428b1210f76cb7900694ec9ab8e67fdcbbe90854f7867c0c90cc5ec41b
+  - message_count: 425
+    topic_metadata:
+      name: /needle_tracking/right_arm_jp
+      offered_qos_profiles: []
+      serialization_format: cdr
+      type: sensor_msgs/msg/JointState
+      type_description_hash: 
+        RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e
+  - message_count: 425
+    topic_metadata:
+      name: /needle_tracking/left_arm_jp
+      offered_qos_profiles: []
+      serialization_format: cdr
+      type: sensor_msgs/msg/JointState
+      type_description_hash: 
+        RIHS01_a13ee3a330e346c9d87b5aa18d24e11690752bd33a0350f11c5882bc9179260e
+  - message_count: 425
+    topic_metadata:
+      name: /needle_tracking/right_arm_cp
+      offered_qos_profiles: []
+      serialization_format: cdr
+      type: geometry_msgs/msg/PoseStamped
+      type_description_hash: 
+        RIHS01_10f3786d7d40fd2b54367835614bff85d4ad3b5dab62bf8bca0cc232d73b4cd8
+  - message_count: 425
+    topic_metadata:
+      name: /needle_tracking/left_arm_cp
+      offered_qos_profiles: []
+      serialization_format: cdr
+      type: geometry_msgs/msg/PoseStamped
+      type_description_hash: 
+        RIHS01_10f3786d7d40fd2b54367835614bff85d4ad3b5dab62bf8bca0cc232d73b4cd8
+  - message_count: 425
+    topic_metadata:
+      name: /needle_tracking/right_tip_pose
+      offered_qos_profiles: []
+      serialization_format: cdr
+      type: geometry_msgs/msg/PoseWithCovarianceStamped
+      type_description_hash: 
+        RIHS01_26432f9803e43727d3c8f668d1fdb3c630f548af631e2f4e31382371bfea3b6e
+  - message_count: 425
+    topic_metadata:
+      name: /needle_tracking/left_tip_pose
+      offered_qos_profiles: []
+      serialization_format: cdr
+      type: geometry_msgs/msg/PoseWithCovarianceStamped
+      type_description_hash: 
+        RIHS01_26432f9803e43727d3c8f668d1fdb3c630f548af631e2f4e31382371bfea3b6e
+  - message_count: 425
+    topic_metadata:
+      name: /checkerboard/pose
+      offered_qos_profiles: []
+      serialization_format: cdr
+      type: geometry_msgs/msg/PoseWithCovarianceStamped
+      type_description_hash: 
+        RIHS01_26432f9803e43727d3c8f668d1fdb3c630f548af631e2f4e31382371bfea3b6e
+  version: 9

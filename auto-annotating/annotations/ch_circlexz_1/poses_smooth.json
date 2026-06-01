@@ -89,9 +89,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013379010287852247,
-          -0.010157311174655235,
-          0.031071231958533653
+          -0.013541100225522731,
+          -0.010281562992297261,
+          0.031451649700419734
         ],
         "quaternion": [
           0.08057014338729976,
@@ -142,7 +142,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.031903958402748074
+        "residual_norm_m": 0.03190036549329722
       }
     },
     "000001": {
@@ -210,9 +210,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013222291167451803,
-          -0.010131868747874192,
-          0.03105993745827228
+          -0.01332026069800083,
+          -0.010207526255734452,
+          0.031292840890340304
         ],
         "quaternion": [
           0.08397708705927479,
@@ -263,7 +263,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.052051083930813896
+        "residual_norm_m": 0.05205036493324678
       }
     },
     "000002": {
@@ -331,9 +331,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012998432605652045,
-          -0.010114460701174867,
-          0.031048017755994067
+          -0.013027772585179806,
+          -0.010138060649928761,
+          0.03112029365110909
         ],
         "quaternion": [
           0.06185371552241953,
@@ -384,7 +384,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03175738046635956
+        "residual_norm_m": 0.031757208220782304
       }
     },
     "000003": {
@@ -452,9 +452,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012776649131999858,
-          -0.010090109717301165,
-          0.030946839485732142
+          -0.012716777087985114,
+          -0.01004592967833873,
+          0.030803715608724178
         ],
         "quaternion": [
           0.05871630984363253,
@@ -505,7 +505,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03630449622598085
+        "residual_norm_m": 0.03630376511910656
       }
     },
     "000004": {
@@ -573,9 +573,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012669431293349364,
-          -0.010006512868487485,
-          0.03098587631847007
+          -0.012630670104975683,
+          -0.009967857243832427,
+          0.030881515868251157
         ],
         "quaternion": [
           0.05679344895456226,
@@ -626,7 +626,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.015476623012066395
+        "residual_norm_m": 0.015476085737486654
       }
     },
     "000005": {
@@ -694,9 +694,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012458338139465976,
-          -0.010060753636263459,
-          0.03099426485721389
+          -0.012459838183636728,
+          -0.010068163633884675,
+          0.031005479926166472
         ],
         "quaternion": [
           0.07631133314185637,
@@ -747,7 +747,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.007467123549785197
+        "residual_norm_m": 0.0074671803098402155
       }
     },
     "000006": {
@@ -815,9 +815,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012352477945317101,
-          -0.010008918854596895,
-          0.031053692274710637
+          -0.01245885219963738,
+          -0.010099385790120962,
+          0.031329490972881235
         ],
         "quaternion": [
           0.08549201453286731,
@@ -868,7 +868,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.04185602505813941
+        "residual_norm_m": 0.0418538414947022
       }
     },
     "000007": {
@@ -936,9 +936,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012209598362643308,
-          -0.00991148253212399,
-          0.031002186637558146
+          -0.012232310754131219,
+          -0.009930053140810505,
+          0.03106090337900046
         ],
         "quaternion": [
           0.07050727652026205,
@@ -989,7 +989,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.004833816601186896
+        "residual_norm_m": 0.004833218114207437
       }
     },
     "000008": {
@@ -1057,9 +1057,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01206271403837254,
-          -0.009823750763150688,
-          0.030912632814957434
+          -0.011993591428994175,
+          -0.009765356484286208,
+          0.030730668362133864
         ],
         "quaternion": [
           0.06281638559532057,
@@ -1110,7 +1110,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01542692259912156
+        "residual_norm_m": 0.015424426674068988
       }
     },
     "000009": {
@@ -1178,9 +1178,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01193765985857591,
-          -0.00975732364385418,
-          0.030969538755848982
+          -0.011893080910277484,
+          -0.009714147700377986,
+          0.030844680800931286
         ],
         "quaternion": [
           0.058731184426675694,
@@ -1231,7 +1231,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01353912224896739
+        "residual_norm_m": 0.013538114876938791
       }
     },
     "000010": {
@@ -1299,9 +1299,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011740121830968049,
-          -0.009795739319265237,
-          0.031043082557546304
+          -0.011755307746402826,
+          -0.009815321314653874,
+          0.0310929401746162
         ],
         "quaternion": [
           0.06308727233568412,
@@ -1352,7 +1352,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02429234153569115
+        "residual_norm_m": 0.024292198831250365
       }
     },
     "000011": {
@@ -1420,9 +1420,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011661398613929995,
-          -0.009734198030438752,
-          0.031060647715711622
+          -0.01170023458047622,
+          -0.009766058046074926,
+          0.03116429723562782
         ],
         "quaternion": [
           0.06487887661738687,
@@ -1473,7 +1473,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03841392589186955
+        "residual_norm_m": 0.03841364928334916
       }
     },
     "000012": {
@@ -1541,9 +1541,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011532775721249933,
-          -0.009681341531962363,
-          0.03104081852025298
+          -0.011545240210283048,
+          -0.009691420513677981,
+          0.03107442370981279
         ],
         "quaternion": [
           0.06137384238138995,
@@ -1594,7 +1594,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.004278230515270824
+        "residual_norm_m": 0.0042781121341017355
       }
     },
     "000013": {
@@ -1662,9 +1662,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0113938805585179,
-          -0.009638894926014425,
-          0.031001150109006687
+          -0.011396162466471441,
+          -0.009639121610003423,
+          0.03100526268952372
         ],
         "quaternion": [
           0.058021414888967435,
@@ -1715,7 +1715,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.008458670454735882
+        "residual_norm_m": 0.008458668024502297
       }
     },
     "000014": {
@@ -1783,9 +1783,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011237102387758767,
-          -0.009623496634835584,
-          0.030950060086503653
+          -0.0112268717091632,
+          -0.009615354226345666,
+          0.030921949465758578
         ],
         "quaternion": [
           0.05075112183858768,
@@ -1836,7 +1836,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.012227597542440237
+        "residual_norm_m": 0.01222763616429582
       }
     },
     "000015": {
@@ -1904,9 +1904,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011096319069775349,
-          -0.009593929304199583,
-          0.030914220404332327
+          -0.011014219362751113,
+          -0.009523125450815993,
+          0.030684517311889307
         ],
         "quaternion": [
           0.04651650640411607,
@@ -1957,7 +1957,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03424180997645553
+        "residual_norm_m": 0.03424005419650053
       }
     },
     "000016": {
@@ -2025,9 +2025,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011034890127952461,
-          -0.009557850202740253,
-          0.03100276447826115
+          -0.011034592619384968,
+          -0.009558326274197898,
+          0.031003362956128346
         ],
         "quaternion": [
           0.0472703127790441,
@@ -2078,7 +2078,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.009547625877595273
+        "residual_norm_m": 0.009547622878355248
       }
     },
     "000017": {
@@ -2146,9 +2146,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010987661981336142,
-          -0.00951376897450236,
-          0.031031741684187365
+          -0.011000734956491166,
+          -0.009523727371776253,
+          0.031066646869060854
         ],
         "quaternion": [
           0.04908018556078894,
@@ -2199,7 +2199,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.008933386571367783
+        "residual_norm_m": 0.008933330318951492
       }
     },
     "000018": {
@@ -2267,9 +2267,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010902106347923404,
-          -0.009485811973060873,
-          0.031081948123575624
+          -0.010935834278628999,
+          -0.009509898459473372,
+          0.031172356258189135
         ],
         "quaternion": [
           0.05135227990986419,
@@ -2320,7 +2320,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.016803548063567094
+        "residual_norm_m": 0.016803179883785338
       }
     },
     "000019": {
@@ -2388,9 +2388,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010722497964139708,
-          -0.009546434571967497,
-          0.031045184427026723
+          -0.01077488881042857,
+          -0.009600531911112334,
+          0.03120817840060376
         ],
         "quaternion": [
           0.05552427243041303,
@@ -2441,7 +2441,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.005053247024552862
+        "residual_norm_m": 0.00504820985936841
       }
     },
     "000020": {
@@ -2509,9 +2509,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010599659363597205,
-          -0.009507539529109937,
-          0.030985987152781568
+          -0.010603231798828909,
+          -0.009513420636547011,
+          0.031000918495378837
         ],
         "quaternion": [
           0.04970330316529061,
@@ -2562,7 +2562,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.00987838402075318
+        "residual_norm_m": 0.009878469649752428
       }
     },
     "000021": {
@@ -2630,9 +2630,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010515203180313917,
-          -0.009437798231376445,
-          0.030944562873986982
+          -0.01056740425192798,
+          -0.009486688640434619,
+          0.03110323640754088
         ],
         "quaternion": [
           0.04849861377666566,
@@ -2683,7 +2683,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.027753096412405514
+        "residual_norm_m": 0.027752420714905704
       }
     },
     "000022": {
@@ -2751,9 +2751,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010413363222462673,
-          -0.009353128832005599,
-          0.030817982920473972
+          -0.010505420134321479,
+          -0.009440328660384743,
+          0.03110014844388909
         ],
         "quaternion": [
           0.03749616171047959,
@@ -2804,7 +2804,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.021281501654035345
+        "residual_norm_m": 0.021279092220231676
       }
     },
     "000023": {
@@ -2872,9 +2872,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010297950231562951,
-          -0.009231179151383133,
-          0.030570735375964678
+          -0.01045485441382983,
+          -0.009371589198296788,
+          0.03104083767134945
         ],
         "quaternion": [
           0.020913118182186316,
@@ -2925,7 +2925,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.04690789345127009
+        "residual_norm_m": 0.04690536642613539
       }
     },
     "000024": {
@@ -2993,9 +2993,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010069270543578979,
-          -0.009151844300065187,
-          0.030187049537350377
+          -0.010440205740407488,
+          -0.009381724174154123,
+          0.031131951603029954
         ],
         "quaternion": [
           0.0021008541918955685,
@@ -3046,7 +3046,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.14252488866641766
+        "residual_norm_m": 0.14252062504144197
       }
     },
     "000025": {
@@ -3114,9 +3114,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008665272870899956,
-          -0.010650170385110107,
-          0.030155031597191715
+          -0.00887834980184044,
+          -0.010965336027030193,
+          0.03099252713933745
         ],
         "quaternion": [
           0.09037918528233242,
@@ -3167,7 +3167,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.05657019457289557
+        "residual_norm_m": 0.056561608663093496
       }
     },
     "000026": {
@@ -3235,9 +3235,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007830610325423789,
-          -0.011393088410219772,
-          0.030328547697246362
+          -0.00789491827175943,
+          -0.011541179512976554,
+          0.030685811299236955
         ],
         "quaternion": [
           0.09711126564561426,
@@ -3288,7 +3288,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.053553141027675784
+        "residual_norm_m": 0.05355148858193453
       }
     },
     "000027": {
@@ -3356,9 +3356,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.00737950824594025,
-          -0.01165967437819813,
-          0.030220877194490924
+          -0.007365844301894544,
+          -0.011672809799037322,
+          0.030234842653420326
         ],
         "quaternion": [
           0.09268088343779401,
@@ -3409,7 +3409,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.05375356647542529
+        "residual_norm_m": 0.053753568600666796
       }
     },
     "000028": {
@@ -3477,9 +3477,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007136396113757952,
-          -0.011694157181140653,
-          0.029953745497538604
+          -0.007136171852425513,
+          -0.011702346018923122,
+          0.029970240876245585
         ],
         "quaternion": [
           0.08419572519212469,
@@ -3530,7 +3530,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.05003878935006319
+        "residual_norm_m": 0.050038789857695755
       }
     },
     "000029": {
@@ -3598,9 +3598,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006950679552687187,
-          -0.011671744836405207,
-          0.029658770400742808
+          -0.006975771433299372,
+          -0.011722390610732242,
+          0.029781049324320755
         ],
         "quaternion": [
           0.08202753802312628,
@@ -3651,7 +3651,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.031794128238925794
+        "residual_norm_m": 0.031793773262867114
       }
     },
     "000030": {
@@ -3719,9 +3719,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006802147711769708,
-          -0.011550811687164927,
-          0.02943286152632201
+          -0.0068246183040986405,
+          -0.011584815741498878,
+          0.029520572459471688
         ],
         "quaternion": [
           0.07671175059841306,
@@ -3772,7 +3772,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.009442192786078923
+        "residual_norm_m": 0.00944175018340847
       }
     },
     "000031": {
@@ -3840,9 +3840,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.00662467056346285,
-          -0.01141318950363648,
-          0.02927297595355936
+          -0.006637279763580416,
+          -0.011431188189197783,
+          0.029322231381104145
         ],
         "quaternion": [
           0.06402841921381364,
@@ -3893,7 +3893,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.014874401320231085
+        "residual_norm_m": 0.014874320721950579
       }
     },
     "000032": {
@@ -3961,9 +3961,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006439116849140836,
-          -0.011301977143392209,
-          0.029092481921307173
+          -0.006454362281205879,
+          -0.01132123567006682,
+          0.02914847087297423
         ],
         "quaternion": [
           0.06062524215545794,
@@ -4014,7 +4014,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0102649180528076
+        "residual_norm_m": 0.010264597935136541
       }
     },
     "000033": {
@@ -4082,9 +4082,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006242379111636581,
-          -0.011252728672496059,
-          0.028848039226557525
+          -0.006220695615851005,
+          -0.011225882474386058,
+          0.028776519405348443
         ],
         "quaternion": [
           0.0583461568392698,
@@ -4135,7 +4135,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.014140599375196435
+        "residual_norm_m": 0.014140222600099901
       }
     },
     "000034": {
@@ -4203,9 +4203,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006109225121351391,
-          -0.011190315562688818,
-          0.028450023376317815
+          -0.006141944497382158,
+          -0.011244553861483559,
+          0.02858751689219285
         ],
         "quaternion": [
           0.0686883592878325,
@@ -4256,7 +4256,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02503544008609751
+        "residual_norm_m": 0.025034834047613315
       }
     },
     "000035": {
@@ -4324,9 +4324,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005945116299019156,
-          -0.011091154076678687,
-          0.02821582287326561
+          -0.005955507465240312,
+          -0.011109089273192653,
+          0.028259836813337175
         ],
         "quaternion": [
           0.06320248409392405,
@@ -4377,7 +4377,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.013100146402645606
+        "residual_norm_m": 0.013100128120056622
       }
     },
     "000036": {
@@ -4445,9 +4445,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005782178255751884,
-          -0.010972468768992709,
-          0.028097607105403818
+          -0.005790772094279788,
+          -0.010978219386186348,
+          0.028117334119374567
         ],
         "quaternion": [
           0.05788624120733156,
@@ -4498,7 +4498,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.008373538827729387
+        "residual_norm_m": 0.00837349749690139
       }
     },
     "000037": {
@@ -4566,9 +4566,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005601182809612494,
-          -0.010903581139558196,
-          0.027997485061426963
+          -0.005579788154269384,
+          -0.01087689191097435,
+          0.02792558524573045
         ],
         "quaternion": [
           0.05996518424541895,
@@ -4619,7 +4619,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.013418290509014967
+        "residual_norm_m": 0.013418119032857572
       }
     },
     "000038": {
@@ -4687,9 +4687,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005484130356851224,
-          -0.010825904711939073,
-          0.027769884894630753
+          -0.005447144369800541,
+          -0.010763498772087628,
+          0.027603878370036646
         ],
         "quaternion": [
           0.05586001104764329,
@@ -4740,7 +4740,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.015088681081036863
+        "residual_norm_m": 0.015087377429190689
       }
     },
     "000039": {
@@ -4808,9 +4808,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005409639261040866,
-          -0.010731864680892825,
-          0.02758525010046869
+          -0.005383832806343032,
+          -0.010685127223795155,
+          0.027462425770085244
         ],
         "quaternion": [
           0.057102917348068896,
@@ -4861,7 +4861,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.011615969320432528
+        "residual_norm_m": 0.011615237201562552
       }
     },
     "000040": {
@@ -4929,9 +4929,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005357797580368733,
-          -0.010645162017332822,
-          0.027414393072213612
+          -0.005327119586635963,
+          -0.010594488415919694,
+          0.027280550956775184
         ],
         "quaternion": [
           0.05343091961227984,
@@ -4982,7 +4982,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.007585788707949748
+        "residual_norm_m": 0.007584272826843379
       }
     },
     "000041": {
@@ -5050,9 +5050,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0053452445433569305,
-          -0.01056212120125715,
-          0.02720891512125971
+          -0.005331759156950374,
+          -0.01053518212407223,
+          0.027138743583725134
         ],
         "quaternion": [
           0.056169503663722795,
@@ -5103,7 +5103,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.00967561427134297
+        "residual_norm_m": 0.009675433616251014
       }
     },
     "000042": {
@@ -5171,9 +5171,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005336583446459524,
-          -0.010490001779036731,
-          0.027021638575683484
+          -0.005300303299480073,
+          -0.010417064554942134,
+          0.026831875587160284
         ],
         "quaternion": [
           0.05732696468668373,
@@ -5224,7 +5224,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.010503688868606737
+        "residual_norm_m": 0.010501466395213079
       }
     },
     "000043": {
@@ -5285,9 +5285,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005337534256834805,
-          -0.010347876467256673,
-          0.02668239192170269
+          -0.005309993932553453,
+          -0.010329283656301265,
+          0.026626667697662556
         ],
         "quaternion": [
           0.05098587790796132,
@@ -5345,7 +5345,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.002922141230864055
+        "residual_norm_m": 0.002921065540835686
       }
     },
     "000044": {
@@ -5413,9 +5413,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.00536943089669612,
-          -0.01028992242348161,
-          0.026505768074423754
+          -0.005358653749471749,
+          -0.010275994338581713,
+          0.026465734919913723
         ],
         "quaternion": [
           0.050913583048498044,
@@ -5466,7 +5466,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01349051617481776
+        "residual_norm_m": 0.01349043267815114
       }
     },
     "000045": {
@@ -5534,9 +5534,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0054213627655362315,
-          -0.010207719681593626,
-          0.026359061960640494
+          -0.005418605945100389,
+          -0.010208693166317442,
+          0.026358487936470273
         ],
         "quaternion": [
           0.05742997137183267,
@@ -5587,7 +5587,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.014958823988409564
+        "residual_norm_m": 0.014958824062517494
       }
     },
     "000046": {
@@ -5655,9 +5655,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005490161270579689,
-          -0.010103917589753684,
-          0.02620892389977046
+          -0.005481148278753975,
+          -0.010083805808095533,
+          0.02615777719269922
         ],
         "quaternion": [
           0.052601727961416433,
@@ -5708,7 +5708,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.008859162452335178
+        "residual_norm_m": 0.008858915915777844
       }
     },
     "000047": {
@@ -5776,9 +5776,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005554283318126977,
-          -0.010020506548663696,
-          0.026093289427024973
+          -0.005552141612566911,
+          -0.010022561895830265,
+          0.02609575772994949
         ],
         "quaternion": [
           0.05467623158622768,
@@ -5829,7 +5829,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.010246928416721757
+        "residual_norm_m": 0.01024692445860334
       }
     },
     "000048": {
@@ -5897,9 +5897,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005634028604679715,
-          -0.00992164172430108,
-          0.025965311701195395
+          -0.005623492732579965,
+          -0.009886145770842217,
+          0.025879410659141507
         ],
         "quaternion": [
           0.05423317572166119,
@@ -5950,7 +5950,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.013201386754365644
+        "residual_norm_m": 0.013200993881524454
       }
     },
     "000049": {
@@ -6011,9 +6011,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005750029462218948,
-          -0.009844279992676333,
-          0.025845748421370964
+          -0.005713376790113404,
+          -0.009819895567273251,
+          0.02576555087126098
         ],
         "quaternion": [
           0.05255527565824996,
@@ -6071,7 +6071,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.019433323521023678
+        "residual_norm_m": 0.019432997395225027
       }
     },
     "000050": {
@@ -6139,9 +6139,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005828772692827185,
-          -0.009787255260871252,
-          0.025754205080110698
+          -0.005824246143076329,
+          -0.009785107953240054,
+          0.025746482966659517
         ],
         "quaternion": [
           0.05378191014761548,
@@ -6192,7 +6192,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.015512451785524264
+        "residual_norm_m": 0.015512457974949066
       }
     },
     "000051": {
@@ -6260,9 +6260,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.00592787227548639,
-          -0.009719706601015933,
-          0.025619684326312654
+          -0.005902855701463552,
+          -0.009684184742937984,
+          0.025522109600958603
         ],
         "quaternion": [
           0.049099262478253324,
@@ -6313,7 +6313,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01628983142760176
+        "residual_norm_m": 0.0162893813197174
       }
     },
     "000052": {
@@ -6381,9 +6381,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006061251452963591,
-          -0.009642893289938054,
-          0.02550682661946256
+          -0.006063004033400074,
+          -0.009638468136201275,
+          0.025498292081005722
         ],
         "quaternion": [
           0.05664412600086392,
@@ -6434,7 +6434,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01803440870923736
+        "residual_norm_m": 0.018034409323769537
       }
     },
     "000053": {
@@ -6502,9 +6502,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.00617188969021527,
-          -0.009591410729494633,
-          0.02543827741082634
+          -0.006160419559555799,
+          -0.009574639773727548,
+          0.025392101524529684
         ],
         "quaternion": [
           0.052708528857793174,
@@ -6555,7 +6555,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.018202600698644957
+        "residual_norm_m": 0.018202505481888082
       }
     },
     "000054": {
@@ -6623,9 +6623,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006290540703379331,
-          -0.009540971662309656,
-          0.025402299776898788
+          -0.006290770116556566,
+          -0.009542270999337651,
+          0.02540454429924776
         ],
         "quaternion": [
           0.05089115387982857,
@@ -6676,7 +6676,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.012333383307190056
+        "residual_norm_m": 0.012333381760131901
       }
     },
     "000055": {
@@ -6744,9 +6744,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.00641845465125614,
-          -0.009479619255375518,
-          0.025373583835790237
+          -0.006408148109831844,
+          -0.0094659804717511,
+          0.0253352086011045
         ],
         "quaternion": [
           0.05033793655384266,
@@ -6797,7 +6797,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01270157318478319
+        "residual_norm_m": 0.012701497613389807
       }
     },
     "000056": {
@@ -6865,9 +6865,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0065605763820470505,
-          -0.009415165296717553,
-          0.025361683231432692
+          -0.006542790566554763,
+          -0.009387981918779853,
+          0.025290244023412515
         ],
         "quaternion": [
           0.045325352248428555,
@@ -6918,7 +6918,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.005327782684622728
+        "residual_norm_m": 0.005327073583238565
       }
     },
     "000057": {
@@ -6986,9 +6986,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0067120821020855365,
-          -0.0093790429569548,
-          0.02534789840284022
+          -0.006713161300591117,
+          -0.009382380070122208,
+          0.025354221032340377
         ],
         "quaternion": [
           0.04386287354218273,
@@ -7039,7 +7039,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0026010003867577547
+        "residual_norm_m": 0.0026009631268238153
       }
     },
     "000058": {
@@ -7107,9 +7107,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0068741482050383345,
-          -0.009323094001247118,
-          0.025356485677900616
+          -0.006855435635910338,
+          -0.009300020249413884,
+          0.025291827093680014
         ],
         "quaternion": [
           0.04271755717860735,
@@ -7160,7 +7160,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.003451755484494201
+        "residual_norm_m": 0.003450722687318684
       }
     },
     "000059": {
@@ -7228,9 +7228,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007068706776370939,
-          -0.00926735700638428,
-          0.025372751448882135
+          -0.0070826945005409815,
+          -0.009284489317690322,
+          0.025420762133616655
         ],
         "quaternion": [
           0.04218580693289461,
@@ -7281,7 +7281,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0074831400107168156
+        "residual_norm_m": 0.007482866380134257
       }
     },
     "000060": {
@@ -7349,9 +7349,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007258173492968879,
-          -0.009210616223472273,
-          0.025379039708977955
+          -0.007262322456886228,
+          -0.009211580397516541,
+          0.02538477356419534
         ],
         "quaternion": [
           0.041035264384544363,
@@ -7402,7 +7402,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.010741769818908667
+        "residual_norm_m": 0.010741771397928214
       }
     },
     "000061": {
@@ -7470,9 +7470,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007430544603129322,
-          -0.009172903319665875,
-          0.0254289000411437
+          -0.007435233766102761,
+          -0.009177920753339426,
+          0.025442408526394032
         ],
         "quaternion": [
           0.039018699639161464,
@@ -7523,7 +7523,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01036026342244962
+        "residual_norm_m": 0.01036024878664519
       }
     },
     "000062": {
@@ -7591,9 +7591,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007602502693527312,
-          -0.009129077731514817,
-          0.025515771641680913
+          -0.007595635670662666,
+          -0.009111970331665126,
+          0.025476896884856375
         ],
         "quaternion": [
           0.04308237740345821,
@@ -7644,7 +7644,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0066566664995498835
+        "residual_norm_m": 0.0066564441930743005
       }
     },
     "000063": {
@@ -7712,9 +7712,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007723887505298089,
-          -0.009154208369099255,
-          0.025638895346544222
+          -0.007730684844072433,
+          -0.00916818209823203,
+          0.025673660453836282
         ],
         "quaternion": [
           0.05064971203553202,
@@ -7765,7 +7765,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.005937032747047439
+        "residual_norm_m": 0.005936830836057368
       }
     },
     "000064": {
@@ -7833,9 +7833,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007897971768132332,
-          -0.009142294182238499,
-          0.02568624384906175
+          -0.007908309885800451,
+          -0.009141439737781372,
+          0.025697117672342923
         ],
         "quaternion": [
           0.048923137147200195,
@@ -7886,7 +7886,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.012447493866776065
+        "residual_norm_m": 0.0124474973874645
       }
     },
     "000065": {
@@ -7954,9 +7954,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007974353319150794,
-          -0.009217935744496666,
-          0.025795655494516987
+          -0.008001294585853217,
+          -0.009249962498568083,
+          0.025884939674797162
         ],
         "quaternion": [
           0.04968560359822644,
@@ -8007,7 +8007,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01686783030834439
+        "residual_norm_m": 0.016867416700278803
       }
     },
     "000066": {
@@ -8075,9 +8075,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008045884507159689,
-          -0.009272496938640086,
-          0.025870276691563318
+          -0.00802915894620536,
+          -0.009251138188036473,
+          0.025812790849087542
         ],
         "quaternion": [
           0.04215744731954528,
@@ -8128,7 +8128,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01449425783885071
+        "residual_norm_m": 0.014494018448041962
       }
     },
     "000067": {
@@ -8196,9 +8196,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008113189928199266,
-          -0.009357293927495243,
-          0.02598041178436059
+          -0.008125289409150345,
+          -0.009371793267324754,
+          0.026020688830260784
         ],
         "quaternion": [
           0.04620222677677677,
@@ -8249,7 +8249,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.007336516008865075
+        "residual_norm_m": 0.007336301153045553
       }
     },
     "000068": {
@@ -8317,9 +8317,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008181424212324756,
-          -0.00943381788266673,
-          0.02605844698644692
+          -0.008184162770307217,
+          -0.009438091007529435,
+          0.026068836641562874
         ],
         "quaternion": [
           0.051594529067025295,
@@ -8370,7 +8370,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.014324292935303108
+        "residual_norm_m": 0.01432428901978764
       }
     },
     "000069": {
@@ -8438,9 +8438,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008253838962989037,
-          -0.009495332289596996,
-          0.02613660856791446
+          -0.008253980962005997,
+          -0.009491941504306899,
+          0.026132015828866102
         ],
         "quaternion": [
           0.051820704478768624,
@@ -8491,7 +8491,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.012477192879328103
+        "residual_norm_m": 0.012477193378804914
       }
     },
     "000070": {
@@ -8559,9 +8559,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008306065337763917,
-          -0.009594565682478708,
-          0.026195351692974145
+          -0.00828563836989118,
+          -0.0095710915645142,
+          0.026131161716866285
         ],
         "quaternion": [
           0.0550339670523234,
@@ -8612,7 +8612,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01653256522421161
+        "residual_norm_m": 0.01653234049546909
       }
     },
     "000071": {
@@ -8680,9 +8680,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008369573695793345,
-          -0.009710239758403537,
-          0.026270153109695018
+          -0.008386130342437145,
+          -0.009728014423044891,
+          0.026321130044579533
         ],
         "quaternion": [
           0.05705274341209817,
@@ -8733,7 +8733,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.015441986032229077
+        "residual_norm_m": 0.01544180695634061
       }
     },
     "000072": {
@@ -8801,9 +8801,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008421406352371066,
-          -0.009836191357779672,
-          0.02628131819169377
+          -0.008401296503372508,
+          -0.009834469320772782,
+          0.026255068055321015
         ],
         "quaternion": [
           0.0664094560752939,
@@ -8854,7 +8854,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03269328494315428
+        "residual_norm_m": 0.03269326942731466
       }
     },
     "000073": {
@@ -8922,9 +8922,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008667465055304954,
-          -0.00980217194540212,
-          0.026210032617708136
+          -0.008624540178367645,
+          -0.009797596001330372,
+          0.026152782920594315
         ],
         "quaternion": [
           0.07051612716950181,
@@ -8975,7 +8975,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.05707827487520201
+        "residual_norm_m": 0.057078214719873094
       }
     },
     "000074": {
@@ -9043,9 +9043,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.009443318690799939,
-          -0.009441544734351942,
-          0.025946291107876395
+          -0.00950919841764868,
+          -0.009497065251426726,
+          0.02610941702086952
         ],
         "quaternion": [
           0.06602760657379031,
@@ -9096,7 +9096,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0102485045352118
+        "residual_norm_m": 0.010246748241372517
       }
     },
     "000075": {
@@ -9164,9 +9164,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010155954816179986,
-          -0.009140485751577282,
-          0.025828856028189177
+          -0.010248322774280479,
+          -0.009208921959674621,
+          0.026042356446005544
         ],
         "quaternion": [
           0.058432636174762846,
@@ -9217,7 +9217,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.029447528986370198
+        "residual_norm_m": 0.029446675638909608
       }
     },
     "000076": {
@@ -9285,9 +9285,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010715028971838096,
-          -0.008927760190958721,
-          0.02585913382720845
+          -0.010872078913693494,
+          -0.009055589684077794,
+          0.026234682455211798
         ],
         "quaternion": [
           0.06942779716394831,
@@ -9338,7 +9338,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.042552510603403114
+        "residual_norm_m": 0.042549858134608855
       }
     },
     "000077": {
@@ -9406,9 +9406,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011088809331021366,
-          -0.008706365456342027,
-          0.026022858196301648
+          -0.011101215644154795,
+          -0.00870829822800522,
+          0.026042293992817576
         ],
         "quaternion": [
           0.055236067920919577,
@@ -9459,7 +9459,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.013209410990518169
+        "residual_norm_m": 0.013209452453788144
       }
     },
     "000078": {
@@ -9527,9 +9527,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01135006785508619,
-          -0.008572536541308289,
-          0.026245409533957015
+          -0.011354138947057685,
+          -0.008573132092566235,
+          0.026252580722990502
         ],
         "quaternion": [
           0.05124164029702682,
@@ -9580,7 +9580,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03147027818532456
+        "residual_norm_m": 0.03147027233861231
       }
     },
     "000079": {
@@ -9648,9 +9648,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01157742468740657,
-          -0.008475698759267338,
-          0.026421066447642992
+          -0.01151168382585238,
+          -0.008422925263216372,
+          0.02626383254179157
         ],
         "quaternion": [
           0.045830618766364434,
@@ -9701,7 +9701,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.044513961898838446
+        "residual_norm_m": 0.04451341604376422
       }
     },
     "000080": {
@@ -9769,9 +9769,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011812106417011048,
-          -0.008426840727640368,
-          0.02677179703853124
+          -0.011821004840604494,
+          -0.008429504000062182,
+          0.02678872088260478
         ],
         "quaternion": [
           0.04124181473561292,
@@ -9822,7 +9822,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.018814842030026646
+        "residual_norm_m": 0.018814797938324964
       }
     },
     "000081": {
@@ -9890,9 +9890,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011995100465857172,
-          -0.00842293178338241,
-          0.027071075843756055
+          -0.0119699005430269,
+          -0.008402537040224213,
+          0.027010417032852833
         ],
         "quaternion": [
           0.05805650199249506,
@@ -9943,7 +9943,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.015590520846589167
+        "residual_norm_m": 0.015590206281056089
       }
     },
     "000082": {
@@ -10011,9 +10011,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01216767012854847,
-          -0.008454063521752792,
-          0.027447617274831367
+          -0.012218079270329722,
+          -0.008489973367074946,
+          0.027563610806925397
         ],
         "quaternion": [
           0.06689649560592859,
@@ -10064,7 +10064,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02897098955437759
+        "residual_norm_m": 0.028970441876586706
       }
     },
     "000083": {
@@ -10132,9 +10132,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012310250772209342,
-          -0.008468363958187291,
-          0.02776903229301936
+          -0.012276600176802427,
+          -0.008438512429656632,
+          0.027687798338331394
         ],
         "quaternion": [
           0.05794920479670314,
@@ -10185,7 +10185,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.025925669945301967
+        "residual_norm_m": 0.025925292894128097
       }
     },
     "000084": {
@@ -10253,9 +10253,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012428323671424359,
-          -0.008598133711494182,
-          0.028053641936096715
+          -0.01251510755429913,
+          -0.008663105008439262,
+          0.0282600100531578
         ],
         "quaternion": [
           0.07098984721964245,
@@ -10306,7 +10306,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.021244387754058364
+        "residual_norm_m": 0.02124181150167196
       }
     },
     "000085": {
@@ -10374,9 +10374,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012590456547738054,
-          -0.00866833168635933,
-          0.02807781269731891
+          -0.012537819174030258,
+          -0.008632029354666112,
+          0.027956523489367734
         ],
         "quaternion": [
           0.06577570833710708,
@@ -10427,7 +10427,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01476039165148478
+        "residual_norm_m": 0.014758926042410381
       }
     },
     "000086": {
@@ -10495,9 +10495,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01276569438574377,
-          -0.008735817685533,
-          0.02835925719492343
+          -0.012774277220419402,
+          -0.008742699644868228,
+          0.0283785948184347
         ],
         "quaternion": [
           0.07625762638584797,
@@ -10548,7 +10548,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.011873847067054348
+        "residual_norm_m": 0.011873775689852985
       }
     },
     "000087": {
@@ -10616,9 +10616,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012941988337814283,
-          -0.008785287949889104,
-          0.02870251813851274
+          -0.01291325068989385,
+          -0.008759847525059384,
+          0.028633786251935293
         ],
         "quaternion": [
           0.08008293331490524,
@@ -10669,7 +10669,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.06529399755429496
+        "residual_norm_m": 0.06529395219820107
       }
     },
     "000088": {
@@ -10737,9 +10737,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013087790450906987,
-          -0.008935091707760107,
-          0.028905789061691722
+          -0.013050382536726727,
+          -0.008910451900618814,
+          0.028828774875513198
         ],
         "quaternion": [
           0.061106848523528254,
@@ -10790,7 +10790,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.038702711547240004
+        "residual_norm_m": 0.038702596013723424
       }
     },
     "000089": {
@@ -10858,9 +10858,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013384457969339203,
-          -0.009108550903802849,
-          0.02878207436019838
+          -0.013446100144233511,
+          -0.009158960617968575,
+          0.028920046475523625
         ],
         "quaternion": [
           0.0699407422735646,
@@ -10911,7 +10911,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02507631766586358
+        "residual_norm_m": 0.02507553586978388
       }
     },
     "000090": {
@@ -10979,9 +10979,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013708036712765664,
-          -0.009128114226875721,
-          0.02889865734861128
+          -0.01367488942148435,
+          -0.00909693859279275,
+          0.028823196856137524
         ],
         "quaternion": [
           0.05897605978437602,
@@ -11032,7 +11032,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03434650079017988
+        "residual_norm_m": 0.034346371537460084
       }
     },
     "000091": {
@@ -11100,9 +11100,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01399805510951446,
-          -0.009335866583162516,
-          0.02876614407956187
+          -0.013949986241454252,
+          -0.00931057776471649,
+          0.02866957376496951
         ],
         "quaternion": [
           0.0716272418207744,
@@ -11153,7 +11153,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.04701862378040279
+        "residual_norm_m": 0.047018395556396385
       }
     },
     "000092": {
@@ -11221,9 +11221,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014376272092490552,
-          -0.009398016356428203,
-          0.028907716852838137
+          -0.01433882866291762,
+          -0.009366947377545447,
+          0.028823387614899255
         ],
         "quaternion": [
           0.06606312252316489,
@@ -11274,7 +11274,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.05821761196416034
+        "residual_norm_m": 0.05821758163880886
       }
     },
     "000093": {
@@ -11342,9 +11342,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01460978834672559,
-          -0.009556229579897125,
-          0.029208578653112542
+          -0.014430195350735864,
+          -0.009437212042147126,
+          0.028845447390671807
         ],
         "quaternion": [
           0.06278805177173077,
@@ -11395,7 +11395,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02183517265418235
+        "residual_norm_m": 0.021825171030874016
       }
     },
     "000094": {
@@ -11463,9 +11463,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014916492965844203,
-          -0.009720234715348311,
-          0.029667007548589076
+          -0.01543399145290187,
+          -0.010059472817666216,
+          0.030719662318748047
         ],
         "quaternion": [
           0.13689259161200584,
@@ -11516,7 +11516,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.17920663441093873
+        "residual_norm_m": 0.17919951780876447
       }
     },
     "000095": {
@@ -11584,9 +11584,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015021200456620183,
-          -0.009765082488325024,
-          0.029584883126009015
+          -0.01512319375953973,
+          -0.00983483785180147,
+          0.02979259151694754
         ],
         "quaternion": [
           0.13446566806723725,
@@ -11637,7 +11637,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.06145734985202391
+        "residual_norm_m": 0.06145743494292354
       }
     },
     "000096": {
@@ -11705,9 +11705,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015088240092157224,
-          -0.009766569648274576,
-          0.029613225960151826
+          -0.015084930014864755,
+          -0.009762114415925385,
+          0.02960389294548567
         ],
         "quaternion": [
           0.11173043363043982,
@@ -11758,7 +11758,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.04693277492654577
+        "residual_norm_m": 0.04693277088236472
       }
     },
     "000097": {
@@ -11826,9 +11826,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015077539501388506,
-          -0.009809324191091612,
-          0.029720186037233316
+          -0.014975424695754854,
+          -0.009742822599564514,
+          0.02951644662301721
         ],
         "quaternion": [
           0.11318609529010083,
@@ -11879,7 +11879,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.15802074513176192
+        "residual_norm_m": 0.1580205227129384
       }
     },
     "000098": {
@@ -11947,9 +11947,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015125607195986322,
-          -0.009832176965091045,
-          0.02991424252287197
+          -0.014929575596545362,
+          -0.009706875325315816,
+          0.029541637865375246
         ],
         "quaternion": [
           0.2338562898990151,
@@ -12000,7 +12000,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.4331631061826154
+        "residual_norm_m": 0.4331627315338161
       }
     },
     "000099": {
@@ -12068,9 +12068,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015317733336997074,
-          -0.00990950536565088,
-          0.030163046237038256
+          -0.015310766017276127,
+          -0.009901121157694611,
+          0.030145259671356554
         ],
         "quaternion": [
           0.14465713386151463,
@@ -12121,7 +12121,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.10181578239928968
+        "residual_norm_m": 0.10181576355653821
       }
     },
     "000100": {
@@ -12189,9 +12189,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015441943422407421,
-          -0.010094700475113967,
-          0.030600249801894464
+          -0.015747832296424916,
+          -0.010302732787654817,
+          0.031224191714496103
         ],
         "quaternion": [
           0.12466947645779412,
@@ -12242,7 +12242,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.049360990807093025
+        "residual_norm_m": 0.04935003841578486
       }
     },
     "000101": {
@@ -12310,9 +12310,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015465808801472698,
-          -0.010143544728562737,
-          0.030650663317642893
+          -0.015522228343294302,
+          -0.010178447179871963,
+          0.030761156384320594
         ],
         "quaternion": [
           0.09423004008115457,
@@ -12363,7 +12363,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03417105438898885
+        "residual_norm_m": 0.03417104402946831
       }
     },
     "000102": {
@@ -12431,9 +12431,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015389816277604131,
-          -0.010227493602964245,
-          0.030749000071969342
+          -0.015335657224098685,
+          -0.010192172094038623,
+          0.030640807335032143
         ],
         "quaternion": [
           0.08902363114427246,
@@ -12484,7 +12484,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.009096635872325797
+        "residual_norm_m": 0.009095029158352948
       }
     },
     "000103": {
@@ -12552,9 +12552,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015389940368022966,
-          -0.010307204373937284,
-          0.030867256173628194
+          -0.015332376843243501,
+          -0.010268169603317858,
+          0.030750247579931087
         ],
         "quaternion": [
           0.07800404784486412,
@@ -12605,7 +12605,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02067705517251602
+        "residual_norm_m": 0.02067629438239305
       }
     },
     "000104": {
@@ -12673,9 +12673,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015422166342720933,
-          -0.01041007700250415,
-          0.031083497770621242
+          -0.015425227345210561,
+          -0.010411020012960036,
+          0.031088349214718234
         ],
         "quaternion": [
           0.09507114242504376,
@@ -12726,7 +12726,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.04261369459402617
+        "residual_norm_m": 0.04261369386473611
       }
     },
     "000105": {
@@ -12794,9 +12794,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01540901796006054,
-          -0.010532132524081403,
-          0.03132572045941418
+          -0.015460686293704187,
+          -0.010571147838527799,
+          0.0314351409468376
         ],
         "quaternion": [
           0.09321835337810594,
@@ -12847,7 +12847,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.038744614120335405
+        "residual_norm_m": 0.038744233981929145
       }
     },
     "000106": {
@@ -12915,9 +12915,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015448047775112786,
-          -0.01057475569167244,
-          0.03149973660946464
+          -0.015475149653536212,
+          -0.010590224619251904,
+          0.03155180836971355
         ],
         "quaternion": [
           0.11727992827250172,
@@ -12968,7 +12968,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.039577625321145254
+        "residual_norm_m": 0.03957754247308788
       }
     },
     "000107": {
@@ -13036,9 +13036,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015351254543080003,
-          -0.010682007509656026,
-          0.031741461322999535
+          -0.015284678013868697,
+          -0.010640871499493054,
+          0.031613588354832335
         ],
         "quaternion": [
           0.18798999336727967,
@@ -13089,7 +13089,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.44532195891613124
+        "residual_norm_m": 0.4453218960224981
       }
     },
     "000108": {
@@ -13157,9 +13157,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015448692608313129,
-          -0.010714380319603922,
-          0.031964524916910965
+          -0.015459213911124382,
+          -0.010716621406028573,
+          0.031982385225929735
         ],
         "quaternion": [
           0.11106992105496036,
@@ -13210,7 +13210,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0930321857442489
+        "residual_norm_m": 0.09303220110902718
       }
     },
     "000109": {
@@ -13278,9 +13278,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015431488186037083,
-          -0.01088724053313479,
-          0.032205469807082165
+          -0.015660361877062216,
+          -0.011056847471676245,
+          0.0326968892654731
         ],
         "quaternion": [
           0.10989817584946526,
@@ -13331,7 +13331,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03974268944253263
+        "residual_norm_m": 0.03973461296130606
       }
     },
     "000110": {
@@ -13399,9 +13399,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01538591310924423,
-          -0.010896663406477427,
-          0.03224921993155422
+          -0.015484766574197789,
+          -0.010968830791360957,
+          0.03246108147176815
         ],
         "quaternion": [
           0.0908452379543571,
@@ -13452,7 +13452,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.04791443877789481
+        "residual_norm_m": 0.04791355285092573
       }
     },
     "000111": {
@@ -13520,9 +13520,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01534374965136707,
-          -0.01087464489589199,
-          0.032154967862535064
+          -0.015285199870976188,
+          -0.0108302339760549,
+          0.0320278346421491
         ],
         "quaternion": [
           0.08289703516549521,
@@ -13573,7 +13573,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.027329655338874666
+        "residual_norm_m": 0.027328778551181303
       }
     },
     "000112": {
@@ -13641,9 +13641,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01526732999336844,
-          -0.010910286297653705,
-          0.0321697703494771
+          -0.015171580447516776,
+          -0.010843413406096031,
+          0.03196827945927452
         ],
         "quaternion": [
           0.0786541216664517,
@@ -13694,7 +13694,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.04707495996559459
+        "residual_norm_m": 0.04707402170379705
       }
     },
     "000113": {
@@ -13762,9 +13762,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015329003456936673,
-          -0.010910702356689483,
-          0.03223396149252233
+          -0.015287291574504118,
+          -0.010879253057700511,
+          0.03214310570581868
         ],
         "quaternion": [
           0.08585136114588962,
@@ -13815,7 +13815,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0359972954149305
+        "residual_norm_m": 0.035997040844928524
       }
     },
     "000114": {
@@ -13883,9 +13883,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015366894353719478,
-          -0.010946388235045608,
-          0.03242668707662662
+          -0.015397826234267957,
+          -0.01096651969506707,
+          0.032491475081719276
         ],
         "quaternion": [
           0.10811234131606863,
@@ -13936,7 +13936,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03802381411070207
+        "residual_norm_m": 0.03802362315641709
       }
     },
     "000115": {
@@ -14004,9 +14004,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015332759416776344,
-          -0.011030938085879625,
-          0.032506049111864596
+          -0.015383744730782306,
+          -0.011070595024244269,
+          0.0326181226851077
         ],
         "quaternion": [
           0.11344984726586775,
@@ -14057,7 +14057,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.010178417936235026
+        "residual_norm_m": 0.010178366633068543
       }
     },
     "000116": {
@@ -14125,9 +14125,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01533035927853763,
-          -0.011044850158435674,
-          0.0325804642083869
+          -0.015508956175243397,
+          -0.011179506805019591,
+          0.032973895867605435
         ],
         "quaternion": [
           0.2085538333383126,
@@ -14178,7 +14178,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.06484431522437424
+        "residual_norm_m": 0.06484167370337883
       }
     },
     "000117": {
@@ -14246,9 +14246,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015236997963536808,
-          -0.010975043852589026,
-          0.03249915980936625
+          -0.015193866279572858,
+          -0.01094364465816398,
+          0.03241241537564929
         ],
         "quaternion": [
           0.22381830547057757,
@@ -14299,7 +14299,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.2583642192184051
+        "residual_norm_m": 0.25836415147021136
       }
     },
     "000118": {
@@ -14367,9 +14367,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015182751820265168,
-          -0.010924334976603493,
-          0.03233919708116033
+          -0.015234783626770452,
+          -0.010961242793266355,
+          0.03244968655825463
         ],
         "quaternion": [
           0.121784664610055,
@@ -14420,7 +14420,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.07920149829830166
+        "residual_norm_m": 0.07920100471614716
       }
     },
     "000119": {
@@ -14488,9 +14488,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01500313475726802,
-          -0.010867630863742702,
-          0.03216014801144136
+          -0.014754518481193206,
+          -0.010684011283194276,
+          0.031620097642724866
         ],
         "quaternion": [
           0.08789171756131246,
@@ -14541,7 +14541,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.06583137055172406
+        "residual_norm_m": 0.06582566042457344
       }
     },
     "000120": {
@@ -14609,9 +14609,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014987192528855916,
-          -0.010877547077331495,
-          0.03221845059251382
+          -0.01483155570982626,
+          -0.010760939608733904,
+          0.03187667955280768
         ],
         "quaternion": [
           0.07806752686859426,
@@ -14662,7 +14662,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02963360334288286
+        "residual_norm_m": 0.02962849270334227
       }
     },
     "000121": {
@@ -14730,9 +14730,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014994106055165152,
-          -0.010931713468986621,
-          0.03242712607167808
+          -0.015222278869258775,
+          -0.011102287758865419,
+          0.03290128618989809
         ],
         "quaternion": [
           0.15504281035616105,
@@ -14783,7 +14783,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.31241912234601527
+        "residual_norm_m": 0.31241814918644095
       }
     },
     "000122": {
@@ -14851,9 +14851,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014920912470808382,
-          -0.010878127299173078,
-          0.03226054887533461
+          -0.015024200703392464,
+          -0.010955449551452497,
+          0.03248888264976136
         ],
         "quaternion": [
           0.13230453427217814,
@@ -14904,7 +14904,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.026903160472628553
+        "residual_norm_m": 0.026902929493033124
       }
     },
     "000123": {
@@ -14972,9 +14972,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01482487794536384,
-          -0.010803080701859305,
-          0.03214345674462355
+          -0.014985435750723582,
+          -0.010927842531367228,
+          0.032508123111835936
         ],
         "quaternion": [
           0.13782256580391528,
@@ -15025,7 +15025,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.19730125629343476
+        "residual_norm_m": 0.19730032875623624
       }
     },
     "000124": {
@@ -15093,9 +15093,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014590445902816596,
-          -0.010710521223899988,
-          0.031783337017295805
+          -0.01451721883984768,
+          -0.010658583640057602,
+          0.03162280289453859
         ],
         "quaternion": [
           0.11160895693865976,
@@ -15146,7 +15146,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01791469870227643
+        "residual_norm_m": 0.017912379484027807
       }
     },
     "000125": {
@@ -15214,9 +15214,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014471729491572556,
-          -0.01057926535439553,
-          0.031626355577416485
+          -0.014329417298332243,
+          -0.010470217814602669,
+          0.03130773873962577
         ],
         "quaternion": [
           0.08532942790057092,
@@ -15267,7 +15267,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0375932005884447
+        "residual_norm_m": 0.03759073234049703
       }
     },
     "000126": {
@@ -15335,9 +15335,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014356845293110388,
-          -0.010537315601470205,
-          0.0315396805230531
+          -0.014245835110230483,
+          -0.010453447335918636,
+          0.03129051622221797
         ],
         "quaternion": [
           0.09345498602157472,
@@ -15388,7 +15388,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03610367223640873
+        "residual_norm_m": 0.036101589647014154
       }
     },
     "000127": {
@@ -15456,9 +15456,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014284175125878778,
-          -0.010525502378583474,
-          0.031616764268517214
+          -0.01435179592219278,
+          -0.010578374503744463,
+          0.03177096188497715
         ],
         "quaternion": [
           0.09728061495848889,
@@ -15509,7 +15509,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.060860705617457954
+        "residual_norm_m": 0.06085973998868997
       }
     },
     "000128": {
@@ -15577,9 +15577,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014191768349281757,
-          -0.010463845373331747,
-          0.03157963282922369
+          -0.014093585860548345,
+          -0.010390119421769825,
+          0.031358299106106526
         ],
         "quaternion": [
           0.08196321169787847,
@@ -15630,7 +15630,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.043022900843647995
+        "residual_norm_m": 0.04302093793443107
       }
     },
     "000129": {
@@ -15698,9 +15698,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014178398226378622,
-          -0.010430895452733274,
-          0.031683949361261385
+          -0.01423163863847907,
+          -0.010467629299085972,
+          0.0318012477710694
         ],
         "quaternion": [
           0.07495235537162104,
@@ -15751,7 +15751,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.058389168642270534
+        "residual_norm_m": 0.05838878823661187
       }
     },
     "000130": {
@@ -15819,9 +15819,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014056741843878555,
-          -0.010435474594672686,
-          0.03169996410056375
+          -0.014104909679671747,
+          -0.01047464529321098,
+          0.031814479813967636
         ],
         "quaternion": [
           0.08813532571586512,
@@ -15872,7 +15872,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.019358059158062886
+        "residual_norm_m": 0.01935747932715607
       }
     },
     "000131": {
@@ -15933,9 +15933,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013823766757033996,
-          -0.010281950863659394,
-          0.03137731010708599
+          -0.013987639425529604,
+          -0.010398122988585936,
+          0.031742538877922735
         ],
         "quaternion": [
           0.08451568119181754,
@@ -15993,7 +15993,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.030639506757991673
+        "residual_norm_m": 0.030635314206047724
       }
     },
     "000132": {
@@ -16061,9 +16061,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01366425566423037,
-          -0.010264124539901597,
-          0.0313511362571965
+          -0.01375686399410432,
+          -0.010334525049078443,
+          0.03156667950678947
         ],
         "quaternion": [
           0.0788927251368766,
@@ -16114,7 +16114,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03589773414292471
+        "residual_norm_m": 0.035896547737245044
       }
     },
     "000133": {
@@ -16182,9 +16182,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013451511897886554,
-          -0.010233136051434819,
-          0.03124932298300659
+          -0.013416004014034016,
+          -0.010203581462757216,
+          0.03116361445773522
         ],
         "quaternion": [
           0.07038355642599929,
@@ -16235,7 +16235,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0185891916241159
+        "residual_norm_m": 0.018588383794602807
       }
     },
     "000134": {
@@ -16303,9 +16303,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013225478370679774,
-          -0.010250246693950108,
-          0.0312129093482218
+          -0.01324561703918883,
+          -0.010268196997517088,
+          0.031263090274026184
         ],
         "quaternion": [
           0.07658150878376872,
@@ -16356,7 +16356,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.017984450507048704
+        "residual_norm_m": 0.017984111691137894
       }
     },
     "000135": {
@@ -16424,9 +16424,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013019690012935521,
-          -0.010221899076721927,
-          0.031152954251372707
+          -0.012960475562045581,
+          -0.010172828018780998,
+          0.03100713001355899
         ],
         "quaternion": [
           0.07528924093835791,
@@ -16477,7 +16477,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.017689364135051257
+        "residual_norm_m": 0.01768769256335695
       }
     },
     "000136": {
@@ -16545,9 +16545,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012818278764587304,
-          -0.010237266735832938,
-          0.03117639442081383
+          -0.012823888736072604,
+          -0.010245145448320538,
+          0.031194111511055896
         ],
         "quaternion": [
           0.07963651457611841,
@@ -16598,7 +16598,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.024989831732224486
+        "residual_norm_m": 0.0249898292906431
       }
     },
     "000137": {
@@ -16666,9 +16666,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012678992458194151,
-          -0.010189191692823348,
-          0.03121498658053946
+          -0.012759074653053216,
+          -0.010252664106581872,
+          0.0314129705811101
         ],
         "quaternion": [
           0.08074240989311882,
@@ -16719,7 +16719,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02565197352713154
+        "residual_norm_m": 0.02564984789595362
       }
     },
     "000138": {
@@ -16787,9 +16787,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012469516172588097,
-          -0.010170255223781292,
-          0.031144812957961444
+          -0.012441407611328833,
+          -0.010148864122085233,
+          0.031076201116223372
         ],
         "quaternion": [
           0.06998201067720283,
@@ -16840,7 +16840,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.019485253278406743
+        "residual_norm_m": 0.019484750775930974
       }
     },
     "000139": {
@@ -16908,9 +16908,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0123199680433811,
-          -0.010128758828741482,
-          0.031130669786011013
+          -0.01233280962698233,
+          -0.010140253963719271,
+          0.031163751661321328
         ],
         "quaternion": [
           0.07362931282096279,
@@ -16961,7 +16961,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.008644711220811677
+        "residual_norm_m": 0.008644575432469496
       }
     },
     "000140": {
@@ -17029,9 +17029,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012166415264656014,
-          -0.010066248526689497,
-          0.031160352292119775
+          -0.012183544335058147,
+          -0.010081947256799641,
+          0.031207681052744813
         ],
         "quaternion": [
           0.07252024757726686,
@@ -17082,7 +17082,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.013777930685652688
+        "residual_norm_m": 0.01377773292164654
       }
     },
     "000141": {
@@ -17150,9 +17150,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012033782691897038,
-          -0.009987248151023224,
-          0.031091765911482425
+          -0.012040697319234323,
+          -0.0099931388822522,
+          0.031109696399834658
         ],
         "quaternion": [
           0.06852955175874231,
@@ -17203,7 +17203,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02778729632349673
+        "residual_norm_m": 0.027787280713400003
       }
     },
     "000142": {
@@ -17271,9 +17271,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01190577376658077,
-          -0.009911702739494327,
-          0.031035769455501256
+          -0.011877558304693465,
+          -0.009887361655839769,
+          0.03096043552979025
         ],
         "quaternion": [
           0.05704489654325469,
@@ -17324,7 +17324,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.008525939887204754
+        "residual_norm_m": 0.008525044560218228
       }
     },
     "000143": {
@@ -17392,9 +17392,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011793781290890537,
-          -0.00985039926217357,
-          0.03103581203242509
+          -0.011802167787458179,
+          -0.00985584800554165,
+          0.031055610107082837
         ],
         "quaternion": [
           0.051385122341917,
@@ -17445,7 +17445,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03636994924135608
+        "residual_norm_m": 0.03636989896480226
       }
     },
     "000144": {
@@ -17513,9 +17513,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011640058433752837,
-          -0.009804335962247045,
-          0.031001084382961133
+          -0.011561188424879649,
+          -0.009736549431796845,
+          0.030788826238658532
         ],
         "quaternion": [
           0.052290618548619994,
@@ -17566,7 +17566,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.026664436660776045
+        "residual_norm_m": 0.026662293292974985
       }
     },
     "000145": {
@@ -17634,9 +17634,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01155246259893084,
-          -0.009782186644320623,
-          0.03103243058656882
+          -0.011581357920666667,
+          -0.009806328146272617,
+          0.03110968491285235
         ],
         "quaternion": [
           0.05752464203278041,
@@ -17687,7 +17687,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.016241774991439285
+        "residual_norm_m": 0.016241191485719633
       }
     },
     "000146": {
@@ -17755,9 +17755,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011426891307710211,
-          -0.009762399400947436,
-          0.03103789578147391
+          -0.011455347588616245,
+          -0.009789772151881666,
+          0.031119467795942452
         ],
         "quaternion": [
           0.0542753341329821,
@@ -17808,7 +17808,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.006438649825475153
+        "residual_norm_m": 0.006437672538061684
       }
     },
     "000147": {
@@ -17876,9 +17876,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011322463651241297,
-          -0.00969783350221146,
-          0.031038579944494743
+          -0.011315422040141522,
+          -0.009689535235770583,
+          0.031016473016972076
         ],
         "quaternion": [
           0.05510351951425394,
@@ -17929,7 +17929,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.010298683427964455
+        "residual_norm_m": 0.010298595845661476
       }
     },
     "000148": {
@@ -17997,9 +17997,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011193460855792257,
-          -0.009668043573764266,
-          0.031033130236074683
+          -0.01119309455229368,
+          -0.009667334061568424,
+          0.031031551036712218
         ],
         "quaternion": [
           0.04977950037627302,
@@ -18050,7 +18050,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01832154246062732
+        "residual_norm_m": 0.01832154442105499
       }
     },
     "000149": {
@@ -18118,9 +18118,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01106839175957252,
-          -0.009644946963757796,
-          0.031013151421406055
+          -0.011041249193070136,
+          -0.009622340551007462,
+          0.03093798089970892
         ],
         "quaternion": [
           0.04731048210007318,
@@ -18171,7 +18171,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.004825590456024038
+        "residual_norm_m": 0.004823946433017331
       }
     },
     "000150": {
@@ -18239,9 +18239,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01098549724053523,
-          -0.009606881162942527,
-          0.031052014513753997
+          -0.011010638395941972,
+          -0.009629288825306705,
+          0.031124329224787396
         ],
         "quaternion": [
           0.04675698191730781,
@@ -18292,7 +18292,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.028199629015346044
+        "residual_norm_m": 0.02819938305836986
       }
     },
     "000151": {
@@ -18360,9 +18360,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010886067336398216,
-          -0.009562802624842739,
-          0.031034033214084406
+          -0.010897258742599121,
+          -0.009572666152849216,
+          0.03106636316375886
         ],
         "quaternion": [
           0.05213211092641291,
@@ -18413,7 +18413,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.026744458715802274
+        "residual_norm_m": 0.02674443450055818
       }
     },
     "000152": {
@@ -18481,9 +18481,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01077279613150309,
-          -0.009518284542402462,
-          0.031003304338469387
+          -0.01077652314080167,
+          -0.00951779248241954,
+          0.03100893630357616
         ],
         "quaternion": [
           0.045168455588591845,
@@ -18534,7 +18534,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.029054512248388863
+        "residual_norm_m": 0.02905450783088019
       }
     },
     "000153": {
@@ -18602,9 +18602,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010622230023883138,
-          -0.009529634654810683,
-          0.030946774620238378
+          -0.010592346647197656,
+          -0.00950422204502143,
+          0.030861871224974007
         ],
         "quaternion": [
           0.0365023542415799,
@@ -18655,7 +18655,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02267907499514812
+        "residual_norm_m": 0.02267857433523805
       }
     },
     "000154": {
@@ -18723,9 +18723,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010518280159702433,
-          -0.009527624901025345,
-          0.03093356780747252
+          -0.010575413220044398,
+          -0.009583492505217044,
+          0.03110809966523125
         ],
         "quaternion": [
           0.0440288533793087,
@@ -18776,7 +18776,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.016366927665356776
+        "residual_norm_m": 0.016364912455641267
       }
     },
     "000155": {
@@ -18844,9 +18844,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010412233862028771,
-          -0.009471282957054543,
-          0.030878217727498054
+          -0.010447465395228263,
+          -0.009506286043376489,
+          0.030988764493899836
         ],
         "quaternion": [
           0.03834359327496088,
@@ -18897,7 +18897,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.014187064528645646
+        "residual_norm_m": 0.014186924161192951
       }
     },
     "000156": {
@@ -18965,9 +18965,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010326250745450963,
-          -0.009391344431813189,
-          0.03078902506423837
+          -0.010426579108361944,
+          -0.009483964263975398,
+          0.031093135473476436
         ],
         "quaternion": [
           0.025824072461468024,
@@ -19018,7 +19018,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.06661294123977066
+        "residual_norm_m": 0.06661189458788842
       }
     },
     "000157": {
@@ -19086,9 +19086,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01017580803441453,
-          -0.009301308808274757,
-          0.030569355147178547
+          -0.010323541732686061,
+          -0.009418757136225545,
+          0.030993426030139097
         ],
         "quaternion": [
           0.009302963895141568,
@@ -19139,7 +19139,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.07092175799871525
+        "residual_norm_m": 0.07092054426813778
       }
     },
     "000158": {
@@ -19207,9 +19207,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.009724309226948686,
-          -0.00948930996414987,
-          0.030076443612975744
+          -0.01011160718180087,
+          -0.00977375924850306,
+          0.031117621918264296
         ],
         "quaternion": [
           0.011736902871988905,
@@ -19260,7 +19260,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.09184142276886917
+        "residual_norm_m": 0.0918329821978671
       }
     },
     "000159": {
@@ -19328,9 +19328,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008387483480716005,
-          -0.010881261812342712,
-          0.030222007511352948
+          -0.00852247832181521,
+          -0.011127934542546028,
+          0.030839221750606917
         ],
         "quaternion": [
           0.08075257030139957,
@@ -19381,7 +19381,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.04024551841453239
+        "residual_norm_m": 0.0402390981455786
       }
     },
     "000160": {
@@ -19449,9 +19449,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0076945414796313755,
-          -0.011464516647386114,
-          0.030305673914352804
+          -0.007707208802353696,
+          -0.011528310928780199,
+          0.030444397270440193
         ],
         "quaternion": [
           0.09653124519758027,
@@ -19502,7 +19502,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.07558143782808287
+        "residual_norm_m": 0.07558136494952442
       }
     },
     "000161": {
@@ -19570,9 +19570,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0073156772915115836,
-          -0.011682130770763063,
-          0.030207990631368593
+          -0.007332050788002529,
+          -0.011733318789796778,
+          0.030327662336065642
         ],
         "quaternion": [
           0.09733631761774328,
@@ -19623,7 +19623,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.06522519546471829
+        "residual_norm_m": 0.06522499613356685
       }
     },
     "000162": {
@@ -19691,9 +19691,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.00709998459076958,
-          -0.011711064635666905,
-          0.02995523372068505
+          -0.007106981376855203,
+          -0.011737974439662058,
+          0.03001673714972223
         ],
         "quaternion": [
           0.08565580711531336,
@@ -19744,7 +19744,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.012430540160181648
+        "residual_norm_m": 0.012430307825078826
       }
     },
     "000163": {
@@ -19812,9 +19812,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0069571995515200725,
-          -0.011639181451243501,
-          0.029597076538386363
+          -0.006968897825897311,
+          -0.011657576435762183,
+          0.029642269796167797
         ],
         "quaternion": [
           0.07636842149239075,
@@ -19865,7 +19865,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03269438251212403
+        "residual_norm_m": 0.032694386394036656
       }
     },
     "000164": {
@@ -19933,9 +19933,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.00680134143304045,
-          -0.011535879660774158,
-          0.029356531673402863
+          -0.006836474425994924,
+          -0.01159042987157995,
+          0.029495690707875423
         ],
         "quaternion": [
           0.0770003613822587,
@@ -19986,7 +19986,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.028829067941628886
+        "residual_norm_m": 0.028828564883793928
       }
     },
     "000165": {
@@ -20054,9 +20054,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006619145393353119,
-          -0.011411495250528798,
-          0.029258105354462185
+          -0.0066219028685752055,
+          -0.011414827232925327,
+          0.02926916083394885
         ],
         "quaternion": [
           0.0742730860562267,
@@ -20107,7 +20107,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.008655403112334165
+        "residual_norm_m": 0.008655424486450871
       }
     },
     "000166": {
@@ -20175,9 +20175,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006440317153505116,
-          -0.011313729823286232,
-          0.02911605783381395
+          -0.006458108294268661,
+          -0.011339310669722864,
+          0.02918784453460048
         ],
         "quaternion": [
           0.06844472978472424,
@@ -20228,7 +20228,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.005290425823778283
+        "residual_norm_m": 0.005289617771640788
       }
     },
     "000167": {
@@ -20296,9 +20296,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006256651657833213,
-          -0.011266931549346616,
-          0.02889016215073488
+          -0.0062650868363495855,
+          -0.011295406174031136,
+          0.02896164580267415
         ],
         "quaternion": [
           0.07350032628944951,
@@ -20349,7 +20349,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02351349718735889
+        "residual_norm_m": 0.023513294498949854
       }
     },
     "000168": {
@@ -20417,9 +20417,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006124772312573275,
-          -0.01118484848549647,
-          0.028467054076616316
+          -0.00614041128863837,
+          -0.011207042023831973,
+          0.028522573648988202
         ],
         "quaternion": [
           0.06818473646465134,
@@ -20470,7 +20470,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.015340929197661434
+        "residual_norm_m": 0.015340868566770664
       }
     },
     "000169": {
@@ -20538,9 +20538,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.00597007764587753,
-          -0.011084322783944039,
-          0.028238988482097025
+          -0.005976564192225302,
+          -0.01109235730661427,
+          0.02825884091380142
         ],
         "quaternion": [
           0.06100481929003363,
@@ -20591,7 +20591,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.010117521463888963
+        "residual_norm_m": 0.010117536321398205
       }
     },
     "000170": {
@@ -20659,9 +20659,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005802313962766794,
-          -0.010970074329098,
-          0.028116610160232335
+          -0.005818821543362874,
+          -0.01099196907334852,
+          0.028176964097944575
         ],
         "quaternion": [
           0.06458846786761697,
@@ -20712,7 +20712,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.025649886803320213
+        "residual_norm_m": 0.025649737392381123
       }
     },
     "000171": {
@@ -20780,9 +20780,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005625170399408004,
-          -0.01089613986441056,
-          0.02802161927869905
+          -0.005590414350001914,
+          -0.010842950632045956,
+          0.027881319386948142
         ],
         "quaternion": [
           0.05723743683076301,
@@ -20833,7 +20833,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0288053386486838
+        "residual_norm_m": 0.028804858241718904
       }
     },
     "000172": {
@@ -20901,9 +20901,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005503446097843918,
-          -0.010819585295470419,
-          0.027824711328426236
+          -0.005468740542800304,
+          -0.010765601024480168,
+          0.027679134365536873
         ],
         "quaternion": [
           0.061309875525793096,
@@ -20954,7 +20954,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01653790876060286
+        "residual_norm_m": 0.016537032547655442
       }
     },
     "000173": {
@@ -21022,9 +21022,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0054383151438528055,
-          -0.010719712344129818,
-          0.027633989506179152
+          -0.005425697915572843,
+          -0.01069995941175281,
+          0.02758132399681762
         ],
         "quaternion": [
           0.06170966720967401,
@@ -21075,7 +21075,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.012150404584646375
+        "residual_norm_m": 0.012150325202178465
       }
     },
     "000174": {
@@ -21143,9 +21143,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005392327210552535,
-          -0.010618533762997907,
-          0.02741513856989644
+          -0.005378337060473158,
+          -0.010595187626351067,
+          0.027352907999681444
         ],
         "quaternion": [
           0.06112065502048125,
@@ -21196,7 +21196,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.006408821840264742
+        "residual_norm_m": 0.00640849911228286
       }
     },
     "000175": {
@@ -21264,9 +21264,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005362939750851045,
-          -0.010517741937010662,
-          0.027195147204512285
+          -0.00534060868607642,
+          -0.0104748422371798,
+          0.02708488701374633
         ],
         "quaternion": [
           0.058805233245487254,
@@ -21317,7 +21317,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0020796445603050856
+        "residual_norm_m": 0.0020757871308355724
       }
     },
     "000176": {
@@ -21385,9 +21385,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.00534705931916313,
-          -0.010453308047189164,
-          0.026957341440003522
+          -0.005324667026583034,
+          -0.010420967506851914,
+          0.026867243962684337
         ],
         "quaternion": [
           0.05847805982075876,
@@ -21438,7 +21438,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.006057085655045001
+        "residual_norm_m": 0.006056371626334376
       }
     },
     "000177": {
@@ -21506,9 +21506,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005365867084914539,
-          -0.010352533415047811,
-          0.026748401923999944
+          -0.005336313572799945,
+          -0.010296035762779694,
+          0.02660218507141731
         ],
         "quaternion": [
           0.05259383094096036,
@@ -21559,7 +21559,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.006488052284475555
+        "residual_norm_m": 0.006485917105646483
       }
     },
     "000178": {
@@ -21627,9 +21627,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005398907119862622,
-          -0.010285126344325317,
-          0.02654840282871165
+          -0.005373823602767861,
+          -0.01022853000904544,
+          0.0264025175384898
         ],
         "quaternion": [
           0.04943325162653663,
@@ -21680,7 +21680,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.013317145679430613
+        "residual_norm_m": 0.013316111365738428
       }
     },
     "000179": {
@@ -21741,9 +21741,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005455616301043711,
-          -0.01017931830033283,
-          0.026337282354609345
+          -0.0054440646346412495,
+          -0.010164134178188677,
+          0.026293753997144412
         ],
         "quaternion": [
           0.0491170574034701,
@@ -21801,7 +21801,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01127984929507286
+        "residual_norm_m": 0.011279789457468362
       }
     },
     "000180": {
@@ -21862,9 +21862,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.00553187087533449,
-          -0.010053439671258983,
-          0.026154034917971664
+          -0.005512906786539169,
+          -0.010062404200379895,
+          0.026160503374393566
         ],
         "quaternion": [
           0.05116189431452475,
@@ -21922,7 +21922,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.008967324064602964
+        "residual_norm_m": 0.008967296813520927
       }
     },
     "000181": {
@@ -21990,9 +21990,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0055933915052582975,
-          -0.009977271875736238,
-          0.02604254480348287
+          -0.0055869079935777725,
+          -0.009969834711769366,
+          0.026020299297884793
         ],
         "quaternion": [
           0.05019416289260515,
@@ -22043,7 +22043,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.002918860700587869
+        "residual_norm_m": 0.002918734777605935
       }
     },
     "000182": {
@@ -22111,9 +22111,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005669706353206927,
-          -0.009885063339851294,
-          0.025946677654943053
+          -0.005665380918483898,
+          -0.009875385476270138,
+          0.02592346357332658
         ],
         "quaternion": [
           0.04951023707388019,
@@ -22164,7 +22164,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01033805586369294
+        "residual_norm_m": 0.010338041191276301
       }
     },
     "000183": {
@@ -22232,9 +22232,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005744762867019301,
-          -0.009816623191022734,
-          0.02582311804499275
+          -0.005729785989232205,
+          -0.009778812593933123,
+          0.02572765739779378
         ],
         "quaternion": [
           0.047143672050066206,
@@ -22285,7 +22285,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.012496015284213671
+        "residual_norm_m": 0.01249551505255439
       }
     },
     "000184": {
@@ -22346,9 +22346,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.00587864772223152,
-          -0.00976829043456655,
-          0.02579015515617372
+          -0.00581722246923095,
+          -0.00971907629732102,
+          0.025636681680179522
         ],
         "quaternion": [
           0.05070523320601821,
@@ -22406,7 +22406,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01855823218767704
+        "residual_norm_m": 0.018557066247411578
       }
     },
     "000185": {
@@ -22474,9 +22474,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.005984854546378823,
-          -0.009709486462631952,
-          0.025700123394095848
+          -0.005980073137432518,
+          -0.009707207335798348,
+          0.025691160823798014
         ],
         "quaternion": [
           0.05381580343709875,
@@ -22527,7 +22527,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.012841255049151585
+        "residual_norm_m": 0.012841265724158064
       }
     },
     "000186": {
@@ -22595,9 +22595,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0061167351399858015,
-          -0.009631001706215848,
-          0.02557498579046058
+          -0.006101699923132778,
+          -0.009600414019560953,
+          0.025496373770647163
         ],
         "quaternion": [
           0.05193417231687578,
@@ -22648,7 +22648,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.011556164355722907
+        "residual_norm_m": 0.011555678328934955
       }
     },
     "000187": {
@@ -22716,9 +22716,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006229217283098056,
-          -0.009592686172670263,
-          0.0255338947051437
+          -0.006243883909129746,
+          -0.00961878173253365,
+          0.025601594250987715
         ],
         "quaternion": [
           0.054116401141768466,
@@ -22769,7 +22769,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01257396364258764
+        "residual_norm_m": 0.012573597013193862
       }
     },
     "000188": {
@@ -22837,9 +22837,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0063503079358375085,
-          -0.00952816142691051,
-          0.025452864784071057
+          -0.006329911987038703,
+          -0.009496962739850713,
+          0.025368282769333252
         ],
         "quaternion": [
           0.04818007611495482,
@@ -22890,7 +22890,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.014417118557183374
+        "residual_norm_m": 0.014416704574742718
       }
     },
     "000189": {
@@ -22958,9 +22958,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006480945350527291,
-          -0.009472525996766729,
-          0.025438343324688365
+          -0.006471636354067556,
+          -0.009456093984532218,
+          0.025395561647001727
         ],
         "quaternion": [
           0.04992295633038025,
@@ -23011,7 +23011,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0038146106529804258
+        "residual_norm_m": 0.003814312539174677
       }
     },
     "000190": {
@@ -23079,9 +23079,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006609023677142922,
-          -0.009435090026279005,
-          0.02545261442379677
+          -0.006603683814869396,
+          -0.009428983211856855,
+          0.025435082653797084
         ],
         "quaternion": [
           0.05074204998667302,
@@ -23132,7 +23132,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.004957854135098796
+        "residual_norm_m": 0.004957820108798862
       }
     },
     "000191": {
@@ -23200,9 +23200,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006755991488215934,
-          -0.009392615737615753,
-          0.025459711154311622
+          -0.006753411898897728,
+          -0.009393534323111104,
+          0.02545825312332059
         ],
         "quaternion": [
           0.051952434680133386,
@@ -23253,7 +23253,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.020442192376381986
+        "residual_norm_m": 0.020442192721294522
       }
     },
     "000192": {
@@ -23321,9 +23321,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.006927662040290415,
-          -0.009325160246185037,
-          0.025460001627631724
+          -0.006907366350792644,
+          -0.009299760937443618,
+          0.025389383093113387
         ],
         "quaternion": [
           0.044119538814445025,
@@ -23374,7 +23374,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.011456194478573089
+        "residual_norm_m": 0.01145579220676493
       }
     },
     "000193": {
@@ -23442,9 +23442,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0071381440119929395,
-          -0.009262113482456286,
-          0.025463374557367805
+          -0.007174015179927589,
+          -0.009303951667799994,
+          0.025581905528959066
         ],
         "quaternion": [
           0.044317244320555414,
@@ -23495,7 +23495,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01051546366664027
+        "residual_norm_m": 0.01051433092797426
       }
     },
     "000194": {
@@ -23563,9 +23563,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007315388282668833,
-          -0.00919671754303075,
-          0.02548149900894972
+          -0.007310078811458584,
+          -0.009186916437508899,
+          0.02545735577078727
         ],
         "quaternion": [
           0.04343491606652158,
@@ -23616,7 +23616,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02015905916595751
+        "residual_norm_m": 0.020159017540792096
       }
     },
     "000195": {
@@ -23684,9 +23684,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007482158732887206,
-          -0.00915984069348816,
-          0.025516823091882038
+          -0.00749234917124484,
+          -0.0091731905575115,
+          0.025551963452384127
         ],
         "quaternion": [
           0.04140106514262099,
@@ -23737,7 +23737,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.006259346949489871
+        "residual_norm_m": 0.006259196936523595
       }
     },
     "000196": {
@@ -23805,9 +23805,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007650997288659774,
-          -0.009103056496486631,
-          0.025583135503357328
+          -0.007659106445462668,
+          -0.009106526194486118,
+          0.025599741888008006
         ],
         "quaternion": [
           0.042540292218589654,
@@ -23858,7 +23858,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.008359628060341986
+        "residual_norm_m": 0.008359606888370051
       }
     },
     "000197": {
@@ -23926,9 +23926,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007776617337929007,
-          -0.00908954427010345,
-          0.02565074956216541
+          -0.007775607805558572,
+          -0.009086787967942034,
+          0.02564598388655599
         ],
         "quaternion": [
           0.038269586617468945,
@@ -23979,7 +23979,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0250524208439487
+        "residual_norm_m": 0.025052421022610995
       }
     },
     "000198": {
@@ -24047,9 +24047,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007906826854208402,
-          -0.009096155958245583,
-          0.025683076943057437
+          -0.007893831532527863,
+          -0.009075775875589607,
+          0.02563026275124023
         ],
         "quaternion": [
           0.03773133939864351,
@@ -24100,7 +24100,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.007333317973051131
+        "residual_norm_m": 0.007333036751948155
       }
     },
     "000199": {
@@ -24168,9 +24168,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.007998549571983054,
-          -0.009142162678610724,
-          0.025768853182003403
+          -0.00798046706455324,
+          -0.009116620280735618,
+          0.025701656371701097
         ],
         "quaternion": [
           0.03698612035624438,
@@ -24221,7 +24221,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.021720930137626472
+        "residual_norm_m": 0.021720752995788933
       }
     },
     "000200": {
@@ -24289,9 +24289,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008067091069575684,
-          -0.009239397138482786,
-          0.025912709767422028
+          -0.008081549053451762,
+          -0.009257249353763422,
+          0.025962716642572718
         ],
         "quaternion": [
           0.04125070056665808,
@@ -24342,7 +24342,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.004699528682511261
+        "residual_norm_m": 0.004698961055110273
       }
     },
     "000201": {
@@ -24410,9 +24410,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008143653652050964,
-          -0.009325892647575364,
-          0.02599112078221044
+          -0.008134617260733579,
+          -0.009316130336029441,
+          0.02596118228543763
         ],
         "quaternion": [
           0.04654566714498576,
@@ -24463,7 +24463,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.006164381329885891
+        "residual_norm_m": 0.006164206900561555
       }
     },
     "000202": {
@@ -24531,9 +24531,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0082231299079719,
-          -0.009402434847280932,
-          0.026151913204459885
+          -0.008232338191826385,
+          -0.00940918068433258,
+          0.026176322229525966
         ],
         "quaternion": [
           0.04863639641598643,
@@ -24584,7 +24584,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.006410623805746283
+        "residual_norm_m": 0.00641056662794459
       }
     },
     "000203": {
@@ -24652,9 +24652,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008277417340102995,
-          -0.009515889717623032,
-          0.026274416080219746
+          -0.008307589942132201,
+          -0.009554401728094783,
+          0.026378604786362957
         ],
         "quaternion": [
           0.05475589725376961,
@@ -24705,7 +24705,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.010061029633156037
+        "residual_norm_m": 0.010060169267545858
       }
     },
     "000204": {
@@ -24773,9 +24773,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0083565279696336,
-          -0.009592467872813431,
-          0.02630685494309683
+          -0.008376992445508394,
+          -0.009611632000062976,
+          0.026365526052849735
         ],
         "quaternion": [
           0.054297153275081306,
@@ -24826,7 +24826,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.008484368880304754
+        "residual_norm_m": 0.00848401454250851
       }
     },
     "000205": {
@@ -24894,9 +24894,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008399535851427295,
-          -0.009699038767443791,
-          0.026290618385422414
+          -0.008366651735948827,
+          -0.009660364969666695,
+          0.026185840700793647
         ],
         "quaternion": [
           0.05376883524952149,
@@ -24947,7 +24947,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.023192085984177168
+        "residual_norm_m": 0.023191657780165405
       }
     },
     "000206": {
@@ -25015,9 +25015,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008448450935745108,
-          -0.00983696232040336,
-          0.02633457312057415
+          -0.008436445995429434,
+          -0.009840325815414044,
+          0.026326431463676435
         ],
         "quaternion": [
           0.06764001272099422,
@@ -25068,7 +25068,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.04585442230441608
+        "residual_norm_m": 0.04585442254009867
       }
     },
     "000207": {
@@ -25136,9 +25136,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.008648389509477286,
-          -0.009841242804836328,
-          0.02629482400068727
+          -0.008625904136271486,
+          -0.009863768188752519,
+          0.026306850435329376
         ],
         "quaternion": [
           0.07731991943638605,
@@ -25189,7 +25189,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.05948504877265861
+        "residual_norm_m": 0.059485040476341414
       }
     },
     "000208": {
@@ -25257,9 +25257,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.009407757371879757,
-          -0.009470836947977228,
-          0.026027444014239592
+          -0.009512456897256757,
+          -0.009568795868051936,
+          0.026305650502629913
         ],
         "quaternion": [
           0.06516117317290746,
@@ -25310,7 +25310,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.015614307795113351
+        "residual_norm_m": 0.015610580708937843
       }
     },
     "000209": {
@@ -25378,9 +25378,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010098539135186104,
-          -0.009141679753030563,
-          0.02582072112858964
+          -0.01018126994757857,
+          -0.009207479337099393,
+          0.026016441282610984
         ],
         "quaternion": [
           0.05247742859628533,
@@ -25431,7 +25431,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.024329786264602114
+        "residual_norm_m": 0.024328737271760763
       }
     },
     "000210": {
@@ -25499,9 +25499,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.010702078613683786,
-          -0.008838669707932668,
-          0.02579408442945488
+          -0.010696532315568082,
+          -0.008819216431693214,
+          0.025758178004369223
         ],
         "quaternion": [
           0.04049922401725016,
@@ -25552,7 +25552,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0107877984754178
+        "residual_norm_m": 0.01078751521065353
       }
     },
     "000211": {
@@ -25620,9 +25620,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011063341759855556,
-          -0.00869720652369276,
-          0.02601332875789606
+          -0.011125083626421929,
+          -0.008742998662124694,
+          0.02615588139945009
         ],
         "quaternion": [
           0.049719180330083386,
@@ -25673,7 +25673,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.05128409158758258
+        "residual_norm_m": 0.05128373503520149
       }
     },
     "000212": {
@@ -25741,9 +25741,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011361467313697615,
-          -0.008570144256912977,
-          0.02621942316747336
+          -0.011375088882522399,
+          -0.008577375707488035,
+          0.026246003617432692
         ],
         "quaternion": [
           0.04853869911113742,
@@ -25794,7 +25794,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03969058455393658
+        "residual_norm_m": 0.039690597608461456
       }
     },
     "000213": {
@@ -25862,9 +25862,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011649359013734926,
-          -0.008447087638038414,
-          0.026583610565820846
+          -0.011705260072103254,
+          -0.008483260847761156,
+          0.026709292800123897
         ],
         "quaternion": [
           0.03957024244426297,
@@ -25915,7 +25915,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.007587223253142819
+        "residual_norm_m": 0.007584443447799062
       }
     },
     "000214": {
@@ -25983,9 +25983,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011844438174870579,
-          -0.008385964198818313,
-          0.026773242423732233
+          -0.011724424997380033,
+          -0.008297350862793658,
+          0.026493895290798448
         ],
         "quaternion": [
           0.035511122938776396,
@@ -26036,7 +26036,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.014788162931434418
+        "residual_norm_m": 0.014783060913478368
       }
     },
     "000215": {
@@ -26104,9 +26104,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012052396204428035,
-          -0.00837028903791597,
-          0.027160051492568494
+          -0.011986449344129154,
+          -0.008319971839436413,
+          0.027005546909434953
         ],
         "quaternion": [
           0.03469825134437536,
@@ -26157,7 +26157,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.017886599740956254
+        "residual_norm_m": 0.017885911086700033
       }
     },
     "000216": {
@@ -26225,9 +26225,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012232747642948195,
-          -0.008412587206865258,
-          0.027547453701150807
+          -0.012149997908355147,
+          -0.00835221517395359,
+          0.027355892661292434
         ],
         "quaternion": [
           0.03302442745988192,
@@ -26278,7 +26278,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.042868311832179665
+        "residual_norm_m": 0.042867422689142426
       }
     },
     "000217": {
@@ -26346,9 +26346,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012359030984757572,
-          -0.00848898265005641,
-          0.02793288154760355
+          -0.012512444576152422,
+          -0.008598703552873349,
+          0.02829766890345505
         ],
         "quaternion": [
           0.08899571099997909,
@@ -26399,7 +26399,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.2917287017875347
+        "residual_norm_m": 0.29172822785846336
       }
     },
     "000218": {
@@ -26467,9 +26467,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012428207654503427,
-          -0.008604759330408801,
-          0.028086976405622365
+          -0.012365199383826206,
+          -0.008563546349770105,
+          0.02794772527941239
         ],
         "quaternion": [
           0.07346578336593357,
@@ -26520,7 +26520,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.029543987620458213
+        "residual_norm_m": 0.02954291097963288
       }
     },
     "000219": {
@@ -26588,9 +26588,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012638567852268497,
-          -0.008717618085135118,
-          0.028245161386405194
+          -0.012733245225633188,
+          -0.008788847729284543,
+          0.028462421356188723
         ],
         "quaternion": [
           0.07547936831725262,
@@ -26641,7 +26641,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.002979968886412483
+        "residual_norm_m": 0.0029630134117265535
       }
     },
     "000220": {
@@ -26709,9 +26709,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012820872002889954,
-          -0.008727666667384797,
-          0.028464762492352764
+          -0.012819535642465145,
+          -0.008724044076266528,
+          0.02845792661766456
         ],
         "quaternion": [
           0.07506548813375276,
@@ -26762,7 +26762,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.027708389524883557
+        "residual_norm_m": 0.02770837789806782
       }
     },
     "000221": {
@@ -26830,9 +26830,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01296637253353143,
-          -0.008770873250292533,
-          0.028810187693177468
+          -0.012951679926579614,
+          -0.00875721101286923,
+          0.028776971110252635
         ],
         "quaternion": [
           0.0753102112470692,
@@ -26883,7 +26883,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.00715624170038398
+        "residual_norm_m": 0.0071564601673826354
       }
     },
     "000222": {
@@ -26951,9 +26951,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01311768304332369,
-          -0.008883897811617397,
-          0.028888489011776722
+          -0.013000445066999879,
+          -0.008801167152647739,
+          0.028627539827390455
         ],
         "quaternion": [
           0.07404968511672526,
@@ -27004,7 +27004,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.010805367617035428
+        "residual_norm_m": 0.01079926466213808
       }
     },
     "000223": {
@@ -27072,9 +27072,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01339674107554617,
-          -0.009097842656291063,
-          0.028836578873532897
+          -0.013405872750315148,
+          -0.009111952861204366,
+          0.02886077997855509
         ],
         "quaternion": [
           0.08362111300938362,
@@ -27125,7 +27125,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0239218200409051
+        "residual_norm_m": 0.023921773805043657
       }
     },
     "000224": {
@@ -27193,9 +27193,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013755565778964406,
-          -0.009166407212639519,
-          0.029016164838656412
+          -0.013756261468775883,
+          -0.009161515595172882,
+          0.02901596092289597
         ],
         "quaternion": [
           0.08389677752972115,
@@ -27246,7 +27246,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.014193722124852225
+        "residual_norm_m": 0.014193720264263259
       }
     },
     "000225": {
@@ -27314,9 +27314,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014091612419356553,
-          -0.009338391423912532,
-          0.028960020563349377
+          -0.014190386117622255,
+          -0.009403983224090263,
+          0.02916320713304649
         ],
         "quaternion": [
           0.09692290465502015,
@@ -27367,7 +27367,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03575475897905469
+        "residual_norm_m": 0.03575373478660351
       }
     },
     "000226": {
@@ -27435,9 +27435,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014347724011909608,
-          -0.009514782227497224,
-          0.029003239902873495
+          -0.01440990609964462,
+          -0.009562937070121846,
+          0.029135187313905454
         ],
         "quaternion": [
           0.11580331887634024,
@@ -27488,7 +27488,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03971865938484091
+        "residual_norm_m": 0.039718791701769375
       }
     },
     "000227": {
@@ -27556,9 +27556,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014662797392310646,
-          -0.0095606581528178,
-          0.02929692935268298
+          -0.014894548925371736,
+          -0.009714440342352486,
+          0.02977429363445064
         ],
         "quaternion": [
           0.1639446193590109,
@@ -27609,7 +27609,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.1836789090804218
+        "residual_norm_m": 0.18367768112632027
       }
     },
     "000228": {
@@ -27677,9 +27677,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014726484027821576,
-          -0.009701468786786278,
-          0.029330043497061635
+          -0.014965233425685957,
+          -0.009873568503518445,
+          0.029826189780323458
         ],
         "quaternion": [
           0.15068072829454504,
@@ -27730,7 +27730,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.09295130605782866
+        "residual_norm_m": 0.09294862118792446
       }
     },
     "000229": {
@@ -27798,9 +27798,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014886431160038769,
-          -0.009610376815653182,
-          0.029268450967924423
+          -0.014895294528292547,
+          -0.009612234618224965,
+          0.02928107512113306
         ],
         "quaternion": [
           0.1497915014291245,
@@ -27851,7 +27851,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.14433457415744377
+        "residual_norm_m": 0.14433457313879894
       }
     },
     "000230": {
@@ -27919,9 +27919,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014915825164008656,
-          -0.009569403790518531,
-          0.02930688499856045
+          -0.014648868704738303,
+          -0.00939585196452885,
+          0.028798161060502613
         ],
         "quaternion": [
           0.23097226839084256,
@@ -27972,7 +27972,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.4628085489072547
+        "residual_norm_m": 0.4628078863430829
       }
     },
     "000231": {
@@ -28040,9 +28040,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01501933641409985,
-          -0.009723325065241496,
-          0.029523391760745234
+          -0.01490698456211564,
+          -0.009650378506841424,
+          0.029299758285484367
         ],
         "quaternion": [
           0.13632242712210013,
@@ -28093,7 +28093,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.19649366779914898
+        "residual_norm_m": 0.19649346359072378
       }
     },
     "000232": {
@@ -28161,9 +28161,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01515998086926444,
-          -0.009827302694913281,
-          0.029788152322898404
+          -0.015209931100266628,
+          -0.009860489218493225,
+          0.029886967058896763
         ],
         "quaternion": [
           0.09737188533527824,
@@ -28214,7 +28214,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0848661553577145
+        "residual_norm_m": 0.08486599830463226
       }
     },
     "000233": {
@@ -28282,9 +28282,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015284432630864443,
-          -0.00992233339139241,
-          0.030100046167525197
+          -0.015319958452297439,
+          -0.009945411554554659,
+          0.030170924823912006
         ],
         "quaternion": [
           0.08669323382467829,
@@ -28335,7 +28335,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02107837834223073
+        "residual_norm_m": 0.021078202814823956
       }
     },
     "000234": {
@@ -28403,9 +28403,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01538191289134164,
-          -0.010015662374805858,
-          0.03037716976384988
+          -0.015413399401895213,
+          -0.010036073315755274,
+          0.030439646914894678
         ],
         "quaternion": [
           0.06604645411247913,
@@ -28456,7 +28456,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.053897479375790515
+        "residual_norm_m": 0.05389740550702122
       }
     },
     "000235": {
@@ -28524,9 +28524,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015466652183891958,
-          -0.01012580382775987,
-          0.03067658973343975
+          -0.01544377565890223,
+          -0.010106601121475961,
+          0.0306268699369861
         ],
         "quaternion": [
           0.08228381810340506,
@@ -28577,7 +28577,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.04714271526061283
+        "residual_norm_m": 0.047142491347191465
       }
     },
     "000236": {
@@ -28645,9 +28645,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01545893894996588,
-          -0.010289706297125428,
-          0.030993468751463287
+          -0.015711435855653898,
+          -0.010458506485423427,
+          0.03147940880826902
         ],
         "quaternion": [
           0.15720947383266926,
@@ -28698,7 +28698,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.42701895176073557
+        "residual_norm_m": 0.42701817683324067
       }
     },
     "000237": {
@@ -28766,9 +28766,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015424878497248709,
-          -0.010362257550696865,
-          0.030946492352666142
+          -0.015445713501212719,
+          -0.010377114497066308,
+          0.03098875553654646
         ],
         "quaternion": [
           0.10724233099790065,
@@ -28819,7 +28819,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02067602510523731
+        "residual_norm_m": 0.02067603596907294
       }
     },
     "000238": {
@@ -28887,9 +28887,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01538211461443609,
-          -0.010404138345477789,
-          0.03097674976623321
+          -0.015223482839479469,
+          -0.01029601003594038,
+          0.03065476054958245
         ],
         "quaternion": [
           0.0742520645378241,
@@ -28940,7 +28940,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.06361145250147061
+        "residual_norm_m": 0.06360923685361972
       }
     },
     "000239": {
@@ -29008,9 +29008,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015450758769671852,
-          -0.010514039379017875,
-          0.031285451134978895
+          -0.015461299338764773,
+          -0.010521089558859244,
+          0.03130635277747259
         ],
         "quaternion": [
           0.08028907053498012,
@@ -29061,7 +29061,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.05786423770265443
+        "residual_norm_m": 0.05786420257642224
       }
     },
     "000240": {
@@ -29129,9 +29129,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01548384105578364,
-          -0.0106253761774035,
-          0.03161477543244754
+          -0.015530485287246588,
+          -0.010658590305678018,
+          0.03171225223035248
         ],
         "quaternion": [
           0.07591725147123332,
@@ -29182,7 +29182,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.06727495919173511
+        "residual_norm_m": 0.0672748967574497
       }
     },
     "000241": {
@@ -29250,9 +29250,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015518120993675364,
-          -0.010699449694014165,
-          0.0318488794397423
+          -0.015675683032245924,
+          -0.01081050714747102,
+          0.032175622881001384
         ],
         "quaternion": [
           0.06488911876630503,
@@ -29303,7 +29303,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.08520635725643587
+        "residual_norm_m": 0.0852047537227183
       }
     },
     "000242": {
@@ -29371,9 +29371,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015487516370758141,
-          -0.01070179320796703,
-          0.03196436800684121
+          -0.015470761858500263,
+          -0.010686834722429869,
+          0.03192708511652415
         ],
         "quaternion": [
           0.07197959130227433,
@@ -29424,7 +29424,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.0169216736610862
+        "residual_norm_m": 0.01692148365733358
       }
     },
     "000243": {
@@ -29492,9 +29492,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015408023573262373,
-          -0.010782552038193366,
-          0.03204228561981578
+          -0.015328811841134026,
+          -0.010728581284931685,
+          0.03187840884793191
         ],
         "quaternion": [
           0.07622489037210971,
@@ -29545,7 +29545,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.029086018123447615
+        "residual_norm_m": 0.029084358387616617
       }
     },
     "000244": {
@@ -29613,9 +29613,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015468715833373139,
-          -0.010852178265748743,
-          0.03221426883649245
+          -0.015577132742595362,
+          -0.010929509375673824,
+          0.03244338147458991
         ],
         "quaternion": [
           0.0939294514262788,
@@ -29666,7 +29666,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.040592243654491635
+        "residual_norm_m": 0.04059079947477058
       }
     },
     "000245": {
@@ -29734,9 +29734,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015448532885392241,
-          -0.010891450319510585,
-          0.032319441921177104
+          -0.015636489776363234,
+          -0.011026267159985911,
+          0.03271784785892353
         ],
         "quaternion": [
           0.08503379535497865,
@@ -29787,7 +29787,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.04388329327931652
+        "residual_norm_m": 0.0438787896614578
       }
     },
     "000246": {
@@ -29855,9 +29855,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015344795128956014,
-          -0.010866747503013887,
-          0.03221626793792614
+          -0.01534112187773098,
+          -0.010864140987680404,
+          0.03220906968824468
         ],
         "quaternion": [
           0.08451189340244954,
@@ -29908,7 +29908,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.025507742087788225
+        "residual_norm_m": 0.025507717716988253
       }
     },
     "000247": {
@@ -29976,9 +29976,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015261430131593619,
-          -0.01084901475109794,
-          0.03210074484463777
+          -0.015194511793889897,
+          -0.010803331155593654,
+          0.03195955192482255
         ],
         "quaternion": [
           0.08156287668588451,
@@ -30029,7 +30029,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.04949303855736507
+        "residual_norm_m": 0.049492643115079116
       }
     },
     "000248": {
@@ -30097,9 +30097,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015265773048709014,
-          -0.010788067973640089,
-          0.03212615106545922
+          -0.01514500948068476,
+          -0.010697391969572619,
+          0.031866506502934856
         ],
         "quaternion": [
           0.05471128513512928,
@@ -30150,7 +30150,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.05102845847152483
+        "residual_norm_m": 0.051027177698153084
       }
     },
     "000249": {
@@ -30218,9 +30218,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015246028676640013,
-          -0.010854814239087346,
-          0.03217038653939327
+          -0.015184833865837943,
+          -0.010811458195647959,
+          0.03204010187767983
         ],
         "quaternion": [
           0.0615658492773877,
@@ -30271,7 +30271,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.003925475085736881
+        "residual_norm_m": 0.003914676405736451
       }
     },
     "000250": {
@@ -30339,9 +30339,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015284348817404498,
-          -0.010927248333724432,
-          0.03244793500298846
+          -0.015574721477425554,
+          -0.011147051417812723,
+          0.03307975449850375
         ],
         "quaternion": [
           0.09737349874078631,
@@ -30392,7 +30392,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.3404475803752815
+        "residual_norm_m": 0.3404450850382032
       }
     },
     "000251": {
@@ -30460,9 +30460,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015146247857879285,
-          -0.010899400387152088,
-          0.03223380825251946
+          -0.014810568805812984,
+          -0.010658109134437502,
+          0.031514849719759506
         ],
         "quaternion": [
           0.06438709635846217,
@@ -30513,7 +30513,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.049707825457221175
+        "residual_norm_m": 0.04968833751229169
       }
     },
     "000252": {
@@ -30581,9 +30581,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015261796717184726,
-          -0.010881846503502853,
-          0.03246623381614917
+          -0.015550335197747346,
+          -0.011079598735943485,
+          0.03306240169993441
         ],
         "quaternion": [
           0.10271564844648079,
@@ -30634,7 +30634,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.31100694336347356
+        "residual_norm_m": 0.3110052976172552
       }
     },
     "000253": {
@@ -30702,9 +30702,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.015046016361447584,
-          -0.010829082402625962,
-          0.0321412815654328
+          -0.014970689861290833,
+          -0.010773043145618812,
+          0.03197707062684356
         ],
         "quaternion": [
           0.09229179493503085,
@@ -30755,7 +30755,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.015925952879328128
+        "residual_norm_m": 0.015921830229994494
       }
     },
     "000254": {
@@ -30823,9 +30823,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014865960701164594,
-          -0.0108135246384772,
-          0.03199500700048653
+          -0.014812703480646965,
+          -0.010777903860001789,
+          0.03188227268970825
         ],
         "quaternion": [
           0.09079790535607901,
@@ -30876,7 +30876,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.046707268440018976
+        "residual_norm_m": 0.046707037790895765
       }
     },
     "000255": {
@@ -30944,9 +30944,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014832298194317195,
-          -0.010740626006392641,
-          0.03191446998401862
+          -0.01479572512665498,
+          -0.010710892287762197,
+          0.03183158739973415
         ],
         "quaternion": [
           0.07135146642076347,
@@ -30997,7 +30997,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.06275224083260615
+        "residual_norm_m": 0.06275225201359298
       }
     },
     "000256": {
@@ -31065,9 +31065,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014733518168931065,
-          -0.010722093131232827,
-          0.03183566115756079
+          -0.014596093127268273,
+          -0.010621417936529097,
+          0.03153590202177
         ],
         "quaternion": [
           0.07194708741978707,
@@ -31118,7 +31118,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.011526225248296468
+        "residual_norm_m": 0.011514245235507491
       }
     },
     "000257": {
@@ -31186,9 +31186,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014746381490147424,
-          -0.010722382399219129,
-          0.031938284489186175
+          -0.01487630273424459,
+          -0.010824366238620691,
+          0.032233578407469786
         ],
         "quaternion": [
           0.10380513896938334,
@@ -31239,7 +31239,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.26636725789834065
+        "residual_norm_m": 0.2663667144431907
       }
     },
     "000258": {
@@ -31307,9 +31307,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01461437873770118,
-          -0.010675916533519424,
-          0.031849078751967824
+          -0.01459153387457165,
+          -0.010660553411813536,
+          0.03180043853043723
         ],
         "quaternion": [
           0.08774866431831721,
@@ -31360,7 +31360,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.07370634480850878
+        "residual_norm_m": 0.07370621013396399
       }
     },
     "000259": {
@@ -31428,9 +31428,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01456641229660633,
-          -0.010610554234358128,
-          0.03185091743075205
+          -0.014582200853487007,
+          -0.01062086815734448,
+          0.03188485524905507
         ],
         "quaternion": [
           0.08090549666147212,
@@ -31481,7 +31481,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03866755053706934
+        "residual_norm_m": 0.038667534808613464
       }
     },
     "000260": {
@@ -31549,9 +31549,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014486146563775068,
-          -0.01057328298142078,
-          0.03181902843988652
+          -0.014559198064800946,
+          -0.010626482980742518,
+          0.031981409839255896
         ],
         "quaternion": [
           0.09891296219326424,
@@ -31602,7 +31602,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.054983473408499794
+        "residual_norm_m": 0.05498312447645609
       }
     },
     "000261": {
@@ -31670,9 +31670,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014353968358011136,
-          -0.010551693166504594,
-          0.031779827870382
+          -0.014482103039423506,
+          -0.010648141711454315,
+          0.0320504702542196
         ],
         "quaternion": [
           0.10413525314772586,
@@ -31723,7 +31723,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.4407749214742452
+        "residual_norm_m": 0.4407746929252522
       }
     },
     "000262": {
@@ -31791,9 +31791,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.014210236221135502,
-          -0.010403325247950027,
-          0.03153650542785193
+          -0.01413404414110087,
+          -0.010344005129988624,
+          0.031362980418705506
         ],
         "quaternion": [
           0.07247239953565571,
@@ -31844,7 +31844,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.059233361153365756
+        "residual_norm_m": 0.059232415282506196
       }
     },
     "000263": {
@@ -31912,9 +31912,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01407201698810761,
-          -0.010329901631436255,
-          0.03141162841327935
+          -0.014079514482238856,
+          -0.010335880121076184,
+          0.03142812419989204
         ],
         "quaternion": [
           0.07913317917013624,
@@ -31965,7 +31965,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02785467724775215
+        "residual_norm_m": 0.027854610955285068
       }
     },
     "000264": {
@@ -32033,9 +32033,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013918966773622261,
-          -0.010241416163414542,
-          0.03130263882715196
+          -0.013844461136082562,
+          -0.010184476051679953,
+          0.031131723269860353
         ],
         "quaternion": [
           0.07180402576869799,
@@ -32086,7 +32086,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01979098787794269
+        "residual_norm_m": 0.01978954734012046
       }
     },
     "000265": {
@@ -32154,9 +32154,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013790464254363108,
-          -0.010188829343757581,
-          0.031231714355267972
+          -0.013709900381402188,
+          -0.010124507648475235,
+          0.031041654824084063
         ],
         "quaternion": [
           0.0792008679645788,
@@ -32207,7 +32207,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.021611252609247303
+        "residual_norm_m": 0.0216093119217143
       }
     },
     "000266": {
@@ -32275,9 +32275,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013627871725694329,
-          -0.010209757916944964,
-          0.03129517440536621
+          -0.013648237516153768,
+          -0.010225828607630653,
+          0.03134417126725935
         ],
         "quaternion": [
           0.08033535618443285,
@@ -32328,7 +32328,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.010223218921317613
+        "residual_norm_m": 0.01022300670616772
       }
     },
     "000267": {
@@ -32396,9 +32396,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.013476362023572587,
-          -0.010227471969747366,
-          0.03127465655904614
+          -0.013604221062180233,
+          -0.010325810297343153,
+          0.031575989561642225
         ],
         "quaternion": [
           0.08785120528059345,
@@ -32449,7 +32449,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.06298417792524506
+        "residual_norm_m": 0.06298257932838516
       }
     },
     "000268": {
@@ -32517,9 +32517,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.01321497898817479,
-          -0.010234645733022118,
-          0.03120426937195316
+          -0.013274369144252438,
+          -0.01028358092626257,
+          0.03134827706668145
         ],
         "quaternion": [
           0.06597030113115857,
@@ -32570,7 +32570,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.027745027720032997
+        "residual_norm_m": 0.027744375255087474
       }
     },
     "000269": {
@@ -32638,9 +32638,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012996034326346358,
-          -0.010193104893517263,
-          0.03114355698856041
+          -0.012934665915097553,
+          -0.010143126979104118,
+          0.030994380600938013
         ],
         "quaternion": [
           0.05719721685921724,
@@ -32691,7 +32691,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03975188599259471
+        "residual_norm_m": 0.03975116789715357
       }
     },
     "000270": {
@@ -32759,9 +32759,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012788921962766146,
-          -0.01019367308652728,
-          0.031100442833452903
+          -0.012773420522730256,
+          -0.010183833126843171,
+          0.031065079360996173
         ],
         "quaternion": [
           0.06874498728172686,
@@ -32812,7 +32812,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.034273693834400945
+        "residual_norm_m": 0.03427362304474277
       }
     },
     "000271": {
@@ -32880,9 +32880,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012648685874694325,
-          -0.010148957213954563,
-          0.0311175596147636
+          -0.012733951185871343,
+          -0.010216016006314818,
+          0.03132670212775563
         ],
         "quaternion": [
           0.0634059512151461,
@@ -32933,7 +32933,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.032332345865582805
+        "residual_norm_m": 0.0323306448934549
       }
     },
     "000272": {
@@ -33001,9 +33001,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012417606697466561,
-          -0.010119624122039263,
-          0.031083940301714148
+          -0.012408701683334678,
+          -0.010114496221968068,
+          0.031065461505636223
         ],
         "quaternion": [
           0.042547159153668246,
@@ -33054,7 +33054,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03722309121988222
+        "residual_norm_m": 0.03722308162405157
       }
     },
     "000273": {
@@ -33122,9 +33122,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012240963460236278,
-          -0.010065994885294274,
-          0.030968976457610535
+          -0.012178350010348596,
+          -0.010013629479873545,
+          0.03080747425950653
         ],
         "quaternion": [
           0.05086440135590602,
@@ -33175,7 +33175,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03464269676866944
+        "residual_norm_m": 0.03464191361606089
       }
     },
     "000274": {
@@ -33243,9 +33243,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.012103022128599794,
-          -0.010019488644695717,
-          0.03098580931186148
+          -0.012048879729361948,
+          -0.009972479296950474,
+          0.030843556317400767
         ],
         "quaternion": [
           0.05178090681563022,
@@ -33296,7 +33296,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.010706868541745605
+        "residual_norm_m": 0.010704854295053965
       }
     },
     "000275": {
@@ -33364,9 +33364,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011969885571530472,
-          -0.010007107984152329,
-          0.031069900017618637
+          -0.012006084201722214,
+          -0.01004101623323881,
+          0.0311691445295625
         ],
         "quaternion": [
           0.06519565772785418,
@@ -33417,7 +33417,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.03834078963675651
+        "residual_norm_m": 0.03834026971623988
       }
     },
     "000276": {
@@ -33485,9 +33485,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.0118551671194072,
-          -0.009937229113076885,
-          0.031079131083371892
+          -0.011790830652007376,
+          -0.009879788928081534,
+          0.030905438203266068
         ],
         "quaternion": [
           0.05575389612304788,
@@ -33538,7 +33538,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02964082253269926
+        "residual_norm_m": 0.02963944148413776
       }
     },
     "000277": {
@@ -33606,9 +33606,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011757928886710942,
-          -0.00992684268239138,
-          0.031150741665945732
+          -0.01176647313091711,
+          -0.00993582096259727,
+          0.031175925937187775
         ],
         "quaternion": [
           0.05159801556053361,
@@ -33659,7 +33659,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.030590685270632165
+        "residual_norm_m": 0.03059063851636672
       }
     },
     "000278": {
@@ -33727,9 +33727,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011676550004625542,
-          -0.009887314428764157,
-          0.03119126822685402
+          -0.011703015731603905,
+          -0.00990704327564107,
+          0.03125883403556451
         ],
         "quaternion": [
           0.0679469992618774,
@@ -33780,7 +33780,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01911188392960652
+        "residual_norm_m": 0.019111574612135376
       }
     },
     "000279": {
@@ -33848,9 +33848,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011528009482509446,
-          -0.009889696698961403,
-          0.031203496988148637
+          -0.011509976819306433,
+          -0.009876013502414146,
+          0.031157036730072387
         ],
         "quaternion": [
           0.0731472927143343,
@@ -33901,7 +33901,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.011969905755801936
+        "residual_norm_m": 0.011969564905559582
       }
     },
     "000280": {
@@ -33969,9 +33969,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011431650678186777,
-          -0.009866862326797395,
-          0.031242180450316473
+          -0.011453666743118183,
+          -0.009887847244896103,
+          0.031305030161917054
         ],
         "quaternion": [
           0.08027383989702201,
@@ -34022,7 +34022,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.02972610837119794
+        "residual_norm_m": 0.029725905464175018
       }
     },
     "000281": {
@@ -34090,9 +34090,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011339206556856498,
-          -0.009815963406550443,
-          0.03127775146291851
+          -0.011319592254386264,
+          -0.009798526024215411,
+          0.031222947462502447
         ],
         "quaternion": [
           0.06937025964001675,
@@ -34143,7 +34143,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.01903286891643286
+        "residual_norm_m": 0.01903275729673192
       }
     },
     "000282": {
@@ -34211,9 +34211,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011261999203408805,
-          -0.009772598512668155,
-          0.031302353974210995
+          -0.01121167107382679,
+          -0.009723984908226076,
+          0.031153852293005952
         ],
         "quaternion": [
           0.06927738990154957,
@@ -34264,7 +34264,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.002127527416001448
+        "residual_norm_m": 0.0021187651599806553
       }
     },
     "000283": {
@@ -34332,9 +34332,9 @@
       "pose": {
         "frame_id": "endoscope_optical",
         "position": [
-          -0.011155504198417177,
-          -0.009790792387882438,
-          0.03140015622177057
+          -0.011098563770233995,
+          -0.009742668085395992,
+          0.031243052766119602
         ],
         "quaternion": [
           0.06844815829326313,
@@ -34385,7 +34385,7 @@
       "diagnostics_image": null,
       "smoothing_info": {
         "method": "se3_manifold_smoothing",
-        "residual_norm_m": 0.004040813193158172
+        "residual_norm_m": 0.004037482514414387
       }
     }
   },

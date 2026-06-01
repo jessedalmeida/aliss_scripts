@@ -381,7 +381,7 @@
           "ts": 1780168984.2288146
         }
       },
-      "poses_source": "raw",
+      "poses_source": "smooth",
       "repack_mode": "topics"
     },
     "ch_circlexz_4": {
@@ -421,7 +421,8 @@
           "ts": 1780169099.818516
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "topics",
+      "poses_source": "smooth"
     },
     "ch_figure8_1": {
       "tracks": {
@@ -446,7 +447,7 @@
         }
       },
       "repack_mode": "topics",
-      "poses_source": "raw"
+      "poses_source": "smooth"
     },
     "ch_figure8_2": {
       "tracks": {
@@ -518,7 +519,8 @@
           "rc": 0,
           "ts": 1780169281.509424
         }
-      }
+      },
+      "repack_mode": "topics"
     },
     "ch_figure8_5": {
       "tracks": {
@@ -536,7 +538,9 @@
           "rc": 0,
           "ts": 1780169322.847285
         }
-      }
+      },
+      "repack_mode": "topics",
+      "poses_source": "smooth"
     },
     "ch_figure8_6": {
       "tracks": {
@@ -554,7 +558,9 @@
           "rc": 0,
           "ts": 1780169364.5452452
         }
-      }
+      },
+      "poses_source": "smooth",
+      "repack_mode": "topics"
     },
     "ch_suture_1": {
       "tracks": {
@@ -572,7 +578,9 @@
           "rc": 0,
           "ts": 1780169428.8106356
         }
-      }
+      },
+      "poses_source": "smooth",
+      "repack_mode": "topics"
     },
     "ch_suture_2": {
       "tracks": {
@@ -590,7 +598,9 @@
           "rc": 0,
           "ts": 1780169494.7036412
         }
-      }
+      },
+      "poses_source": "smooth",
+      "repack_mode": "topics"
     },
     "ch_suture_3": {
       "tracks": {
@@ -613,7 +623,9 @@
           "rc": 0,
           "ts": 1780169559.5449214
         }
-      }
+      },
+      "poses_source": "smooth",
+      "repack_mode": "topics"
     },
     "ch_suture_4": {
       "tracks": {
@@ -631,7 +643,8 @@
           "rc": 0,
           "ts": 1780169621.39571
         }
-      }
+      },
+      "poses_source": "smooth"
     },
     "ch_suture_5": {
       "tracks": {
@@ -700,7 +713,7 @@
     "chicken_1": {
       "tracks": {
         "needle": true,
-        "checkerboard": true
+        "checkerboard": false
       },
       "stages": {
         "extract": {
@@ -718,7 +731,7 @@
     "chicken_2": {
       "tracks": {
         "needle": true,
-        "checkerboard": true
+        "checkerboard": false
       },
       "stages": {
         "extract": {
@@ -754,7 +767,7 @@
     "chicken_4": {
       "tracks": {
         "needle": true,
-        "checkerboard": true
+        "checkerboard": false
       },
       "stages": {
         "extract": {
@@ -772,7 +785,7 @@
     "chicken_5": {
       "tracks": {
         "needle": true,
-        "checkerboard": true
+        "checkerboard": false
       },
       "stages": {
         "extract": {
@@ -790,7 +803,7 @@
     "grasper_tracking": {
       "tracks": {
         "needle": true,
-        "checkerboard": true
+        "checkerboard": false
       },
       "stages": {
         "extract": {
@@ -808,7 +821,7 @@
     "grasper_tracking_1": {
       "tracks": {
         "needle": true,
-        "checkerboard": true
+        "checkerboard": false
       },
       "stages": {
         "extract": {
@@ -826,7 +839,7 @@
     "grasper_tracking_2": {
       "tracks": {
         "needle": true,
-        "checkerboard": true
+        "checkerboard": false
       },
       "stages": {
         "extract": {
@@ -844,7 +857,7 @@
     "trachea_1": {
       "tracks": {
         "needle": true,
-        "checkerboard": true
+        "checkerboard": false
       },
       "stages": {
         "extract": {
@@ -862,7 +875,7 @@
     "trachea_2": {
       "tracks": {
         "needle": true,
-        "checkerboard": true
+        "checkerboard": false
       },
       "stages": {
         "extract": {
@@ -880,7 +893,7 @@
     "trachea_3": {
       "tracks": {
         "needle": true,
-        "checkerboard": true
+        "checkerboard": false
       },
       "stages": {
         "extract": {
@@ -898,7 +911,7 @@
     "trachea_4": {
       "tracks": {
         "needle": true,
-        "checkerboard": true
+        "checkerboard": false
       },
       "stages": {
         "extract": {
