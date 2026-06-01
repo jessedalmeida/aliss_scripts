@@ -526,7 +526,8 @@ window.addEventListener("keydown", e=>{
   if(e.metaKey || e.ctrlKey || e.altKey) return;
   const k=e.key.toLowerCase();
 
-  if(e.code==="Space"){ S.spaceDown=true; cv.style.cursor="grab"; e.preventDefault(); return; }
+  // if(e.code==="Space"){ S.spaceDown=true; cv.style.cursor="grab"; e.preventDefault(); return; }
+  if(e.code==="Space"){ togglePlay(); e.preventDefault(); return; }
 
   // --- help cheatsheet ---
   if(e.key==="?" || (k==="/" && e.shiftKey)){ toggleKeys(); return; }
@@ -545,7 +546,7 @@ window.addEventListener("keydown", e=>{
     return; }
 
   // --- playback ---
-  if(k==="p"){ togglePlay(); return; }
+  if(k==="Space"){ togglePlay(); return; }
 
   // --- mode switching (1..5 match the toolbar order) ---
   const modeKeys={"1":"view","2":"seed","3":"mask","4":"keypoints","5":"corners"};

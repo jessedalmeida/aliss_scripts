@@ -744,7 +744,21 @@ class OfflineCheckerboardEstimator:
     def _solve_pose(self, corners: list[tuple[float, float]]) -> PoseEstimateResult:
         board_points = np.asarray(self.checkerboard.object_points, dtype=np.float64)
         image_points = np.asarray(corners, dtype=np.float64).reshape(-1, 2)
-        refined = _solve_pnp_refine(board_points, image_points, self.camera_matrix, self.distortion_coeffs)
+
+        rvec0 = None
+        tvec0 = None
+        if self.last_successful_pose is not None:
+            rvec0, tvec0 = self.last_successful_pose
+            
+        refined = _solve_pnp_refine(
+            board_points,
+            image_points,
+            self.camera_matrix,
+            self.distortion_coeffs,
+            rvec=rvec0,
+            tvec=tvec0,
+        )
+        # refined = _solve_pnp_refine(board_points, image_points, self.camera_matrix, self.distortion_coeffs)
         if refined is None:
             return PoseEstimateResult(success=False, failure_reason="solvePnP failed")
 
