@@ -1,0 +1,47 @@
+{
+  "manifest": "dataset/manifest.jsonl",
+  "seed": 0,
+  "splits": {
+    "train": [
+      "ch_chicken_1",
+      "ch_chicken_2",
+      "ch_chicken_3",
+      "ch_chicken_4",
+      "ch_chicken_5",
+      "ch_circlexy_1",
+      "ch_circlexy_2",
+      "ch_circlexy_3",
+      "ch_circlexy_4",
+      "ch_circlexy_5",
+      "ch_circlexy_6",
+      "ch_circlexz_1",
+      "ch_circlexz_2",
+      "ch_circlexz_3",
+      "ch_circlexz_4",
+      "ch_circlexz_5",
+      "ch_figure8_1",
+      "ch_figure8_2",
+      "ch_figure8_3",
+      "ch_figure8_4",
+      "ch_figure8_5",
+      "ch_figure8_6",
+      "ch_suture_1",
+      "ch_suture_2",
+      "ch_suture_3",
+      "ch_suture_4",
+      "ch_suture_5",
+      "ch_suture_6",
+      "ch_suture_7",
+      "chicken_3",
+      "chicken_4",
+      "chicken_5",
+      "trachea_1"
+    ],
+    "val": [
+      "chicken_2"
+    ],
+    "test": [
+      "chicken_1"
+    ]
+  }
+}

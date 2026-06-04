@@ -1,0 +1,44 @@
+{
+  "config": {
+    "out_dir": "annotated_bags_5-12",
+    "sam2_repo": "/home/jesse/sam2",
+    "model": "large",
+    "every_n": 3,
+    "camera_yaml": "/home/jesse/aliss_core/src/aliss_scripts/auto-annotating/annotations_5-12/ves_camera.yaml",
+    "board": {
+      "squares_x": 4,
+      "squares_y": 5,
+      "square_size": 0.002
+    },
+    "bag_sources": {
+      "ch_suture3": "/data/ros_bags/calibrated_needle_tracking/raw_bags/ch_suture3"
+    }
+  },
+  "bags": {
+    "ch_suture3": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {
+        "extract": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167705.2009053
+        },
+        "pose": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167727.8919528
+        },
+        "smooth": {
+          "status": "ok",
+          "rc": 0,
+          "ts": 1780167728.6746223
+        }
+      },
+      "repack_mode": "snapshot",
+      "poses_source": "smooth"
+    }
+  }
+}

@@ -54,7 +54,25 @@ def _import_estimate():
     raise ImportError("Could not import estimate_checkerboard_pose_offline with its API.") from last
 
 
+# def _camera_yaml(ctx, bag: str) -> Path:
+#     if ctx.camera_yaml:
+#         return Path(ctx.camera_yaml)
+#     choose_camera_yaml = _import_estimate().choose_camera_yaml
+#     return choose_camera_yaml(ctx.ann_dir, ctx.bag_dir(bag), None)
 def _camera_yaml(ctx, bag: str) -> Path:
+    """Resolve the camera calibration for a bag.
+
+    A bag's OWN ves_camera.yaml (in its annotation dir) is more specific than any
+    global/config camera_yaml and therefore wins — this lets a one-off bag with a
+    different calibration sit alongside others without reconfiguring the global.
+    Falls back to the configured global, then to the standard search path.
+    """
+    bag_local = ctx.bag_dir(bag) / "ves_camera.yaml"
+    if bag_local.exists():
+        return bag_local
+    also = ctx.ann_dir / ctx.bag_dir(bag).name / "ves_camera.yaml"
+    if also != bag_local and also.exists():
+        return also
     if ctx.camera_yaml:
         return Path(ctx.camera_yaml)
     choose_camera_yaml = _import_estimate().choose_camera_yaml

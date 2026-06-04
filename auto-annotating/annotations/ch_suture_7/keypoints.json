@@ -1,0 +1,8280 @@
+{
+  "bag_stem": "ch_suture_7",
+  "source": "gui_edit",
+  "frames": {
+    "000000": {
+      "needle_tip": [
+        580,
+        568
+      ],
+      "needle_tail": [
+        805,
+        598
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000001": {
+      "needle_tip": [
+        575,
+        553
+      ],
+      "needle_tail": [
+        804,
+        600
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000002": {
+      "needle_tip": [
+        575,
+        555
+      ],
+      "needle_tail": [
+        805,
+        598
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000003": {
+      "needle_tip": [
+        576,
+        555
+      ],
+      "needle_tail": [
+        805,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000004": {
+      "needle_tip": [
+        576,
+        558
+      ],
+      "needle_tail": [
+        804,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000005": {
+      "needle_tip": [
+        580,
+        567
+      ],
+      "needle_tail": [
+        805,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000006": {
+      "needle_tip": [
+        580,
+        567
+      ],
+      "needle_tail": [
+        805,
+        598
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000007": {
+      "needle_tip": [
+        580,
+        570
+      ],
+      "needle_tail": [
+        805,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000008": {
+      "needle_tip": [
+        588,
+        579
+      ],
+      "needle_tail": [
+        803,
+        601
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000009": {
+      "needle_tip": [
+        580,
+        566
+      ],
+      "needle_tail": [
+        804,
+        601
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000010": {
+      "needle_tip": [
+        588,
+        580
+      ],
+      "needle_tail": [
+        805,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000011": {
+      "needle_tip": [
+        583,
+        572
+      ],
+      "needle_tail": [
+        804,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000012": {
+      "needle_tip": [
+        579,
+        563
+      ],
+      "needle_tail": [
+        805,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000013": {
+      "needle_tip": [
+        587,
+        580
+      ],
+      "needle_tail": [
+        805,
+        600
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000014": {
+      "needle_tip": [
+        582,
+        570
+      ],
+      "needle_tail": [
+        804,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000015": {
+      "needle_tip": [
+        592,
+        586
+      ],
+      "needle_tail": [
+        805,
+        600
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000016": {
+      "needle_tip": [
+        584,
+        571
+      ],
+      "needle_tail": [
+        805,
+        598
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000017": {
+      "needle_tip": [
+        580,
+        564
+      ],
+      "needle_tail": [
+        805,
+        600
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000018": {
+      "needle_tip": [
+        587,
+        576
+      ],
+      "needle_tail": [
+        804,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000019": {
+      "needle_tip": [
+        591,
+        586
+      ],
+      "needle_tail": [
+        804,
+        600
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000020": {
+      "needle_tip": [
+        580,
+        565
+      ],
+      "needle_tail": [
+        805,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000021": {
+      "needle_tip": [
+        581,
+        568
+      ],
+      "needle_tail": [
+        803,
+        601
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000022": {
+      "needle_tip": [
+        585,
+        579
+      ],
+      "needle_tail": [
+        804,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000023": {
+      "needle_tip": [
+        585,
+        571
+      ],
+      "needle_tail": [
+        804,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000024": {
+      "needle_tip": [
+        587,
+        580
+      ],
+      "needle_tail": [
+        804,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000025": {
+      "needle_tip": [
+        588,
+        576
+      ],
+      "needle_tail": [
+        802,
+        602
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000026": {
+      "needle_tip": [
+        584,
+        571
+      ],
+      "needle_tail": [
+        804,
+        600
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000027": {
+      "needle_tip": [
+        586,
+        579
+      ],
+      "needle_tail": [
+        805,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000028": {
+      "needle_tip": [
+        603,
+        596
+      ],
+      "needle_tail": [
+        804,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000029": {
+      "needle_tip": [
+        592,
+        581
+      ],
+      "needle_tail": [
+        804,
+        601
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000030": {
+      "needle_tip": [
+        592,
+        587
+      ],
+      "needle_tail": [
+        804,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000031": {
+      "needle_tip": [
+        587,
+        575
+      ],
+      "needle_tail": [
+        804,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000032": {
+      "needle_tip": [
+        587,
+        577
+      ],
+      "needle_tail": [
+        804,
+        601
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000033": {
+      "needle_tip": [
+        590,
+        583
+      ],
+      "needle_tail": [
+        804,
+        601
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000034": {
+      "needle_tip": [
+        589,
+        583
+      ],
+      "needle_tail": [
+        803,
+        602
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000035": {
+      "needle_tip": [
+        590,
+        584
+      ],
+      "needle_tail": [
+        804,
+        601
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000036": {
+      "needle_tip": [
+        588,
+        574
+      ],
+      "needle_tail": [
+        804,
+        601
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000037": {
+      "needle_tip": [
+        588,
+        575
+      ],
+      "needle_tail": [
+        804,
+        601
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000038": {
+      "needle_tip": [
+        588,
+        577
+      ],
+      "needle_tail": [
+        804,
+        600
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000039": {
+      "needle_tip": [
+        586,
+        580
+      ],
+      "needle_tail": [
+        804,
+        601
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000040": {
+      "needle_tip": [
+        588,
+        575
+      ],
+      "needle_tail": [
+        804,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000041": {
+      "needle_tip": [
+        584,
+        572
+      ],
+      "needle_tail": [
+        805,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000042": {
+      "needle_tip": [
+        587,
+        577
+      ],
+      "needle_tail": [
+        805,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000043": {
+      "needle_tip": [
+        603,
+        597
+      ],
+      "needle_tail": [
+        804,
+        600
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000044": {
+      "needle_tip": [
+        581,
+        569
+      ],
+      "needle_tail": [
+        805,
+        598
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000045": {
+      "needle_tip": [
+        580,
+        567
+      ],
+      "needle_tail": [
+        804,
+        600
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000046": {
+      "needle_tip": [
+        586,
+        581
+      ],
+      "needle_tail": [
+        805,
+        598
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000047": {
+      "needle_tip": [
+        584,
+        580
+      ],
+      "needle_tail": [
+        805,
+        598
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000048": {
+      "needle_tip": [
+        584,
+        580
+      ],
+      "needle_tail": [
+        805,
+        597
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000049": {
+      "needle_tip": [
+        580,
+        576
+      ],
+      "needle_tail": [
+        805,
+        597
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000050": {
+      "needle_tip": [
+        585,
+        588
+      ],
+      "needle_tail": [
+        804,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000051": {
+      "needle_tip": [
+        578,
+        610
+      ],
+      "needle_tail": [
+        799,
+        587
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000052": {
+      "needle_tip": [
+        583,
+        633
+      ],
+      "needle_tail": [
+        794,
+        586
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000053": {
+      "needle_tip": [
+        571,
+        638
+      ],
+      "needle_tail": [
+        789,
+        589
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000054": {
+      "needle_tip": [
+        575,
+        647
+      ],
+      "needle_tail": [
+        788,
+        591
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000055": {
+      "needle_tip": [
+        579,
+        655
+      ],
+      "needle_tail": [
+        788,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000056": {
+      "needle_tip": [
+        580,
+        657
+      ],
+      "needle_tail": [
+        789,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000057": {
+      "needle_tip": [
+        579,
+        657
+      ],
+      "needle_tail": [
+        789,
+        596
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000058": {
+      "needle_tip": [
+        581,
+        660
+      ],
+      "needle_tail": [
+        789,
+        596
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000059": {
+      "needle_tip": [
+        580,
+        656
+      ],
+      "needle_tail": [
+        791,
+        592
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000060": {
+      "needle_tip": [
+        588,
+        660
+      ],
+      "needle_tail": [
+        790,
+        589
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000061": {
+      "needle_tip": [
+        617,
+        680
+      ],
+      "needle_tail": [
+        788,
+        591
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000062": {
+      "needle_tip": [
+        605,
+        671
+      ],
+      "needle_tail": [
+        787,
+        592
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000063": {
+      "needle_tip": [
+        618,
+        675
+      ],
+      "needle_tail": [
+        786,
+        591
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000064": {
+      "needle_tip": [
+        605,
+        662
+      ],
+      "needle_tail": [
+        784,
+        589
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000065": {
+      "needle_tip": [
+        619,
+        670
+      ],
+      "needle_tail": [
+        783,
+        591
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000066": {
+      "needle_tip": [
+        618,
+        669
+      ],
+      "needle_tail": [
+        784,
+        590
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000067": {
+      "needle_tip": [
+        621,
+        668
+      ],
+      "needle_tail": [
+        784,
+        586
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000068": {
+      "needle_tip": [
+        619,
+        664
+      ],
+      "needle_tail": [
+        784,
+        591
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000069": {
+      "needle_tip": [
+        620,
+        665
+      ],
+      "needle_tail": [
+        783,
+        591
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000070": {
+      "needle_tip": [
+        619,
+        661
+      ],
+      "needle_tail": [
+        791,
+        589
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000071": {
+      "needle_tip": [
+        623,
+        656
+      ],
+      "needle_tail": [
+        797,
+        582
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000072": {
+      "needle_tip": [
+        626,
+        651
+      ],
+      "needle_tail": [
+        799,
+        578
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000073": {
+      "needle_tip": [
+        619,
+        650
+      ],
+      "needle_tail": [
+        801,
+        572
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000074": {
+      "needle_tip": [
+        632,
+        639
+      ],
+      "needle_tail": [
+        804,
+        567
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000075": {
+      "needle_tip": [
+        633,
+        628
+      ],
+      "needle_tail": [
+        808,
+        558
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000076": {
+      "needle_tip": [
+        628,
+        621
+      ],
+      "needle_tail": [
+        815,
+        565
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000077": {
+      "needle_tip": [
+        627,
+        620
+      ],
+      "needle_tail": [
+        820,
+        568
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000078": {
+      "needle_tip": [
+        622,
+        618
+      ],
+      "needle_tail": [
+        823,
+        567
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000079": {
+      "needle_tip": [
+        619,
+        620
+      ],
+      "needle_tail": [
+        824,
+        571
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000080": {
+      "needle_tip": [
+        624,
+        626
+      ],
+      "needle_tail": [
+        826,
+        571
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000081": {
+      "needle_tip": [
+        622,
+        621
+      ],
+      "needle_tail": [
+        828,
+        574
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000082": {
+      "needle_tip": [
+        613,
+        610
+      ],
+      "needle_tail": [
+        835,
+        580
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000083": {
+      "needle_tip": [
+        615,
+        613
+      ],
+      "needle_tail": [
+        841,
+        583
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000084": {
+      "needle_tip": [
+        614,
+        609
+      ],
+      "needle_tail": [
+        850,
+        578
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000085": {
+      "needle_tip": [
+        616,
+        610
+      ],
+      "needle_tail": [
+        849,
+        577
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000086": {
+      "needle_tip": [
+        584,
+        583
+      ],
+      "needle_tail": [
+        832,
+        578
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000087": {
+      "needle_tip": [
+        568,
+        564
+      ],
+      "needle_tail": [
+        815,
+        585
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000088": {
+      "needle_tip": [
+        569,
+        563
+      ],
+      "needle_tail": [
+        818,
+        582
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000089": {
+      "needle_tip": [
+        560,
+        541
+      ],
+      "needle_tail": [
+        816,
+        585
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000090": {
+      "needle_tip": [
+        563,
+        534
+      ],
+      "needle_tail": [
+        812,
+        591
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000091": {
+      "needle_tip": [
+        571,
+        491
+      ],
+      "needle_tail": [
+        793,
+        609
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000092": {
+      "needle_tip": [
+        604,
+        443
+      ],
+      "needle_tail": [
+        785,
+        637
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000093": {
+      "needle_tip": [
+        606,
+        439
+      ],
+      "needle_tail": [
+        770,
+        646
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000094": {
+      "needle_tip": [
+        598,
+        429
+      ],
+      "needle_tail": [
+        749,
+        653
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000095": {
+      "needle_tip": [
+        589,
+        425
+      ],
+      "needle_tail": [
+        744,
+        657
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000096": {
+      "needle_tip": [
+        584,
+        420
+      ],
+      "needle_tail": [
+        736,
+        657
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000097": {
+      "needle_tip": [
+        584,
+        416
+      ],
+      "needle_tail": [
+        732,
+        655
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000098": {
+      "needle_tip": [
+        583,
+        417
+      ],
+      "needle_tail": [
+        729,
+        657
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000099": {
+      "needle_tip": [
+        567,
+        416
+      ],
+      "needle_tail": [
+        729,
+        654
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000100": {
+      "needle_tip": [
+        558,
+        415
+      ],
+      "needle_tail": [
+        732,
+        654
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000101": {
+      "needle_tip": [
+        554,
+        407
+      ],
+      "needle_tail": [
+        726,
+        653
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000102": {
+      "needle_tip": [
+        552,
+        409
+      ],
+      "needle_tail": [
+        721,
+        652
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000103": {
+      "needle_tip": [
+        549,
+        410
+      ],
+      "needle_tail": [
+        730,
+        652
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000104": {
+      "needle_tip": [
+        540,
+        416
+      ],
+      "needle_tail": [
+        726,
+        650
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000105": {
+      "needle_tip": [
+        535,
+        416
+      ],
+      "needle_tail": [
+        726,
+        647
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000106": {
+      "needle_tip": [
+        521,
+        406
+      ],
+      "needle_tail": [
+        712,
+        640
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000107": {
+      "needle_tip": [
+        519,
+        403
+      ],
+      "needle_tail": [
+        715,
+        638
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000108": {
+      "needle_tip": [
+        516,
+        409
+      ],
+      "needle_tail": [
+        716,
+        638
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000109": {
+      "needle_tip": [
+        488,
+        413
+      ],
+      "needle_tail": [
+        708,
+        631
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000110": {
+      "needle_tip": [
+        472,
+        413
+      ],
+      "needle_tail": [
+        705,
+        627
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000111": {
+      "needle_tip": [
+        460,
+        423
+      ],
+      "needle_tail": [
+        704,
+        624
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000112": {
+      "needle_tip": [
+        453,
+        431
+      ],
+      "needle_tail": [
+        707,
+        621
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000113": {
+      "needle_tip": [
+        449,
+        429
+      ],
+      "needle_tail": [
+        706,
+        618
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000114": {
+      "needle_tip": [
+        444,
+        436
+      ],
+      "needle_tail": [
+        707,
+        617
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000115": {
+      "needle_tip": [
+        443,
+        440
+      ],
+      "needle_tail": [
+        707,
+        616
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000116": {
+      "needle_tip": [
+        444,
+        438
+      ],
+      "needle_tail": [
+        708,
+        616
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000117": {
+      "needle_tip": [
+        442,
+        439
+      ],
+      "needle_tail": [
+        709,
+        616
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000118": {
+      "needle_tip": [
+        441,
+        439
+      ],
+      "needle_tail": [
+        707,
+        616
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000119": {
+      "needle_tip": [
+        433,
+        457
+      ],
+      "needle_tail": [
+        707,
+        613
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000120": {
+      "needle_tip": [
+        425,
+        470
+      ],
+      "needle_tail": [
+        706,
+        610
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000121": {
+      "needle_tip": [
+        420,
+        473
+      ],
+      "needle_tail": [
+        708,
+        606
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000122": {
+      "needle_tip": [
+        418,
+        483
+      ],
+      "needle_tail": [
+        707,
+        603
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000123": {
+      "needle_tip": [
+        428,
+        517
+      ],
+      "needle_tail": [
+        721,
+        608
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000124": {
+      "needle_tip": [
+        445,
+        527
+      ],
+      "needle_tail": [
+        733,
+        606
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000125": {
+      "needle_tip": [
+        462,
+        551
+      ],
+      "needle_tail": [
+        733,
+        607
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000126": {
+      "needle_tip": [
+        464,
+        548
+      ],
+      "needle_tail": [
+        731,
+        607
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000127": {
+      "needle_tip": [
+        467,
+        547
+      ],
+      "needle_tail": [
+        726,
+        608
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000128": {
+      "needle_tip": [
+        480,
+        568
+      ],
+      "needle_tail": [
+        719,
+        610
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000129": {
+      "needle_tip": [
+        481,
+        599
+      ],
+      "needle_tail": [
+        709,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000130": {
+      "needle_tip": [
+        484,
+        613
+      ],
+      "needle_tail": [
+        703,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000131": {
+      "needle_tip": [
+        486,
+        623
+      ],
+      "needle_tail": [
+        704,
+        591
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000132": {
+      "needle_tip": [
+        484,
+        619
+      ],
+      "needle_tail": [
+        699,
+        592
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000133": {
+      "needle_tip": [
+        470,
+        605
+      ],
+      "needle_tail": [
+        699,
+        591
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000134": {
+      "needle_tip": [
+        482,
+        616
+      ],
+      "needle_tail": [
+        698,
+        590
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000135": {
+      "needle_tip": [
+        501,
+        632
+      ],
+      "needle_tail": [
+        697,
+        591
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000136": {
+      "needle_tip": [
+        483,
+        616
+      ],
+      "needle_tail": [
+        692,
+        593
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000137": {
+      "needle_tip": [
+        467,
+        596
+      ],
+      "needle_tail": [
+        678,
+        592
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000138": {
+      "needle_tip": [
+        423,
+        553
+      ],
+      "needle_tail": [
+        653,
+        585
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000139": {
+      "needle_tip": [
+        448,
+        587
+      ],
+      "needle_tail": [
+        648,
+        582
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000140": {
+      "needle_tip": [
+        443,
+        580
+      ],
+      "needle_tail": [
+        645,
+        583
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000141": {
+      "needle_tip": [
+        447,
+        585
+      ],
+      "needle_tail": [
+        645,
+        583
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000142": {
+      "needle_tip": [
+        447,
+        584
+      ],
+      "needle_tail": [
+        640,
+        589
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000143": {
+      "needle_tip": [
+        442,
+        575
+      ],
+      "needle_tail": [
+        645,
+        584
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000144": {
+      "needle_tip": [
+        446,
+        578
+      ],
+      "needle_tail": [
+        644,
+        585
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000145": {
+      "needle_tip": [
+        446,
+        577
+      ],
+      "needle_tail": [
+        642,
+        588
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000146": {
+      "needle_tip": [
+        447,
+        579
+      ],
+      "needle_tail": [
+        645,
+        585
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000147": {
+      "needle_tip": [
+        447,
+        578
+      ],
+      "needle_tail": [
+        645,
+        585
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000148": {
+      "needle_tip": [
+        447,
+        578
+      ],
+      "needle_tail": [
+        645,
+        585
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000149": {
+      "needle_tip": [
+        447,
+        578
+      ],
+      "needle_tail": [
+        643,
+        588
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000150": {
+      "needle_tip": [
+        448,
+        580
+      ],
+      "needle_tail": [
+        643,
+        588
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000151": {
+      "needle_tip": [
+        448,
+        574
+      ],
+      "needle_tail": [
+        645,
+        584
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000152": {
+      "needle_tip": [
+        459,
+        549
+      ],
+      "needle_tail": [
+        644,
+        593
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000153": {
+      "needle_tip": [
+        464,
+        541
+      ],
+      "needle_tail": [
+        645,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000154": {
+      "needle_tip": [
+        465,
+        539
+      ],
+      "needle_tail": [
+        644,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000155": {
+      "needle_tip": [
+        465,
+        539
+      ],
+      "needle_tail": [
+        645,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000156": {
+      "needle_tip": [
+        465,
+        537
+      ],
+      "needle_tail": [
+        642,
+        596
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000157": {
+      "needle_tip": [
+        467,
+        526
+      ],
+      "needle_tail": [
+        636,
+        598
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000158": {
+      "needle_tip": [
+        475,
+        511
+      ],
+      "needle_tail": [
+        635,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000159": {
+      "needle_tip": [
+        476,
+        447
+      ],
+      "needle_tail": [
+        539,
+        590
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000160": {
+      "needle_tip": [
+        472,
+        441
+      ],
+      "needle_tail": [
+        529,
+        580
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000161": {
+      "needle_tip": [
+        467,
+        435
+      ],
+      "needle_tail": [
+        521,
+        574
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000162": {
+      "needle_tip": [
+        464,
+        434
+      ],
+      "needle_tail": [
+        517,
+        570
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000163": {
+      "needle_tip": [
+        463,
+        433
+      ],
+      "needle_tail": [
+        514,
+        567
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000164": {
+      "needle_tip": [
+        459,
+        429
+      ],
+      "needle_tail": [
+        512,
+        565
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000165": {
+      "needle_tip": [
+        450,
+        425
+      ],
+      "needle_tail": [
+        502,
+        557
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000166": {
+      "needle_tip": [
+        446,
+        424
+      ],
+      "needle_tail": [
+        500,
+        556
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000167": {
+      "needle_tip": [
+        446,
+        451
+      ],
+      "needle_tail": [
+        500,
+        555
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000168": {
+      "needle_tip": [
+        438,
+        440
+      ],
+      "needle_tail": [
+        492,
+        546
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000169": {
+      "needle_tip": [
+        436,
+        440
+      ],
+      "needle_tail": [
+        487,
+        541
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000170": {
+      "needle_tip": [
+        435,
+        434
+      ],
+      "needle_tail": [
+        482,
+        534
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000171": {
+      "needle_tip": [
+        434,
+        427
+      ],
+      "needle_tail": [
+        479,
+        532
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000172": {
+      "needle_tip": [
+        430,
+        425
+      ],
+      "needle_tail": [
+        474,
+        525
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000173": {
+      "needle_tip": [
+        428,
+        420
+      ],
+      "needle_tail": [
+        471,
+        520
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000174": {
+      "needle_tip": [
+        434,
+        395
+      ],
+      "needle_tail": [
+        563,
+        548
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000175": {
+      "needle_tip": [
+        550,
+        539
+      ],
+      "needle_tail": [
+        457,
+        504
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000176": {
+      "needle_tip": [
+        410,
+        408
+      ],
+      "needle_tail": [
+        445,
+        481
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000177": {
+      "needle_tip": [
+        404,
+        402
+      ],
+      "needle_tail": [
+        438,
+        470
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000178": {
+      "needle_tip": [
+        402,
+        410
+      ],
+      "needle_tail": [
+        437,
+        472
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000179": {
+      "needle_tip": [
+        392,
+        431
+      ],
+      "needle_tail": [
+        452,
+        495
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000180": {
+      "needle_tip": [
+        391,
+        425
+      ],
+      "needle_tail": [
+        451,
+        496
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000181": {
+      "needle_tip": [
+        391,
+        429
+      ],
+      "needle_tail": [
+        550,
+        512
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000182": {
+      "needle_tip": [
+        392,
+        438
+      ],
+      "needle_tail": [
+        461,
+        514
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000183": {
+      "needle_tip": [
+        393,
+        443
+      ],
+      "needle_tail": [
+        464,
+        519
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000184": {
+      "needle_tip": [
+        392,
+        362
+      ],
+      "needle_tail": [
+        563,
+        525
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000185": {
+      "needle_tip": [
+        401,
+        366
+      ],
+      "needle_tail": [
+        574,
+        536
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000186": {
+      "needle_tip": [
+        405,
+        374
+      ],
+      "needle_tail": [
+        582,
+        541
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000187": {
+      "needle_tip": [
+        412,
+        398
+      ],
+      "needle_tail": [
+        597,
+        548
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000188": {
+      "needle_tip": [
+        417,
+        488
+      ],
+      "needle_tail": [
+        594,
+        550
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000189": {
+      "needle_tip": [
+        410,
+        421
+      ],
+      "needle_tail": [
+        598,
+        548
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000190": {
+      "needle_tip": [
+        419,
+        499
+      ],
+      "needle_tail": [
+        598,
+        548
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000191": {
+      "needle_tip": [
+        404,
+        438
+      ],
+      "needle_tail": [
+        598,
+        548
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000192": {
+      "needle_tip": [
+        404,
+        438
+      ],
+      "needle_tail": [
+        598,
+        548
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000193": {
+      "needle_tip": [
+        420,
+        503
+      ],
+      "needle_tail": [
+        595,
+        550
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000194": {
+      "needle_tip": [
+        403,
+        449
+      ],
+      "needle_tail": [
+        597,
+        549
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000195": {
+      "needle_tip": [
+        401,
+        458
+      ],
+      "needle_tail": [
+        601,
+        549
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000196": {
+      "needle_tip": [
+        391,
+        450
+      ],
+      "needle_tail": [
+        602,
+        551
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000197": {
+      "needle_tip": [
+        397,
+        459
+      ],
+      "needle_tail": [
+        601,
+        552
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000198": {
+      "needle_tip": [
+        394,
+        464
+      ],
+      "needle_tail": [
+        610,
+        545
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000199": {
+      "needle_tip": [
+        409,
+        493
+      ],
+      "needle_tail": [
+        628,
+        545
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000200": {
+      "needle_tip": [
+        413,
+        505
+      ],
+      "needle_tail": [
+        630,
+        544
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000201": {
+      "needle_tip": [
+        453,
+        557
+      ],
+      "needle_tail": [
+        630,
+        545
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000202": {
+      "needle_tip": [
+        416,
+        517
+      ],
+      "needle_tail": [
+        631,
+        543
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000203": {
+      "needle_tip": [
+        410,
+        508
+      ],
+      "needle_tail": [
+        631,
+        541
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000204": {
+      "needle_tip": [
+        454,
+        556
+      ],
+      "needle_tail": [
+        626,
+        545
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000205": {
+      "needle_tip": [
+        451,
+        553
+      ],
+      "needle_tail": [
+        626,
+        544
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000206": {
+      "needle_tip": [
+        447,
+        549
+      ],
+      "needle_tail": [
+        625,
+        542
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000207": {
+      "needle_tip": [
+        440,
+        540
+      ],
+      "needle_tail": [
+        621,
+        542
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000208": {
+      "needle_tip": [
+        439,
+        540
+      ],
+      "needle_tail": [
+        617,
+        541
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000209": {
+      "needle_tip": [
+        439,
+        520
+      ],
+      "needle_tail": [
+        610,
+        561
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000210": {
+      "needle_tip": [
+        425,
+        440
+      ],
+      "needle_tail": [
+        602,
+        569
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000211": {
+      "needle_tip": [
+        430,
+        492
+      ],
+      "needle_tail": [
+        585,
+        572
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000212": {
+      "needle_tip": [
+        431,
+        435
+      ],
+      "needle_tail": [
+        585,
+        575
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000213": {
+      "needle_tip": [
+        431,
+        435
+      ],
+      "needle_tail": [
+        587,
+        576
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000214": {
+      "needle_tip": [
+        426,
+        437
+      ],
+      "needle_tail": [
+        586,
+        576
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000215": {
+      "needle_tip": [
+        429,
+        435
+      ],
+      "needle_tail": [
+        582,
+        577
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000216": {
+      "needle_tip": [
+        438,
+        432
+      ],
+      "needle_tail": [
+        587,
+        578
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000217": {
+      "needle_tip": [
+        441,
+        428
+      ],
+      "needle_tail": [
+        584,
+        578
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000218": {
+      "needle_tip": [
+        446,
+        423
+      ],
+      "needle_tail": [
+        584,
+        579
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000219": {
+      "needle_tip": [
+        434,
+        442
+      ],
+      "needle_tail": [
+        582,
+        579
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000220": {
+      "needle_tip": [
+        434,
+        445
+      ],
+      "needle_tail": [
+        585,
+        579
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000221": {
+      "needle_tip": [
+        446,
+        424
+      ],
+      "needle_tail": [
+        585,
+        578
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000222": {
+      "needle_tip": [
+        446,
+        425
+      ],
+      "needle_tail": [
+        582,
+        578
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000223": {
+      "needle_tip": [
+        444,
+        422
+      ],
+      "needle_tail": [
+        582,
+        577
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000224": {
+      "needle_tip": [
+        437,
+        416
+      ],
+      "needle_tail": [
+        576,
+        576
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000225": {
+      "needle_tip": [
+        437,
+        412
+      ],
+      "needle_tail": [
+        568,
+        569
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000226": {
+      "needle_tip": [
+        430,
+        410
+      ],
+      "needle_tail": [
+        568,
+        561
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000227": {
+      "needle_tip": [
+        431,
+        407
+      ],
+      "needle_tail": [
+        567,
+        554
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000228": {
+      "needle_tip": [
+        430,
+        406
+      ],
+      "needle_tail": [
+        561,
+        548
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000229": {
+      "needle_tip": [
+        429,
+        404
+      ],
+      "needle_tail": [
+        551,
+        544
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000230": {
+      "needle_tip": [
+        428,
+        393
+      ],
+      "needle_tail": [
+        547,
+        541
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000231": {
+      "needle_tip": [
+        426,
+        382
+      ],
+      "needle_tail": [
+        553,
+        542
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000232": {
+      "needle_tip": [
+        428,
+        367
+      ],
+      "needle_tail": [
+        538,
+        529
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000233": {
+      "needle_tip": [
+        417,
+        365
+      ],
+      "needle_tail": [
+        535,
+        523
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000234": {
+      "needle_tip": [
+        414,
+        360
+      ],
+      "needle_tail": [
+        535,
+        513
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000235": {
+      "needle_tip": [
+        412,
+        355
+      ],
+      "needle_tail": [
+        444,
+        485
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000236": {
+      "needle_tip": [
+        410,
+        352
+      ],
+      "needle_tail": [
+        434,
+        474
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000237": {
+      "needle_tip": [
+        409,
+        356
+      ],
+      "needle_tail": [
+        694,
+        512
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000238": {
+      "needle_tip": [
+        409,
+        359
+      ],
+      "needle_tail": [
+        694,
+        512
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000239": {
+      "needle_tip": [
+        407,
+        355
+      ],
+      "needle_tail": [
+        518,
+        496
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000240": {
+      "needle_tip": [
+        406,
+        350
+      ],
+      "needle_tail": [
+        693,
+        512
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000241": {
+      "needle_tip": [
+        403,
+        352
+      ],
+      "needle_tail": [
+        685,
+        512
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000242": {
+      "needle_tip": [
+        402,
+        345
+      ],
+      "needle_tail": [
+        671,
+        503
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000243": {
+      "needle_tip": [
+        401,
+        352
+      ],
+      "needle_tail": [
+        680,
+        504
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000244": {
+      "needle_tip": [
+        391,
+        379
+      ],
+      "needle_tail": [
+        674,
+        503
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000245": {
+      "needle_tip": [
+        392,
+        367
+      ],
+      "needle_tail": [
+        653,
+        483
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000246": {
+      "needle_tip": [
+        478,
+        391
+      ],
+      "needle_tail": [
+        622,
+        448
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000247": {
+      "needle_tip": [
+        596,
+        424
+      ],
+      "needle_tail": [
+        653,
+        449
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000248": {
+      "needle_tip": [
+        483,
+        379
+      ],
+      "needle_tail": [
+        668,
+        459
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000249": {
+      "needle_tip": [
+        486,
+        372
+      ],
+      "needle_tail": [
+        688,
+        474
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000250": {
+      "needle_tip": [
+        610,
+        427
+      ],
+      "needle_tail": [
+        676,
+        465
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000251": {
+      "needle_tip": [
+        613,
+        428
+      ],
+      "needle_tail": [
+        676,
+        465
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000252": {
+      "needle_tip": [
+        614,
+        430
+      ],
+      "needle_tail": [
+        672,
+        458
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000253": {
+      "needle_tip": [
+        618,
+        434
+      ],
+      "needle_tail": [
+        685,
+        478
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000254": {
+      "needle_tip": [
+        621,
+        441
+      ],
+      "needle_tail": [
+        682,
+        475
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000255": {
+      "needle_tip": [
+        630,
+        443
+      ],
+      "needle_tail": [
+        687,
+        478
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000256": {
+      "needle_tip": [
+        640,
+        444
+      ],
+      "needle_tail": [
+        697,
+        479
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000257": {
+      "needle_tip": [
+        645,
+        447
+      ],
+      "needle_tail": [
+        704,
+        491
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000258": {
+      "needle_tip": [
+        644,
+        444
+      ],
+      "needle_tail": [
+        718,
+        492
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000259": {
+      "needle_tip": [
+        642,
+        444
+      ],
+      "needle_tail": [
+        735,
+        525
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000260": {
+      "needle_tip": [
+        648,
+        447
+      ],
+      "needle_tail": [
+        738,
+        527
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000261": {
+      "needle_tip": [
+        647,
+        448
+      ],
+      "needle_tail": [
+        735,
+        525
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000262": {
+      "needle_tip": [
+        647,
+        448
+      ],
+      "needle_tail": [
+        734,
+        526
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000263": {
+      "needle_tip": [
+        645,
+        447
+      ],
+      "needle_tail": [
+        735,
+        523
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000264": {
+      "needle_tip": [
+        646,
+        450
+      ],
+      "needle_tail": [
+        734,
+        527
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000265": {
+      "needle_tip": [
+        638,
+        453
+      ],
+      "needle_tail": [
+        700,
+        495
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000266": {
+      "needle_tip": [
+        633,
+        459
+      ],
+      "needle_tail": [
+        705,
+        507
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000267": {
+      "needle_tip": [
+        613,
+        470
+      ],
+      "needle_tail": [
+        693,
+        512
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000268": {
+      "needle_tip": [
+        615,
+        473
+      ],
+      "needle_tail": [
+        669,
+        514
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000269": {
+      "needle_tip": [
+        609,
+        480
+      ],
+      "needle_tail": [
+        655,
+        520
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000270": {
+      "needle_tip": [
+        594,
+        483
+      ],
+      "needle_tail": [
+        658,
+        535
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000271": {
+      "needle_tip": [
+        603,
+        484
+      ],
+      "needle_tail": [
+        659,
+        537
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000272": {
+      "needle_tip": [
+        596,
+        485
+      ],
+      "needle_tail": [
+        657,
+        537
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000273": {
+      "needle_tip": [
+        602,
+        486
+      ],
+      "needle_tail": [
+        651,
+        535
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000274": {
+      "needle_tip": [
+        602,
+        488
+      ],
+      "needle_tail": [
+        652,
+        536
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000275": {
+      "needle_tip": [
+        598,
+        487
+      ],
+      "needle_tail": [
+        652,
+        534
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000276": {
+      "needle_tip": [
+        598,
+        488
+      ],
+      "needle_tail": [
+        658,
+        538
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000277": {
+      "needle_tip": [
+        616,
+        495
+      ],
+      "needle_tail": [
+        670,
+        536
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000278": {
+      "needle_tip": [
+        629,
+        554
+      ],
+      "needle_tail": [
+        704,
+        588
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000279": {
+      "needle_tip": [
+        648,
+        583
+      ],
+      "needle_tail": [
+        715,
+        631
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000280": {
+      "needle_tip": [
+        650,
+        591
+      ],
+      "needle_tail": [
+        726,
+        642
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000281": {
+      "needle_tip": [
+        650,
+        594
+      ],
+      "needle_tail": [
+        734,
+        643
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000282": {
+      "needle_tip": [
+        650,
+        592
+      ],
+      "needle_tail": [
+        739,
+        643
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000283": {
+      "needle_tip": [
+        654,
+        592
+      ],
+      "needle_tail": [
+        731,
+        645
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000284": {
+      "needle_tip": [
+        655,
+        592
+      ],
+      "needle_tail": [
+        715,
+        631
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000285": {
+      "needle_tip": [
+        664,
+        592
+      ],
+      "needle_tail": [
+        752,
+        681
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000286": {
+      "needle_tip": [
+        664,
+        588
+      ],
+      "needle_tail": [
+        752,
+        670
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000287": {
+      "needle_tip": [
+        672,
+        579
+      ],
+      "needle_tail": [
+        752,
+        639
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000288": {
+      "needle_tip": [
+        681,
+        577
+      ],
+      "needle_tail": [
+        772,
+        650
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000289": {
+      "needle_tip": [
+        685,
+        570
+      ],
+      "needle_tail": [
+        816,
+        829
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000290": {
+      "needle_tip": [
+        686,
+        570
+      ],
+      "needle_tail": [
+        803,
+        681
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000291": {
+      "needle_tip": [
+        685,
+        570
+      ],
+      "needle_tail": [
+        795,
+        662
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000292": {
+      "needle_tip": [
+        686,
+        571
+      ],
+      "needle_tail": [
+        803,
+        670
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000293": {
+      "needle_tip": [
+        684,
+        569
+      ],
+      "needle_tail": [
+        812,
+        692
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000294": {
+      "needle_tip": [
+        689,
+        567
+      ],
+      "needle_tail": [
+        812,
+        881
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000295": {
+      "needle_tip": [
+        698,
+        564
+      ],
+      "needle_tail": [
+        811,
+        899
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000296": {
+      "needle_tip": [
+        706,
+        559
+      ],
+      "needle_tail": [
+        829,
+        642
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000297": {
+      "needle_tip": [
+        779,
+        521
+      ],
+      "needle_tail": [
+        921,
+        853
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000298": {
+      "needle_tip": [
+        507,
+        493
+      ],
+      "needle_tail": [
+        941,
+        805
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000299": {
+      "needle_tip": [
+        504,
+        493
+      ],
+      "needle_tail": [
+        951,
+        812
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000300": {
+      "needle_tip": [
+        502,
+        495
+      ],
+      "needle_tail": [
+        938,
+        850
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000301": {
+      "needle_tip": [
+        504,
+        501
+      ],
+      "needle_tail": [
+        964,
+        817
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000302": {
+      "needle_tip": [
+        504,
+        500
+      ],
+      "needle_tail": [
+        980,
+        803
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000303": {
+      "needle_tip": [
+        509,
+        505
+      ],
+      "needle_tail": [
+        1005,
+        636
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000304": {
+      "needle_tip": [
+        520,
+        514
+      ],
+      "needle_tail": [
+        668,
+        559
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000305": {
+      "needle_tip": [
+        517,
+        472
+      ],
+      "needle_tail": [
+        697,
+        561
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000306": {
+      "needle_tip": [
+        521,
+        478
+      ],
+      "needle_tail": [
+        700,
+        564
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000307": {
+      "needle_tip": [
+        524,
+        475
+      ],
+      "needle_tail": [
+        699,
+        563
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000308": {
+      "needle_tip": [
+        527,
+        485
+      ],
+      "needle_tail": [
+        698,
+        568
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000309": {
+      "needle_tip": [
+        523,
+        482
+      ],
+      "needle_tail": [
+        699,
+        569
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000310": {
+      "needle_tip": [
+        528,
+        478
+      ],
+      "needle_tail": [
+        701,
+        569
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000311": {
+      "needle_tip": [
+        523,
+        479
+      ],
+      "needle_tail": [
+        700,
+        570
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000312": {
+      "needle_tip": [
+        525,
+        485
+      ],
+      "needle_tail": [
+        703,
+        570
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000313": {
+      "needle_tip": [
+        531,
+        488
+      ],
+      "needle_tail": [
+        703,
+        571
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000314": {
+      "needle_tip": [
+        528,
+        491
+      ],
+      "needle_tail": [
+        708,
+        568
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000315": {
+      "needle_tip": [
+        527,
+        500
+      ],
+      "needle_tail": [
+        707,
+        571
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000316": {
+      "needle_tip": [
+        533,
+        496
+      ],
+      "needle_tail": [
+        710,
+        571
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000317": {
+      "needle_tip": [
+        534,
+        494
+      ],
+      "needle_tail": [
+        708,
+        574
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000318": {
+      "needle_tip": [
+        540,
+        499
+      ],
+      "needle_tail": [
+        719,
+        575
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000319": {
+      "needle_tip": [
+        585,
+        499
+      ],
+      "needle_tail": [
+        766,
+        575
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000320": {
+      "needle_tip": [
+        614,
+        477
+      ],
+      "needle_tail": [
+        775,
+        580
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000321": {
+      "needle_tip": [
+        620,
+        467
+      ],
+      "needle_tail": [
+        781,
+        578
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000322": {
+      "needle_tip": [
+        635,
+        450
+      ],
+      "needle_tail": [
+        787,
+        572
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000323": {
+      "needle_tip": [
+        638,
+        440
+      ],
+      "needle_tail": [
+        784,
+        568
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000324": {
+      "needle_tip": [
+        630,
+        426
+      ],
+      "needle_tail": [
+        767,
+        569
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000325": {
+      "needle_tip": [
+        618,
+        417
+      ],
+      "needle_tail": [
+        752,
+        562
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000326": {
+      "needle_tip": [
+        610,
+        412
+      ],
+      "needle_tail": [
+        748,
+        557
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000327": {
+      "needle_tip": [
+        592,
+        422
+      ],
+      "needle_tail": [
+        740,
+        546
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000328": {
+      "needle_tip": [
+        589,
+        432
+      ],
+      "needle_tail": [
+        738,
+        540
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000329": {
+      "needle_tip": [
+        590,
+        430
+      ],
+      "needle_tail": [
+        737,
+        537
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000330": {
+      "needle_tip": [
+        592,
+        430
+      ],
+      "needle_tail": [
+        735,
+        536
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000331": {
+      "needle_tip": [
+        592,
+        429
+      ],
+      "needle_tail": [
+        734,
+        535
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000332": {
+      "needle_tip": [
+        593,
+        432
+      ],
+      "needle_tail": [
+        734,
+        535
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000333": {
+      "needle_tip": [
+        588,
+        422
+      ],
+      "needle_tail": [
+        717,
+        535
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000334": {
+      "needle_tip": [
+        575,
+        403
+      ],
+      "needle_tail": [
+        680,
+        538
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000335": {
+      "needle_tip": [
+        558,
+        396
+      ],
+      "needle_tail": [
+        651,
+        536
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000336": {
+      "needle_tip": [
+        537,
+        386
+      ],
+      "needle_tail": [
+        630,
+        534
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000337": {
+      "needle_tip": [
+        506,
+        441
+      ],
+      "needle_tail": [
+        604,
+        535
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000338": {
+      "needle_tip": [
+        486,
+        459
+      ],
+      "needle_tail": [
+        588,
+        541
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000339": {
+      "needle_tip": [
+        477,
+        471
+      ],
+      "needle_tail": [
+        566,
+        534
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000340": {
+      "needle_tip": [
+        507,
+        508
+      ],
+      "needle_tail": [
+        570,
+        535
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000341": {
+      "needle_tip": [
+        474,
+        482
+      ],
+      "needle_tail": [
+        566,
+        536
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000342": {
+      "needle_tip": [
+        473,
+        482
+      ],
+      "needle_tail": [
+        565,
+        536
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000343": {
+      "needle_tip": [
+        474,
+        484
+      ],
+      "needle_tail": [
+        565,
+        536
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000344": {
+      "needle_tip": [
+        473,
+        483
+      ],
+      "needle_tail": [
+        564,
+        537
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000345": {
+      "needle_tip": [
+        472,
+        482
+      ],
+      "needle_tail": [
+        568,
+        544
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000346": {
+      "needle_tip": [
+        473,
+        480
+      ],
+      "needle_tail": [
+        577,
+        545
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000347": {
+      "needle_tip": [
+        472,
+        478
+      ],
+      "needle_tail": [
+        592,
+        537
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000348": {
+      "needle_tip": [
+        476,
+        477
+      ],
+      "needle_tail": [
+        604,
+        538
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000349": {
+      "needle_tip": [
+        485,
+        487
+      ],
+      "needle_tail": [
+        619,
+        539
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000350": {
+      "needle_tip": [
+        489,
+        490
+      ],
+      "needle_tail": [
+        625,
+        540
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000351": {
+      "needle_tip": [
+        497,
+        498
+      ],
+      "needle_tail": [
+        633,
+        539
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000352": {
+      "needle_tip": [
+        490,
+        473
+      ],
+      "needle_tail": [
+        645,
+        540
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000353": {
+      "needle_tip": [
+        520,
+        511
+      ],
+      "needle_tail": [
+        660,
+        544
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000354": {
+      "needle_tip": [
+        519,
+        481
+      ],
+      "needle_tail": [
+        673,
+        547
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000355": {
+      "needle_tip": [
+        523,
+        489
+      ],
+      "needle_tail": [
+        678,
+        550
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000356": {
+      "needle_tip": [
+        531,
+        493
+      ],
+      "needle_tail": [
+        686,
+        549
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000357": {
+      "needle_tip": [
+        535,
+        497
+      ],
+      "needle_tail": [
+        689,
+        550
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000358": {
+      "needle_tip": [
+        538,
+        503
+      ],
+      "needle_tail": [
+        691,
+        551
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000359": {
+      "needle_tip": [
+        541,
+        514
+      ],
+      "needle_tail": [
+        694,
+        563
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000360": {
+      "needle_tip": [
+        529,
+        511
+      ],
+      "needle_tail": [
+        680,
+        565
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000361": {
+      "needle_tip": [
+        524,
+        506
+      ],
+      "needle_tail": [
+        666,
+        567
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000362": {
+      "needle_tip": [
+        498,
+        478
+      ],
+      "needle_tail": [
+        646,
+        564
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000363": {
+      "needle_tip": [
+        486,
+        474
+      ],
+      "needle_tail": [
+        617,
+        564
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000364": {
+      "needle_tip": [
+        470,
+        506
+      ],
+      "needle_tail": [
+        585,
+        563
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000365": {
+      "needle_tip": [
+        467,
+        514
+      ],
+      "needle_tail": [
+        582,
+        570
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000366": {
+      "needle_tip": [
+        468,
+        515
+      ],
+      "needle_tail": [
+        582,
+        570
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000367": {
+      "needle_tip": [
+        467,
+        517
+      ],
+      "needle_tail": [
+        582,
+        571
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000368": {
+      "needle_tip": [
+        464,
+        508
+      ],
+      "needle_tail": [
+        564,
+        563
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000369": {
+      "needle_tip": [
+        461,
+        503
+      ],
+      "needle_tail": [
+        563,
+        555
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000370": {
+      "needle_tip": [
+        454,
+        470
+      ],
+      "needle_tail": [
+        537,
+        515
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000371": {
+      "needle_tip": [
+        453,
+        459
+      ],
+      "needle_tail": [
+        531,
+        500
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000372": {
+      "needle_tip": [
+        452,
+        456
+      ],
+      "needle_tail": [
+        532,
+        498
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000373": {
+      "needle_tip": [
+        454,
+        457
+      ],
+      "needle_tail": [
+        534,
+        498
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000374": {
+      "needle_tip": [
+        452,
+        449
+      ],
+      "needle_tail": [
+        533,
+        494
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000375": {
+      "needle_tip": [
+        459,
+        445
+      ],
+      "needle_tail": [
+        546,
+        494
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000376": {
+      "needle_tip": [
+        462,
+        440
+      ],
+      "needle_tail": [
+        554,
+        494
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000377": {
+      "needle_tip": [
+        462,
+        439
+      ],
+      "needle_tail": [
+        547,
+        491
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000378": {
+      "needle_tip": [
+        463,
+        438
+      ],
+      "needle_tail": [
+        550,
+        493
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000379": {
+      "needle_tip": [
+        464,
+        438
+      ],
+      "needle_tail": [
+        550,
+        494
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000380": {
+      "needle_tip": [
+        466,
+        433
+      ],
+      "needle_tail": [
+        549,
+        496
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000381": {
+      "needle_tip": [
+        481,
+        406
+      ],
+      "needle_tail": [
+        556,
+        502
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000382": {
+      "needle_tip": [
+        513,
+        385
+      ],
+      "needle_tail": [
+        575,
+        504
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000383": {
+      "needle_tip": [
+        516,
+        390
+      ],
+      "needle_tail": [
+        578,
+        505
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000384": {
+      "needle_tip": [
+        514,
+        394
+      ],
+      "needle_tail": [
+        579,
+        504
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000385": {
+      "needle_tip": [
+        517,
+        393
+      ],
+      "needle_tail": [
+        579,
+        503
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000386": {
+      "needle_tip": [
+        515,
+        395
+      ],
+      "needle_tail": [
+        577,
+        502
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000387": {
+      "needle_tip": [
+        511,
+        393
+      ],
+      "needle_tail": [
+        563,
+        500
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000388": {
+      "needle_tip": [
+        508,
+        398
+      ],
+      "needle_tail": [
+        508,
+        451
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000389": {
+      "needle_tip": [
+        510,
+        397
+      ],
+      "needle_tail": [
+        505,
+        444
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000390": {
+      "needle_tip": [
+        510,
+        399
+      ],
+      "needle_tail": [
+        549,
+        506
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000391": {
+      "needle_tip": [
+        510,
+        401
+      ],
+      "needle_tail": [
+        505,
+        445
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000392": {
+      "needle_tip": [
+        509,
+        404
+      ],
+      "needle_tail": [
+        505,
+        442
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000393": {
+      "needle_tip": [
+        508,
+        405
+      ],
+      "needle_tail": [
+        504,
+        442
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000394": {
+      "needle_tip": [
+        508,
+        401
+      ],
+      "needle_tail": [
+        504,
+        435
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000395": {
+      "needle_tip": [
+        502,
+        400
+      ],
+      "needle_tail": [
+        499,
+        418
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000396": {
+      "needle_tip": [
+        504,
+        398
+      ],
+      "needle_tail": [
+        501,
+        406
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000397": {
+      "needle_tip": [
+        505,
+        396
+      ],
+      "needle_tail": [
+        503,
+        401
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000398": {
+      "needle_tip": [
+        505,
+        395
+      ],
+      "needle_tail": [
+        503,
+        397
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000399": {
+      "needle_tip": [
+        510,
+        394
+      ],
+      "needle_tail": [
+        502,
+        402
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000400": {
+      "needle_tip": [
+        520,
+        395
+      ],
+      "needle_tail": [
+        514,
+        400
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000401": {
+      "needle_tip": [
+        527,
+        399
+      ],
+      "needle_tail": [
+        522,
+        402
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000402": {
+      "needle_tip": [
+        534,
+        402
+      ],
+      "needle_tail": [
+        527,
+        407
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000403": {
+      "needle_tip": [
+        540,
+        405
+      ],
+      "needle_tail": [
+        535,
+        409
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000404": {
+      "needle_tip": [
+        542,
+        408
+      ],
+      "needle_tail": [
+        534,
+        411
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000405": {
+      "needle_tip": [
+        544,
+        408
+      ],
+      "needle_tail": [
+        541,
+        410
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000406": {
+      "needle_tip": [
+        546,
+        408
+      ],
+      "needle_tail": [
+        537,
+        412
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000420": {
+      "needle_tip": [
+        673,
+        347
+      ],
+      "needle_tail": [
+        618,
+        516
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000421": {
+      "needle_tip": [
+        678,
+        352
+      ],
+      "needle_tail": [
+        719,
+        916
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000422": {
+      "needle_tip": [
+        677,
+        358
+      ],
+      "needle_tail": [
+        730,
+        902
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000423": {
+      "needle_tip": [
+        678,
+        376
+      ],
+      "needle_tail": [
+        731,
+        906
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000424": {
+      "needle_tip": [
+        678,
+        380
+      ],
+      "needle_tail": [
+        734,
+        898
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000425": {
+      "needle_tip": [
+        669,
+        385
+      ],
+      "needle_tail": [
+        734,
+        899
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000426": {
+      "needle_tip": [
+        646,
+        594
+      ],
+      "needle_tail": [
+        733,
+        903
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000427": {
+      "needle_tip": [
+        653,
+        387
+      ],
+      "needle_tail": [
+        734,
+        903
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000428": {
+      "needle_tip": [
+        665,
+        383
+      ],
+      "needle_tail": [
+        630,
+        554
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000429": {
+      "needle_tip": [
+        644,
+        387
+      ],
+      "needle_tail": [
+        630,
+        553
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000430": {
+      "needle_tip": [
+        630,
+        389
+      ],
+      "needle_tail": [
+        628,
+        552
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000431": {
+      "needle_tip": [
+        620,
+        384
+      ],
+      "needle_tail": [
+        631,
+        553
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000432": {
+      "needle_tip": [
+        617,
+        385
+      ],
+      "needle_tail": [
+        623,
+        555
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000433": {
+      "needle_tip": [
+        616,
+        385
+      ],
+      "needle_tail": [
+        627,
+        552
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000434": {
+      "needle_tip": [
+        602,
+        385
+      ],
+      "needle_tail": [
+        628,
+        551
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000435": {
+      "needle_tip": [
+        580,
+        396
+      ],
+      "needle_tail": [
+        854,
+        706
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000436": {
+      "needle_tip": [
+        584,
+        385
+      ],
+      "needle_tail": [
+        634,
+        554
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000437": {
+      "needle_tip": [
+        555,
+        509
+      ],
+      "needle_tail": [
+        634,
+        555
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000438": {
+      "needle_tip": [
+        570,
+        504
+      ],
+      "needle_tail": [
+        641,
+        557
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000439": {
+      "needle_tip": [
+        551,
+        509
+      ],
+      "needle_tail": [
+        634,
+        558
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000440": {
+      "needle_tip": [
+        551,
+        509
+      ],
+      "needle_tail": [
+        633,
+        560
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000441": {
+      "needle_tip": [
+        552,
+        508
+      ],
+      "needle_tail": [
+        642,
+        560
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000442": {
+      "needle_tip": [
+        552,
+        505
+      ],
+      "needle_tail": [
+        643,
+        561
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000443": {
+      "needle_tip": [
+        551,
+        506
+      ],
+      "needle_tail": [
+        647,
+        561
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000444": {
+      "needle_tip": [
+        551,
+        504
+      ],
+      "needle_tail": [
+        647,
+        561
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000445": {
+      "needle_tip": [
+        551,
+        505
+      ],
+      "needle_tail": [
+        645,
+        561
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000446": {
+      "needle_tip": [
+        554,
+        508
+      ],
+      "needle_tail": [
+        651,
+        563
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000447": {
+      "needle_tip": [
+        558,
+        508
+      ],
+      "needle_tail": [
+        655,
+        565
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000448": {
+      "needle_tip": [
+        560,
+        507
+      ],
+      "needle_tail": [
+        663,
+        565
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000449": {
+      "needle_tip": [
+        560,
+        508
+      ],
+      "needle_tail": [
+        665,
+        565
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000450": {
+      "needle_tip": [
+        567,
+        510
+      ],
+      "needle_tail": [
+        683,
+        571
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000451": {
+      "needle_tip": [
+        569,
+        519
+      ],
+      "needle_tail": [
+        691,
+        574
+      ],
+      "occluded": {
+        "tip": true,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000452": {
+      "needle_tip": [
+        568,
+        484
+      ],
+      "needle_tail": [
+        702,
+        579
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000453": {
+      "needle_tip": [
+        558,
+        494
+      ],
+      "needle_tail": [
+        703,
+        582
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000454": {
+      "needle_tip": [
+        558,
+        516
+      ],
+      "needle_tail": [
+        705,
+        581
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000455": {
+      "needle_tip": [
+        573,
+        552
+      ],
+      "needle_tail": [
+        704,
+        582
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000456": {
+      "needle_tip": [
+        559,
+        499
+      ],
+      "needle_tail": [
+        704,
+        582
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000457": {
+      "needle_tip": [
+        559,
+        497
+      ],
+      "needle_tail": [
+        704,
+        583
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000458": {
+      "needle_tip": [
+        558,
+        496
+      ],
+      "needle_tail": [
+        704,
+        584
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000459": {
+      "needle_tip": [
+        568,
+        498
+      ],
+      "needle_tail": [
+        712,
+        582
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000460": {
+      "needle_tip": [
+        570,
+        498
+      ],
+      "needle_tail": [
+        716,
+        584
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000461": {
+      "needle_tip": [
+        580,
+        501
+      ],
+      "needle_tail": [
+        731,
+        578
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000462": {
+      "needle_tip": [
+        583,
+        499
+      ],
+      "needle_tail": [
+        733,
+        573
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000463": {
+      "needle_tip": [
+        576,
+        490
+      ],
+      "needle_tail": [
+        731,
+        560
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000464": {
+      "needle_tip": [
+        575,
+        495
+      ],
+      "needle_tail": [
+        735,
+        546
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000465": {
+      "needle_tip": [
+        575,
+        494
+      ],
+      "needle_tail": [
+        735,
+        542
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000466": {
+      "needle_tip": [
+        576,
+        501
+      ],
+      "needle_tail": [
+        736,
+        540
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000467": {
+      "needle_tip": [
+        579,
+        509
+      ],
+      "needle_tail": [
+        736,
+        541
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000468": {
+      "needle_tip": [
+        600,
+        549
+      ],
+      "needle_tail": [
+        736,
+        542
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000469": {
+      "needle_tip": [
+        580,
+        533
+      ],
+      "needle_tail": [
+        736,
+        544
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000470": {
+      "needle_tip": [
+        588,
+        543
+      ],
+      "needle_tail": [
+        746,
+        546
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000471": {
+      "needle_tip": [
+        599,
+        544
+      ],
+      "needle_tail": [
+        766,
+        547
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000472": {
+      "needle_tip": [
+        623,
+        542
+      ],
+      "needle_tail": [
+        792,
+        548
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000473": {
+      "needle_tip": [
+        651,
+        544
+      ],
+      "needle_tail": [
+        826,
+        547
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000474": {
+      "needle_tip": [
+        657,
+        542
+      ],
+      "needle_tail": [
+        835,
+        548
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000475": {
+      "needle_tip": [
+        657,
+        546
+      ],
+      "needle_tail": [
+        834,
+        553
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000476": {
+      "needle_tip": [
+        655,
+        542
+      ],
+      "needle_tail": [
+        840,
+        551
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000477": {
+      "needle_tip": [
+        666,
+        549
+      ],
+      "needle_tail": [
+        840,
+        553
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000478": {
+      "needle_tip": [
+        657,
+        543
+      ],
+      "needle_tail": [
+        841,
+        552
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000479": {
+      "needle_tip": [
+        661,
+        533
+      ],
+      "needle_tail": [
+        837,
+        556
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000480": {
+      "needle_tip": [
+        656,
+        527
+      ],
+      "needle_tail": [
+        837,
+        556
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000481": {
+      "needle_tip": [
+        655,
+        526
+      ],
+      "needle_tail": [
+        841,
+        553
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000482": {
+      "needle_tip": [
+        664,
+        547
+      ],
+      "needle_tail": [
+        849,
+        549
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000483": {
+      "needle_tip": [
+        698,
+        549
+      ],
+      "needle_tail": [
+        880,
+        536
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000484": {
+      "needle_tip": [
+        713,
+        546
+      ],
+      "needle_tail": [
+        897,
+        536
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000485": {
+      "needle_tip": [
+        724,
+        544
+      ],
+      "needle_tail": [
+        908,
+        534
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000486": {
+      "needle_tip": [
+        734,
+        546
+      ],
+      "needle_tail": [
+        916,
+        532
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000487": {
+      "needle_tip": [
+        746,
+        543
+      ],
+      "needle_tail": [
+        932,
+        532
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000488": {
+      "needle_tip": [
+        751,
+        538
+      ],
+      "needle_tail": [
+        944,
+        530
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000489": {
+      "needle_tip": [
+        769,
+        549
+      ],
+      "needle_tail": [
+        951,
+        530
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000490": {
+      "needle_tip": [
+        780,
+        544
+      ],
+      "needle_tail": [
+        967,
+        526
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000491": {
+      "needle_tip": [
+        786,
+        535
+      ],
+      "needle_tail": [
+        981,
+        520
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000492": {
+      "needle_tip": [
+        794,
+        526
+      ],
+      "needle_tail": [
+        993,
+        518
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000493": {
+      "needle_tip": [
+        800,
+        530
+      ],
+      "needle_tail": [
+        1000,
+        518
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000494": {
+      "needle_tip": [
+        800,
+        531
+      ],
+      "needle_tail": [
+        1001,
+        519
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000495": {
+      "needle_tip": [
+        804,
+        534
+      ],
+      "needle_tail": [
+        1003,
+        520
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000496": {
+      "needle_tip": [
+        798,
+        530
+      ],
+      "needle_tail": [
+        1003,
+        525
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000497": {
+      "needle_tip": [
+        794,
+        535
+      ],
+      "needle_tail": [
+        1000,
+        535
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000498": {
+      "needle_tip": [
+        790,
+        543
+      ],
+      "needle_tail": [
+        995,
+        544
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000499": {
+      "needle_tip": [
+        788,
+        545
+      ],
+      "needle_tail": [
+        992,
+        548
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000500": {
+      "needle_tip": [
+        773,
+        544
+      ],
+      "needle_tail": [
+        976,
+        564
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000501": {
+      "needle_tip": [
+        744,
+        562
+      ],
+      "needle_tail": [
+        942,
+        575
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000502": {
+      "needle_tip": [
+        718,
+        565
+      ],
+      "needle_tail": [
+        910,
+        584
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000503": {
+      "needle_tip": [
+        690,
+        559
+      ],
+      "needle_tail": [
+        886,
+        584
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000504": {
+      "needle_tip": [
+        665,
+        559
+      ],
+      "needle_tail": [
+        854,
+        588
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000505": {
+      "needle_tip": [
+        644,
+        554
+      ],
+      "needle_tail": [
+        831,
+        588
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000506": {
+      "needle_tip": [
+        632,
+        551
+      ],
+      "needle_tail": [
+        808,
+        599
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000507": {
+      "needle_tip": [
+        624,
+        552
+      ],
+      "needle_tail": [
+        805,
+        588
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000508": {
+      "needle_tip": [
+        609,
+        530
+      ],
+      "needle_tail": [
+        795,
+        589
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000509": {
+      "needle_tip": [
+        603,
+        527
+      ],
+      "needle_tail": [
+        786,
+        591
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000510": {
+      "needle_tip": [
+        593,
+        517
+      ],
+      "needle_tail": [
+        776,
+        591
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000511": {
+      "needle_tip": [
+        588,
+        518
+      ],
+      "needle_tail": [
+        765,
+        592
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000512": {
+      "needle_tip": [
+        575,
+        498
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000513": {
+      "needle_tip": [
+        574,
+        501
+      ],
+      "needle_tail": [
+        746,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000514": {
+      "needle_tip": [
+        574,
+        503
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000515": {
+      "needle_tip": [
+        574,
+        498
+      ],
+      "needle_tail": [
+        746,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000516": {
+      "needle_tip": [
+        573,
+        502
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000517": {
+      "needle_tip": [
+        574,
+        498
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000518": {
+      "needle_tip": [
+        575,
+        503
+      ],
+      "needle_tail": [
+        746,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000519": {
+      "needle_tip": [
+        575,
+        499
+      ],
+      "needle_tail": [
+        746,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000520": {
+      "needle_tip": [
+        573,
+        497
+      ],
+      "needle_tail": [
+        747,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000521": {
+      "needle_tip": [
+        575,
+        501
+      ],
+      "needle_tail": [
+        747,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000522": {
+      "needle_tip": [
+        575,
+        495
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000523": {
+      "needle_tip": [
+        574,
+        502
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000524": {
+      "needle_tip": [
+        574,
+        502
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000525": {
+      "needle_tip": [
+        575,
+        497
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000526": {
+      "needle_tip": [
+        575,
+        497
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000527": {
+      "needle_tip": [
+        575,
+        502
+      ],
+      "needle_tail": [
+        745,
+        596
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000528": {
+      "needle_tip": [
+        574,
+        502
+      ],
+      "needle_tail": [
+        747,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000529": {
+      "needle_tip": [
+        575,
+        499
+      ],
+      "needle_tail": [
+        745,
+        596
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000530": {
+      "needle_tip": [
+        574,
+        498
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000531": {
+      "needle_tip": [
+        573,
+        496
+      ],
+      "needle_tail": [
+        747,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000532": {
+      "needle_tip": [
+        573,
+        501
+      ],
+      "needle_tail": [
+        746,
+        596
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000533": {
+      "needle_tip": [
+        574,
+        500
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000534": {
+      "needle_tip": [
+        574,
+        504
+      ],
+      "needle_tail": [
+        748,
+        593
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000535": {
+      "needle_tip": [
+        574,
+        501
+      ],
+      "needle_tail": [
+        748,
+        593
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000536": {
+      "needle_tip": [
+        575,
+        497
+      ],
+      "needle_tail": [
+        747,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000537": {
+      "needle_tip": [
+        574,
+        499
+      ],
+      "needle_tail": [
+        747,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000538": {
+      "needle_tip": [
+        574,
+        501
+      ],
+      "needle_tail": [
+        746,
+        596
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000539": {
+      "needle_tip": [
+        574,
+        497
+      ],
+      "needle_tail": [
+        748,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000540": {
+      "needle_tip": [
+        575,
+        498
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000541": {
+      "needle_tip": [
+        574,
+        499
+      ],
+      "needle_tail": [
+        748,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000542": {
+      "needle_tip": [
+        575,
+        500
+      ],
+      "needle_tail": [
+        746,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000543": {
+      "needle_tip": [
+        573,
+        498
+      ],
+      "needle_tail": [
+        748,
+        593
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000544": {
+      "needle_tip": [
+        574,
+        503
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000545": {
+      "needle_tip": [
+        574,
+        499
+      ],
+      "needle_tail": [
+        746,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000546": {
+      "needle_tip": [
+        575,
+        496
+      ],
+      "needle_tail": [
+        748,
+        593
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000547": {
+      "needle_tip": [
+        575,
+        498
+      ],
+      "needle_tail": [
+        748,
+        593
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000548": {
+      "needle_tip": [
+        575,
+        500
+      ],
+      "needle_tail": [
+        746,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000549": {
+      "needle_tip": [
+        575,
+        499
+      ],
+      "needle_tail": [
+        747,
+        594
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000550": {
+      "needle_tip": [
+        574,
+        499
+      ],
+      "needle_tail": [
+        746,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000551": {
+      "needle_tip": [
+        575,
+        498
+      ],
+      "needle_tail": [
+        747,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000552": {
+      "needle_tip": [
+        575,
+        493
+      ],
+      "needle_tail": [
+        747,
+        593
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000553": {
+      "needle_tip": [
+        575,
+        497
+      ],
+      "needle_tail": [
+        746,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000554": {
+      "needle_tip": [
+        575,
+        497
+      ],
+      "needle_tail": [
+        746,
+        595
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000555": {
+      "needle_tip": [
+        575,
+        496
+      ],
+      "needle_tail": [
+        748,
+        593
+      ],
+      "occluded": {
+        "tip": false,
+        "tail": false
+      },
+      "status": "ok"
+    },
+    "000408": {
+      "needle_tip": [
+        662,
+        328
+      ],
+      "needle_tail": null,
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000418": {
+      "needle_tip": [
+        670,
+        335
+      ],
+      "needle_tail": null,
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000414": {
+      "needle_tip": [
+        666,
+        341
+      ],
+      "needle_tail": null,
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000411": {
+      "needle_tip": [
+        667,
+        338
+      ],
+      "needle_tail": null,
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000409": {
+      "needle_tip": [
+        668,
+        333
+      ],
+      "needle_tail": null,
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000407": {
+      "needle_tip": null,
+      "needle_tail": null,
+      "occluded": {
+        "tip": true,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000412": {
+      "needle_tip": [
+        666,
+        340
+      ],
+      "needle_tail": null,
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000413": {
+      "needle_tip": [
+        666,
+        341
+      ],
+      "needle_tail": null,
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000415": {
+      "needle_tip": [
+        666,
+        341
+      ],
+      "needle_tail": null,
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000416": {
+      "needle_tip": [
+        666,
+        341
+      ],
+      "needle_tail": null,
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    },
+    "000417": {
+      "needle_tip": [
+        666,
+        341
+      ],
+      "needle_tail": null,
+      "occluded": {
+        "tip": false,
+        "tail": true
+      },
+      "status": "ok"
+    }
+  }
+}

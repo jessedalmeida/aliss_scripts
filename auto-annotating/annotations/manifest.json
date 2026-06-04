@@ -644,7 +644,8 @@
           "ts": 1780169621.39571
         }
       },
-      "poses_source": "smooth"
+      "poses_source": "smooth",
+      "repack_mode": "topics"
     },
     "ch_suture_5": {
       "tracks": {
@@ -667,7 +668,9 @@
           "rc": 0,
           "ts": 1780169648.4547827
         }
-      }
+      },
+      "poses_source": "smooth",
+      "repack_mode": "topics"
     },
     "ch_suture_6": {
       "tracks": {
@@ -690,7 +693,8 @@
           "rc": 0,
           "ts": 1780169678.935289
         }
-      }
+      },
+      "repack_mode": "topics"
     },
     "ch_suture_7": {
       "tracks": {
@@ -708,7 +712,9 @@
           "rc": 0,
           "ts": 1780169729.0760207
         }
-      }
+      },
+      "poses_source": "smooth",
+      "repack_mode": "topics"
     },
     "chicken_1": {
       "tracks": {
@@ -726,7 +732,8 @@
           "rc": 0,
           "ts": 1780169748.3292255
         }
-      }
+      },
+      "repack_mode": "topics"
     },
     "chicken_2": {
       "tracks": {
@@ -744,12 +751,13 @@
           "rc": 0,
           "ts": 1780169771.6169758
         }
-      }
+      },
+      "repack_mode": "topics"
     },
     "chicken_3": {
       "tracks": {
         "needle": true,
-        "checkerboard": true
+        "checkerboard": false
       },
       "stages": {
         "extract": {
@@ -762,7 +770,8 @@
           "rc": 0,
           "ts": 1780169808.373441
         }
-      }
+      },
+      "repack_mode": "topics"
     },
     "chicken_4": {
       "tracks": {
@@ -780,7 +789,8 @@
           "rc": 0,
           "ts": 1780169827.052915
         }
-      }
+      },
+      "repack_mode": "topics"
     },
     "chicken_5": {
       "tracks": {
@@ -798,7 +808,8 @@
           "rc": 0,
           "ts": 1780169861.0274699
         }
-      }
+      },
+      "repack_mode": "topics"
     },
     "grasper_tracking": {
       "tracks": {
@@ -870,7 +881,8 @@
           "rc": 0,
           "ts": 1780170011.6402519
         }
-      }
+      },
+      "repack_mode": "topics"
     },
     "trachea_2": {
       "tracks": {
@@ -888,7 +900,8 @@
           "rc": 0,
           "ts": 1780170033.5363774
         }
-      }
+      },
+      "repack_mode": "topics"
     },
     "trachea_3": {
       "tracks": {
@@ -929,7 +942,7 @@
     "trachea_5": {
       "tracks": {
         "needle": true,
-        "checkerboard": true
+        "checkerboard": false
       },
       "stages": {
         "extract": {

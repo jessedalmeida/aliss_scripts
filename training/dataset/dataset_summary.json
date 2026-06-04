@@ -1,0 +1,427 @@
+{
+  "ann_dir": "auto-annotating/annotations",
+  "bags": 32,
+  "bags_with_board": 29,
+  "bags_without_board": 3,
+  "frames_total": 10618,
+  "frames_with_board": 9688,
+  "frames_without_board": 930,
+  "per_bag": [
+    {
+      "bag": "ch_chicken_1",
+      "has_board": true,
+      "frames_emitted": 233,
+      "masks_found": 233,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 233,
+        "needle_tail": 233,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_chicken_2",
+      "has_board": true,
+      "frames_emitted": 206,
+      "masks_found": 206,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 206,
+        "needle_tail": 206,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_chicken_3",
+      "has_board": true,
+      "frames_emitted": 355,
+      "masks_found": 355,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 355,
+        "needle_tail": 355,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_chicken_4",
+      "has_board": true,
+      "frames_emitted": 251,
+      "masks_found": 251,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 251,
+        "needle_tail": 251,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_chicken_5",
+      "has_board": true,
+      "frames_emitted": 388,
+      "masks_found": 388,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 388,
+        "needle_tail": 388,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_circlexy_1",
+      "has_board": true,
+      "frames_emitted": 261,
+      "masks_found": 261,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 261,
+        "needle_tail": 261,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_circlexy_2",
+      "has_board": true,
+      "frames_emitted": 313,
+      "masks_found": 313,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 313,
+        "needle_tail": 313,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_circlexy_3",
+      "has_board": true,
+      "frames_emitted": 302,
+      "masks_found": 302,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 302,
+        "needle_tail": 302,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_circlexy_4",
+      "has_board": true,
+      "frames_emitted": 371,
+      "masks_found": 371,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 371,
+        "needle_tail": 371,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_circlexy_5",
+      "has_board": true,
+      "frames_emitted": 292,
+      "masks_found": 292,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 292,
+        "needle_tail": 292,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_circlexy_6",
+      "has_board": true,
+      "frames_emitted": 317,
+      "masks_found": 317,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 317,
+        "needle_tail": 317,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_circlexz_1",
+      "has_board": true,
+      "frames_emitted": 284,
+      "masks_found": 284,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 284,
+        "needle_tail": 284,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_circlexz_2",
+      "has_board": true,
+      "frames_emitted": 325,
+      "masks_found": 325,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 325,
+        "needle_tail": 325,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_circlexz_3",
+      "has_board": true,
+      "frames_emitted": 381,
+      "masks_found": 381,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 381,
+        "needle_tail": 381,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_circlexz_4",
+      "has_board": true,
+      "frames_emitted": 292,
+      "masks_found": 292,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 292,
+        "needle_tail": 292,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_circlexz_5",
+      "has_board": true,
+      "frames_emitted": 488,
+      "masks_found": 488,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 488,
+        "needle_tail": 488,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_figure8_1",
+      "has_board": true,
+      "frames_emitted": 231,
+      "masks_found": 231,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 231,
+        "needle_tail": 231,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_figure8_2",
+      "has_board": true,
+      "frames_emitted": 475,
+      "masks_found": 475,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 475,
+        "needle_tail": 475,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_figure8_3",
+      "has_board": true,
+      "frames_emitted": 305,
+      "masks_found": 305,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 305,
+        "needle_tail": 305,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_figure8_4",
+      "has_board": true,
+      "frames_emitted": 205,
+      "masks_found": 205,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 205,
+        "needle_tail": 205,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_figure8_5",
+      "has_board": true,
+      "frames_emitted": 264,
+      "masks_found": 264,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 264,
+        "needle_tail": 264,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_figure8_6",
+      "has_board": true,
+      "frames_emitted": 282,
+      "masks_found": 282,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 282,
+        "needle_tail": 282,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_suture_1",
+      "has_board": true,
+      "frames_emitted": 418,
+      "masks_found": 418,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 417,
+        "needle_tail": 417,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_suture_2",
+      "has_board": true,
+      "frames_emitted": 440,
+      "masks_found": 440,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 440,
+        "needle_tail": 440,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_suture_3",
+      "has_board": true,
+      "frames_emitted": 425,
+      "masks_found": 425,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 425,
+        "needle_tail": 425,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_suture_4",
+      "has_board": true,
+      "frames_emitted": 421,
+      "masks_found": 421,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 421,
+        "needle_tail": 421,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_suture_5",
+      "has_board": true,
+      "frames_emitted": 262,
+      "masks_found": 262,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 262,
+        "needle_tail": 262,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_suture_6",
+      "has_board": true,
+      "frames_emitted": 345,
+      "masks_found": 345,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 345,
+        "needle_tail": 345,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "ch_suture_7",
+      "has_board": true,
+      "frames_emitted": 556,
+      "masks_found": 556,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 553,
+        "needle_tail": 543,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "chicken_1",
+      "has_board": false,
+      "frames_emitted": 221,
+      "masks_found": 221,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 221,
+        "needle_tail": 221,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "chicken_2",
+      "has_board": false,
+      "frames_emitted": 271,
+      "masks_found": 271,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 271,
+        "needle_tail": 271,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "chicken_3",
+      "has_board": false,
+      "frames_emitted": 438,
+      "masks_found": 438,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 0,
+        "needle_tail": 0,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    }
+  ]
+}
