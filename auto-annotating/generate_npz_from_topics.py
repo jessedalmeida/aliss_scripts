@@ -8,15 +8,19 @@ This reads the split-topic annotated MCAPs produced by `repack_bag.py` and emits
 an NPZ containing keys expected by `npz_dataloader.NPZTrackingDataParser`:
 
   f{idx:06d}_raw_mask      (H, W) uint8
-  f{idx:06d}_mask_points   (H, W) uint8 (keypoints drawn)
-  f{idx:06d}_kp_needle_tip  (2,) float32
-  f{idx:06d}_kp_needle_tail (2,) float32
+  f{idx:06d}_mask_points   (H, W) uint8 (visible keypoints drawn)
+  f{idx:06d}_kp_needle_tip    (2,) float32
+  f{idx:06d}_kp_needle_tail   (2,) float32
+  f{idx:06d}_kp_left_arm_tip  (2,) float32
+  f{idx:06d}_kp_right_arm_tip (2,) float32
+  f{idx:06d}_kp_<name>_v      () uint8  -- visibility: 1 visible/usable, 0 not visible
   f{idx:06d}_pose          (4,4) float32  -- only frames with pose are written
   f{idx:06d}_arm_cp        (7,) float32  -- optional, if PoseStamped present
 
-Only frames that have both a mask and a checkerboard pose are written (loader
-requires both). Keypoint arm-tip fields are ignored as requested; only needle
-tip/tail are extracted.
+Only frames that have both a mask and a checkerboard pose are written, with a
+fallback to mask+keypoints when no pose frames exist. All four keypoints are
+exported with a binary visibility flag; when a keypoint is not visible (v=0) its
+coordinates are unreliable and should be ignored/masked in the training loss.
 """
 
 from __future__ import annotations
@@ -137,13 +141,24 @@ def generate_npz_from_mcap(mcap_path: Path, out_path: Path) -> None:
                     continue
 
             elif topic == KEYPOINTS_TOPIC:
-                # custom NeedleTrackingKeypoints: needle_tip, needle_tail
+                # custom NeedleTrackingKeypoints: 4 keypoints + binary visibility
+                # (1 = visible/usable, 0 = not visible/coords unreliable)
                 try:
-                    tip = msg.needle_tip
-                    tail = msg.needle_tail
+                    def _xy(pt):
+                        return np.array([float(pt.x), float(pt.y)], dtype=np.float32)
+                    def _vis(field):
+                        return int(getattr(msg, field, 0) or 0)
                     frames[ts]["kp"] = {
-                        "needle_tip": np.array([float(tip.x), float(tip.y)], dtype=np.float32),
-                        "needle_tail": np.array([float(tail.x), float(tail.y)], dtype=np.float32),
+                        "needle_tip":    _xy(msg.needle_tip),
+                        "needle_tail":   _xy(msg.needle_tail),
+                        "left_arm_tip":  _xy(msg.left_arm_tip),
+                        "right_arm_tip": _xy(msg.right_arm_tip),
+                    }
+                    frames[ts]["vis"] = {
+                        "needle_tip":    _vis("needle_tip_visibility"),
+                        "needle_tail":   _vis("needle_tail_visibility"),
+                        "left_arm_tip":  _vis("left_arm_tip_visibility"),
+                        "right_arm_tip": _vis("right_arm_tip_visibility"),
                     }
                 except Exception:
                     continue
@@ -192,28 +207,27 @@ def generate_npz_from_mcap(mcap_path: Path, out_path: Path) -> None:
         # raw mask
         data_dict[f"{prefix}raw_mask"] = np.array(mask, dtype=np.uint8)
 
-        # mask_points: draw tiny circles at keypoint coords
+        # mask_points: draw tiny circles only at VISIBLE keypoints (vis==1)
         mask_points = np.zeros_like(mask, dtype=np.uint8)
+        vis = d.get("vis") or {}
         try:
-            tip = kp.get("needle_tip")
-            tail = kp.get("needle_tail")
-
-            if tip is not None and np.isfinite(tip).all():
-                _cv2.circle(mask_points, (int(tip[0]), int(tip[1])), 3, 255, -1)
-            if tail is not None and np.isfinite(tail).all():
-                _cv2.circle(mask_points, (int(tail[0]), int(tail[1])), 3, 255, -1)
+            if kp is not None:
+                for name in ("needle_tip", "needle_tail", "left_arm_tip", "right_arm_tip"):
+                    pt = kp.get(name)
+                    if pt is not None and vis.get(name, 0) == 1 and np.isfinite(pt).all():
+                        _cv2.circle(mask_points, (int(pt[0]), int(pt[1])), 3, 255, -1)
         except Exception:
             pass
         data_dict[f"{prefix}mask_points"] = mask_points
 
-        # keypoints (only needle tip/tail)
+        # keypoints: all 4, each (x, y) plus a binary visibility flag
+        # (1 = visible/usable, 0 = not visible -> coords unreliable, ignore in loss)
         if kp is not None:
-            tip = kp.get("needle_tip")
-            tail = kp.get("needle_tail")
-            if tip is not None:
-                data_dict[f"{prefix}kp_needle_tip"] = np.array(tip, dtype=np.float32)
-            if tail is not None:
-                data_dict[f"{prefix}kp_needle_tail"] = np.array(tail, dtype=np.float32)
+            for name in ("needle_tip", "needle_tail", "left_arm_tip", "right_arm_tip"):
+                pt = kp.get(name)
+                if pt is not None:
+                    data_dict[f"{prefix}kp_{name}"] = np.array(pt, dtype=np.float32)
+                data_dict[f"{prefix}kp_{name}_v"] = np.array(vis.get(name, 0), dtype=np.uint8)
 
         # pose
         if pose is not None:

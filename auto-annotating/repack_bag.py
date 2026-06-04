@@ -92,6 +92,11 @@ geometry_msgs/Point32 needle_tip
 geometry_msgs/Point32 needle_tail
 geometry_msgs/Point32 left_arm_tip
 geometry_msgs/Point32 right_arm_tip
+# per-keypoint visibility: 1 = visible/usable, 0 = not visible (coords unreliable)
+uint8 needle_tip_visibility
+uint8 needle_tail_visibility
+uint8 left_arm_tip_visibility
+uint8 right_arm_tip_visibility
 geometry_msgs/Pose2D bounding_box_center
 float64 bounding_box_size_x
 float64 bounding_box_size_y
@@ -335,6 +340,18 @@ def extract_xy_or_default(point_like, default: tuple[float, float] = (0.0, 0.0))
         return default
 
 
+def _kp_visibility(frame_data: dict, name: str) -> int:
+    """Binary visibility for a keypoint: 1 = visible/usable, 0 = not visible.
+    A keypoint is 0 if it is unlabeled OR flagged occluded (its coords are
+    unreliable when occluded, per how the data was annotated)."""
+    xy = frame_data.get(name)
+    labeled = isinstance(xy, (list, tuple)) and len(xy) >= 2 and xy[0] is not None
+    if not labeled:
+        return 0
+    occ = (frame_data.get("occluded") or {}).get(name, False)
+    return 0 if occ else 1
+
+
 def build_keypoints_msg(typestore, frame_data: dict, mask_np: np.ndarray,
                         right_pose: PoseWithCovarianceStamped | None,
                         left_pose: PoseWithCovarianceStamped | None,
@@ -344,9 +361,12 @@ def build_keypoints_msg(typestore, frame_data: dict, mask_np: np.ndarray,
     needle_tip_xy = extract_xy_or_default(frame_data.get("needle_tip"))
     needle_tail_xy = extract_xy_or_default(frame_data.get("needle_tail"))
 
-    def _tip_point(tooltip, pose):
-        # Prefer the tool-tip PIXEL topic (x/y are pixels at .pose.pose.position);
-        # fall back to the 3D tip-pose position when no tool-tip message is present.
+    def _arm_point(name, tooltip, pose):
+        # Manual GUI annotation ALWAYS wins (decision). Fall back to the tool-tip
+        # PIXEL topic, then the 3D tip-pose, only when there is no manual label.
+        manual = frame_data.get(name)
+        if isinstance(manual, (list, tuple)) and len(manual) >= 2 and manual[0] is not None:
+            return point32_from_xy(float(manual[0]), float(manual[1]), 0.0)
         if tooltip is not None:
             pos = tooltip.pose.pose.position
             return point32_from_xy(float(pos.x), float(pos.y), 0.0)
@@ -356,8 +376,11 @@ def build_keypoints_msg(typestore, frame_data: dict, mask_np: np.ndarray,
                                    float(pose.pose.pose.position.z))
         return point32_from_xy(0.0, 0.0, 0.0)
 
-    right_tip = _tip_point(right_tooltip, right_pose)
-    left_tip = _tip_point(left_tooltip, left_pose)
+    left_tip = _arm_point("left_arm_tip", left_tooltip, left_pose)
+    right_tip = _arm_point("right_arm_tip", right_tooltip, right_pose)
+
+    vis = {n: _kp_visibility(frame_data, n)
+           for n in ("needle_tip", "needle_tail", "left_arm_tip", "right_arm_tip")}
 
     fallback_points = [pt for pt in (needle_tip_xy, needle_tail_xy) if any(abs(v) > 0.0 for v in pt)]
     bbox_center, bbox_size_x, bbox_size_y = mask_bbox(mask_np, fallback_points=fallback_points)
@@ -367,6 +390,10 @@ def build_keypoints_msg(typestore, frame_data: dict, mask_np: np.ndarray,
         needle_tail=point32_from_xy(*needle_tail_xy),
         left_arm_tip=left_tip,
         right_arm_tip=right_tip,
+        needle_tip_visibility=int(vis["needle_tip"]),
+        needle_tail_visibility=int(vis["needle_tail"]),
+        left_arm_tip_visibility=int(vis["left_arm_tip"]),
+        right_arm_tip_visibility=int(vis["right_arm_tip"]),
         bounding_box_center=bbox_center,
         bounding_box_size_x=float(bbox_size_x),
         bounding_box_size_y=float(bbox_size_y),
