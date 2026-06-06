@@ -365,10 +365,17 @@ async def track_keypoints_ep(bag: str, req: Request):
     anchor=True re-tracks forward only, preserving frames before the seed."""
     from .flow_ops import track_keypoints
     body = await req.json()
-    tip, tail = body.get("needle_tip"), body.get("needle_tail")
     seed_key = body.get("seed_key")
-    if not (tip and tail and seed_key):
-        raise HTTPException(400, "need seed_key, needle_tip, needle_tail")
+    # accept either an explicit {points:{name:[x,y]}} map or the legacy
+    # needle_tip/needle_tail fields for backward compatibility
+    points = body.get("points")
+    if points is None:
+        points = {}
+        for name in ("needle_tip", "needle_tail", "left_arm_tip", "right_arm_tip"):
+            if body.get(name):
+                points[name] = body[name]
+    if not (points and seed_key):
+        raise HTTPException(400, "need seed_key and at least one keypoint to track")
     files = frame_files(bag)
     keys = [frame_key(f) for f in files]
     if seed_key not in keys:
@@ -378,7 +385,7 @@ async def track_keypoints_ep(bag: str, req: Request):
     existing = data.get("frames", {}) if body.get("anchor") else None
     try:
         frames = track_keypoints(
-            files, keys, seed_key, tip, tail,
+            files, keys, seed_key, points,
             direction=body.get("direction", "both"),
             anchor=bool(body.get("anchor")), existing=existing)
     except Exception as exc:  # noqa: BLE001 - surface to UI
@@ -425,10 +432,10 @@ async def save_keypoint(bag: str, key: str, req: Request):
     data.setdefault("source", "gui_edit")
     frames = data.setdefault("frames", {})
     entry = frames.setdefault(key, {})
-    for field in ("needle_tip", "needle_tail"):
+    for field in ("needle_tip", "needle_tail", "left_arm_tip", "right_arm_tip"):
         if field in body:
             entry[field] = body[field]  # [x, y] or None
-    entry.setdefault("occluded", {"tip": False, "tail": False})
+    entry.setdefault("occluded", {})
     if "occluded" in body:
         entry["occluded"].update(body["occluded"])
     entry["status"] = "ok"
@@ -499,73 +506,6 @@ async def reflow_pose(bag: str, key: str, req: Request):
         # don't persist the backfilled parameters block if it wasn't there originally
         poses_path.write_text(json.dumps(payload, indent=2) + "\n")
     return {"ok": True, "frame": result}
-
-
-@app.post("/api/bags/{bag}/poses/reflow_high_rms")
-async def reflow_high_rms(bag: str, req: Request):
-    """Auto-reflow every 'ok' frame whose RMS exceeds max_rms: re-seed its corners
-    from the nearest good neighbor and KEEP the result only if it lowers RMS.
-    Frames still over threshold afterward are marked status='high_rms' so they can
-    be reviewed/jumped-to. Saves poses.json in place. Body: {max_rms: float,
-    neighbor_radius: int}."""
-    body = await req.json() if await req.body() else {}
-    max_rms = float(body.get("max_rms", 3.0))
-    radius = int(body.get("neighbor_radius", 3))
-    c = ctx()
-    try:
-        from flow_seed import try_optical_flow_seed
-    except ImportError as exc:
-        raise HTTPException(500, f"flow_seed not importable (check --scripts-dir): {exc}")
-
-    poses_path = bag_dir(bag) / "poses.json"
-    payload = read_json(poses_path)
-    frames = payload.get("frames", {})
-    if not frames:
-        raise HTTPException(404, "no poses.json yet - run the pose stage first")
-    payload.setdefault("parameters", {}).update({
-        "squares_x": c.board["squares_x"], "squares_y": c.board["squares_y"],
-        "square_size": c.board["square_size"]})
-    from .pose_ops import _camera_yaml
-    cam_yaml = _camera_yaml(c, bag)
-
-    targets = [k for k, fr in frames.items()
-               if fr.get("status") == "ok"
-               and float(fr.get("rms_reprojection_error", 0.0)) > max_rms]
-    healed = flagged = 0
-    for k in targets:
-        orig = frames[k]
-        orig_rms = float(orig.get("rms_reprojection_error", 0.0))
-        try:
-            r = try_optical_flow_seed(c.bag_dir(bag), k, payload, cam_yaml, neighbor_radius=radius)
-        except Exception:
-            r = None
-        new_rms = float(r.get("rms_reprojection_error", 1e9)) if r else 1e9
-        if r and new_rms < orig_rms:
-            r.setdefault("frame_key", k)
-            frames[k] = r
-            healed += 1
-            if new_rms > max_rms:
-                frames[k]["status"] = "high_rms"; flagged += 1
-        else:
-            orig["status"] = "high_rms"; flagged += 1
-    poses_path.write_text(json.dumps(payload, indent=2) + "\n")
-    return {"ok": True, "checked": len(targets), "healed": healed, "still_high": flagged,
-            "max_rms": max_rms}
-
-
-@app.get("/api/bags/{bag}/flagged_frames")
-def flagged_frames(bag: str):
-    """Frame keys that need attention, for jump-to navigation: high_rms frames and
-    outright detection failures (excludes 'ok' and intentional 'no_board')."""
-    frames = read_json(bag_dir(bag) / "poses.json").get("frames", {})
-    def _rms(k): return float(frames[k].get("rms_reprojection_error", 0.0))
-    high = sorted((k for k, f in frames.items()
-                   if f.get("status") == "high_rms"), key=int)
-    fails = sorted((k for k, f in frames.items()
-                    if f.get("status") not in ("ok", "high_rms", "no_board")), key=int)
-    return {"high_rms": [{"key": k, "rms": _rms(k)} for k in high],
-            "failures": fails,
-            "all": sorted(set(high) | set(fails), key=int)}
 
 
 @app.post("/api/bags/{bag}/pose/{key}")

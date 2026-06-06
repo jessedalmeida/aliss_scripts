@@ -277,6 +277,18 @@ const $ = id => document.getElementById(id);
 const cv = $("cv"), ctx = cv.getContext("2d");
 const HANDLE = 6, HIT = 12;
 
+// ── Keypoint definitions — add/remove entries here to change which keypoints
+// the GUI tracks. `suggestable` controls whether mask-based "suggest" applies
+// (needle endpoints yes; arm tool-tips no). `connectTo` draws a connecting line.
+const KEYPOINTS = [
+  {name:"needle_tip",    label:"tip",   color:"#f85149", suggestable:true,  connectTo:"needle_tail"},
+  {name:"needle_tail",   label:"tail",  color:"#39b7d6", suggestable:true},
+  {name:"left_arm_tip",  label:"L-arm", color:"#3fb950", suggestable:false},
+  {name:"right_arm_tip", label:"R-arm", color:"#d29922", suggestable:false},
+];
+const KP_NAMES = KEYPOINTS.map(k=>k.name);
+const KP_BY = Object.fromEntries(KEYPOINTS.map(k=>[k.name,k]));
+
 const S = {
   bags:[], bag:null, keys:[], idx:0, mode:"view", config:{},
   frameImg:null, maskCanvas:null,
@@ -285,7 +297,7 @@ const S = {
   board:{cols:3, rows:4, expected:12},
   view:{scale:1, ox:0, oy:0}, viewReady:false,
   brush:6, erase:false,
-  stickyOcc:{tip:false, tail:false},  // occlusion persists across frames until toggled off
+  stickyOcc:{},  // {keypointName: bool} occlusion persists across frames until toggled off
   painting:false, dragKp:null, dragCorner:-1, panning:false, panLast:null, spaceDown:false,
   kpNext:"needle_tip",
 };
@@ -335,10 +347,16 @@ function draw(){
   // keypoints
   if(S.mode==="keypoints"||S.mode==="view"){
     const k=S.kp[key];
-    if(k){ drawPt(k.needle_tip,"#f85149","tip",k.occluded&&k.occluded.tip);
-           drawPt(k.needle_tail,"#39b7d6","tail",k.occluded&&k.occluded.tail);
-           if(k.needle_tip&&k.needle_tail){ const lw=1.5/S.view.scale; ctx.lineWidth=lw; ctx.strokeStyle="rgba(255,255,255,.4)";
-             ctx.beginPath(); ctx.moveTo(k.needle_tip[0],k.needle_tip[1]); ctx.lineTo(k.needle_tail[0],k.needle_tail[1]); ctx.stroke(); } }
+    if(k){
+      for(const def of KEYPOINTS){
+        if(def.connectTo && k[def.name] && k[def.connectTo]){
+          const lw=1.5/S.view.scale; ctx.lineWidth=lw; ctx.strokeStyle="rgba(255,255,255,.4)";
+          ctx.beginPath(); ctx.moveTo(k[def.name][0],k[def.name][1]);
+          ctx.lineTo(k[def.connectTo][0],k[def.connectTo][1]); ctx.stroke();
+        }
+      }
+      for(const def of KEYPOINTS){ drawPt(k[def.name], def.color, def.label, k.occluded && k.occluded[def.name]); }
+    }
   }
   // seeds
   if(S.mode==="seed"){
@@ -466,13 +484,12 @@ async function showFrame(i){
   // load existing corners into working set so they're draggable
   S.corners = (S.poses[key]&&S.poses[key].corners)? S.poses[key].corners.map(c=>[c[0],c[1]]) : [];
   // sticky occlusion: carry the current tip/tail occlusion state onto this frame
-  if(S.stickyOcc.tip || S.stickyOcc.tail){
-    const k=S.kp[key]=S.kp[key]||{occluded:{tip:false,tail:false}};
-    k.occluded=k.occluded||{tip:false,tail:false};
+  if(KP_NAMES.some(n=>S.stickyOcc[n])){
+    const k=S.kp[key]=S.kp[key]||{occluded:{}};
+    k.occluded=k.occluded||{};
     let changed=false;
-    for(const w of ["tip","tail"]){ if(S.stickyOcc[w] && !k.occluded[w]){ k.occluded[w]=true; changed=true; } }
-    // only autosave if this frame already has keypoints to annotate (don't create empty entries)
-    if(changed && (k.needle_tip||k.needle_tail)) saveKp(true);
+    for(const n of KP_NAMES){ if(S.stickyOcc[n] && !k.occluded[n]){ k.occluded[n]=true; changed=true; } }
+    if(changed && KP_NAMES.some(n=>k[n])) saveKp(true);
   }
   if(!S.viewReady){ sizeCanvas(); fitView(); }
   $("slider").value=S.idx;
@@ -509,8 +526,10 @@ cv.addEventListener("mousedown", e=>{
   else if(S.mode==="seed"){ const key=S.keys[S.idx]; S.seeds[key]=S.seeds[key]||{points:[],labels:[]};
     const neg=(e.button===2||e.shiftKey); S.seeds[key].points.push([Math.round(x),Math.round(y)]); S.seeds[key].labels.push(neg?0:1); draw(); updateModeTools(); }
   else if(S.mode==="keypoints" && e.button===0){
-    const k=S.kp[S.keys[S.idx]]||{}; const hit=["needle_tip","needle_tail"].find(n=>k[n]&&dist(k[n],[x,y])<HIT/S.view.scale);
-    if(hit) S.dragKp=hit; else { setKp(S.kpNext,[Math.round(x),Math.round(y)]); S.kpNext=S.kpNext==="needle_tip"?"needle_tail":"needle_tip"; updateModeTools(); } }
+    const k=S.kp[S.keys[S.idx]]||{}; const hit=KP_NAMES.find(n=>k[n]&&dist(k[n],[x,y])<HIT/S.view.scale);
+    if(hit) S.dragKp=hit;
+    else { setKp(S.kpNext,[Math.round(x),Math.round(y)]);
+           const ci=KP_NAMES.indexOf(S.kpNext); S.kpNext=KP_NAMES[(ci+1)%KP_NAMES.length]; updateModeTools(); } }
   else if(S.mode==="corners" && e.button===0){
     const ci=S.corners.findIndex(c=>dist(c,[x,y])<HIT/S.view.scale);
     if(ci>=0) S.dragCorner=ci;
@@ -569,8 +588,8 @@ window.addEventListener("keydown", e=>{
     if(k==="t"){ trackKp(false); return; }     // track ↔
     if(k==="r"){ trackKp(true); return; }      // re-anchor →
     if(k==="g"){ suggestKp(false); return; }   // suggest this frame
-    if(k==="z"){ toggleOcc("tip"); return; }   // occlude tip
-    if(k==="x"){ toggleOcc("tail"); return; }  // occlude tail
+    if(k==="z"){ toggleOcc(S.kpNext); return; } // occlude the current/next keypoint
+    if(k==="c"){ const ci=KP_NAMES.indexOf(S.kpNext); S.kpNext=KP_NAMES[(ci+1)%KP_NAMES.length]; updateModeTools(); return; } // cycle which keypoint is next
   } else if(S.mode==="mask"){
     if(k==="e"){ S.erase=!S.erase; updateModeTools(); return; }     // toggle erase
     if(k==="c"){ S.maskCanvas.getContext("2d").clearRect(0,0,S.maskCanvas.width,S.maskCanvas.height); draw(); return; }
@@ -588,7 +607,7 @@ window.addEventListener("keyup", e=>{ if(e.code==="Space"){ S.spaceDown=false; c
 function dist(a,b){ return Math.hypot(a[0]-b[0],a[1]-b[1]); }
 function stroke(x,y){ const m=S.maskCanvas.getContext("2d"); m.globalCompositeOperation=S.erase?"destination-out":"source-over";
   m.fillStyle="#fff"; m.beginPath(); m.arc(x,y,S.brush,0,7); m.fill(); m.globalCompositeOperation="source-over"; draw(); }
-function setKp(which,xy){ const key=S.keys[S.idx]; S.kp[key]=S.kp[key]||{occluded:{tip:false,tail:false}}; S.kp[key][which]=xy; draw(); }
+function setKp(which,xy){ const key=S.keys[S.idx]; S.kp[key]=S.kp[key]||{occluded:{}}; S.kp[key][which]=xy; draw(); }
 
 // ===== saves / actions =====
 async function saveMask(){ const key=S.keys[S.idx];
@@ -596,7 +615,9 @@ async function saveMask(){ const key=S.keys[S.idx];
   const res=await fetch(`/api/bags/${S.bag}/mask/${key}`,{method:"POST",headers:{"Content-Type":"image/png"},body:blob});
   toast(res.ok?"mask saved":"mask save failed"); }
 async function saveKp(silent){ const key=S.keys[S.idx], k=S.kp[key]||{};
-  await jpost(`/api/bags/${S.bag}/keypoints/${key}`,{needle_tip:k.needle_tip||null,needle_tail:k.needle_tail||null,occluded:k.occluded||{}}); if(!silent) toast("keypoints saved"); }
+  const body={occluded:k.occluded||{}};
+  for(const n of KP_NAMES) body[n]=k[n]||null;
+  await jpost(`/api/bags/${S.bag}/keypoints/${key}`, body); if(!silent) toast("keypoints saved"); }
 async function saveSeeds(run){
   const seeds=Object.entries(S.seeds).filter(([k,v])=>v.points.some((_,i)=>v.labels[i]===1))
     .map(([k,v])=>({frame_idx:parseInt(k,10),points:v.points,labels:v.labels}));
@@ -605,10 +626,11 @@ async function saveSeeds(run){
     if(run){ await runStage("propagate"); } await loadBags(); }
   catch(e){ toast("seed save failed: "+e.message); } }
 async function trackKp(anchor){ const key=S.keys[S.idx], k=S.kp[key]||{};
-  if(!k.needle_tip||!k.needle_tail){ toast("place tip and tail first"); return; }
+  const points={}; for(const n of KP_NAMES){ if(k[n]) points[n]=k[n]; }
+  if(!Object.keys(points).length){ toast("place at least one keypoint first"); return; }
   toast(anchor?"re-anchoring…":"tracking…");
   try{ const r=await jpost(`/api/bags/${S.bag}/keypoints/track`,
-        {seed_key:key,needle_tip:k.needle_tip,needle_tail:k.needle_tail,direction:"both",anchor:!!anchor});
+        {seed_key:key,points,direction:"both",anchor:!!anchor});
     S.kp=(await jget(`/api/bags/${S.bag}/keypoints`)).frames||{}; toast(`tracked ${r.tracked} frames`); await loadBags(); draw(); }
   catch(e){ toast("track failed: "+e.message); } }
 async function suggestKp(all){
@@ -694,14 +716,18 @@ function updateModeTools(){
     $("cp").onclick=copyPrevMask; $("sm").onclick=saveMask;
   } else if(S.mode==="keypoints"){
     const k=S.kp[S.keys[S.idx]]||{occluded:{}}; const oc=k.occluded||{};
-    mk(`<span style="color:var(--dim)">next: <b style="color:var(--amber)">${S.kpNext==='needle_tip'?'TIP':'TAIL'}</b> · drag to move</span>
+    const nextDef=KP_BY[S.kpNext]||KEYPOINTS[0];
+    const occBtns=KEYPOINTS.map(def=>{
+      const on=oc[def.name]; const sticky=S.stickyOcc[def.name]?' ⤓':'';
+      return `<button class="btn ${on?'warn':''}" data-occ="${def.name}" title="toggle occlusion for ${def.label}">${def.label} ${on?'OCC':'vis'}${sticky}</button>`;
+    }).join("");
+    mk(`<span style="color:var(--dim)">next: <b style="color:${nextDef.color}">${nextDef.label.toUpperCase()}</b> · click places · drag moves</span>
         <button class="btn" id="sg">suggest ⌖</button><button class="btn" id="sga">suggest all</button>
-        <button class="btn ${oc.tip?'warn':''}" id="ot">tip ${oc.tip?'OCCLUDED':'visible'}${S.stickyOcc.tip?' ⤓':''}</button>
-        <button class="btn ${oc.tail?'warn':''}" id="ol">tail ${oc.tail?'OCCLUDED':'visible'}${S.stickyOcc.tail?' ⤓':''}</button>
+        ${occBtns}
         <button class="btn" id="tk">track ↔</button><button class="btn warn" id="ak">re-anchor →</button>
         <button class="btn go" id="sk">save frame</button>`);
     $("sg").onclick=()=>suggestKp(false); $("sga").onclick=()=>suggestKp(true);
-    $("ot").onclick=()=>toggleOcc("tip"); $("ol").onclick=()=>toggleOcc("tail");
+    document.querySelectorAll("#modetools .btn[data-occ]").forEach(b=>b.onclick=()=>toggleOcc(b.dataset.occ));
     $("tk").onclick=()=>trackKp(false); $("ak").onclick=()=>trackKp(true); $("sk").onclick=()=>saveKp();
   } else if(S.mode==="corners"){
     const isNB=(S.poses[S.keys[S.idx]]||{}).status==="no_board";
@@ -753,14 +779,15 @@ async function nextFlagged(){
     await showFrame(idx); toast(`flagged frame ${target}${hi?` · rms ${(+hi.rms).toFixed(2)}px`:''} (${S.flagged.length} total)`); }
   else toast("flagged frame not in current list");
 }
-function toggleOcc(which){ const key=S.keys[S.idx]; S.kp[key]=S.kp[key]||{occluded:{tip:false,tail:false}};
-  S.kp[key].occluded=S.kp[key].occluded||{tip:false,tail:false};
+function toggleOcc(which){ const key=S.keys[S.idx]; S.kp[key]=S.kp[key]||{occluded:{}};
+  S.kp[key].occluded=S.kp[key].occluded||{};
   const nv=!S.kp[key].occluded[which];
   S.kp[key].occluded[which]=nv;
-  S.stickyOcc[which]=nv;                 // persist this choice to following frames
+  S.stickyOcc[which]=nv;
   draw(); updateModeTools();
-  saveKp(true);                          // autosave so the flag sticks on disk
-  toast(`${which} occluded: ${nv} (persists to next frames until toggled off)`); }
+  saveKp(true);
+  const lbl=(KP_BY[which]||{}).label||which;
+  toast(`${lbl} occluded: ${nv} (persists to next frames until toggled off)`); }
 
 // ===== borrow (cross-bag reference seeding) =====
 let borrowState={sources:[],src:null,frame:null};

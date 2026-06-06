@@ -112,6 +112,10 @@ geometry_msgs/PoseStamped left_arm_cp
 geometry_msgs/PoseWithCovarianceStamped right_tip_pose
 geometry_msgs/PoseWithCovarianceStamped left_tip_pose
 NeedleTrackingKeypoints keypoints
+geometry_msgs/PoseWithCovarianceStamped checkerboard_pose
+# 1 = checkerboard_pose is valid this frame; 0 = no checkerboard detected
+# (checkerboard_pose is a zero placeholder when invalid - DO NOT use it)
+uint8 checkerboard_valid
 builtin_interfaces/Time stamp
 """
 
@@ -444,8 +448,15 @@ def build_snapshot_msg(
     left_pose: PoseWithCovarianceStamped,
     keypoints_msg,
     timestamp_ns: int,
+    checkerboard_pose: PoseWithCovarianceStamped | None = None,
 ):
     snapshot_cls = typestore.types[SNAPSHOT_TYPE]
+    # checkerboard_pose may be None (no board this frame). The message field can't
+    # be None, so write a blank placeholder and set checkerboard_valid=0 so
+    # consumers know to ignore it.
+    cb_valid = 1 if checkerboard_pose is not None else 0
+    cb_pose = checkerboard_pose if checkerboard_pose is not None \
+        else build_blank_pose_with_cov_stamped(timestamp_ns)
     return snapshot_cls(
         img=image_msg,
         mask=mask_msg,
@@ -456,6 +467,8 @@ def build_snapshot_msg(
         right_tip_pose=right_pose,
         left_tip_pose=left_pose,
         keypoints=keypoints_msg,
+        checkerboard_pose=cb_pose,
+        checkerboard_valid=int(cb_valid),
         stamp=ns_to_time(timestamp_ns),
     )
 
@@ -719,8 +732,8 @@ def repack_bag(
                     annotation_conns[topic] = writer.add_connection(topic=topic, msgtype=msgtype, typestore=typestore)
             else:
                 snapshot_conn = writer.add_connection(topic=SNAPSHOT_TOPIC, msgtype=SNAPSHOT_TYPE, typestore=typestore)
-                if pose_indices:
-                    checkerboard_pose_conn = writer.add_connection(topic=CHECKERBOARD_POSE_TOPIC, msgtype=POSE_TYPE, typestore=typestore)
+                # snapshot mode folds the checkerboard pose into the snapshot message
+                # (with a checkerboard_valid flag), so no separate pose topic is created.
 
             latest_joint_right: JointState | None = None
             latest_joint_left: JointState | None = None
@@ -835,6 +848,12 @@ def repack_bag(
                                 )
                         else:
                             assert snapshot_conn is not None
+                            # checkerboard pose for THIS frame (None if no board) — folded
+                            # into the snapshot so every annotation is on one synchronized
+                            # message; checkerboard_valid flags whether it's real.
+                            cb_pose_msg = None
+                            if annotated_idx in poses:
+                                cb_pose_msg = build_pose_msg(timestamp, poses[annotated_idx])
                             snapshot_msg = build_snapshot_msg(
                                 typestore,
                                 image_msg,
@@ -847,6 +866,7 @@ def repack_bag(
                                 left_pose_msg,
                                 keypoints_msg,
                                 timestamp,
+                                checkerboard_pose=cb_pose_msg,
                             )
                             serialize_and_write(writer, snapshot_conn, typestore, snapshot_msg, SNAPSHOT_TYPE, timestamp)
                         try:
@@ -858,19 +878,17 @@ def repack_bag(
                     if annotated_idx in poses:
                         pose_frame_data = poses[annotated_idx]
                         pose_msg = build_pose_msg(timestamp, pose_frame_data)
-                        if pose_msg is not None:
-                            if split_topics:
-                                serialize_and_write(
-                                    writer,
-                                    annotation_conns[CHECKERBOARD_POSE_TOPIC],
-                                    typestore,
-                                    pose_msg,
-                                    POSE_TYPE,
-                                    timestamp,
-                                )
-                            else:
-                                if checkerboard_pose_conn is not None:
-                                    serialize_and_write(writer, checkerboard_pose_conn, typestore, pose_msg, POSE_TYPE, timestamp)
+                        if pose_msg is not None and split_topics:
+                            # snapshot mode now carries the pose INSIDE the snapshot,
+                            # so only split-topics mode publishes the separate topic.
+                            serialize_and_write(
+                                writer,
+                                annotation_conns[CHECKERBOARD_POSE_TOPIC],
+                                typestore,
+                                pose_msg,
+                                POSE_TYPE,
+                                timestamp,
+                            )
                         last_selected_mask_idx = annotated_idx
 
                     saved_frame_counter += 1

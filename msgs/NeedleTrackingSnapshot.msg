@@ -21,5 +21,9 @@ geometry_msgs/PoseWithCovarianceStamped left_tip_pose
 # Tracked keypoints (e.g., needle tip, needle tail, arm tips)
 NeedleTrackingKeypoints keypoints
 
+# For better synchronized checkerboard poses
+geometry_msgs/PoseWithCovarianceStamped checkerboard_pose
+uint8 checkerboard_valid
+
 # Timestamp for synchronization
 builtin_interfaces/Time stamp
