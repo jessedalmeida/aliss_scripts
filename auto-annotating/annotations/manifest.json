@@ -714,7 +714,7 @@
         }
       },
       "poses_source": "smooth",
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "chicken_1": {
       "tracks": {
