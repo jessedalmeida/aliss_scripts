@@ -85,8 +85,8 @@
           "ts": 1780168352.6825254
         }
       },
-      "repack_mode": "topics",
-      "poses_source": "auto"
+      "repack_mode": "snapshot",
+      "poses_source": "smooth"
     },
     "ch_chicken_1": {
       "tracks": {
@@ -155,7 +155,7 @@
           "ts": 1780167779.3469017
         }
       },
-      "repack_mode": "topics",
+      "repack_mode": "snapshot",
       "poses_source": "smooth"
     },
     "ch_chicken_4": {
@@ -176,7 +176,7 @@
         }
       },
       "poses_source": "smooth",
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "ch_chicken_5": {
       "tracks": {
@@ -196,7 +196,7 @@
         }
       },
       "poses_source": "smooth",
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "ch_circlexy_2": {
       "tracks": {
@@ -215,7 +215,7 @@
           "ts": 1780168639.580855
         }
       },
-      "repack_mode": "topics",
+      "repack_mode": "snapshot",
       "poses_source": "smooth"
     },
     "ch_circlexy_3": {
@@ -240,8 +240,8 @@
           "ts": 1780168685.7357984
         }
       },
-      "repack_mode": "topics",
-      "poses_source": "smooth"
+      "repack_mode": "snapshot",
+      "poses_source": "raw"
     },
     "ch_circlexy_4": {
       "tracks": {
@@ -260,7 +260,8 @@
           "ts": 1780168740.6528208
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "snapshot",
+      "poses_source": "smooth"
     },
     "ch_circlexy_5": {
       "tracks": {
@@ -284,7 +285,7 @@
           "ts": 1780168785.4235783
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "ch_circlexy_6": {
       "tracks": {
@@ -308,7 +309,8 @@
           "ts": 1780168833.3813467
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "snapshot",
+      "poses_source": "smooth"
     },
     "ch_circlexz_1": {
       "tracks": {
@@ -332,7 +334,8 @@
           "ts": 1780168876.0467622
         }
       },
-      "repack_mode": "snapshot"
+      "repack_mode": "snapshot",
+      "poses_source": "smooth"
     },
     "ch_circlexz_2": {
       "tracks": {
@@ -422,7 +425,7 @@
         }
       },
       "repack_mode": "topics",
-      "poses_source": "smooth"
+      "poses_source": "raw"
     },
     "ch_figure8_1": {
       "tracks": {
@@ -447,7 +450,7 @@
         }
       },
       "repack_mode": "topics",
-      "poses_source": "smooth"
+      "poses_source": "raw"
     },
     "ch_figure8_2": {
       "tracks": {
@@ -580,7 +583,7 @@
         }
       },
       "poses_source": "smooth",
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "ch_suture_2": {
       "tracks": {
@@ -600,7 +603,7 @@
         }
       },
       "poses_source": "smooth",
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "ch_suture_3": {
       "tracks": {
@@ -625,7 +628,7 @@
         }
       },
       "poses_source": "smooth",
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "ch_suture_4": {
       "tracks": {
@@ -645,7 +648,7 @@
         }
       },
       "poses_source": "smooth",
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "ch_suture_5": {
       "tracks": {
@@ -670,7 +673,7 @@
         }
       },
       "poses_source": "smooth",
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "ch_suture_6": {
       "tracks": {
@@ -694,7 +697,7 @@
           "ts": 1780169678.935289
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "ch_suture_7": {
       "tracks": {
@@ -733,7 +736,7 @@
           "ts": 1780169748.3292255
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "chicken_2": {
       "tracks": {
@@ -752,7 +755,7 @@
           "ts": 1780169771.6169758
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "chicken_3": {
       "tracks": {
@@ -771,7 +774,7 @@
           "ts": 1780169808.373441
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "chicken_4": {
       "tracks": {
@@ -790,7 +793,7 @@
           "ts": 1780169827.052915
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "chicken_5": {
       "tracks": {
@@ -809,7 +812,7 @@
           "ts": 1780169861.0274699
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "grasper_tracking": {
       "tracks": {
@@ -882,7 +885,7 @@
           "ts": 1780170011.6402519
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "trachea_2": {
       "tracks": {
@@ -901,7 +904,7 @@
           "ts": 1780170033.5363774
         }
       },
-      "repack_mode": "topics"
+      "repack_mode": "snapshot"
     },
     "trachea_3": {
       "tracks": {

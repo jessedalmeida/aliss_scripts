@@ -2766,9 +2766,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000210": {
       "needle_tip": [
@@ -2781,7 +2784,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -2798,7 +2802,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -2815,7 +2820,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -2850,9 +2856,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000215": {
       "needle_tip": [
@@ -2865,7 +2874,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -2954,9 +2964,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000221": {
       "needle_tip": [
@@ -2969,7 +2982,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -2986,7 +3000,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3003,7 +3018,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3020,9 +3036,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000225": {
       "needle_tip": [
@@ -3035,7 +3054,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3052,7 +3072,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3069,7 +3090,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3086,7 +3108,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3103,9 +3126,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000230": {
       "needle_tip": [
@@ -3118,7 +3144,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3135,7 +3162,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3152,7 +3180,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3169,9 +3198,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000234": {
       "needle_tip": [
@@ -3184,9 +3216,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000235": {
       "needle_tip": [
@@ -3199,7 +3234,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3216,9 +3252,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000237": {
       "needle_tip": [
@@ -3231,9 +3270,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000238": {
       "needle_tip": [
@@ -3246,7 +3288,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3263,7 +3306,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3280,9 +3324,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000241": {
       "needle_tip": [
@@ -3295,7 +3342,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3312,7 +3360,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3329,7 +3378,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3346,9 +3396,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000245": {
       "needle_tip": [
@@ -3361,9 +3414,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000246": {
       "needle_tip": [
@@ -3376,22 +3432,26 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000247": {
       "needle_tip": [
-        652,
-        675
+        599,
+        662
       ],
       "needle_tail": [
-        655,
-        675
+        726,
+        587
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3408,7 +3468,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3420,12 +3481,13 @@
         666
       ],
       "needle_tail": [
-        639,
-        652
+        711,
+        587
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3437,12 +3499,13 @@
         600
       ],
       "needle_tail": [
-        662,
-        585
+        674,
+        586
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3454,14 +3517,17 @@
         605
       ],
       "needle_tail": [
-        786,
-        326
+        674,
+        583
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000252": {
       "needle_tip": [
@@ -3474,9 +3540,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000253": {
       "needle_tip": [
@@ -3489,9 +3558,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000254": {
       "needle_tip": [
@@ -3504,7 +3576,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3521,9 +3594,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000256": {
       "needle_tip": [
@@ -3536,7 +3612,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3553,7 +3630,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3570,7 +3648,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3587,7 +3666,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3604,7 +3684,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3621,7 +3702,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3638,9 +3720,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000263": {
       "needle_tip": [
@@ -3653,7 +3738,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3670,9 +3756,12 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000265": {
       "needle_tip": [
@@ -3685,7 +3774,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -3702,7 +3792,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "left_arm_tip": null,
@@ -4367,9 +4458,12 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000304": {
       "needle_tip": [
@@ -4382,9 +4476,12 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000305": {
       "needle_tip": [
@@ -4397,9 +4494,12 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000306": {
       "needle_tip": [
@@ -4412,9 +4512,12 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000307": {
       "needle_tip": [
@@ -4427,9 +4530,12 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000308": {
       "needle_tip": [
@@ -4442,9 +4548,12 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000309": {
       "needle_tip": [
@@ -4457,9 +4566,12 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000310": {
       "needle_tip": [
@@ -4708,7 +4820,9 @@
         "tip": false,
         "tail": false
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000324": {
       "needle_tip": [
@@ -4723,7 +4837,9 @@
         "tip": true,
         "tail": false
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000325": {
       "needle_tip": [
@@ -4738,7 +4854,9 @@
         "tip": false,
         "tail": false
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000326": {
       "needle_tip": [
@@ -4753,7 +4871,9 @@
         "tip": false,
         "tail": false
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000327": {
       "needle_tip": [
@@ -4768,7 +4888,9 @@
         "tip": true,
         "tail": false
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000328": {
       "needle_tip": [
@@ -4783,7 +4905,9 @@
         "tip": true,
         "tail": false
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000329": {
       "needle_tip": [
@@ -4798,7 +4922,9 @@
         "tip": true,
         "tail": false
       },
-      "status": "ok"
+      "status": "ok",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000330": {
       "needle_tip": [

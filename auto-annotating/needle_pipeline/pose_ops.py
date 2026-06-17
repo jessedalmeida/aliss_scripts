@@ -54,11 +54,6 @@ def _import_estimate():
     raise ImportError("Could not import estimate_checkerboard_pose_offline with its API.") from last
 
 
-# def _camera_yaml(ctx, bag: str) -> Path:
-#     if ctx.camera_yaml:
-#         return Path(ctx.camera_yaml)
-#     choose_camera_yaml = _import_estimate().choose_camera_yaml
-#     return choose_camera_yaml(ctx.ann_dir, ctx.bag_dir(bag), None)
 def _camera_yaml(ctx, bag: str) -> Path:
     """Resolve the camera calibration for a bag.
 
@@ -231,6 +226,61 @@ def project_axes(ctx, bag: str, key: str, frame: dict, axis_len: float | None = 
             "y": p[2].tolist(), "z": p[3].tolist()}
 
 
+# Needle geometry relative to the checkerboard — mirrors CheckerboardTracker in the
+# live node (suturing/needle_tracking) so the annotation overlay matches what the
+# node will compute. Keep these in sync with checkerboard_tracker.py.
+_NEEDLE_OFFSET = np.array([-5.29e-3, 3.179e-3, 0.0], dtype=np.float64)
+_NEEDLE_RADIUS = 4.6e-3
+_NEEDLE_ARC_LENGTH = 10.6e-3
+_NEEDLE_ANGLE = _NEEDLE_ARC_LENGTH / _NEEDLE_RADIUS
+_R_CB_NEEDLE = np.array([
+    [0.0, -1.0,  0.0],
+    [-1.0, 0.0,  0.0],
+    [0.0,  0.0, -1.0],
+], dtype=np.float64)
+
+
+def project_needle_arc(ctx, bag: str, key: str, frame: dict, n_pts: int = 50) -> dict | None:
+    """Project the suture-needle arc (derived from the checkerboard pose via the
+    fixed needle offset/flip) to pixel coords for an overlay. Returns
+    {"points": [[px,py], ...]} or None if the frame has no usable pose.
+
+    The math matches CheckerboardTracker.apply_external_checkerboard_pose +
+    _draw_needle_arc in the live node, so what you see while annotating is what the
+    node reconstructs from the same checkerboard pose.
+    """
+    rt = _rvec_tvec_for_frame(ctx, bag, frame)
+    if rt is None:
+        return None
+    rvec, tvec = rt
+    K, dist = load_camera_model_cached(ctx, bag)
+
+    # checkerboard pose in camera frame (T_C_cb)
+    Rm, _ = cv2.Rodrigues(np.asarray(rvec, dtype=np.float64))
+    T_C_cb = np.eye(4, dtype=np.float64)
+    T_C_cb[:3, :3] = Rm
+    T_C_cb[:3, 3] = np.asarray(tvec, dtype=np.float64).reshape(3)
+
+    # needle frame relative to checkerboard (flip + static offset), then to camera
+    T_cb_N = np.eye(4, dtype=np.float64)
+    T_cb_N[:3, :3] = _R_CB_NEEDLE
+    T_cb_N[:3, 3] = _NEEDLE_OFFSET
+    T_cam_N = T_C_cb @ T_cb_N
+
+    # arc points in the needle's local frame (matches _draw_needle_arc)
+    theta = np.linspace(0.0, _NEEDLE_ANGLE, int(n_pts))
+    r = _NEEDLE_RADIUS
+    x = -r * np.cos(theta)
+    y = r * np.sin(theta)
+    z = np.zeros_like(theta)
+    pts = np.vstack((x, y, z, np.ones_like(theta)))           # 4 x N
+    pts_cam = (T_cam_N @ pts)[:3, :].T                         # N x 3
+
+    proj, _ = cv2.projectPoints(pts_cam, np.zeros(3), np.zeros(3), K, dist)
+    pts2d = proj.reshape(-1, 2)
+    return {"points": pts2d.tolist()}
+
+
 def _import_temporal():
     import importlib
     for name in ("temporal_interpolation",
@@ -270,20 +320,13 @@ def resmooth(ctx, bag: str, z_downweight: float = 1.0, process_noise_scale: floa
                 continue
             cov = pose.get("covariance")
             if cov and len(cov) == 36:
-                # Covariance is ROS order [x,y,z,rot_x,rot_y,rot_z], row-major 6x6.
-                # To down-weight Z we must scale the ENTIRE Z row AND column by the
-                # factor (not just the c[2,2] diagonal): this preserves the matrix's
-                # positive-definiteness and its x/y<->z correlation structure. Scaling
-                # only the diagonal on a near-singular covariance breaks conditioning
-                # and can make the smoother's Kalman gain produce wrong-sign (drifting)
-                # Z corrections. Row+col scaling by s multiplies the z variance by s^2
-                # and each z-cross-covariance by s, exactly as a proper rescaling should.
-                import numpy as _np
-                M = _np.asarray(cov, dtype=_np.float64).reshape(6, 6)
-                s = float(z_downweight)
-                M[2, :] *= s
-                M[:, 2] *= s
-                pose["covariance"] = [float(v) for v in M.reshape(-1)]
+                c = list(cov)
+                # 6x6 row-major; position Z variance is index 2*6+2 = 14
+                c[14] *= float(z_downweight) ** 2
+                # also down-weight the two in-plane tilt rotations (rx, ry) -> indices 21, 28
+                c[21] *= float(z_downweight)
+                c[28] *= float(z_downweight)
+                pose["covariance"] = c
         tf = tempfile.NamedTemporaryFile("w", suffix=".json", delete=False)
         tf.write(json.dumps(data)); tf.close()
         src_path = Path(tf.name)

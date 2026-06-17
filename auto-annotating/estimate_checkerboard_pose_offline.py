@@ -154,6 +154,7 @@ def process_bag(args: argparse.Namespace, bag_dir: Path, output_json: Path) -> b
                     if refined is None:
                         raise RuntimeError("solvePnP failed")
                     rvec, tvec = refined
+                    rms = pose_rms_reprojection_error(object_points, image_points, rvec, tvec, estimator.camera_matrix, estimator.distortion_coeffs)
                     covariance = compute_pose_covariance(
                         object_points,
                         image_points,
@@ -161,9 +162,8 @@ def process_bag(args: argparse.Namespace, bag_dir: Path, output_json: Path) -> b
                         tvec,
                         estimator.camera_matrix,
                         estimator.distortion_coeffs,
-                        args.pixel_noise_sigma,
+                        rms,
                     )
-                    rms = pose_rms_reprojection_error(object_points, image_points, rvec, tvec, estimator.camera_matrix, estimator.distortion_coeffs)
 
                     pose_dict = {
                         "frame_id": "endoscope_optical",

@@ -23,8 +23,8 @@
     },
     "000027": {
       "needle_tip": [
-        613,
-        486
+        560,
+        482
       ],
       "needle_tail": [
         724,
@@ -35,12 +35,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000028": {
       "needle_tip": [
-        612,
-        485
+        557,
+        482
       ],
       "needle_tail": [
         723,
@@ -51,7 +53,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000029": {
       "needle_tip": [
@@ -67,7 +71,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000030": {
       "needle_tip": [
@@ -479,10 +485,13 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000052": {
       "needle_tip": [
@@ -552,10 +561,13 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000056": {
       "needle_tip": [
@@ -568,7 +580,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "method": "optical_flow_gui",
@@ -966,12 +979,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000078": {
       "needle_tip": [
-        745,
-        497
+        731,
+        487
       ],
       "needle_tail": [
         821,
@@ -982,12 +997,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000079": {
       "needle_tip": [
-        738,
-        497
+        718,
+        487
       ],
       "needle_tail": [
         823,
@@ -998,12 +1015,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000080": {
       "needle_tip": [
-        739,
-        498
+        714,
+        485
       ],
       "needle_tail": [
         823,
@@ -1014,12 +1033,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000081": {
       "needle_tip": [
-        730,
-        499
+        708,
+        484
       ],
       "needle_tail": [
         823,
@@ -1030,12 +1051,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000082": {
       "needle_tip": [
-        726,
-        501
+        699,
+        486
       ],
       "needle_tail": [
         824,
@@ -1046,12 +1069,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000083": {
       "needle_tip": [
-        723,
-        504
+        699,
+        488
       ],
       "needle_tail": [
         825,
@@ -1062,12 +1087,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000084": {
       "needle_tip": [
-        723,
-        509
+        696,
+        491
       ],
       "needle_tail": [
         827,
@@ -1078,12 +1105,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000085": {
       "needle_tip": [
-        728,
-        509
+        696,
+        501
       ],
       "needle_tail": [
         828,
@@ -1094,12 +1123,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000086": {
       "needle_tip": [
-        731,
-        517
+        693,
+        508
       ],
       "needle_tail": [
         828,
@@ -1110,12 +1141,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000087": {
       "needle_tip": [
-        734,
-        523
+        689,
+        520
       ],
       "needle_tail": [
         828,
@@ -1126,12 +1159,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000088": {
       "needle_tip": [
-        737,
-        527
+        687,
+        521
       ],
       "needle_tail": [
         828,
@@ -2014,10 +2049,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000136": {
       "needle_tip": [
@@ -2030,10 +2068,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000137": {
       "needle_tip": [
@@ -2046,10 +2087,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000138": {
       "needle_tip": [
@@ -2062,10 +2106,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000139": {
       "needle_tip": [
@@ -2078,10 +2125,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000140": {
       "needle_tip": [
@@ -2094,10 +2144,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000141": {
       "needle_tip": [
@@ -2110,10 +2163,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000142": {
       "needle_tip": [
@@ -2126,10 +2182,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000143": {
       "needle_tip": [
@@ -2142,10 +2201,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000144": {
       "needle_tip": [
@@ -2158,10 +2220,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000145": {
       "needle_tip": [
@@ -2174,10 +2239,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000146": {
       "needle_tip": [
@@ -2190,10 +2258,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000147": {
       "needle_tip": [
@@ -2206,10 +2277,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000148": {
       "needle_tip": [
@@ -2222,10 +2296,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000149": {
       "needle_tip": [
@@ -2238,10 +2315,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000150": {
       "needle_tip": [
@@ -2254,10 +2334,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000151": {
       "needle_tip": [
@@ -2270,10 +2353,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000152": {
       "needle_tip": [
@@ -2286,10 +2372,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000153": {
       "needle_tip": [
@@ -2302,10 +2391,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000154": {
       "needle_tip": [
@@ -2318,10 +2410,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000155": {
       "needle_tip": [
@@ -2334,10 +2429,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000156": {
       "needle_tip": [
@@ -2350,10 +2448,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000157": {
       "needle_tip": [
@@ -2366,10 +2467,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000158": {
       "needle_tip": [
@@ -2382,10 +2486,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000159": {
       "needle_tip": [
@@ -2398,10 +2505,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000160": {
       "needle_tip": [
@@ -2414,10 +2524,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000161": {
       "needle_tip": [
@@ -2430,10 +2543,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000162": {
       "needle_tip": [
@@ -2446,10 +2562,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000163": {
       "needle_tip": [
@@ -2462,10 +2581,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000164": {
       "needle_tip": [
@@ -2478,10 +2600,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000165": {
       "needle_tip": [
@@ -2494,10 +2619,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000166": {
       "needle_tip": [
@@ -2510,10 +2638,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000167": {
       "needle_tip": [
@@ -2526,10 +2657,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000168": {
       "needle_tip": [
@@ -2542,10 +2676,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000169": {
       "needle_tip": [
@@ -2558,10 +2695,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000170": {
       "needle_tip": [
@@ -2574,10 +2714,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000171": {
       "needle_tip": [
@@ -2590,10 +2733,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000172": {
       "needle_tip": [
@@ -2606,10 +2752,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000173": {
       "needle_tip": [
@@ -2622,10 +2771,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000174": {
       "needle_tip": [
@@ -2638,10 +2790,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000175": {
       "needle_tip": [
@@ -2654,10 +2809,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000176": {
       "needle_tip": [
@@ -2670,10 +2828,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000177": {
       "needle_tip": [
@@ -2689,7 +2850,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000178": {
       "needle_tip": [
@@ -2705,7 +2868,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000179": {
       "needle_tip": [
@@ -2721,7 +2886,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000180": {
       "needle_tip": [
@@ -2737,7 +2904,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000181": {
       "needle_tip": [
@@ -2753,7 +2922,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000182": {
       "needle_tip": [
@@ -2801,12 +2972,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000185": {
       "needle_tip": [
-        586,
-        420
+        589,
+        433
       ],
       "needle_tail": [
         786,
@@ -2817,12 +2990,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000186": {
       "needle_tip": [
-        539,
-        445
+        591,
+        481
       ],
       "needle_tail": [
         783,
@@ -2833,7 +3008,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000187": {
       "needle_tip": [
@@ -3084,8 +3261,8 @@
     },
     "000200": {
       "needle_tip": [
-        806,
-        498
+        826,
+        483
       ],
       "needle_tail": [
         823,
@@ -3115,7 +3292,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000202": {
       "needle_tip": [
@@ -3311,8 +3490,8 @@
     },
     "000214": {
       "needle_tip": [
-        770,
-        502
+        765,
+        525
       ],
       "needle_tail": [
         853,
@@ -3323,7 +3502,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000215": {
       "needle_tip": [
@@ -3826,10 +4007,13 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000244": {
       "needle_tip": [
@@ -3842,7 +4026,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "method": "optical_flow_gui",
@@ -3860,7 +4045,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "method": "optical_flow_gui",
@@ -3878,10 +4064,13 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000247": {
       "needle_tip": [
@@ -3894,7 +4083,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "method": "optical_flow_gui",
@@ -3912,7 +4102,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "method": "optical_flow_gui",
@@ -3930,7 +4121,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "method": "optical_flow_gui",
@@ -3948,7 +4140,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "method": "optical_flow_gui",
@@ -3966,7 +4159,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "method": "optical_flow_gui",
@@ -4156,10 +4350,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000263": {
       "needle_tip": [
@@ -4172,10 +4369,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000264": {
       "needle_tip": [
@@ -4188,10 +4388,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000265": {
       "needle_tip": [
@@ -4204,10 +4407,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000266": {
       "needle_tip": [
@@ -4220,10 +4426,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000267": {
       "needle_tip": [
@@ -4236,10 +4445,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000268": {
       "needle_tip": [
@@ -4252,10 +4464,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000269": {
       "needle_tip": [
@@ -4268,10 +4483,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000270": {
       "needle_tip": [
@@ -4284,10 +4502,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000271": {
       "needle_tip": [
@@ -4300,10 +4521,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000272": {
       "needle_tip": [
@@ -4316,10 +4540,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000273": {
       "needle_tip": [
@@ -4332,10 +4559,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000274": {
       "needle_tip": [
@@ -4348,10 +4578,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000275": {
       "needle_tip": [
@@ -4364,10 +4597,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000276": {
       "needle_tip": [
@@ -4380,10 +4616,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000277": {
       "needle_tip": [
@@ -4396,10 +4635,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000278": {
       "needle_tip": [
@@ -4412,10 +4654,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000279": {
       "needle_tip": [
@@ -4428,10 +4673,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000280": {
       "needle_tip": [
@@ -4444,10 +4692,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000281": {
       "needle_tip": [
@@ -4460,10 +4711,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000282": {
       "needle_tip": [
@@ -4476,10 +4730,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000283": {
       "needle_tip": [
@@ -4492,10 +4749,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000284": {
       "needle_tip": [
@@ -4508,10 +4768,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000285": {
       "needle_tip": [
@@ -4524,10 +4787,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000286": {
       "needle_tip": [
@@ -4540,10 +4806,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000287": {
       "needle_tip": [
@@ -4556,10 +4825,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000288": {
       "needle_tip": [
@@ -4572,10 +4844,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000289": {
       "needle_tip": [
@@ -4588,10 +4863,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000290": {
       "needle_tip": [
@@ -4604,10 +4882,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000291": {
       "needle_tip": [
@@ -4620,10 +4901,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000292": {
       "needle_tip": [
@@ -4636,10 +4920,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000293": {
       "needle_tip": [
@@ -4652,10 +4939,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000294": {
       "needle_tip": [
@@ -4668,10 +4958,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000295": {
       "needle_tip": [
@@ -4684,10 +4977,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000296": {
       "needle_tip": [
@@ -4700,10 +4996,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000297": {
       "needle_tip": [
@@ -4716,10 +5015,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000298": {
       "needle_tip": [
@@ -4732,10 +5034,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000299": {
       "needle_tip": [
@@ -4748,10 +5053,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000300": {
       "needle_tip": [
@@ -4764,10 +5072,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000301": {
       "needle_tip": [
@@ -4867,8 +5178,8 @@
     },
     "000307": {
       "needle_tip": [
-        537,
-        423
+        542,
+        432
       ],
       "needle_tail": [
         760,
@@ -4879,12 +5190,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000308": {
       "needle_tip": [
-        535,
-        430
+        543,
+        448
       ],
       "needle_tail": [
         759,
@@ -4895,12 +5208,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000309": {
       "needle_tip": [
-        525,
-        439
+        547,
+        471
       ],
       "needle_tail": [
         757,
@@ -4911,12 +5226,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000310": {
       "needle_tip": [
-        503,
-        464
+        548,
+        492
       ],
       "needle_tail": [
         755,
@@ -4927,7 +5244,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000311": {
       "needle_tip": [
@@ -5322,24 +5641,26 @@
     },
     "000333": {
       "needle_tip": [
-        782,
-        418
+        711,
+        474
       ],
       "needle_tail": [
-        808,
-        275
+        812,
+        272
       ],
       "occluded": {
         "tip": false,
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000334": {
       "needle_tip": [
-        760,
-        434
+        684,
+        497
       ],
       "needle_tail": [
         775,
@@ -5350,12 +5671,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000335": {
       "needle_tip": [
-        762,
-        427
+        649,
+        501
       ],
       "needle_tail": [
         730,
@@ -5366,12 +5689,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000336": {
       "needle_tip": [
-        755,
-        430
+        637,
+        506
       ],
       "needle_tail": [
         723,
@@ -5382,12 +5707,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000337": {
       "needle_tip": [
-        755,
-        433
+        637,
+        506
       ],
       "needle_tail": [
         722,
@@ -5398,12 +5725,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000338": {
       "needle_tip": [
-        748,
-        418
+        616,
+        496
       ],
       "needle_tail": [
         724,
@@ -5414,12 +5743,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000339": {
       "needle_tip": [
-        735,
-        413
+        577,
+        468
       ],
       "needle_tail": [
         731,
@@ -5430,7 +5761,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000340": {
       "needle_tip": [
@@ -5446,7 +5779,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000341": {
       "needle_tip": [
@@ -5462,7 +5797,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000342": {
       "needle_tip": [
@@ -5478,12 +5815,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000343": {
       "needle_tip": [
-        557,
-        449
+        556,
+        466
       ],
       "needle_tail": [
         755,
@@ -5494,12 +5833,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000344": {
       "needle_tip": [
-        551,
-        456
+        553,
+        473
       ],
       "needle_tail": [
         755,
@@ -5510,12 +5851,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000345": {
       "needle_tip": [
-        549,
-        459
+        556,
+        478
       ],
       "needle_tail": [
         756,
@@ -5526,12 +5869,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000346": {
       "needle_tip": [
-        551,
-        452
+        553,
+        468
       ],
       "needle_tail": [
         756,
@@ -5542,12 +5887,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000347": {
       "needle_tip": [
         556,
-        450
+        468
       ],
       "needle_tail": [
         756,
@@ -5558,12 +5905,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000348": {
       "needle_tip": [
-        559,
-        441
+        532,
+        427
       ],
       "needle_tail": [
         745,
@@ -5574,12 +5923,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000349": {
       "needle_tip": [
-        528,
-        420
+        492,
+        392
       ],
       "needle_tail": [
         705,
@@ -5590,12 +5941,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000350": {
       "needle_tip": [
-        501,
-        400
+        464,
+        358
       ],
       "needle_tail": [
         679,
@@ -5606,12 +5959,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000351": {
       "needle_tip": [
         452,
-        355
+        343
       ],
       "needle_tail": [
         659,
@@ -5622,12 +5977,14 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000352": {
       "needle_tip": [
-        438,
-        341
+        440,
+        333
       ],
       "needle_tail": [
         640,
@@ -5638,7 +5995,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000353": {
       "needle_tip": [
@@ -5654,7 +6013,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000354": {
       "needle_tip": [
@@ -5670,7 +6031,9 @@
         "tail": false
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000355": {
       "needle_tip": [
@@ -5795,10 +6158,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": false
+        "tail": false,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000363": {
       "needle_tip": [
@@ -5811,10 +6177,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000364": {
       "needle_tip": [
@@ -5827,15 +6196,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000365": {
       "needle_tip": [
-        544,
-        277
+        548,
+        266
       ],
       "needle_tail": [
         604,
@@ -5843,15 +6215,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000366": {
       "needle_tip": [
-        549,
-        283
+        555,
+        264
       ],
       "needle_tail": [
         602,
@@ -5859,15 +6234,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000367": {
       "needle_tip": [
-        553,
-        285
+        566,
+        268
       ],
       "needle_tail": [
         602,
@@ -5875,15 +6253,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000368": {
       "needle_tip": [
-        552,
-        287
+        573,
+        274
       ],
       "needle_tail": [
         601,
@@ -5891,15 +6272,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000369": {
       "needle_tip": [
-        552,
-        290
+        573,
+        274
       ],
       "needle_tail": [
         601,
@@ -5907,15 +6291,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000370": {
       "needle_tip": [
-        557,
-        289
+        573,
+        274
       ],
       "needle_tail": [
         601,
@@ -5923,15 +6310,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000371": {
       "needle_tip": [
-        556,
-        290
+        575,
+        274
       ],
       "needle_tail": [
         601,
@@ -5939,15 +6329,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000372": {
       "needle_tip": [
-        556,
-        292
+        575,
+        274
       ],
       "needle_tail": [
         601,
@@ -5955,15 +6348,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000373": {
       "needle_tip": [
-        562,
-        282
+        575,
+        274
       ],
       "needle_tail": [
         601,
@@ -5971,15 +6367,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000374": {
       "needle_tip": [
-        565,
-        280
+        577,
+        274
       ],
       "needle_tail": [
         601,
@@ -5987,15 +6386,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000375": {
       "needle_tip": [
-        563,
-        281
+        577,
+        274
       ],
       "needle_tail": [
         601,
@@ -6003,15 +6405,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000376": {
       "needle_tip": [
-        565,
-        280
+        579,
+        273
       ],
       "needle_tail": [
         601,
@@ -6019,15 +6424,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000377": {
       "needle_tip": [
-        570,
-        277
+        584,
+        271
       ],
       "needle_tail": [
         601,
@@ -6035,15 +6443,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000378": {
       "needle_tip": [
-        571,
-        276
+        584,
+        271
       ],
       "needle_tail": [
         601,
@@ -6051,15 +6462,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000379": {
       "needle_tip": [
-        572,
-        276
+        584,
+        271
       ],
       "needle_tail": [
         601,
@@ -6067,15 +6481,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000380": {
       "needle_tip": [
-        572,
-        276
+        584,
+        271
       ],
       "needle_tail": [
         601,
@@ -6083,15 +6500,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000381": {
       "needle_tip": [
-        572,
-        274
+        584,
+        271
       ],
       "needle_tail": [
         601,
@@ -6099,15 +6519,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000382": {
       "needle_tip": [
-        570,
-        275
+        584,
+        271
       ],
       "needle_tail": [
         602,
@@ -6115,15 +6538,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000383": {
       "needle_tip": [
-        570,
-        274
+        584,
+        271
       ],
       "needle_tail": [
         601,
@@ -6131,15 +6557,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000384": {
       "needle_tip": [
-        571,
-        275
+        584,
+        271
       ],
       "needle_tail": [
         602,
@@ -6147,15 +6576,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000385": {
       "needle_tip": [
-        568,
-        274
+        584,
+        271
       ],
       "needle_tail": [
         601,
@@ -6163,15 +6595,18 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000386": {
       "needle_tip": [
-        567,
-        276
+        584,
+        271
       ],
       "needle_tail": [
         602,
@@ -6179,10 +6614,13 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
-      "method": "optical_flow_gui"
+      "method": "optical_flow_gui",
+      "left_arm_tip": null,
+      "right_arm_tip": null
     },
     "000387": {
       "needle_tip": [
@@ -6195,7 +6633,8 @@
       ],
       "occluded": {
         "tip": false,
-        "tail": true
+        "tail": true,
+        "needle_tail": true
       },
       "status": "ok",
       "method": "optical_flow_gui",
@@ -6204,8 +6643,8 @@
     },
     "000025": {
       "needle_tip": [
-        588,
-        491
+        560,
+        524
       ],
       "needle_tail": [
         730,
@@ -6223,8 +6662,8 @@
     },
     "000024": {
       "needle_tip": [
-        602,
-        485
+        561,
+        535
       ],
       "needle_tail": [
         734,
@@ -6251,7 +6690,8 @@
       ],
       "occluded": {
         "tip": true,
-        "tail": false
+        "tail": false,
+        "needle_tip": true
       },
       "status": "ok",
       "method": "optical_flow_gui",

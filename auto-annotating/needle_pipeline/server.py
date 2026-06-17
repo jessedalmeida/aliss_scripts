@@ -467,6 +467,21 @@ def get_axes(bag: str, key: str):
     return {"axes": axes}
 
 
+@app.get("/api/bags/{bag}/needle_arc/{key}")
+def get_needle_arc(bag: str, key: str):
+    """Project the suture-needle arc (from the checkerboard pose) to pixels.
+    Returns {points: [[px,py],...]} or {points:null} if the frame has no pose."""
+    frame = read_json(bag_dir(bag) / "poses.json").get("frames", {}).get(key)
+    if not frame or frame.get("status") != "ok" or not frame.get("pose"):
+        return {"points": None}
+    try:
+        from .pose_ops import project_needle_arc
+        arc = project_needle_arc(ctx(), bag, key, frame)
+    except Exception as exc:  # noqa: BLE001 - decorative; never 500 the UI
+        return {"points": None, "error": str(exc)}
+    return arc if arc else {"points": None}
+
+
 @app.post("/api/bags/{bag}/pose/{key}/reflow")
 async def reflow_pose(bag: str, key: str, req: Request):
     """Re-seed a bad frame's checkerboard corners by optical-flow from the nearest

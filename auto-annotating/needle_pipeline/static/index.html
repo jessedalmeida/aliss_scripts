@@ -297,9 +297,14 @@ const S = {
   board:{cols:3, rows:4, expected:12},
   view:{scale:1, ox:0, oy:0}, viewReady:false,
   brush:6, erase:false,
-  stickyOcc:{},  // {keypointName: bool} occlusion persists across frames until toggled off
+  stickyOcc:{},  // {keypointName: bool} occlusion persisted across frames (only when stickyMode on)
   painting:false, dragKp:null, dragCorner:-1, panning:false, panLast:null, spaceDown:false,
   kpNext:"needle_tip",
+  autosave:true,     // save on drag-end + frame change
+  kpLock:false,      // true = lock to kpNext (no autocycle); false = autocycle after placing
+  stickyMode:false,  // true = occlusion toggles persist to following frames; false = per-frame only
+  showNeedle:true,   // overlay the projected needle arc from the checkerboard pose
+  needleArc:{},      // per-frame cache of projected arc points
 };
 
 function toast(m){ const t=$("toast"); t.textContent=m; t.classList.add("show"); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove("show"),1800); }
@@ -367,7 +372,15 @@ function draw(){
   if(S.mode==="corners"||S.mode==="view"){
     drawCornerGrid(S.corners.length?S.corners:(S.poses[key]&&S.poses[key].corners)||[]);
     if(S.axes[key]) drawAxes(S.axes[key]);
+    if(S.showNeedle && S.needleArc[key]) drawNeedleArc(S.needleArc[key]);
   }
+}
+function drawNeedleArc(a){
+  if(!a||!a.points||a.points.length<2) return;
+  const pts=a.points; ctx.lineWidth=3/S.view.scale; ctx.strokeStyle="#ffd33d"; ctx.lineCap="round";
+  ctx.beginPath(); ctx.moveTo(pts[0][0],pts[0][1]);
+  for(let i=1;i<pts.length;i++) ctx.lineTo(pts[i][0],pts[i][1]);
+  ctx.stroke();
 }
 function drawAxes(a){
   if(!a||!a.origin) return;
@@ -460,36 +473,51 @@ function renderRail(){
 function loadImg(u){ return new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=u; }); }
 async function selectBag(name){
   if(typeof stopPlay==="function") stopPlay();
-  S.bag=name; S.idx=0; S.viewReady=false; S.seeds={}; S.axes={};
+  S.bag=name; S.idx=0; S.viewReady=false; S.seeds={}; S.axes={}; S.needleArc={};
+  // frames first (needed to show anything), then fetch the independent data in
+  // parallel instead of six sequential round-trips.
   const f=await jget(`/api/bags/${name}/frames`); S.keys=f.keys;
-  try{ S.kp=(await jget(`/api/bags/${name}/keypoints`)).frames||{}; }catch{ S.kp={}; }
-  try{ S.poses=(await jget(`/api/bags/${name}/poses`)).frames||{}; }catch{ S.poses={}; }
-  await loadFlagged();
-  try{ const sd=await jget(`/api/bags/${name}/seeds`); (sd.seed_frames||[]).forEach(e=>{
-        const o=e.objects&&e.objects.needle_mask; if(o) S.seeds[String(e.seed_frame_idx).padStart(6,'0')]={points:o.points,labels:o.labels}; }); }catch{}
+  const [kp, poses, sd] = await Promise.all([
+    jget(`/api/bags/${name}/keypoints`).then(r=>r.frames||{}).catch(()=>({})),
+    jget(`/api/bags/${name}/poses`).then(r=>r.frames||{}).catch(()=>({})),
+    jget(`/api/bags/${name}/seeds`).then(r=>r).catch(()=>null),
+  ]);
+  S.kp=kp; S.poses=poses;
+  if(sd){ (sd.seed_frames||[]).forEach(e=>{
+    const o=e.objects&&e.objects.needle_mask; if(o) S.seeds[String(e.seed_frame_idx).padStart(6,'0')]={points:o.points,labels:o.labels}; }); }
   $("slider").max=Math.max(0,S.keys.length-1);
   $("empty").style.display=S.keys.length?"none":"flex";
-  await loadBags();
+  // show the first frame immediately; flagged + rail refresh in the background
   if(S.keys.length) await showFrame(0); else renderRail();
+  loadFlagged();   // off the critical path — updates the rail when it returns
+  loadBags();
 }
 async function showFrame(i){
   if(!S.keys.length) return;
+  // autosave the frame we're LEAVING (covers dragged/placed keypoints not yet saved)
+  if(S.autosave && S.mode==="keypoints" && S.keys[S.idx]!=null){
+    const leavingKey=S.keys[S.idx], lk=S.kp[leavingKey];
+    if(lk && KP_NAMES.some(n=>lk[n])){ try{ await saveKp(); }catch{} }
+  }
   S.idx=Math.max(0,Math.min(S.keys.length-1,i));
-  S.dragKp=null; S.dragCorner=-1; S.kpNext="needle_tip";
+  S.dragKp=null; S.dragCorner=-1;
+  if(!S.kpLock) S.kpNext="needle_tip";   // in lock mode keep the chosen keypoint
   const key=S.keys[S.idx];
-  S.frameImg=await loadImg(`/api/bags/${S.bag}/frame/${key}?t=${Date.now()}`);
+  // frame image never changes for a given key -> let the browser cache it (no ?t=)
+  S.frameImg=await loadImg(`/api/bags/${S.bag}/frame/${key}`);
   const iw=S.frameImg.naturalWidth, ih=S.frameImg.naturalHeight;
   S.maskCanvas=document.createElement("canvas"); S.maskCanvas.width=iw; S.maskCanvas.height=ih;
+  // mask CAN change after an edit, so keep the cache-buster here only
   try{ const mi=await loadImg(`/api/bags/${S.bag}/mask/${key}?t=${Date.now()}`); S.maskCanvas.getContext("2d").drawImage(mi,0,0,iw,ih); }catch{}
   // load existing corners into working set so they're draggable
   S.corners = (S.poses[key]&&S.poses[key].corners)? S.poses[key].corners.map(c=>[c[0],c[1]]) : [];
-  // sticky occlusion: carry the current tip/tail occlusion state onto this frame
-  if(KP_NAMES.some(n=>S.stickyOcc[n])){
+  // sticky occlusion: only carries to following frames when sticky MODE is enabled
+  if(S.stickyMode && KP_NAMES.some(n=>S.stickyOcc[n])){
     const k=S.kp[key]=S.kp[key]||{occluded:{}};
     k.occluded=k.occluded||{};
     let changed=false;
     for(const n of KP_NAMES){ if(S.stickyOcc[n] && !k.occluded[n]){ k.occluded[n]=true; changed=true; } }
-    if(changed && KP_NAMES.some(n=>k[n])) saveKp(true);
+    if(changed && S.autosave && KP_NAMES.some(n=>k[n])) saveKp();
   }
   if(!S.viewReady){ sizeCanvas(); fitView(); }
   $("slider").value=S.idx;
@@ -498,6 +526,7 @@ async function showFrame(i){
   updateStatPill();
   updateModeTools(); draw();
   fetchAxes(key);   // async; redraws when ready
+  fetchNeedleArc(key);
 }
 async function fetchAxes(key){
   if(key in S.axes) return;                    // cached (incl. null)
@@ -506,6 +535,14 @@ async function fetchAxes(key){
   try{ const r=await jget(`/api/bags/${S.bag}/axes/${key}`); S.axes[key]=r.axes||null;
        if(S.keys[S.idx]===key) draw(); }   // only redraw if still on this frame
   catch{ S.axes[key]=null; }
+}
+async function fetchNeedleArc(key){
+  if(key in S.needleArc) return;               // cached (incl. null)
+  const pe=S.poses[key];
+  if(!pe||pe.status!=="ok"||!pe.pose){ S.needleArc[key]=null; return; }
+  try{ const r=await jget(`/api/bags/${S.bag}/needle_arc/${key}`); S.needleArc[key]=r.points?{points:r.points}:null;
+       if(S.keys[S.idx]===key) draw(); }
+  catch{ S.needleArc[key]=null; }
 }
 function updateStatPill(){
   const key=S.keys[S.idx], pe=S.poses[key], k=S.kp[key];
@@ -529,7 +566,9 @@ cv.addEventListener("mousedown", e=>{
     const k=S.kp[S.keys[S.idx]]||{}; const hit=KP_NAMES.find(n=>k[n]&&dist(k[n],[x,y])<HIT/S.view.scale);
     if(hit) S.dragKp=hit;
     else { setKp(S.kpNext,[Math.round(x),Math.round(y)]);
-           const ci=KP_NAMES.indexOf(S.kpNext); S.kpNext=KP_NAMES[(ci+1)%KP_NAMES.length]; updateModeTools(); } }
+           if(!S.kpLock){ const ci=KP_NAMES.indexOf(S.kpNext); S.kpNext=KP_NAMES[(ci+1)%KP_NAMES.length]; }
+           if(S.autosave) saveKp();
+           updateModeTools(); } }
   else if(S.mode==="corners" && e.button===0){
     const ci=S.corners.findIndex(c=>dist(c,[x,y])<HIT/S.view.scale);
     if(ci>=0) S.dragCorner=ci;
@@ -544,7 +583,11 @@ window.addEventListener("mousemove", e=>{
   else if(S.mode==="keypoints"&&S.dragKp){ setKp(S.dragKp,[Math.round(x),Math.round(y)]); }
   else if(S.mode==="corners"&&S.dragCorner>=0){ S.corners[S.dragCorner]=[Math.round(x),Math.round(y)]; draw(); }
 });
-window.addEventListener("mouseup", ()=>{ S.painting=false; S.dragKp=null; S.dragCorner=-1; if(S.panning){ S.panning=false; cv.style.cursor=""; } });
+window.addEventListener("mouseup", ()=>{
+  // a finished keypoint drag is a real edit -> autosave it (this was the missing save)
+  if(S.mode==="keypoints" && S.dragKp && S.autosave){ saveKp(); }
+  S.painting=false; S.dragKp=null; S.dragCorner=-1; if(S.panning){ S.panning=false; cv.style.cursor=""; }
+});
 window.addEventListener("keydown", e=>{
   // never intercept typing in inputs/selects/textareas
   if(["INPUT","SELECT","TEXTAREA"].includes(e.target.tagName)) return;
@@ -614,10 +657,16 @@ async function saveMask(){ const key=S.keys[S.idx];
   const blob=await new Promise(r=>S.maskCanvas.toBlob(r,"image/png"));
   const res=await fetch(`/api/bags/${S.bag}/mask/${key}`,{method:"POST",headers:{"Content-Type":"image/png"},body:blob});
   toast(res.ok?"mask saved":"mask save failed"); }
-async function saveKp(silent){ const key=S.keys[S.idx], k=S.kp[key]||{};
+async function saveKp(){ const key=S.keys[S.idx], k=S.kp[key]||{};
   const body={occluded:k.occluded||{}};
   for(const n of KP_NAMES) body[n]=k[n]||null;
-  await jpost(`/api/bags/${S.bag}/keypoints/${key}`, body); if(!silent) toast("keypoints saved"); }
+  await jpost(`/api/bags/${S.bag}/keypoints/${key}`, body);
+  // explicit confirmation on EVERY save, with which keypoints + any occlusion
+  const placed=KP_NAMES.filter(n=>k[n]);
+  const occ=KP_NAMES.filter(n=>(k.occluded||{})[n]);
+  let msg=`saved frame ${key} · ${placed.length} keypoint${placed.length===1?'':'s'}`;
+  if(occ.length) msg+=` · occluded: ${occ.map(n=>(KP_BY[n]||{}).label||n).join(", ")}`;
+  toast(msg); }
 async function saveSeeds(run){
   const seeds=Object.entries(S.seeds).filter(([k,v])=>v.points.some((_,i)=>v.labels[i]===1))
     .map(([k,v])=>({frame_idx:parseInt(k,10),points:v.points,labels:v.labels}));
@@ -716,18 +765,33 @@ function updateModeTools(){
     $("cp").onclick=copyPrevMask; $("sm").onclick=saveMask;
   } else if(S.mode==="keypoints"){
     const k=S.kp[S.keys[S.idx]]||{occluded:{}}; const oc=k.occluded||{};
-    const nextDef=KP_BY[S.kpNext]||KEYPOINTS[0];
+    // per-keypoint SELECT buttons: click to choose which keypoint the next click places.
+    const selBtns=KEYPOINTS.map(def=>{
+      const active=(S.kpNext===def.name);
+      return `<button class="btn" data-sel="${def.name}" title="place ${def.label} next"
+        style="border-color:${def.color}; ${active?`background:${def.color}; color:#000; font-weight:bold`:`color:${def.color}`}">${def.label}</button>`;
+    }).join("");
+    // per-keypoint OCCLUDE buttons (sticky marker only shown when sticky MODE is on)
     const occBtns=KEYPOINTS.map(def=>{
-      const on=oc[def.name]; const sticky=S.stickyOcc[def.name]?' ⤓':'';
+      const on=oc[def.name]; const sticky=(S.stickyMode && S.stickyOcc[def.name])?' ⤓':'';
       return `<button class="btn ${on?'warn':''}" data-occ="${def.name}" title="toggle occlusion for ${def.label}">${def.label} ${on?'OCC':'vis'}${sticky}</button>`;
     }).join("");
-    mk(`<span style="color:var(--dim)">next: <b style="color:${nextDef.color}">${nextDef.label.toUpperCase()}</b> · click places · drag moves</span>
+    mk(`<span style="color:var(--dim)">place:</span> ${selBtns}
+        <button class="btn ${S.kpLock?'go':''}" id="kplock" title="lock = keep placing the selected keypoint; unlocked = autocycle">${S.kpLock?'🔒 lock':'↻ cycle'}</button>
+        <span style="width:1px;height:18px;background:var(--line);display:inline-block;margin:0 4px"></span>
         <button class="btn" id="sg">suggest ⌖</button><button class="btn" id="sga">suggest all</button>
         ${occBtns}
+        <button class="btn ${S.stickyMode?'warn':''}" id="stickytog" title="sticky = occlusion persists to following frames">${S.stickyMode?'sticky ON':'sticky off'}</button>
+        <span style="width:1px;height:18px;background:var(--line);display:inline-block;margin:0 4px"></span>
         <button class="btn" id="tk">track ↔</button><button class="btn warn" id="ak">re-anchor →</button>
+        <button class="btn ${S.autosave?'go':''}" id="autotog" title="autosave on drag-end + frame change">${S.autosave?'autosave ON':'autosave off'}</button>
         <button class="btn go" id="sk">save frame</button>`);
-    $("sg").onclick=()=>suggestKp(false); $("sga").onclick=()=>suggestKp(true);
+    document.querySelectorAll("#modetools .btn[data-sel]").forEach(b=>b.onclick=()=>{ S.kpNext=b.dataset.sel; updateModeTools(); });
     document.querySelectorAll("#modetools .btn[data-occ]").forEach(b=>b.onclick=()=>toggleOcc(b.dataset.occ));
+    $("kplock").onclick=()=>{ S.kpLock=!S.kpLock; toast(S.kpLock?`locked to ${(KP_BY[S.kpNext]||{}).label}`:"autocycle on"); updateModeTools(); };
+    $("stickytog").onclick=()=>{ S.stickyMode=!S.stickyMode; if(!S.stickyMode) S.stickyOcc={}; toast(S.stickyMode?"sticky occlusion ON (persists to next frames)":"sticky off (per-frame)"); updateModeTools(); };
+    $("autotog").onclick=()=>{ S.autosave=!S.autosave; toast(S.autosave?"autosave ON":"autosave OFF — save manually with 's'"); updateModeTools(); };
+    $("sg").onclick=()=>suggestKp(false); $("sga").onclick=()=>suggestKp(true);
     $("tk").onclick=()=>trackKp(false); $("ak").onclick=()=>trackKp(true); $("sk").onclick=()=>saveKp();
   } else if(S.mode==="corners"){
     const isNB=(S.poses[S.keys[S.idx]]||{}).status==="no_board";
@@ -738,6 +802,7 @@ function updateModeTools(){
         <button class="btn" id="rc">reset to detected</button>
         <button class="btn warn" id="rf">reflow from neighbor ↺</button>
         <button class="btn ${isNB?'warn':''}" id="nb">${isNB?'no board ✓ (click to clear)':'mark no board'}</button>
+        <button class="btn ${S.showNeedle?'go':''}" id="needletog" title="overlay the projected needle arc from the checkerboard pose">needle ${S.showNeedle?'ON':'off'}</button>
         <button class="btn go" id="sp">re-solve pose</button>
         <span style="flex:1"></span>
         <button class="btn" id="autofix" title="reflow every frame whose RMS is above threshold, keeping the result only if it improves">auto-fix high-RMS</button>
@@ -748,6 +813,7 @@ function updateModeTools(){
     $("rf").onclick=reflowPose;
     $("nb").onclick=markNoBoard;
     $("sp").onclick=solvePose;
+    $("needletog").onclick=()=>{ S.showNeedle=!S.showNeedle; toast(S.showNeedle?"needle arc ON":"needle arc off"); updateModeTools(); draw(); };
     $("autofix").onclick=autoFixHighRms;
     $("nextflag").onclick=nextFlagged;
   } else mk(`<span style="color:var(--faint)">read-only · overlays show mask, keypoints & checkerboard</span>`);
@@ -783,11 +849,12 @@ function toggleOcc(which){ const key=S.keys[S.idx]; S.kp[key]=S.kp[key]||{occlud
   S.kp[key].occluded=S.kp[key].occluded||{};
   const nv=!S.kp[key].occluded[which];
   S.kp[key].occluded[which]=nv;
-  S.stickyOcc[which]=nv;
+  // only persist to following frames when sticky MODE is on; otherwise per-frame
+  if(S.stickyMode) S.stickyOcc[which]=nv;
   draw(); updateModeTools();
-  saveKp(true);
+  if(S.autosave) saveKp();
   const lbl=(KP_BY[which]||{}).label||which;
-  toast(`${lbl} occluded: ${nv} (persists to next frames until toggled off)`); }
+  toast(`${lbl} occluded: ${nv}${S.stickyMode?' (sticky: persists to next frames)':' (this frame only)'}`); }
 
 // ===== borrow (cross-bag reference seeding) =====
 let borrowState={sources:[],src:null,frame:null};
