@@ -10,4 +10,3 @@ auto-annotating/__pycache__/
 runs/*
 *.npz
 *.yaml
-*.json

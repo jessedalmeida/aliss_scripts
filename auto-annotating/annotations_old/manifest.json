@@ -1,0 +1,116 @@
+{
+  "config": {
+    "out_dir": "annotated_bags_old",
+    "sam2_repo": "/home/jesse/sam2",
+    "model": "large",
+    "every_n": 3,
+    "camera_yaml": "/home/jesse/aliss_core/src/aliss_scripts/auto-annotating/annotations_old/ves_camera.yaml",
+    "board": {
+      "squares_x": 4,
+      "squares_y": 5,
+      "square_size": 0.002
+    },
+    "bag_sources": {
+      "ch_ingrasp_rot1": "/data/ros_bags/calibrated_needle_tracking/raw_bags/ch_ingrasp_rot1",
+      "ch_ingrasp_rot2": "/data/ros_bags/calibrated_needle_tracking/raw_bags/ch_ingrasp_rot2",
+      "ch_ingrasp_rot3": "/data/ros_bags/calibrated_needle_tracking/raw_bags/ch_ingrasp_rot3"
+    },
+    "repack_mode": "snapshot",
+    "poses_source": "auto",
+    "bags": {
+      "ch_ingrasp_rot1": {
+        "tracks": {
+          "needle": true,
+          "checkerboard": true
+        },
+        "stages": {
+          "pose": {
+            "status": "ok",
+            "rc": 0,
+            "ts": 1780267512.5973063
+          },
+          "smooth": {
+            "status": "fail",
+            "rc": 2,
+            "ts": 1780107551.5460296
+          },
+          "repack": {
+            "status": "ok",
+            "rc": 0,
+            "ts": 1780168352.6825254
+          }
+        }
+      },
+      "ch_ingrasp_rot2": {
+        "tracks": {
+          "needle": true,
+          "checkerboard": true
+        },
+        "stages": {
+          "pose": {
+            "status": "ok",
+            "rc": 0,
+            "ts": 1780267512.5973063
+          },
+          "smooth": {
+            "status": "fail",
+            "rc": 2,
+            "ts": 1780107551.5460296
+          },
+          "repack": {
+            "status": "ok",
+            "rc": 0,
+            "ts": 1780168352.6825254
+          }
+        }
+      },
+      "ch_ingrasp_rot3": {
+        "tracks": {
+          "needle": true,
+          "checkerboard": true
+        },
+        "stages": {
+          "pose": {
+            "status": "ok",
+            "rc": 0,
+            "ts": 1780267512.5973063
+          },
+          "smooth": {
+            "status": "fail",
+            "rc": 2,
+            "ts": 1780107551.5460296
+          },
+          "repack": {
+            "status": "ok",
+            "rc": 0,
+            "ts": 1780168352.6825254
+          }
+        }
+      }
+    }
+  },
+  "bags": {
+    "ch_ingrasp_rot1": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {}
+    },
+    "ch_ingrasp_rot2": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {},
+      "poses_source": "raw"
+    },
+    "ch_ingrasp_rot3": {
+      "tracks": {
+        "needle": true,
+        "checkerboard": true
+      },
+      "stages": {}
+    }
+  }
+}
