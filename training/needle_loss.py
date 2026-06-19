@@ -18,6 +18,17 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
+def _soft_argmax(hm: torch.Tensor) -> torch.Tensor:
+    """(B,K,H,W) -> (B,K,2) expected (x,y) in heatmap-grid units via spatial softmax."""
+    B, K, H, W = hm.shape
+    prob = F.softmax(hm.reshape(B, K, -1), dim=-1).reshape(B, K, H, W)
+    xs = torch.linspace(0, W - 1, W, device=hm.device)
+    ys = torch.linspace(0, H - 1, H, device=hm.device)
+    ex = (prob.sum(2) * xs).sum(-1)
+    ey = (prob.sum(3) * ys).sum(-1)
+    return torch.stack([ex, ey], dim=-1)   # (B,K,2)
+
+
 def soft_dice_loss(logits: torch.Tensor, target: torch.Tensor, eps: float = 1e-6) -> torch.Tensor:
     prob = torch.sigmoid(logits)
     dims = (1, 2, 3)
@@ -38,11 +49,15 @@ class NeedleLoss(nn.Module):
         mask_dice = soft_dice_loss(out["mask_logits"], batch["mask"])
         mask_loss = mask_bce + mask_dice
 
-        # ---- heatmaps (masked by hm_mask) ----
-        pred_hm, tgt_hm = out["heatmaps"], batch["heatmaps"]
+        # ---- keypoint coordinate loss (masked by hm_mask) ----
+        # Soft-argmax gives differentiable (x,y) in heatmap-grid units (0..H-1).
+        # L2 distance normalized by heatmap height puts the loss in [0,1] range,
+        # making it comparable in scale to the mask and vis terms.
+        pred_xy = _soft_argmax(out["heatmaps"])               # (B,K,2) heatmap units
+        tgt_xy = batch["kps_hm"]                              # (B,K,2)
         hm_mask = batch["hm_mask"]                            # (B,K)
-        per_px = F.mse_loss(pred_hm, tgt_hm, reduction="none")  # (B,K,H,W)
-        per_kp = per_px.mean(dim=(2, 3))                      # (B,K)
+        H = out["heatmaps"].shape[2]
+        per_kp = ((pred_xy - tgt_xy) ** 2).sum(-1).sqrt() / H  # (B,K) normalized L2
         denom = hm_mask.sum().clamp(min=1.0)
         hm_loss = (per_kp * hm_mask).sum() / denom
 

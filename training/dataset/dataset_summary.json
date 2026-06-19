@@ -1,20 +1,21 @@
 {
   "ann_dir": "auto-annotating/annotations",
-  "bags": 32,
+  "bags": 41,
   "bags_with_board": 29,
-  "bags_without_board": 3,
-  "frames_total": 10618,
+  "bags_without_board": 12,
+  "frames_total": 13234,
   "frames_with_board": 9688,
-  "frames_without_board": 930,
+  "frames_without_board": 3546,
   "per_bag": [
     {
       "bag": "ch_chicken_1",
       "has_board": true,
       "frames_emitted": 233,
       "masks_found": 233,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 233,
+        "needle_tip": 133,
         "needle_tail": 233,
         "left_arm_tip": 0,
         "right_arm_tip": 0
@@ -25,10 +26,11 @@
       "has_board": true,
       "frames_emitted": 206,
       "masks_found": 206,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 206,
-        "needle_tail": 206,
+        "needle_tip": 145,
+        "needle_tail": 205,
         "left_arm_tip": 0,
         "right_arm_tip": 0
       }
@@ -38,9 +40,10 @@
       "has_board": true,
       "frames_emitted": 355,
       "masks_found": 355,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 355,
+        "needle_tip": 235,
         "needle_tail": 355,
         "left_arm_tip": 0,
         "right_arm_tip": 0
@@ -51,9 +54,10 @@
       "has_board": true,
       "frames_emitted": 251,
       "masks_found": 251,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 251,
+        "needle_tip": 112,
         "needle_tail": 251,
         "left_arm_tip": 0,
         "right_arm_tip": 0
@@ -64,10 +68,11 @@
       "has_board": true,
       "frames_emitted": 388,
       "masks_found": 388,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 388,
-        "needle_tail": 388,
+        "needle_tip": 252,
+        "needle_tail": 281,
         "left_arm_tip": 0,
         "right_arm_tip": 0
       }
@@ -77,6 +82,7 @@
       "has_board": true,
       "frames_emitted": 261,
       "masks_found": 261,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 261,
@@ -90,6 +96,7 @@
       "has_board": true,
       "frames_emitted": 313,
       "masks_found": 313,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 313,
@@ -103,6 +110,7 @@
       "has_board": true,
       "frames_emitted": 302,
       "masks_found": 302,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 302,
@@ -116,9 +124,10 @@
       "has_board": true,
       "frames_emitted": 371,
       "masks_found": 371,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 371,
+        "needle_tip": 279,
         "needle_tail": 371,
         "left_arm_tip": 0,
         "right_arm_tip": 0
@@ -129,10 +138,11 @@
       "has_board": true,
       "frames_emitted": 292,
       "masks_found": 292,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 292,
-        "needle_tail": 292,
+        "needle_tail": 264,
         "left_arm_tip": 0,
         "right_arm_tip": 0
       }
@@ -142,6 +152,7 @@
       "has_board": true,
       "frames_emitted": 317,
       "masks_found": 317,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 317,
@@ -155,6 +166,7 @@
       "has_board": true,
       "frames_emitted": 284,
       "masks_found": 284,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 284,
@@ -168,6 +180,7 @@
       "has_board": true,
       "frames_emitted": 325,
       "masks_found": 325,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 325,
@@ -181,6 +194,7 @@
       "has_board": true,
       "frames_emitted": 381,
       "masks_found": 381,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 381,
@@ -194,6 +208,7 @@
       "has_board": true,
       "frames_emitted": 292,
       "masks_found": 292,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 292,
@@ -207,6 +222,7 @@
       "has_board": true,
       "frames_emitted": 488,
       "masks_found": 488,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 488,
@@ -220,6 +236,7 @@
       "has_board": true,
       "frames_emitted": 231,
       "masks_found": 231,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 231,
@@ -233,6 +250,7 @@
       "has_board": true,
       "frames_emitted": 475,
       "masks_found": 475,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 475,
@@ -246,6 +264,7 @@
       "has_board": true,
       "frames_emitted": 305,
       "masks_found": 305,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 305,
@@ -259,6 +278,7 @@
       "has_board": true,
       "frames_emitted": 205,
       "masks_found": 205,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 205,
@@ -272,6 +292,7 @@
       "has_board": true,
       "frames_emitted": 264,
       "masks_found": 264,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 264,
@@ -285,6 +306,7 @@
       "has_board": true,
       "frames_emitted": 282,
       "masks_found": 282,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
         "needle_tip": 282,
@@ -298,10 +320,11 @@
       "has_board": true,
       "frames_emitted": 418,
       "masks_found": 418,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 417,
-        "needle_tail": 417,
+        "needle_tip": 259,
+        "needle_tail": 418,
         "left_arm_tip": 0,
         "right_arm_tip": 0
       }
@@ -311,9 +334,10 @@
       "has_board": true,
       "frames_emitted": 440,
       "masks_found": 440,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 440,
+        "needle_tip": 342,
         "needle_tail": 440,
         "left_arm_tip": 0,
         "right_arm_tip": 0
@@ -324,9 +348,10 @@
       "has_board": true,
       "frames_emitted": 425,
       "masks_found": 425,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 425,
+        "needle_tip": 279,
         "needle_tail": 425,
         "left_arm_tip": 0,
         "right_arm_tip": 0
@@ -337,9 +362,10 @@
       "has_board": true,
       "frames_emitted": 421,
       "masks_found": 421,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 421,
+        "needle_tip": 302,
         "needle_tail": 421,
         "left_arm_tip": 0,
         "right_arm_tip": 0
@@ -350,9 +376,10 @@
       "has_board": true,
       "frames_emitted": 262,
       "masks_found": 262,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 262,
+        "needle_tip": 157,
         "needle_tail": 262,
         "left_arm_tip": 0,
         "right_arm_tip": 0
@@ -363,9 +390,10 @@
       "has_board": true,
       "frames_emitted": 345,
       "masks_found": 345,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 345,
+        "needle_tip": 271,
         "needle_tail": 345,
         "left_arm_tip": 0,
         "right_arm_tip": 0
@@ -376,10 +404,11 @@
       "has_board": true,
       "frames_emitted": 556,
       "masks_found": 556,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 553,
-        "needle_tail": 543,
+        "needle_tip": 366,
+        "needle_tail": 505,
         "left_arm_tip": 0,
         "right_arm_tip": 0
       }
@@ -389,9 +418,10 @@
       "has_board": false,
       "frames_emitted": 221,
       "masks_found": 221,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 221,
+        "needle_tip": 134,
         "needle_tail": 221,
         "left_arm_tip": 0,
         "right_arm_tip": 0
@@ -402,9 +432,10 @@
       "has_board": false,
       "frames_emitted": 271,
       "masks_found": 271,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 271,
+        "needle_tip": 205,
         "needle_tail": 271,
         "left_arm_tip": 0,
         "right_arm_tip": 0
@@ -415,10 +446,137 @@
       "has_board": false,
       "frames_emitted": 438,
       "masks_found": 438,
+      "yolo_masks_found": 0,
       "skipped_no_image": 0,
       "keypoint_coverage": {
-        "needle_tip": 0,
-        "needle_tail": 0,
+        "needle_tip": 347,
+        "needle_tail": 438,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "chicken_4",
+      "has_board": false,
+      "frames_emitted": 218,
+      "masks_found": 218,
+      "yolo_masks_found": 0,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 89,
+        "needle_tail": 218,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "chicken_5",
+      "has_board": false,
+      "frames_emitted": 391,
+      "masks_found": 391,
+      "yolo_masks_found": 0,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 191,
+        "needle_tail": 372,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "grasper_tracking_1",
+      "has_board": false,
+      "frames_emitted": 486,
+      "masks_found": 486,
+      "yolo_masks_found": 0,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 450,
+        "needle_tail": 457,
+        "left_arm_tip": 475,
+        "right_arm_tip": 482
+      }
+    },
+    {
+      "bag": "grasper_tracking_2",
+      "has_board": false,
+      "frames_emitted": 233,
+      "masks_found": 233,
+      "yolo_masks_found": 0,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 209,
+        "needle_tail": 188,
+        "left_arm_tip": 233,
+        "right_arm_tip": 233
+      }
+    },
+    {
+      "bag": "trachea_1",
+      "has_board": false,
+      "frames_emitted": 234,
+      "masks_found": 234,
+      "yolo_masks_found": 0,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 187,
+        "needle_tail": 234,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "trachea_2",
+      "has_board": false,
+      "frames_emitted": 233,
+      "masks_found": 233,
+      "yolo_masks_found": 0,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 200,
+        "needle_tail": 233,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "trachea_3",
+      "has_board": false,
+      "frames_emitted": 299,
+      "masks_found": 299,
+      "yolo_masks_found": 0,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 243,
+        "needle_tail": 299,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "trachea_4",
+      "has_board": false,
+      "frames_emitted": 203,
+      "masks_found": 203,
+      "yolo_masks_found": 0,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 153,
+        "needle_tail": 203,
+        "left_arm_tip": 0,
+        "right_arm_tip": 0
+      }
+    },
+    {
+      "bag": "trachea_5",
+      "has_board": false,
+      "frames_emitted": 319,
+      "masks_found": 319,
+      "yolo_masks_found": 0,
+      "skipped_no_image": 0,
+      "keypoint_coverage": {
+        "needle_tip": 228,
+        "needle_tail": 267,
         "left_arm_tip": 0,
         "right_arm_tip": 0
       }

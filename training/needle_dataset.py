@@ -99,14 +99,22 @@ class NeedleDataset(Dataset):
         return (m > 0).astype(np.float32)
 
     def _build_raw(self, rec: dict) -> dict:
-        """Load image+mask at input_size and keypoints in input_size pixel space.
+        """Load image+mask+cond_mask at input_size and keypoints in input_size pixel space.
 
         Returns raw arrays the transform (Step 4) can operate on before heatmaps
-        are rendered: image (S,S,3 uint8), mask (S,S float), kps (K,2 float with
-        NaN for absent), vis (K,) and labeled (K,) flags.
+        are rendered: image (S,S,3 uint8), mask (S,S float), cond_mask (S,S float),
+        kps (K,2 float with NaN for absent), vis (K,) and labeled (K,) flags.
+
+        cond_mask is the 4th input channel (YOLO predicted mask if available, else
+        SAM2 GT as a proxy). The model learns to condition keypoint placement on it.
         """
         img = self._load_image(rec["image"])          # (S,S,3) uint8
         mask = self._load_mask(rec["mask"])            # (S,S) float {0,1}
+
+        # 4th conditioning channel: YOLO predicted mask when present, SAM2 GT proxy otherwise
+        yolo_path = rec.get("yolo_mask")
+        cond_mask = self._load_mask(yolo_path) if yolo_path else mask.copy()
+
         K = len(self.keypoints)
         kps = np.full((K, 2), np.nan, np.float32)
         vis = np.zeros(K, np.float32)
@@ -114,37 +122,57 @@ class NeedleDataset(Dataset):
         s_in = self.input_size / NATIVE                # native(1080) -> input_size
         for k, name in enumerate(self.keypoints):
             kp = rec["keypoints"][name]
-            xy = kp["xy"]
-            if xy is None:                             # absent
-                continue
-            labeled[k] = 1.0                           # visibility is supervised
-            kps[k] = [xy[0] * s_in, xy[1] * s_in]
-            if kp["visible"]:
-                vis[k] = 1.0                           # occluded -> stays 0
-        return {"image": img, "mask": mask, "kps": kps, "vis": vis, "labeled": labeled}
+            # state field (new manifests); fall back to xy+visible for old manifests
+            state = kp.get("state")
+            if state is None:
+                if kp["xy"] is None:
+                    state = "unlabeled"
+                elif kp["visible"]:
+                    state = "visible"
+                else:
+                    state = "occluded"
+
+            if state == "visible":
+                labeled[k] = 1.0
+                vis[k] = 1.0
+                xy = kp["xy"]
+                kps[k] = [xy[0] * s_in, xy[1] * s_in]
+            elif state == "occluded":
+                labeled[k] = 1.0      # supervise visibility only; hm_mask stays 0
+                # vis stays 0, kps stays nan
+            # unlabeled: labeled=0, nothing supervised
+
+        return {"image": img, "mask": mask, "cond_mask": cond_mask,
+                "kps": kps, "vis": vis, "labeled": labeled}
 
     def _finalize(self, raw: dict, rec: dict) -> dict:
         """Render heatmaps from (possibly transformed) raw arrays -> tensors."""
-        img, mask = raw["image"], raw["mask"]
+        img, mask, cond_mask = raw["image"], raw["mask"], raw["cond_mask"]
         kps, vis, labeled = raw["kps"], raw["vis"], raw["labeled"]
         K = len(self.keypoints)
 
         heatmaps = np.zeros((K, self.hm_size, self.hm_size), np.float32)
         hm_mask = np.zeros(K, np.float32)
+        kps_hm = np.zeros((K, 2), np.float32)          # GT coords in heatmap-grid units
         s_hm = 1.0 / self.heatmap_stride               # input_size px -> heatmap grid
         for k in range(K):
             # supervise the heatmap only where the point is labeled AND visible
             if labeled[k] > 0 and vis[k] > 0 and np.isfinite(kps[k]).all():
                 hm_mask[k] = 1.0
-                render_gaussian(heatmaps[k], kps[k, 0] * s_hm, kps[k, 1] * s_hm, self.sigma)
+                cx, cy = kps[k, 0] * s_hm, kps[k, 1] * s_hm
+                kps_hm[k] = [cx, cy]
+                render_gaussian(heatmaps[k], cx, cy, self.sigma)
 
         img_f = img.astype(np.float32) / 255.0
         if self.normalize:
             img_f = (img_f - IMAGENET_MEAN) / IMAGENET_STD
+        img_t = torch.from_numpy(img_f.transpose(2, 0, 1)).contiguous()          # (3,S,S)
+        cond_t = torch.from_numpy(cond_mask[None].astype(np.float32)).contiguous()  # (1,S,S)
         return {
-            "image": torch.from_numpy(img_f.transpose(2, 0, 1)).contiguous(),
+            "image": torch.cat([img_t, cond_t], dim=0),                           # (4,S,S)
             "mask": torch.from_numpy(mask[None].astype(np.float32)).contiguous(),
             "heatmaps": torch.from_numpy(heatmaps),
+            "kps_hm": torch.from_numpy(kps_hm),                                   # (K,2) heatmap coords
             "hm_mask": torch.from_numpy(hm_mask),
             "vis_target": torch.from_numpy(vis.astype(np.float32)),   # 1 visible, 0 occluded/out
             "vis_mask": torch.from_numpy(labeled.astype(np.float32)), # 1 where supervised

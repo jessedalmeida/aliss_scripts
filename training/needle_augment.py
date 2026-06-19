@@ -89,7 +89,7 @@ class NeedleAugmentation:
         self.rng = np.random.RandomState(seed)
 
     # ---- geometric ---- #
-    def _affine(self, image, mask, fov, kps, S):
+    def _affine(self, image, mask, cond_mask, fov, kps, S):
         cx = cy = S / 2.0
         angle = self.rng.uniform(-self.rot_deg, self.rot_deg)
         scale = self.rng.uniform(*self.scale_range)
@@ -102,22 +102,25 @@ class NeedleAugmentation:
                                borderMode=cv2.BORDER_CONSTANT, borderValue=0)
         mask = cv2.warpAffine(mask, M, (S, S), flags=cv2.INTER_NEAREST,
                               borderMode=cv2.BORDER_CONSTANT, borderValue=0)
+        cond_mask = cv2.warpAffine(cond_mask, M, (S, S), flags=cv2.INTER_NEAREST,
+                                   borderMode=cv2.BORDER_CONSTANT, borderValue=0)
         fov = cv2.warpAffine(fov.astype(np.uint8), M, (S, S), flags=cv2.INTER_NEAREST,
                              borderMode=cv2.BORDER_CONSTANT, borderValue=0).astype(bool)
         # kps: (K,2) -> homogeneous
         ones = np.ones((kps.shape[0], 1), np.float32)
         kps_h = np.hstack([kps, ones])
         kps_t = (M @ kps_h.T).T  # (K,2)
-        return image, mask, fov, kps_t.astype(np.float32)
+        return image, mask, cond_mask, fov, kps_t.astype(np.float32)
 
-    def _maybe_flip(self, image, mask, fov, kps, S):
+    def _maybe_flip(self, image, mask, cond_mask, fov, kps, S):
         if self.rng.rand() < self.flip_p:
             image = image[:, ::-1].copy()
             mask = mask[:, ::-1].copy()
+            cond_mask = cond_mask[:, ::-1].copy()
             fov = fov[:, ::-1].copy()
             kps = kps.copy()
             kps[:, 0] = (S - 1) - kps[:, 0]
-        return image, mask, fov, kps
+        return image, mask, cond_mask, fov, kps
 
     # ---- photometric (image only) ---- #
     def _photometric(self, image):
@@ -148,14 +151,18 @@ class NeedleAugmentation:
             if not in_bounds:
                 vis[k] = 0.0
                 continue
-            if self.fov_aware and not fov[int(round(y)), int(round(x))]:
+            xi = min(int(round(x)), S - 1)
+            yi = min(int(round(y)), S - 1)
+            if self.fov_aware and not fov[yi, xi]:
                 vis[k] = 0.0
         return vis
 
     def __call__(self, raw: dict) -> dict:
-        """raw: image (S,S,3 uint8), mask (S,S float), kps (K,2 float; NaN if absent),
-        vis (K,) float, labeled (K,) float.  Returns same structure, augmented."""
-        image, mask, kps = raw["image"], raw["mask"], raw["kps"].copy()
+        """raw: image (S,S,3 uint8), mask (S,S float), cond_mask (S,S float),
+        kps (K,2 float; NaN if absent), vis (K,) float, labeled (K,) float.
+        Returns same structure, augmented. cond_mask is warped in lockstep with mask."""
+        image, mask, cond_mask = raw["image"], raw["mask"], raw["cond_mask"]
+        kps = raw["kps"].copy()
         vis, labeled = raw["vis"], raw["labeled"]
         S = image.shape[0]
 
@@ -167,13 +174,15 @@ class NeedleAugmentation:
         kps_safe[absent] = S / 2.0
 
         if self.rng.rand() < self.p_geom:
-            image, mask, fov, kps_safe = self._maybe_flip(image, mask, fov, kps_safe, S)
-            image, mask, fov, kps_safe = self._affine(image, mask, fov, kps_safe, S)
+            image, mask, cond_mask, fov, kps_safe = self._maybe_flip(
+                image, mask, cond_mask, fov, kps_safe, S)
+            image, mask, cond_mask, fov, kps_safe = self._affine(
+                image, mask, cond_mask, fov, kps_safe, S)
 
         vis = self._update_visibility(kps_safe, vis, fov, S)
         kps_safe[absent] = np.nan  # restore absent markers
 
         image = self._photometric(image)
 
-        return {"image": image, "mask": mask, "kps": kps_safe,
-                "vis": vis, "labeled": labeled}
+        return {"image": image, "mask": mask, "cond_mask": cond_mask,
+                "kps": kps_safe, "vis": vis, "labeled": labeled}

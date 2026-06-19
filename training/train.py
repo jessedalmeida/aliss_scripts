@@ -85,8 +85,7 @@ def validate(model, loader, crit, device, heatmap_stride: int = 4) -> dict:
         # keypoint pixel error in NATIVE coords, visible points only
         pred = model.soft_argmax(out["heatmaps"])             # (B,K,2) heatmap units
         B, K, H, W = out["heatmaps"].shape
-        tgt_flat = batch["heatmaps"].reshape(B, K, -1).argmax(-1)
-        gt = torch.stack([tgt_flat % W, tgt_flat // W], -1).float()  # (B,K,2)
+        gt = batch["kps_hm"]                                  # (B,K,2) heatmap units
         to_native = heatmap_stride * (NATIVE / batch["image"].shape[-1])
         err = ((pred - gt) * to_native).pow(2).sum(-1).sqrt()  # (B,K)
         m = batch["hm_mask"] > 0
@@ -113,10 +112,12 @@ def validate(model, loader, crit, device, heatmap_stride: int = 4) -> dict:
 # --------------------------------------------------------------------------- #
 # train
 # --------------------------------------------------------------------------- #
-def train_one_epoch(model, loader, crit, opt, scaler, device, use_amp) -> dict:
+def train_one_epoch(model, loader, crit, opt, scaler, device, use_amp, epoch: int) -> dict:
     model.train()
     agg = {"total": 0.0, "mask": 0.0, "hm": 0.0, "vis": 0.0, "n": 0}
-    for batch in loader:
+    n_batches = len(loader)
+    log_every = max(1, n_batches // 10)
+    for step, batch in enumerate(loader):
         for k, v in batch.items():
             if torch.is_tensor(v):
                 batch[k] = v.to(device)
@@ -131,6 +132,12 @@ def train_one_epoch(model, loader, crit, opt, scaler, device, use_amp) -> dict:
         for t in ("total", "mask", "hm", "vis"):
             agg[t] += losses[t].item() * bs
         agg["n"] += bs
+        if (step + 1) % log_every == 0 or step == n_batches - 1:
+            n = max(agg["n"], 1)
+            print(f"  ep {epoch} [{step + 1}/{n_batches}] "
+                  f"loss {agg['total']/n:.4f} "
+                  f"(mask {agg['mask']/n:.3f} hm {agg['hm']/n:.4f} vis {agg['vis']/n:.4f})",
+                  flush=True)
     n = max(agg["n"], 1)
     return {k: agg[k] / n for k in ("total", "mask", "hm", "vis")}
 
@@ -173,10 +180,13 @@ def main():
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=args.epochs)
     scaler = torch.cuda.amp.GradScaler(enabled=use_amp)
 
+    n_train = len(train_loader)
+    print(f"train batches/epoch: {n_train}  val batches: {len(val_loader)}", flush=True)
+
     log = []
     best = -1.0
     for epoch in range(args.epochs):
-        tr = train_one_epoch(model, train_loader, crit, opt, scaler, device, use_amp)
+        tr = train_one_epoch(model, train_loader, crit, opt, scaler, device, use_amp, epoch)
         val = validate(model, val_loader, crit, device, heatmap_stride=4)
         sched.step()
         row = {"epoch": epoch, "lr": opt.param_groups[0]["lr"], **tr, **val}

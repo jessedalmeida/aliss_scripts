@@ -50,8 +50,12 @@ class NeedleNet(nn.Module):
 
         weights = "IMAGENET1K_V1" if pretrained else None
         enc = resnet34(weights=weights)
-        # encoder stages (for input 640): strides 4,4,8,16,32
-        self.stem = nn.Sequential(enc.conv1, enc.bn1, enc.relu)  # stride 2, 64
+        # 4-channel stem: copy RGB pretrained weights, zero-init the conditioning channel.
+        # Zero init preserves pretrained behavior at step 0; the channel learns via backprop.
+        new_conv = nn.Conv2d(4, 64, kernel_size=7, stride=2, padding=3, bias=False)
+        new_conv.weight.data[:, :3] = enc.conv1.weight.data
+        new_conv.weight.data[:, 3:] = 0.0
+        self.stem = nn.Sequential(new_conv, enc.bn1, enc.relu)  # stride 2, 64
         self.pool = enc.maxpool                                   # stride 4, 64
         self.layer1, self.layer2 = enc.layer1, enc.layer2         # 64@s4, 128@s8
         self.layer3, self.layer4 = enc.layer3, enc.layer4         # 256@s16, 512@s32

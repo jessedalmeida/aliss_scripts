@@ -82,6 +82,19 @@ def index_masks(bag_dir: Path) -> dict[int, Path]:
     return out
 
 
+def index_yolo_masks(bag_dir: Path) -> dict[int, Path]:
+    """Map frame index -> YOLO predicted mask path (from yolo_mask/ subdir)."""
+    yolo_dir = bag_dir / "yolo_mask"
+    out: dict[int, Path] = {}
+    if not yolo_dir.exists():
+        return out
+    for p in sorted(yolo_dir.glob("*.png")):
+        idx = frame_index_from_name(p.name)
+        if idx is not None:
+            out[idx] = p
+    return out
+
+
 def load_json(path: Path) -> dict:
     if not path.exists():
         return {}
@@ -94,25 +107,43 @@ def load_json(path: Path) -> dict:
 # --------------------------------------------------------------------------- #
 # normalization core (format-agnostic; reused by any serializer)
 # --------------------------------------------------------------------------- #
+def _resolve_occlusion(name: str, occluded: dict) -> bool:
+    """Long key (e.g. 'needle_tip') wins when present; short key ('tip') is fallback.
+
+    keypoints.json has an inconsistency: some frames use short keys, some use long
+    keys, and occasionally they disagree. The long key is authoritative.
+    """
+    if name in occluded:
+        return bool(occluded[name])
+    short = name.replace("needle_", "")   # needle_tip -> tip
+    if short in occluded:
+        return bool(occluded[short])
+    return False
+
+
 def normalize_keypoints(kp_frame: dict) -> dict:
     """Normalize one keypoints.json frame entry into all-4-keypoint form.
 
-    Handles both the rich target schema (with an `occluded` dict and arm tips)
-    and the prototype schema (needle tip/tail only, no occlusion).
+    Emits per-keypoint 'state': 'visible' | 'occluded' | 'unlabeled'.
+    xy is set only for visible points; occluded xy is not trustworthy and is
+    deliberately omitted so downstream code cannot accidentally supervise it.
     """
     occluded = kp_frame.get("occluded") or {}
     out: dict[str, dict] = {}
     for name in KEYPOINT_NAMES:
         xy = kp_frame.get(name)
         if xy is None or len(xy) != 2:
-            out[name] = {"xy": None, "visible": False}
+            out[name] = {"xy": None, "state": "unlabeled", "visible": False}
             continue
-        # visible = annotated AND not explicitly flagged occluded.
-        is_occluded = bool(occluded.get(name, False))
-        out[name] = {
-            "xy": [float(xy[0]), float(xy[1])],
-            "visible": not is_occluded,
-        }
+        is_occluded = _resolve_occlusion(name, occluded)
+        if is_occluded:
+            out[name] = {"xy": None, "state": "occluded", "visible": False}
+        else:
+            out[name] = {
+                "xy": [float(xy[0]), float(xy[1])],
+                "state": "visible",
+                "visible": True,
+            }
     return out
 
 
@@ -144,6 +175,7 @@ def export_bag(bag_dir: Path, has_board_override: bool | None) -> tuple[list[dic
     poses = load_json(bag_dir / "poses.json").get("frames", {})
     kps = load_json(bag_dir / "keypoints.json").get("frames", {})
     masks = index_masks(bag_dir)
+    yolo_masks = index_yolo_masks(bag_dir)
 
     has_board = bag_has_board(poses, has_board_override)
 
@@ -183,6 +215,7 @@ def export_bag(bag_dir: Path, has_board_override: bool | None) -> tuple[list[dic
             "frame": idx,
             "image": str(image),
             "mask": str(masks[idx]),
+            "yolo_mask": str(yolo_masks[idx]) if idx in yolo_masks else None,
             "has_board": has_board,
             "board_detected": board_detected,
             "pose_status": pose_status,
@@ -194,6 +227,7 @@ def export_bag(bag_dir: Path, has_board_override: bool | None) -> tuple[list[dic
         "has_board": has_board,
         "frames_emitted": len(records),
         "masks_found": len(masks),
+        "yolo_masks_found": len(yolo_masks),
         "skipped_no_image": skipped_no_image,
         "keypoint_coverage": kp_coverage,
     }
